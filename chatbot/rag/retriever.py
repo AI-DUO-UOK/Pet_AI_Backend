@@ -126,7 +126,7 @@ class AdvancedRetriever:
             self._initialized = True  # Mark as attempted
             self.semantic_retriever = None
     
-    def search(self, query: str, top_k: int = 5) -> List[dict]:
+    def search(self, query: str, top_k: int = 3) -> List[dict]:
         """
         Perform semantic search
         
@@ -147,7 +147,7 @@ class AdvancedRetriever:
             logger.error(f"Search error: {e}")
             return []
     
-    def get_context(self, query: str, top_k: int = 5) -> str:
+    def get_context(self, query: str, top_k: int = 3) -> str:
         """
         Get context string for LLM
         

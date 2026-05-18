@@ -26,7 +26,7 @@ def ask_rag(
     question: str,
     use_advanced_rag: bool = True,
     confidence_threshold: float = CONFIDENCE_THRESHOLD,
-    top_k: int = 5,
+    top_k: int = 3,
 ) -> str:
     """
     Answer question using complete RAG pipeline

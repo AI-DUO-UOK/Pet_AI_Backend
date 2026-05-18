@@ -77,7 +77,7 @@ DOCLING_TIMEOUT = 300  # Timeout for PDF processing (seconds)
 # ─────────────────────────────────────────────────────────────────
 
 # Semantic retrieval settings
-SIMILARITY_TOP_K = 5  # Number of top results to return
+SIMILARITY_TOP_K = 3  # Number of top results to return
 RETRIEVAL_BATCH_SIZE = 1000  # Batch size for indexing
 
 
