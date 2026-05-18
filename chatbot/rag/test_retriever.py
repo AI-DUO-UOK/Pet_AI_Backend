@@ -9,7 +9,7 @@ from chatbot.rag.retriever import get_advanced_retriever
 retriever = get_advanced_retriever()
 
 queries = [
-    "What causes dermatitis in dogs?"
+    "Dog is vomiting"
 ]
 
 for q in queries:
@@ -29,4 +29,4 @@ for q in queries:
             print(f"Type: {result.get('chunk_type', 'text')}")
             print(f"Source: {result.get('source', 'Unknown')}")
             print(f"\nContent:")
-            print(result.get('content', 'No content')[:500])
+            print(result.get('content', 'No content')[:1000])
