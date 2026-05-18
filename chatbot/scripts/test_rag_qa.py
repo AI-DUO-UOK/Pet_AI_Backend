@@ -46,7 +46,7 @@ def test_rag_pipeline():
         print("=" * 70)
         
         # Call the full RAG pipeline
-        answer = ask_rag(query, confidence_threshold=0.65)
+        answer = ask_rag(query, confidence_threshold=0.70)
         
         print(f"\nANSWER:\n{answer}")
         print("\n" + "-" * 70)
