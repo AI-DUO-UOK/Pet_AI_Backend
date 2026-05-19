@@ -15,6 +15,6 @@ llm = ChatOpenAI(
     model="mistralai/mistral-large-2512",
     openai_api_key=api_key,
     openai_api_base="https://openrouter.ai/api/v1",
-    max_tokens=200,  # Reduced to fit within available credits
+    max_tokens=400,  # Reduced to fit within available credits
     request_timeout=30
 )
