@@ -6,6 +6,7 @@ from chatbot.agent import agent
 from chatbot.llm import llm
 from chatbot.memory import memory
 from chatbot.langsmith_config import setup_langsmith
+from chatbot.rag.retriever import get_advanced_retriever  # Import retriever for RAG context
 
 # Keywords for intent detection
 SKIN_KEYWORDS = [
@@ -257,7 +258,7 @@ Provide helpful, accurate veterinary advice based on the question asked."""
                         )
             else:
                 # General health question (no disease keywords detected)
-                # But check if a disease diagnosis was made earlier
+                # Use RAG retriever to get knowledge base context
                 analysis_done = False  # Reset for general questions
                 
                 # Get conversation history from memory for better context
@@ -273,14 +274,73 @@ Provide helpful, accurate veterinary advice based on the question asked."""
                         for disease in ['dermatitis', 'mange', 'infection', 'blepharitis', 'keratitis', 'conjunctiv']
                     )
                 
-                # Build prompt with full conversation context
-                if conversation_history:
-                    # This is a follow-up question - use LLM directly with full context
-                    # This guarantees the LLM sees the previous conversation
-                    if has_previous_diagnosis:
-                        # Emphasize that there was a previous diagnosis
-                        prompt = f"""You are a veterinary expert assistant. 
+                # Get RAG context from knowledge base
+                print("🔍 Searching knowledge base...\n")
+                try:
+                    retriever = get_advanced_retriever()
+                    search_results = retriever.search(query=user_input, top_k=3)
                     
+                    # Filter results by confidence threshold
+                    confidence_threshold = 0.65
+                    relevant_results = [
+                        result for result in search_results
+                        if result.get('score', 0) >= confidence_threshold
+                    ]
+                    
+                    if relevant_results:
+                        # Build context from retrieved chunks
+                        rag_context = "\n\n".join([
+                            f"Source: {result.get('source', 'Unknown')}\n{result.get('content', '')}"
+                            for result in relevant_results
+                        ])
+                        
+                        # Build prompt with RAG context and conversation history
+                        if conversation_history and has_previous_diagnosis:
+                            # Include both retrieved context AND previous diagnosis
+                            rag_prompt = f"""You are a helpful veterinary AI assistant.
+
+Pet Type: {animal}
+
+Previous Diagnosis Context:
+{conversation_history}
+
+Use the following retrieved context from the knowledge base to answer the current question:
+
+Retrieved Knowledge Base Context:
+{rag_context}
+
+Current User Question: {user_input}
+
+IMPORTANT INSTRUCTIONS:
+1. Use the retrieved knowledge base context to provide accurate information.
+2. Reference the previous diagnosis where relevant.
+3. Answer the current question using both the retrieved context and the conversation history.
+4. Be specific and provide detailed veterinary advice.
+5. Do NOT ask for images. Just provide helpful guidance based on the information available."""
+                        else:
+                            # Just use retrieved context for new topic
+                            rag_prompt = f"""You are a helpful veterinary AI assistant.
+
+Pet Type: {animal}
+
+Use the following retrieved context from the knowledge base to answer the question as accurately as possible:
+
+Retrieved Knowledge Base Context:
+{rag_context}
+
+User Question: {user_input}
+
+Answer based on the retrieved context. Provide detailed, accurate veterinary advice."""
+                        
+                        # Call LLM with RAG context
+                        llm_response = llm.invoke(rag_prompt)
+                        clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
+                    else:
+                        # No relevant context found - fall back to agent
+                        if conversation_history:
+                            if has_previous_diagnosis:
+                                prompt = f"""You are a veterinary expert assistant. 
+                        
 Pet Type: {animal}
 
 Previous Conversation (including a specific medical diagnosis):
@@ -288,16 +348,11 @@ Previous Conversation (including a specific medical diagnosis):
 
 Current User Question: {user_input}
 
-IMPORTANT INSTRUCTIONS:
-1. You MUST reference the previous conversation and any diagnosis that was made.
-2. If a specific condition was diagnosed (e.g., dermatitis, mange, infection, etc.), acknowledge that diagnosis clearly.
-3. Answer the current question in context of that previous diagnosis.
-4. Be specific and reference the exact condition and details that were discussed before.
-5. Do NOT ask for images. Just provide helpful guidance based on what's been discussed."""
-                    else:
-                        # General follow-up without specific diagnosis
-                        prompt = f"""You are a veterinary expert assistant. 
-                    
+IMPORTANT: You MUST reference the previous conversation and any diagnosis that was made.
+Provide helpful, accurate veterinary advice based on the question asked."""
+                            else:
+                                prompt = f"""You are a veterinary expert assistant. 
+                        
 Pet Type: {animal}
 
 Previous Conversation:
@@ -305,16 +360,13 @@ Previous Conversation:
 
 Current User Question: {user_input}
 
-IMPORTANT: You MUST reference the previous conversation above when answering. 
-Acknowledge what was previously discussed about this {animal} and provide follow-up advice that builds on that context.
-Be specific and reference the exact issue that was mentioned before.
-Do NOT ask for images. Just provide helpful guidance based on what's been discussed."""
-                    
-                    response = llm.invoke(prompt)
-                    clean_response = response.content if hasattr(response, 'content') else str(response)
-                else:
-                    # First general health question - use agent normally
-                    enriched_input = f"""
+IMPORTANT: You MUST reference the previous conversation when answering."""
+                            
+                            llm_response = llm.invoke(prompt)
+                            clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
+                        else:
+                            # Use agent for first general question
+                            enriched_input = f"""
                 Pet Type: {animal}
                 Issue Type: General health question
                 
@@ -323,17 +375,66 @@ Do NOT ask for images. Just provide helpful guidance based on what's been discus
                 This is a general health question. Answer it directly with veterinary advice.
                 Do NOT ask for images. Just provide helpful guidance.
                 """
+                            
+                            llm_response = agent.run(enriched_input)
+                            clean_response = clean_agent_response(llm_response)
                     
-                    response = agent.run(enriched_input)
-                    clean_response = clean_agent_response(response)
+                    print(f"Bot: {clean_response}\n")
+                    
+                    # Save all responses to memory for context in future turns
+                    memory.save_context(
+                        {"input": user_input},
+                        {"output": clean_response}
+                    )
                 
-                print(f"Bot: {clean_response}\n")
+                except Exception as e:
+                    # Fallback to agent on any error
+                    print(f"⚠️  Knowledge base search encountered an issue, using general knowledge..\n")
+                    if conversation_history:
+                        if has_previous_diagnosis:
+                            prompt = f"""You are a veterinary expert assistant. 
+                        
+Pet Type: {animal}
+
+Previous Conversation (including a specific medical diagnosis):
+{conversation_history}
+
+Current User Question: {user_input}
+
+IMPORTANT: You MUST reference the previous conversation and any diagnosis that was made.
+Provide helpful, accurate veterinary advice based on the question asked."""
+                        else:
+                            prompt = f"""You are a veterinary expert assistant. 
+                        
+Pet Type: {animal}
+
+Previous Conversation:
+{conversation_history}
+
+Current User Question: {user_input}
+
+IMPORTANT: You MUST reference the previous conversation when answering."""
+                        
+                        llm_response = llm.invoke(prompt)
+                        clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
+                    else:
+                        enriched_input = f"""
+                Pet Type: {animal}
+                Issue Type: General health question
                 
-                # IMPORTANT: Save all responses to memory for context in future turns
-                memory.save_context(
-                    {"input": user_input},
-                    {"output": clean_response}
-                )
+                User Query: {user_input}
+                
+                This is a general health question. Answer it directly with veterinary advice.
+                """
+                        
+                        llm_response = agent.run(enriched_input)
+                        clean_response = clean_agent_response(llm_response)
+                    
+                    print(f"Bot: {clean_response}\n")
+                    memory.save_context(
+                        {"input": user_input},
+                        {"output": clean_response}
+                    )
         
         except KeyboardInterrupt:
             print("\n\nBot: Goodbye! 🐾")
