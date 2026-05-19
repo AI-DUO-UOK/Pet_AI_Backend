@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from chatbot.rag.agentic_rag import query_agentic_rag
-from chatbot.memory import ConversationMemory
+from chatbot.memory import SimpleConversationMemory
 from chatbot.tools import _analyze_pet_image_impl
 import logging
 
@@ -92,7 +92,7 @@ class SessionManager:
         # Initialize session with memory
         self.sessions[session_id] = {
             "pet_type": pet_type.lower(),
-            "memory": ConversationMemory(),
+            "memory": SimpleConversationMemory(),
             "current_disease_type": None,
             "analysis_done": False
         }
@@ -239,7 +239,10 @@ async def chat(session_id: str, message: ChatMessage) -> ChatResponse:
         chat_history = ""
         if hasattr(memory, 'messages'):
             for msg in memory.messages[-6:]:  # Last 6 messages for context
-                chat_history += f"\n{msg}"
+                chat_history += f"\n{msg.content}"
+        
+        # Save user question to memory
+        memory.add_user_message(user_input)
         
         # Get response from agentic RAG
         logger.info(f"Processing message for session {session_id}: {user_input[:50]}")
@@ -249,9 +252,8 @@ async def chat(session_id: str, message: ChatMessage) -> ChatResponse:
         # Try to parse analysis data from response
         parsed_response, analysis_data = parse_rag_response(response_text)
         
-        # Save to memory
-        memory.save_response(response_text)
-        memory.save_question(user_input)
+        # Save AI response to memory
+        memory.add_ai_message(response_text)
         
         is_analysis = analysis_data is not None
         
