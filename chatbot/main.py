@@ -6,7 +6,7 @@ from chatbot.agent import agent
 from chatbot.llm import llm
 from chatbot.memory import memory
 from chatbot.langsmith_config import setup_langsmith
-from chatbot.rag.retriever import get_advanced_retriever  # Import retriever for RAG context
+from chatbot.rag.agentic_rag import query_agentic_rag  # Import intelligent agentic RAG
 
 # Keywords for intent detection
 SKIN_KEYWORDS = [
@@ -167,84 +167,33 @@ def run_chat():
                             print("     Please try again with a different image file.\n")
                             continue
                         else:
-                            # Tool succeeded - use RAG to explain the diagnosis
+                            # Tool succeeded - use agentic RAG to explain the diagnosis
                             disease_class = tool_result.get('class', 'Unknown')
                             confidence = tool_result.get('confidence', 'N/A')
                             
-                            print("🔍 Searching knowledge base for detailed information...\n")
+                            # Use agentic RAG - agent will decide whether to search knowledge base
+                            explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+
+User's original description: {user_input}
+
+Provide a detailed veterinary explanation covering:
+1. What is {disease_class}?
+2. Common causes and risk factors for this condition
+3. Treatment options and recommendations
+4. When to seek professional veterinary care
+5. Prevention and management tips
+
+Be thorough and informative. Use formatting with headers and bullet points for clarity."""
                             
-                            # First, try to get RAG context for this disease
-                            try:
-                                retriever = get_advanced_retriever()
-                                search_results = retriever.search(query=f"{disease_class} {disease_type} in {animal}s", top_k=5)
-                                
-                                # Filter results by confidence threshold
-                                rag_threshold = 0.7
-                                relevant_results = [
-                                    result for result in search_results
-                                    if result.get('score', 0) >= rag_threshold
-                                ]
-                                
-                                if relevant_results:
-                                    # Build context from retrieved chunks
-                                    rag_context = "\n\n".join([
-                                        f"Source: {result.get('source', 'Unknown')}\n{result.get('content', '')}"
-                                        for result in relevant_results
-                                    ])
-                                    
-                                    # Use RAG context for explanation
-                                    explanation_prompt = f"""You are a veterinary expert. Based on the computer vision analysis of a {animal}'s {disease_type}, the detected condition is: {disease_class} (with {confidence:.1%} confidence).
-
-User's original description: {user_input}
-
-Use the following knowledge base context to provide a detailed explanation:
-
-Knowledge Base Context:
-{rag_context}
-
-Provide a detailed veterinary explanation covering:
-1. What is {disease_class}?
-2. Common causes and risk factors for this condition
-3. Treatment options and recommendations
-4. When to seek professional veterinary care
-5. Prevention and management tips
-
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
-                                else:
-                                    # Fall back to general knowledge if RAG threshold not met
-                                    explanation_prompt = f"""You are a veterinary expert. Based on the computer vision analysis of a {animal}'s {disease_type}, the detected condition is: {disease_class} (with {confidence:.1%} confidence).
-
-User's original description: {user_input}
-
-Provide a detailed veterinary explanation covering:
-1. What is {disease_class}?
-2. Common causes and risk factors for this condition
-3. Treatment options and recommendations
-4. When to seek professional veterinary care
-5. Prevention and management tips
-
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
-                                
-                                # Call LLM with RAG context or general knowledge
-                                llm_response = llm.invoke(explanation_prompt)
-                                explanation_text = llm_response.content
-                            except Exception as e:
-                                # Fallback: If RAG retrieval fails, use general knowledge
-                                explanation_prompt = f"""You are a veterinary expert. Based on the computer vision analysis of a {animal}'s {disease_type}, the detected condition is: {disease_class} (with {confidence:.1%} confidence).
-
-User's original description: {user_input}
-
-Provide a detailed veterinary explanation covering:
-1. What is {disease_class}?
-2. Common causes and risk factors for this condition
-3. Treatment options and recommendations
-4. When to seek professional veterinary care
-5. Prevention and management tips
-
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
-                                
-                                llm_response = llm.invoke(explanation_prompt)
-                                explanation_text = llm_response.content
+                            # Get conversation history for context
+                            memory_vars = memory.load_memory_variables({})
+                            chat_history = memory_vars.get('chat_history', '')
+                            
+                            # Agent decides whether to use RAG
+                            explanation_text = query_agentic_rag(
+                                question=explanation_query,
+                                chat_history=chat_history
+                            )
                             
                             print(f"Bot: {explanation_text}\n")
                             analysis_done = True  # Mark that we've done analysis
@@ -270,72 +219,23 @@ Be thorough and informative. Use formatting with headers and bullet points for c
                         memory_vars = memory.load_memory_variables({})
                         conversation_history = memory_vars.get('chat_history', '')
                         
-                        print("🔍 Searching knowledge base...\n")
-                        
-                        try:
-                            retriever = get_advanced_retriever()
-                            search_results = retriever.search(query=user_input, top_k=5)
-                            
-                            # Filter results by confidence threshold
-                            rag_threshold = 0.7
-                            relevant_results = [
-                                result for result in search_results
-                                if result.get('score', 0) >= rag_threshold
-                            ]
-                            
-                            if relevant_results:
-                                # Build context from retrieved chunks
-                                rag_context = "\n\n".join([
-                                    f"Source: {result.get('source', 'Unknown')}\n{result.get('content', '')}"
-                                    for result in relevant_results
-                                ])
-                                
-                                # Use RAG context for follow-up question
-                                followup_prompt = f"""You are a veterinary expert. You have already diagnosed and discussed a {disease_type} condition with this {animal}.
+                        # Use agentic RAG for follow-up question - agent decides if RAG is needed
+                        followup_query = f"""You have already diagnosed and discussed a {disease_type} condition with this {animal}.
 
 Previous Conversation:
 {conversation_history}
-
-Use the following knowledge base context to answer the follow-up question:
-
-Knowledge Base Context:
-{rag_context}
 
 User's follow-up question: {user_input}
 
 IMPORTANT: Reference the specific diagnosis and previous discussion from the conversation history.
-Answer using the knowledge base context, in the context of the condition previously diagnosed.
+Answer this question in the context of the condition previously diagnosed. 
 Provide helpful, accurate veterinary advice based on the question asked."""
-                            else:
-                                # Fall back to general knowledge if RAG threshold not met
-                                followup_prompt = f"""You are a veterinary expert. You have already diagnosed and discussed a {disease_type} condition with this {animal}.
-
-Previous Conversation:
-{conversation_history}
-
-User's follow-up question: {user_input}
-
-IMPORTANT: You MUST reference the specific diagnosis and previous discussion from the conversation history above.
-Answer this question in the context of the condition you previously diagnosed. 
-Provide helpful, accurate veterinary advice based on the question asked."""
-                            
-                            llm_response = llm.invoke(followup_prompt)
-                            followup_answer = llm_response.content
-                        except Exception as e:
-                            # Fallback: If RAG retrieval fails, use general knowledge
-                            followup_prompt = f"""You are a veterinary expert. You have already diagnosed and discussed a {disease_type} condition with this {animal}.
-
-Previous Conversation:
-{conversation_history}
-
-User's follow-up question: {user_input}
-
-IMPORTANT: You MUST reference the specific diagnosis and previous discussion from the conversation history above.
-Answer this question in the context of the condition you previously diagnosed. 
-Provide helpful, accurate veterinary advice based on the question asked."""
-                            
-                            llm_response = llm.invoke(followup_prompt)
-                            followup_answer = llm_response.content
+                        
+                        # Agent decides whether to use RAG
+                        followup_answer = query_agentic_rag(
+                            question=followup_query,
+                            chat_history=conversation_history
+                        )
                         
                         print(f"Bot: {followup_answer}\n")
                         
@@ -345,45 +245,9 @@ Provide helpful, accurate veterinary advice based on the question asked."""
                             {"output": followup_answer}
                         )
                     else:
-                        # First time for this disease - try RAG for initial info, then ask for image
-                        print("🔍 Searching knowledge base for general information...\n")
-                        
-                        try:
-                            retriever = get_advanced_retriever()
-                            search_results = retriever.search(query=f"{disease_type} in {animal}s", top_k=5)
-                            
-                            # Filter results by confidence threshold
-                            rag_threshold = 0.7
-                            relevant_results = [
-                                result for result in search_results
-                                if result.get('score', 0) >= rag_threshold
-                            ]
-                            
-                            if relevant_results:
-                                # Build context from retrieved chunks
-                                rag_context = "\n\n".join([
-                                    f"Source: {result.get('source', 'Unknown')}\n{result.get('content', '')}"
-                                    for result in relevant_results[:2]  # Use top 2 for initial info
-                                ])
-                                
-                                # Provide RAG-based initial information and ask for image
-                                initial_prompt = f"""You are a veterinary expert. The user is asking about a {disease_type} issue in their {animal}.
-
-Based on knowledge base information about {disease_type} in {animal}s:
-
-Knowledge Base Context:
-{rag_context}
-
-User's description: {user_input}
-
-Provide a brief initial response mentioning what the knowledge base says about {disease_type}, then ask the user to upload a clear image of the affected {disease_type} area for proper diagnosis. 
-Guide them to provide the image file path."""
-                                
-                                llm_response = llm.invoke(initial_prompt)
-                                clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
-                            else:
-                                # Fall back to agent if no RAG context available
-                                enriched_input = f"""
+                        # First time for this disease - ask for image WITHOUT searching knowledge base
+                        # RAG search will only happen AFTER the CV model analyzes the image
+                        enriched_input = f"""
                         Pet Type: {animal}
                         Issue Type: {disease_type} disease
                         
@@ -393,24 +257,8 @@ Guide them to provide the image file path."""
                         so you can provide a proper diagnosis. Guide them to provide the image file path.
                         Do NOT use the tool yet. Just ask for the image.
                         """
-                                response = agent.run(enriched_input)
-                                clean_response = clean_agent_response(response)
-                        
-                        except Exception as e:
-                            # Fallback to agent on any error
-                            enriched_input = f"""
-                        Pet Type: {animal}
-                        Issue Type: {disease_type} disease
-                        
-                        User Query: {user_input}
-                        
-                        The user is asking about a {disease_type} issue. Ask them to upload a clear image
-                        so you can provide a proper diagnosis. Guide them to provide the image file path.
-                        Do NOT use the tool yet. Just ask for the image.
-                        """
-                            response = agent.run(enriched_input)
-                            clean_response = clean_agent_response(response)
-                        
+                        response = agent.run(enriched_input)
+                        clean_response = clean_agent_response(response)
                         print(f"Bot: {clean_response}\n")
                         
                         # Save to memory
@@ -427,176 +275,32 @@ Guide them to provide the image file path."""
                 memory_vars = memory.load_memory_variables({})
                 conversation_history = memory_vars.get('chat_history', '')
                 
-                # Check if there was a previous diagnosis in the conversation
-                has_previous_diagnosis = False
-                if conversation_history:
-                    # Look for diagnosis records in history (they contain "Diagnosed with")
-                    has_previous_diagnosis = 'Diagnosed with' in conversation_history or any(
-                        disease in conversation_history.lower() 
-                        for disease in ['dermatitis', 'mange', 'infection', 'blepharitis', 'keratitis', 'conjunctiv']
-                    )
-                
-                # Get RAG context from knowledge base
-                print("🔍 Searching knowledge base...\n")
-                try:
-                    retriever = get_advanced_retriever()
-                    search_results = retriever.search(query=user_input, top_k=3)
-                    
-                    # Filter results by confidence threshold (0.7 for RAG, fallback to general knowledge below that)
-                    rag_threshold = 0.7
-                    relevant_results = [
-                        result for result in search_results
-                        if result.get('score', 0) >= rag_threshold
-                    ]
-                    
-                    if relevant_results:
-                        # Build context from retrieved chunks
-                        rag_context = "\n\n".join([
-                            f"Source: {result.get('source', 'Unknown')}\n{result.get('content', '')}"
-                            for result in relevant_results
-                        ])
-                        
-                        # Build prompt with RAG context and conversation history
-                        if conversation_history and has_previous_diagnosis:
-                            # Include both retrieved context AND previous diagnosis
-                            rag_prompt = f"""You are a helpful veterinary AI assistant.
-
-Pet Type: {animal}
-
-Previous Diagnosis Context:
-{conversation_history}
-
-Use the following retrieved context from the knowledge base to answer the current question:
-
-Retrieved Knowledge Base Context:
-{rag_context}
-
-Current User Question: {user_input}
-
-IMPORTANT INSTRUCTIONS:
-1. Use the retrieved knowledge base context to provide accurate information.
-2. Reference the previous diagnosis where relevant.
-3. Answer the current question using both the retrieved context and the conversation history.
-4. Be specific and provide detailed veterinary advice.
-5. Do NOT ask for images. Just provide helpful guidance based on the information available."""
-                        else:
-                            # Just use retrieved context for new topic
-                            rag_prompt = f"""You are a helpful veterinary AI assistant.
-
-Pet Type: {animal}
-
-Use the following retrieved context from the knowledge base to answer the question as accurately as possible:
-
-Retrieved Knowledge Base Context:
-{rag_context}
-
-User Question: {user_input}
-
-Answer based on the retrieved context. Provide detailed, accurate veterinary advice."""
-                        
-                        # Call LLM with RAG context
-                        llm_response = llm.invoke(rag_prompt)
-                        clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
-                    else:
-                        # No relevant context found - fall back to agent
-                        if conversation_history:
-                            if has_previous_diagnosis:
-                                prompt = f"""You are a veterinary expert assistant. 
-                        
-Pet Type: {animal}
-
-Previous Conversation (including a specific medical diagnosis):
-{conversation_history}
-
-Current User Question: {user_input}
-
-IMPORTANT: You MUST reference the previous conversation and any diagnosis that was made.
-Provide helpful, accurate veterinary advice based on the question asked."""
-                            else:
-                                prompt = f"""You are a veterinary expert assistant. 
-                        
-Pet Type: {animal}
+                # Use agentic RAG - let the agent decide whether to search knowledge base or answer directly
+                # This is intelligent routing that avoids unnecessary retrieval
+                pet_query = f"""Pet Type: {animal}
 
 Previous Conversation:
 {conversation_history}
 
 Current User Question: {user_input}
 
-IMPORTANT: You MUST reference the previous conversation when answering."""
-                            
-                            llm_response = llm.invoke(prompt)
-                            clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
-                        else:
-                            # Use agent for first general question
-                            enriched_input = f"""
-                Pet Type: {animal}
-                Issue Type: General health question
+If this is a veterinary/medical question, search the knowledge base for accurate information.
+If this is casual conversation or personal information, answer directly without searching.
+Be smart about deciding whether retrieval is necessary."""
                 
-                User Query: {user_input}
+                # Agent decides: use RAG or answer directly
+                clean_response = query_agentic_rag(
+                    question=pet_query,
+                    chat_history=conversation_history
+                )
                 
-                This is a general health question. Answer it directly with veterinary advice.
-                Do NOT ask for images. Just provide helpful guidance.
-                """
-                            
-                            llm_response = agent.run(enriched_input)
-                            clean_response = clean_agent_response(llm_response)
-                    
-                    print(f"Bot: {clean_response}\n")
-                    
-                    # Save all responses to memory for context in future turns
-                    memory.save_context(
-                        {"input": user_input},
-                        {"output": clean_response}
-                    )
+                print(f"Bot: {clean_response}\n")
                 
-                except Exception as e:
-                    # Fallback to agent on any error
-                    print(f"⚠️  Knowledge base search encountered an issue, using general knowledge..\n")
-                    if conversation_history:
-                        if has_previous_diagnosis:
-                            prompt = f"""You are a veterinary expert assistant. 
-                        
-Pet Type: {animal}
-
-Previous Conversation (including a specific medical diagnosis):
-{conversation_history}
-
-Current User Question: {user_input}
-
-IMPORTANT: You MUST reference the previous conversation and any diagnosis that was made.
-Provide helpful, accurate veterinary advice based on the question asked."""
-                        else:
-                            prompt = f"""You are a veterinary expert assistant. 
-                        
-Pet Type: {animal}
-
-Previous Conversation:
-{conversation_history}
-
-Current User Question: {user_input}
-
-IMPORTANT: You MUST reference the previous conversation when answering."""
-                        
-                        llm_response = llm.invoke(prompt)
-                        clean_response = llm_response.content if hasattr(llm_response, 'content') else str(llm_response)
-                    else:
-                        enriched_input = f"""
-                Pet Type: {animal}
-                Issue Type: General health question
-                
-                User Query: {user_input}
-                
-                This is a general health question. Answer it directly with veterinary advice.
-                """
-                        
-                        llm_response = agent.run(enriched_input)
-                        clean_response = clean_agent_response(llm_response)
-                    
-                    print(f"Bot: {clean_response}\n")
-                    memory.save_context(
-                        {"input": user_input},
-                        {"output": clean_response}
-                    )
+                # Save all responses to memory for context in future turns
+                memory.save_context(
+                    {"input": user_input},
+                    {"output": clean_response}
+                )
         
         except KeyboardInterrupt:
             print("\n\nBot: Goodbye! 🐾")
