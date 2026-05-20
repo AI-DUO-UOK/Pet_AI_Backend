@@ -21,7 +21,7 @@ echo ""
 # Start CV Model API
 echo "🚀 Starting CV Model API (FastAPI)..."
 echo "   Running on: http://localhost:8000"
-python app/main.py &
+python -m uvicorn app.main:app --port 8000 &
 CV_PID=$!
 sleep 2  # Give it time to start
 
