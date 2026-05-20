@@ -604,85 +604,46 @@ async def stream_llm_response(
     chat_history: str = ""
 ) -> AsyncGenerator[str, None]:
     """
-    Stream LLM response while preserving markdown formatting.
+    Stream LLM response in sentence chunks while preserving all markdown.
     
     Uses the exact same query_agentic_rag but streams the output.
-    Preserves markdown structure (headers, bullets, paragraphs) during streaming.
+    Streams by sentences/lines to naturally preserve markdown formatting.
     
     Args:
         question: User question
         chat_history: Previous conversation history
     
     Yields:
-        Response chunks (sentences/lines with formatting preserved)
+        Response chunks (complete sentences/lines with formatting intact)
     """
     try:
         # Get full response using existing agentic RAG (unchanged logic)
         full_response = query_agentic_rag(question=question, chat_history=chat_history)
         
-        # Stream the response while preserving markdown structure
-        # Split by sentences and small chunks to preserve newlines and formatting
-        
-        # First, preserve all paragraph breaks and headers
-        import re
-        
-        # Split by double newlines first (paragraph breaks)
+        # Simple approach: split by double newlines (paragraphs) and stream them
+        # This naturally preserves all markdown formatting
         paragraphs = full_response.split('\n\n')
         
-        for para_idx, paragraph in enumerate(paragraphs):
-            if not paragraph.strip():
+        for para in paragraphs:
+            if not para.strip():
                 continue
-                
-            # Check if this is a header (starts with #)
-            if paragraph.strip().startswith('#'):
-                # Yield entire header at once
-                yield paragraph + '\n\n'
-                await asyncio.sleep(0.05)
-            elif paragraph.strip().startswith('-') or paragraph.strip().startswith('*'):
-                # This is a list - split by list items to maintain structure
-                lines = paragraph.split('\n')
-                for line in lines:
-                    if line.strip():
-                        yield line + '\n'
-                        await asyncio.sleep(0.03)
-                # Add spacing after list
-                if para_idx < len(paragraphs) - 1:
-                    yield '\n'
-                    await asyncio.sleep(0.02)
-            else:
-                # Regular paragraph - stream by words but keep sentences together
-                # Split into sentences first
-                sentences = re.split(r'(?<=[.!?])\s+', paragraph.strip())
-                
-                for sent_idx, sentence in enumerate(sentences):
-                    if not sentence.strip():
-                        continue
-                    
-                    # For each sentence, stream by small word chunks
-                    words = sentence.split()
-                    chunk_size = 3  # Yield 3 words at a time
-                    
-                    for i in range(0, len(words), chunk_size):
-                        chunk_words = words[i:i + chunk_size]
-                        chunk_text = " ".join(chunk_words)
-                        
-                        # Add punctuation for last chunk of sentence
-                        if i + chunk_size >= len(words):
-                            yield chunk_text + ' '
-                        else:
-                            yield chunk_text + ' '
-                        
-                        await asyncio.sleep(0.03)
-                    
-                    # Add period if missing
-                    if not sentence.endswith(('.', '!', '?')):
-                        yield '. '
-                        await asyncio.sleep(0.02)
-                
-                # Add paragraph break
-                if para_idx < len(paragraphs) - 1:
-                    yield '\n\n'
-                    await asyncio.sleep(0.03)
+            
+            # For each paragraph, yield it in sentence-sized chunks
+            # This preserves headers, lists, formatting, everything
+            import re
+            
+            # Split into sentences but keep the delimiters
+            sentences = re.split(r'(?<=[.!?\n])\s+', para.strip())
+            
+            for sentence in sentences:
+                if sentence.strip():
+                    yield sentence + ' '
+                    # Shorter delay for natural streaming feel
+                    await asyncio.sleep(0.04)
+            
+            # Add paragraph break between paragraphs
+            yield '\n\n'
+            await asyncio.sleep(0.02)
     
     except Exception as e:
         logger.error(f"Error streaming LLM response: {e}")
