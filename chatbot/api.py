@@ -7,12 +7,15 @@ Imports and reuses exact same functions as CLI chatbot.
 
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from typing import Optional, Dict
+from typing import Optional, Dict, AsyncGenerator
 import uuid
 import os
 import tempfile
 import logging
+import json
+import asyncio
 
 from chatbot.main import detect_disease_type, extract_image_path, clean_agent_response
 from chatbot.tools import _analyze_pet_image_impl
@@ -399,6 +402,113 @@ async def get_chat_history(session_id: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+
+@app.post("/api/chat/message/stream")
+async def send_message_stream(request: SendMessageRequest):
+    """
+    Send a message and stream the response using Server-Sent Events.
+    
+    This is the same logic as /api/chat/message but with streaming.
+    Returns response token-by-token for real-time display.
+    
+    Args:
+        request: Contains session_id and message text
+    
+    Yields:
+        SSE formatted strings with streaming response chunks
+    """
+    from fastapi.responses import StreamingResponse
+    
+    async def response_generator():
+        try:
+            # Get session
+            session = get_session(request.session_id)
+            user_input = request.message.strip()
+            
+            if not user_input:
+                yield f"data: {json.dumps({'error': 'Message cannot be empty'})}\n\n"
+                return
+            
+            animal = session.animal
+            
+            # Detect disease type from message (same as CLI)
+            detected_disease_type = detect_disease_type(user_input)
+            
+            if detected_disease_type:
+                if detected_disease_type != session.current_disease_type:
+                    session.analysis_done = False
+                session.current_disease_type = detected_disease_type
+            
+            disease_type = session.current_disease_type
+            used_rag = False
+            
+            # Handle disease-specific flow
+            if disease_type:
+                image_path = extract_image_path(user_input)
+                
+                if image_path and os.path.isfile(image_path):
+                    # Analyze image
+                    bot_response = await handle_image_analysis(
+                        session, image_path, animal, disease_type, user_input
+                    )
+                    session.analysis_done = True
+                    # Stream the full response
+                    yield f"data: {json.dumps({'chunk': bot_response, 'used_rag': False, 'disease_detected': disease_type, 'done': True})}\n\n"
+                else:
+                    if session.analysis_done:
+                        # Follow-up question
+                        follow_up_prompt = f"The user is asking a follow-up question about the {disease_type} condition we discussed earlier: '{user_input}'"
+                        
+                        # Stream RAG response with history
+                        chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
+                        
+                        # Get the response with a streaming approach
+                        response_text = ""
+                        async for chunk in stream_llm_response(follow_up_prompt, chat_history):
+                            response_text += chunk
+                            yield f"data: {json.dumps({'chunk': chunk, 'used_rag': True, 'disease_detected': None, 'done': False})}\n\n"
+                            await asyncio.sleep(0.01)  # Small delay for streaming effect
+                        
+                        used_rag = True
+                        session.memory.save_context({"input": user_input}, {"output": response_text})
+                        yield f"data: {json.dumps({'chunk': '', 'used_rag': True, 'disease_detected': None, 'done': True})}\n\n"
+                    else:
+                        # First mention of disease - ask for image
+                        enriched_input = f"The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. Ask them if they can provide an image for analysis."
+                        
+                        response_text = ""
+                        async for chunk in stream_llm_response(enriched_input, ""):
+                            response_text += chunk
+                            yield f"data: {json.dumps({'chunk': chunk, 'used_rag': False, 'disease_detected': disease_type, 'done': False})}\n\n"
+                            await asyncio.sleep(0.01)
+                        
+                        session.memory.save_context({"input": user_input}, {"output": response_text})
+                        yield f"data: {json.dumps({'chunk': '', 'used_rag': False, 'disease_detected': disease_type, 'done': True})}\n\n"
+            else:
+                # General health question - use agentic RAG
+                chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
+                
+                response_text = ""
+                async for chunk in stream_llm_response(user_input, chat_history):
+                    response_text += chunk
+                    yield f"data: {json.dumps({'chunk': chunk, 'used_rag': True, 'disease_detected': None, 'done': False})}\n\n"
+                    await asyncio.sleep(0.01)
+                
+                used_rag = True
+                session.memory.save_context({"input": user_input}, {"output": response_text})
+                yield f"data: {json.dumps({'chunk': '', 'used_rag': True, 'disease_detected': None, 'done': True})}\n\n"
+        
+        except Exception as e:
+            logger.exception(f"Error in streaming message: {e}")
+            yield f"data: {json.dumps({'error': str(e)})}\n\n"
+    
+    return StreamingResponse(
+        response_generator(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"}
+    )
+
+
 @app.delete("/api/chat/session/{session_id}")
 async def delete_session(session_id: str):
     """
@@ -487,6 +597,96 @@ Be thorough and informative. Use formatting with headers and bullet points for c
     except Exception as e:
         logger.error(f"Error in image analysis: {e}")
         return f"Error analyzing image: {str(e)}"
+
+
+async def stream_llm_response(
+    question: str,
+    chat_history: str = ""
+) -> AsyncGenerator[str, None]:
+    """
+    Stream LLM response while preserving markdown formatting.
+    
+    Uses the exact same query_agentic_rag but streams the output.
+    Preserves markdown structure (headers, bullets, paragraphs) during streaming.
+    
+    Args:
+        question: User question
+        chat_history: Previous conversation history
+    
+    Yields:
+        Response chunks (sentences/lines with formatting preserved)
+    """
+    try:
+        # Get full response using existing agentic RAG (unchanged logic)
+        full_response = query_agentic_rag(question=question, chat_history=chat_history)
+        
+        # Stream the response while preserving markdown structure
+        # Split by sentences and small chunks to preserve newlines and formatting
+        
+        # First, preserve all paragraph breaks and headers
+        import re
+        
+        # Split by double newlines first (paragraph breaks)
+        paragraphs = full_response.split('\n\n')
+        
+        for para_idx, paragraph in enumerate(paragraphs):
+            if not paragraph.strip():
+                continue
+                
+            # Check if this is a header (starts with #)
+            if paragraph.strip().startswith('#'):
+                # Yield entire header at once
+                yield paragraph + '\n\n'
+                await asyncio.sleep(0.05)
+            elif paragraph.strip().startswith('-') or paragraph.strip().startswith('*'):
+                # This is a list - split by list items to maintain structure
+                lines = paragraph.split('\n')
+                for line in lines:
+                    if line.strip():
+                        yield line + '\n'
+                        await asyncio.sleep(0.03)
+                # Add spacing after list
+                if para_idx < len(paragraphs) - 1:
+                    yield '\n'
+                    await asyncio.sleep(0.02)
+            else:
+                # Regular paragraph - stream by words but keep sentences together
+                # Split into sentences first
+                sentences = re.split(r'(?<=[.!?])\s+', paragraph.strip())
+                
+                for sent_idx, sentence in enumerate(sentences):
+                    if not sentence.strip():
+                        continue
+                    
+                    # For each sentence, stream by small word chunks
+                    words = sentence.split()
+                    chunk_size = 3  # Yield 3 words at a time
+                    
+                    for i in range(0, len(words), chunk_size):
+                        chunk_words = words[i:i + chunk_size]
+                        chunk_text = " ".join(chunk_words)
+                        
+                        # Add punctuation for last chunk of sentence
+                        if i + chunk_size >= len(words):
+                            yield chunk_text + ' '
+                        else:
+                            yield chunk_text + ' '
+                        
+                        await asyncio.sleep(0.03)
+                    
+                    # Add period if missing
+                    if not sentence.endswith(('.', '!', '?')):
+                        yield '. '
+                        await asyncio.sleep(0.02)
+                
+                # Add paragraph break
+                if para_idx < len(paragraphs) - 1:
+                    yield '\n\n'
+                    await asyncio.sleep(0.03)
+    
+    except Exception as e:
+        logger.error(f"Error streaming LLM response: {e}")
+        yield f"Error: {str(e)}"
 
 
 # ─────────────────────────────────────────────────────────────
