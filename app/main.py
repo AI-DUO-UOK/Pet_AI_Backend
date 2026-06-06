@@ -1,11 +1,15 @@
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import logging
+import tempfile
+import os
 from app.models import dog_skin, dog_eye, cat_skin
 from app.utils.image import preprocess
 from app.services.router import route_prediction
 from app.api_routes import router as api_router
 from chatbot.langsmith_config import setup_langsmith
+from chatbot.tools import _analyze_pet_image_impl
+from chatbot.rag.agentic_rag import query_agentic_rag
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +25,7 @@ app.add_middleware(
         "http://localhost:3001",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:3001",
+        "*",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -122,3 +127,90 @@ async def analyze_image(
     image = preprocess(file.file)
     result = route_prediction(app, animal, disease_type, image)
     return result
+
+# 📸 Chatbot image upload endpoint
+@app.post("/api/chat/upload-image")
+async def upload_image(
+    session_id: str = Form(...),
+    disease_type: str = Form(...),
+    file: UploadFile = File(...)
+):
+    """
+    Upload and analyze a pet image for chatbot.
+    
+    This endpoint:
+    1. Saves uploaded image temporarily
+    2. Calls CV model for disease detection
+    3. Uses agentic RAG to explain diagnosis
+    
+    Args:
+        session_id: Conversation session ID
+        disease_type: 'skin' or 'eye'
+        file: Image file upload
+    
+    Returns:
+        Disease prediction and explanation
+    """
+    try:
+        # Get animal type from session (default to dog if not found)
+        animal = "dog"  # Default - in production, retrieve from session
+        
+        if disease_type not in ["skin", "eye"]:
+            raise HTTPException(status_code=400, detail="disease_type must be 'skin' or 'eye'")
+        
+        # Save uploaded file temporarily
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
+            content = await file.read()
+            tmp.write(content)
+            tmp_path = tmp.name
+        
+        try:
+            # Analyze image using CV model
+            tool_result = _analyze_pet_image_impl(
+                image_path=tmp_path,
+                animal=animal,
+                disease_type=disease_type
+            )
+            
+            if isinstance(tool_result, dict) and "error" in tool_result:
+                raise HTTPException(status_code=400, detail=tool_result['error'])
+            
+            disease_class = tool_result.get('class', 'Unknown')
+            confidence = tool_result.get('confidence', 0.0)
+            
+            # Use agentic RAG to explain diagnosis
+            explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+
+Provide a detailed veterinary explanation covering:
+1. What is {disease_class}?
+2. Common causes and risk factors for this condition
+3. Treatment options and recommendations
+4. When to seek professional veterinary care
+5. Prevention and management tips
+
+Be thorough and informative. Use formatting with headers and bullet points for clarity."""
+            
+            explanation_text = query_agentic_rag(
+                question=explanation_query,
+                chat_history=""
+            )
+            
+            logger.info(f"Image analyzed for {disease_type}: {disease_class}")
+            
+            return {
+                "session_id": session_id,
+                "disease_class": disease_class,
+                "confidence": confidence,
+                "explanation": explanation_text
+            }
+        
+        finally:
+            # Clean up temp file
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error uploading image: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
