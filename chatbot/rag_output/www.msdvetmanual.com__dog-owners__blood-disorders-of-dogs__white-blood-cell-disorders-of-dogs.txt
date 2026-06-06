@@ -1,0 +1,45 @@
+1. <[Blood Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# White Blood Cell Disorders of Dogs
+By[R. Darren Wood](https://ovc.uoguelph.ca/pathobiology/people/faculty/R-Darren-Wood%20), DVM, DVSc, DACVP, Department of Pathobiology, Ontario Veterinary College, University of Guelph
+Reviewed/Revised Dec 2017 | Modified Sept 2024
+v3201103
+* [Disorders Related to Increased or Decreased White Blood Cells](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cell-disorders-of-dogs#Disorders-Related-to-Increased-or-Decreased-White-Blood-Cells_v3201110)|
+* [Leukemia and Lymphoma](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cell-disorders-of-dogs#Leukemia-and-Lymphoma_v3201125)|
+* [Gray Collie Syndrome](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cell-disorders-of-dogs#Gray-Collie-Syndrome_v3201135)|
+* [Pelger-Huët Anomaly](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cell-disorders-of-dogs#Pelger-Hu%C3%ABt-Anomaly_v3201143)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cell-disorders-of-dogs#For-More-Information_v34432147)|
+
+Leukocytes, or white blood cells, include neutrophils, lymphocytes, monocytes, eosinophils, and basophils ( see [White Blood Cells of Dogs](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cells-of-dogs)). These cells vary with regard to where they are produced, how long they circulate in the bloodstream, and the factors that stimulate them into going in or out of the intricate network of blood vessels that branch out through the tissues of the body. The normal numbers of each type of white blood cell also vary between species. **Leukocytosis** is an increase in the total number of circulating white blood cells; **leukopenia** is a decrease. In addition to an overall increase or decrease in white blood cells, increases or decreases in each type of white blood cell can lead to—and help diagnose—disorders.
+**Leukograms** are blood tests that count the number of different white blood cells circulating in the bloodstream. By counting the cells and examining their form, your veterinarian gains valuable information that can help diagnose a wide variety of disorders.
+## Disorders Related to Increased or Decreased White Blood Cells
+**Neutrophilia** is an increase in the number of neutrophils in the bloodstream and is caused by inflammation. Structural changes in neutrophils may occur during severe inflammation and are referred to as toxic changes. **Neutropenia** is a decrease in the number of neutrophils in the bloodstream. It may occur due to the white blood cells sticking to the walls of damaged blood vessels, destruction of neutrophils, or reduced formation in the bone marrow. Neutropenia may occur in all species during overwhelming bacterial infections. Adverse reactions to drugs may result in neutropenia or even pancytopenia (a reduction in red and white blood cells and platelets).
+**Eosinophilia** is an increase in the number of eosinophils, which are involved in allergic reactions and in controlling parasites. Increases are caused by substances that promote allergic reactions (for example, histamine) and by certain antibodies. Eosinophils increase during infections with parasites such as heartworms or fleas. Eosinophilia also may occur with inflammation of the intestines, kidneys, lungs, or skin. A decrease in eosinophils is known as **eosinopenia**. It is a common reaction to stress or treatment with corticosteroids.
+Basophils are rare in domestic animals. Basophils produce histamine and, like eosinophils, are involved in allergic reactions and combating parasites. **Basophilia** (an increase in basophils) is uncommon, but does occur in some dogs with heartworm disease.
+**Lymphocytosis** is an increase in the number of lymphocytes in the bloodstream. It can be caused by certain hormones, stimulation of the immune system by infections, chronic diseases like arthritis, and leukemia, which is a cancer of the immune system. **Lymphopenia** is a decrease in the number of lymphocytes. It is most commonly caused by corticosteroids (either those naturally occurring in the body or given as treatment for a disease). Lymphopenia may also be caused by other conditions, such as decreased production of lymphocytes, some viral infections, and hereditary diseases.
+**Monocytosis** is an increase in monocytes and may be associated with longterm inflammation.
+## Leukemia and Lymphoma
+Leukemia is a malignant cancer that is characterized by an increase in abnormal white blood cells in the bloodstream. Lymphoma is a related cancer of certain white blood cells that begins in a lymph node or other lymphoid tissue ( see [Malignant Lymphoma in Dogs](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/malignant-lymphoma-in-dogs)). Leukemia should be considered a potential cause when there is an increase in the number of white blood cells in the bloodstream.
+## Gray Collie Syndrome
+This syndrome, also called cyclic hematopoiesis, is an inherited deficiency of the immune system that affects gray (but not merle) Collies. Signs of the disease include an extensive decrease of neutrophils that occurs in 12‑day cycles, overwhelming reoccurring bacterial infections, bleeding, and a pale coat and nose color. The start of this disease is thought to be a defect in the maturation of the cells that form red and white blood cells and platelets in the bone marrow. Blood cell growth factors and other hormones also have a cyclic pattern.
+Affected puppies often die at birth or during their first week. Most dogs with the disease die by 6 months of age. Surviving dogs may be stunted and weak and develop serious bacterial infections during the periods when neutrophil numbers are low. They also develop amyloidosis, an accumulation of an abnormal protein called [amyloid](https://www.msdvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/amyloidosis-in-dogs).
+Your veterinarian can diagnose the disease based on the signs and results of blood tests. Treatment with proteins that stimulate the production of neutrophils in the bone marrow may provide temporary—but not longterm—improvement..
+## Pelger-Huët Anomaly
+This inherited condition is caused by the failure of white blood cells to mature normally. White blood cell function is normal, and most animals do not have any signs of illness.
+## For More Information
+Also see professional content regarding [white blood cell disorders](https://www.msdvetmanual.com/circulatory-system/leukocyte-disorders/overview-of-leukocyte-disorders-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

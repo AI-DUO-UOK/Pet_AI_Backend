@@ -1,0 +1,27 @@
+1. <[Disorders Affecting Multiple Body Systems of Dogs](https://www.msdvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs)
+
+* Find In Topic
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Salmon Poisoning Disease and Elokomin Fluke Fever in Dogs
+By[Yasuko Rikihisa](https://vet.osu.edu/rikihisa-yasuko%20), PhD, Department of Veterinary Biosciences, College of Veterinary Medicine, The Ohio State University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3208833
+Salmon poisoning disease is a short-term, infectious disease of dogs and related species ( for example, foxes, coyotes, wolves), in which the infective bacteria are transmitted by a fluke (a type of flatworm). The name of the disease is misleading because no poison is involved. Elokomin fluke fever resembles salmon poisoning disease but infects a wider range of animals, including members of the dog family, ferrets, bears, and raccoons. These two disorders occur only in the Pacific Northwest region of the United States, from San Francisco to the coast of Alaska. It is most common from northern California to Puget Sound. Fish and snails found in these regions are necessary for the development of the infective bacteria.
+**Salmon poisoning disease** is caused by the bacterium _Neorickettsia helminthoeca_. Sometimes the disease is complicated by a second agent, _Neorickettsia elokominica_ , which causes Elokomin fluke fever. Animals become infected by eating trout, salmon, or Pacific giant salamanders that are infected with rickettsia-infected fluke larvae. It is the rickettsiae bacteria that cause the disease; the fluke infection itself produces few or no signs of disease. Transmission by dog to dog contact is rare.
+In salmon poisoning disease, signs appear suddenly, usually 5 to 7 days after eating infected fish. In some cases, however, the onset of signs may take as long as 33 days. Signs usually continue for 7 to 10 days before culminating in death in up to 90% of untreated animals. A high fever may be seen initially, which peaks in 1 to 2 days and then gradually returns to normal. Frequently, animals have abnormally low body temperature before death. Fever is accompanied by depression and complete loss of appetite in virtually all cases. Persistent vomiting usually occurs by day 4 or 5, followed by diarrhea that may be severe and contain blood. Dehydration and extreme weight loss occur. The lymph nodes may be enlarged. Nasal or eye discharges may be present.
+**Elokomin fluke fever** is generally a milder infection than salmon poisoning disease. The severe gastrointestinal signs seen with salmon poisoning disease are less common in Elokomin fluke fever infections. However, disease of the lymph nodes may occur more often. Death occurs in only about 10% of untreated cases. Flukes embedded in the intestine do not cause much tissue damage.
+In both infections, fluke eggs can usually be seen on fecal examination, which helps with the diagnosis. If your veterinarian cannot find fluke eggs in your dog’s feces, then samples of the lymph nodes may be examined for evidence of the bacteria.
+Currently, the only means of preventing this disease is to restrict the consumption of uncooked salmon, trout, steelhead, and similar freshwater fish. In dogs that recover, there is a strong, long-lasting immunity to future infections. However, dogs that have been infected with _Neorickettsia helminthoeca_ are still vulnerable to _Neorickettsia elokominica_ and vice versa.
+Various intravenous drugs may be given to treat these infections. Early treatment greatly increases the chances for survival. Animals that die from these infections have usually received delayed treatment. Death is often because of dehydration, electrolyte and acid-base imbalances, and anemia. Therefore, your veterinarian will prescribe general supportive treatment to maintain fluid levels and acid-base balance, while meeting nutritional requirements and controlling diarrhea. In some cases, blood transfusions may be helpful.
+**Also see professional content regarding**[ salmon poisoning disease](https://www.msdvetmanual.com/infectious-diseases/rickettsial-diseases-in-dogs/salmon-poisoning-disease-in-dogs).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

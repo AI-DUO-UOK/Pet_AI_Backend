@@ -4,6 +4,7 @@ import logging
 from app.models import dog_skin, dog_eye, cat_skin
 from app.utils.image import preprocess
 from app.services.router import route_prediction
+
 from app.api_routes import router as api_router
 from chatbot.langsmith_config import setup_langsmith
 
@@ -64,6 +65,7 @@ async def health():
 # 🔥 Load models ONCE
 @app.on_event("startup")
 def load_models():
+
     try:
         # Initialize LangSmith tracing (optional)
         setup_langsmith()
@@ -93,6 +95,14 @@ def load_models():
         app.state.cat_skin = None
     
     logger.info("✅ Backend startup complete")
+
+    # Initialize LangSmith tracing (optional)
+    setup_langsmith()
+    
+    app.state.dog_skin = dog_skin.load_model()
+    app.state.dog_eye = dog_eye.load_model()
+    app.state.cat_skin = cat_skin.load_model()
+
 
 # 📸 Prediction endpoint
 @app.post("/predict")

@@ -1,0 +1,31 @@
+1. <[Blood Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Blood Groups and Blood Transfusions in Dogs
+By[Susan M. Cotter](http://vetprofiles.tufts.edu/faculty/susan-cotter%20), DVM, DACVIM, Cummings School of Veterinary Medicine, Tufts University
+Reviewed/Revised Dec 2017 | Modified Sept 2024
+v3200818
+* [Blood Transfusions](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/blood-groups-and-blood-transfusions-in-dogs#Blood-Transfusions_v3200827)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/blood-groups-and-blood-transfusions-in-dogs#For-More-Information_v34432123)|
+
+Blood groups are determined by the presence or absence of certain antigens (proteins and sugars) on the red blood cell membrane.
+Dogs have more than 12 blood groups, and their red blood cells may contain any combination of these since each blood group is inherited independently. The most important of these is called Dog Erythrocyte Antigen (DEA) 1.1. Typing of blood donors and recipients is done before transfusion. Approximately 40% of dogs are positive for DEA 1.1, meaning that they have that antigen on their red blood cells. If a dog is DEA 1.1-negative and is given DEA 1.1-positive blood, it may develop antibodies that rapidly destroy the red blood cells if a second DEA 1.1-positive transfusion is given. By selecting donor animals that lack DEA 1.1 or that match the recipient, the risk of sensitizing the recipient can be minimized. A DEA 1.1-positive dog may receive either positive or negative blood.
+## Blood Transfusions
+Often, the need for a blood transfusion is an emergency, such as severe bleeding or sudden destruction of red blood cells due to other disease. Transfusions may also be needed to treat anemia. Animals with blood clotting disorders often require repeated transfusions of whole blood, red blood cells, plasma, or platelets. The most serious risk of transfusion is acute destruction of red blood cells, usually caused by a previously formed antibody to an antigen on the transfused red blood cells. Fortunately, this is rare. A more common problem in dogs that have received multiple transfusions is delayed destruction of the red blood cells, caused by antibodies to some of the minor blood group antigens.
+Other complications of transfusions include infection from contaminated blood, a decrease in blood calcium levels, and accumulation of fluid in the lungs as a result of giving too large a volume of blood. Skin hives, fever, or vomiting are seen occasionally. Fortunately most transfusions are safe and effective.
+## For More Information
+Also see professional content regarding [blood groups and blood transfusions](https://www.msdvetmanual.com/circulatory-system/blood-groups-and-blood-transfusions-in-dogs-and-cats/blood-groups-in-dogs-and-cats).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

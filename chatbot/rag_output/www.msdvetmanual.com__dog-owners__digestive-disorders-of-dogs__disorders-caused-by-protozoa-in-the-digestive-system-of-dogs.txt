@@ -1,0 +1,47 @@
+1. <[Digestive Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Caused by Protozoa in the Digestive System of Dogs
+By[Sharon Patton](https://www.msdvetmanual.com/authors/patton-sharon), MS, PhD, Department of Biomedical and Diagnostic Sciences, College of Veterinary Medicine, University of Tennessee;[Peter D. Constable](https://www.msdvetmanual.com/authors/constable-peter), BVSc (Hons), MS, PhD, DACVIM, College of Veterinary Medicine, University of Illinois at Urbana-Champaign
+Reviewed/Revised May 2018 | Modified Sept 2024
+v3202925
+* [Amebiasis](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-protozoa-in-the-digestive-system-of-dogs#Amebiasis_v3202928)|
+* [Coccidiosis](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-protozoa-in-the-digestive-system-of-dogs#Coccidiosis_v3202936)|
+* [Giardiasis](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-protozoa-in-the-digestive-system-of-dogs#Giardiasis_v3202945)|
+
+Protozoa are single-celled organisms that can sometimes cause disease. They may be free-living or parasites. Some of the more common diseases caused by protozoa in dogs are discussed below.
+## Amebiasis
+Amebiasis is a disease caused by the amoeba _Entamoeba histolytica_. It causes inflammation of the large intestine, which leads to persistent diarrhea. Amebiasis is common in tropical and subtropical areas worldwide. Its prevalence has declined in the US over the past several decades, but the disease is still important in many tropical areas, particularly in times of disasters. It is common in people, sometimes seen in dogs and cats, and rare in other mammals. Humans are the natural host for this species and are the usual source of infection for domestic animals. Dogs become infected by ingesting food or water contaminated with feces that contain infective cysts, which are a dormant form of the parasite.
+_Entamoeba histolytica_ lives inside the large intestine and will sometimes produce no obvious signs; on the other hand, it can invade the intestinal lining and produce inflammation, wounds, and bleeding. In short-term disease, severe diarrhea may develop. This disease may be fatal, become long-lasting, or improve spontaneously. Signs in longterm cases include weight loss, loss of appetite, straining to defecate, and diarrhea. Any of these signs may be continuous or may come and go. In addition to the large intestine, the infecting amoebae may invade skin around the anus, genitals, liver, brain, lungs, kidneys, and other organs. Signs may resemble those of other diseases of the large intestine. The disease is more severe in animals or people that have a suppressed immune system.
+The disease is diagnosed by the presence of active or dormant _E. histolytica_ in feces. The parasites may be difficult to detect because they are not always present in the feces, especially if infection has occurred outside of the intestine. In some cases, your veterinarian may examine the large intestine directly using specialized instruments. This procedure is called a colonoscopy. A test is available for the identification of the amoeba in humans and may be used for diagnosis in dogs and other animals.
+Medication may be prescribed to treat this illness, although the effectiveness of treatment has not been fully evaluated. Dogs may continue to shed amoebae in the feces even after drug treatment. Be sure to follow treatment and care instructions fully.
+**Also see professional content regarding**[ amebiasis](https://www.msdvetmanual.com/digestive-system/amebiasis/entamoeba-histolytica-amebiasis).
+## Coccidiosis
+Coccidiosis is an invasion and destruction of intestinal tissues by any of several protozoa. Dogs can be infected with species of _Isospora_ , _Hammondia_ , and _Sarcocystis_ protozoa, with _Isospora_ as the most common. It can cause illness in dogs but while infections are relatively common, most infected dogs show no signs.
+Coccidia tend to infect dogs or puppies that have been weakened in some way. Therefore, signs of illness caused by coccidiosis are most prevalent under conditions of poor nutrition, poor sanitation, or overcrowding, or after stresses, such as weaning. Infection results when a dog ingests infective eggs (oocysts). These oocysts enter the environment in the feces of an infected dog, but they are unable to cause infection until they develop further under the right environmental conditions.
+The most common signs of infection in severe cases are diarrhea (sometimes bloody), weight loss, and dehydration. The veterinarian will combine the results of fecal examinations with observations of signs and intestinal abnormalities to confirm the diagnosis.
+Infection usually ends on its own within a few weeks unless reinfection occurs. Medication may lessen the likelihood of reinfection and spread. Sick dogs should be isolated to prevent exposure of other animals.
+Sanitation is important, especially in kennels or where large numbers of dogs are housed. Feces should be removed frequently and fecal contamination of feed and water should be prevented. Runs, cages, and utensils should be disinfected daily. Raw meat should not be fed. Insect control is also important.
+**Also see professional content regarding**[ coccidiosis](https://www.msdvetmanual.com/digestive-system/coccidiosis/coccidiosis-of-cats-and-dogs).
+## Giardiasis
+Giardiasis is a longterm, intestinal protozoal infection caused by species of _Giardia_. It is seen worldwide in most domestic and wild mammals, many birds, and people. Infection is common in dogs. _Giardia_ has been reported to be found in up to 39% of fecal samples from pet and shelter dogs, with a higher rate of infection in younger animals.
+_Giardia_ protozoa live in the small intestine, where they attach and multiply. They produce cysts that are passed in the feces. Transmission occurs when a dog eats these cysts, either through contact with an infected dog or a contaminated environment. Shedding of cysts by an infected dog may be continuous over several days and weeks but is often intermittent. It is currently unclear whether the same species of _Giardia_ can infect both domestic animals and people. It appears that some _Giardia_ species can infect a variety of mammals, while others only infect a single species.
+_Giardia_ infection in dogs sometimes causes no signs. In other cases, it causes weight loss and longterm diarrhea, which can be continual or intermittent, particularly in puppies. Feces are usually soft, poorly formed, pale, and foul-smelling. Watery diarrhea is unusual, and blood is usually not present in feces. Occasionally vomiting occurs. Giardiasis causes [malabsorption](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-stomach-and-intestines-in-dogs#v3202610) of nutrients and must be distinguished from other conditions that also affect the dog’s ability to absorb nutrients properly. A diagnosis is usually made by identification of _Giardia_ cysts or _Giardia_ antigen in stool samples.
+To treat giardiasis, your veterinarian will likely prescribe a drug or combination of drugs that are effective against protozoa. A vaccine is available for dogs in some countries. Some studies indicate that the vaccine may reduce signs as well as the number and length of time cysts are shed into the environment.
+_Giardia_ cysts in the feces are a source of infection and reinfection for dogs, particularly those in crowded conditions such as kennels. Prompt removal of feces from cages, runs, and yards limits environmental contamination. Cysts are inactivated by disinfectants, such as quaternary ammonium compounds, household bleach (1 part bleach to 16 or 32 parts water), steam, and boiling water. To increase the effectiveness of disinfectant treatment, solutions should be left for 5 to 20 minutes before being rinsed off kennel or run surfaces. Disinfection of grass yards or runs is impossible, and these areas should be considered contaminated for at least 1 month after infected dogs last had access. Cysts are susceptible to drying, so areas should be allowed to dry thoroughly after cleaning. Shampooing and rinsing the dogs well can help remove cysts from hair.
+Dogs may occasionally be infected by a type of _Giardia_ that also infects people. Dog feces should be disposed of promptly. It is important to wash hands properly after handling infected animals or their feces.
+**Also see professional content regarding**[ giardiasis](https://www.msdvetmanual.com/digestive-system/giardiasis-giardia/giardiasis-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

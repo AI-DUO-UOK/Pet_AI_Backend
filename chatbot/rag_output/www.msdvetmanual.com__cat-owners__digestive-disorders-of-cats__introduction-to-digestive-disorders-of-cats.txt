@@ -1,0 +1,75 @@
+1. <[Digestive Disorders of Cats](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Introduction to Digestive Disorders of Cats
+By[Stanley I. Rubin](https://www.msdvetmanual.com/authors/rubin-stanley), DVM, MS, DACVIM, Department of Veterinary Clinical Medicine, College of Veterinary Medicine, University of Illinois at Urbana-Champaign
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3243451
+* [General Signs of Digestive System Disorders](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#General-Signs-of-Digestive-System-Disorders_v3243460)|
+* [Examination of the Digestive System](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#Examination-of-the-Digestive-System_v3243476)|
+* [Infectious Diseases](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#Infectious-Diseases_v3243481)|
+* [Noninfectious Diseases](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#Noninfectious-Diseases_v3243537)|
+* [Treatment Overview of Digestive System Disorders](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#Treatment-Overview-of-Digestive-System-Disorders_v3243540)|
+* [For More Information](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#For-More-Information_v34430211)|
+* Multimedia|
+
+The digestive system includes all the organs that are involved in taking in and processing food. It begins with the mouth and includes the esophagus, stomach, liver, pancreas, intestines, rectum, and anus.
+The process of digestion begins when your pet picks up food with its mouth and starts chewing. Enzymes found in saliva begin breaking down the food chemically. The process continues with swallowing, additional breakdown of food in the stomach, absorption of nutrients in the intestines, and elimination of waste. Digestion is critical not only for providing nutrients but also for maintaining the proper balance of fluid and electrolytes (salts) in the body.
+Major digestive organs, cat
+| --- |
+The functions of the digestive system can be divided into 4 main categories: digestion, absorption of nutrients, motility (movement through the digestive tract), and elimination of feces.
+When treating a digestive system problem, the veterinarian’s goal is to first identify the part of the system where the problem lies and then to determine the specific cause and appropriate treatment.
+## General Signs of Digestive System Disorders
+Signs of digestive system disease can include excessive drooling, diarrhea, constipation, vomiting or regurgitation, loss of appetite, bleeding, abdominal pain and bloating, straining to defecate, shock, and dehydration. Your cat may indicate abdominal pain by whining, meowing, and abnormal postures (for example, crouching while arching the back).
+The location and nature of the disease often can be determined by the signs your pet shows. For example, abnormalities of biting, chewing, and swallowing usually are associated with diseases of the mouth, the teeth, the jaw, or the esophagus. Vomiting is usually due to inflammation of the lining of the stomach or intestines (gastroenteritis) caused by infection or irritation. However, vomiting can also be caused by a nondigestive condition, such as kidney disease.
+**Diarrhea** is often a sign of digestive system disorders, but it can have many causes. It is important to treat animals with continuing diarrhea, because dehydration and electrolyte (salt) imbalance, which may lead to shock, are seen when large quantities of fluid are lost.
+Large-volume, watery diarrhea usually is associated with hypersecretion, a condition in which excess fluid is secreted into the intestines. This can be caused by bacterial infection. Diarrhea can also be caused by malabsorption, the failure to properly absorb nutrients. Malabsorption is due to a defect in the intestinal cells responsible for absorption. This condition can be caused by viruses (for example, feline panleukopenia virus), a defect that limits the ability of the intestines to absorb liquids, or reduced pancreatic secretions needed for effective digestion.
+Changes in the color, consistency, or frequency of feces are another sign of digestive problems. Black, tarry feces may be a sign of bleeding in the stomach or small intestine. Straining during bowel movements is usually associated with inflammation of the rectum and anus. Abdominal distention (bloating) can result from accumulation of gas, fluid, or ingested food, usually due to reduced activity of the muscles that move food through the digestive system. Distention can also be caused by a physical obstruction, such as a foreign object or intussusception (“telescoping” of one part of the intestines into another), or from something as simple as overeating.
+## Examination of the Digestive System
+Your complete, accurate description of your cat’s history (age, signs of illness, current diet, past problems, exposure to other cats, and so on) combined with a veterinarian’s clinical examination can often determine the cause of a digestive system problem.
+When a digestive system disorder is suspected, your veterinarian’s initial examination might include a visual inspection of the mouth and abdomen for changes in size or shape; a “hands on” inspection of the abdomen (through the abdominal wall or through the rectum) to evaluate the shape, size, and position of the abdominal organs; and listening through a stethoscope for any abnormal abdominal sounds. The veterinarian may also want to inspect your cat’s feces. When you make an appointment with your veterinarian, it is a good idea to ask whether you should bring along a recent stool sample to help with diagnosis.
+Depending on what the initial examination reveals, additional tests might be needed to determine the cause of the problem. These might include laboratory tests on samples containing blood or feces to determine whether bacteria, viruses, or parasites are involved, as well as specialized procedures such as x-ray imaging, ultrasonography, or using an endoscope to perform an internal examination of the esophagus, stomach, duodenum, colon, and/or rectum. Sometimes it is necessary to collect fluid from swollen abdominal organs or from the abdominal cavity for analysis; this is done with a long, hollow needle. Other tests that are sometimes needed include biopsies (sampling and microscopic analysis) of liver or intestinal tissue and blood tests to detect possible malabsorption or maldigestion.
+## Infectious Diseases
+Because it is easy for foreign organisms and other “invaders” to enter the digestive tract through the mouth, this body system is prone to infection by bacteria, viruses, parasites, and other organisms ( see Table: [Infections of the Digestive System in Cats](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/introduction-to-digestive-disorders-of-cats#v55079318)). These infections spread in various ways, but the most common are by direct contact or by contamination of food or water by feces.
+People and animals all have small numbers of certain intestinal microorganisms that are found within the digestive tract—most commonly in the intestines—and that become established within a few hours after birth. These so-called intestinal flora are actually beneficial, in some cases aiding in digestion and in others helping to prevent infection. However, sometimes infections occur when these organisms, normally found in small numbers, suddenly multiply. This can occur after a period of stress, under unhygienic conditions, or in an animal whose immune system is weakened.
+Table
+Infections of the Digestive System in Cats
+Table
+Infections of the Digestive System in Cats
+Infections of the Digestive System in Cats
+| Organism  | Examples  |
+| --- | --- |
+| Viruses  | Feline panleukopenia virus, feline enteric coronavirus, feline rotavirus, feline astroviruses  |
+| Bacteria  | _Salmonella_ species, _Yersinia enterocolitica, Campylobacter jejuni, Clostridium_ species, _Mycobacterium_ species, _Shigella_ species, _Escherichia coli_  |
+| Protozoa  | _Isospora_ species, _Sarcocystis_ species, _Besnoitia_ species, _Hammondia_ species, _Toxoplasma_ species, _Giardia_ species, _Trichomonas_ species, _Entamoeba histolytica, Balantidium coli, Cryptosporidium_ species  |
+| Fungi  | _Histoplasma capsulatum, Aspergillus_ species, _Candida albicans,_ phycomycetes  |
+| Algae  | _Prototheca_ species  |
+| Parasites  | Numerous  |
+Diagnosis of a specific infectious disease depends on finding and identifying the organism suspected to cause the disease. This may require one or more fecal samples, which will be submitted to a diagnostic laboratory.
+**[Parasites](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/gastrointestinal-parasites-of-cats#v55079628)** are a frequent cause of digestive tract disorders in animals. Many species of parasites can infect the digestive tract and cause disease. Parasites require at least one host in order to develop and reproduce. The life cycles of some parasites are direct, which means there is only one host. Eggs and larvae are passed in the feces, develop into an infective stage, and are eaten by your pet. No other animals or organisms are needed to complete the life cycle. Other parasites have complex life cycles that involve an intermediate host, such as an insect. In this situation, infection is acquired when the intermediate host—or parasite shed by that host—is consumed by your pet. The extent to which a parasite affects an animal depends on the parasite itself, as well as the animal’s own resistance, age, nutrition, and overall health.
+Parasites can cause severe disease or simply decrease your cat’s overall fitness. Some of these parasites also infect humans. Because signs of parasite infection are similar to those seen in other illnesses, diagnosis depends on your veterinarian’s knowledge of seasonal cycles of parasite infection, as well as examination of feces for evidence of parasite eggs or larvae. In some cases, blood tests can also be used to detect the presence of parasites.
+## Noninfectious Diseases
+Many digestive system diseases are not caused by infective organisms. Their causes include overeating, eating poor-quality or indigestible food, chemicals, obstruction caused by swallowing foreign objects, or injury to the digestive system. Digestive system disease can also be caused by enzyme deficiencies, damage to the digestive tract (such as from gastric ulcers or inflammation), or birth defects. Digestive system signs such as vomiting and diarrhea may also occur because of other diseases in the body, such as kidney, liver, or adrenal gland disease. In noninfectious diseases of the digestive tract, usually only a single animal is affected at one time; exceptions are diseases associated with excessive food intake or poisons, in which multiple animals living together can be affected.
+## Treatment Overview of Digestive System Disorders
+Specific disorders and their treatments are described later in this chapter; however, some general principles are listed in this section. Eliminating the cause of the disease is the primary objective of veterinary treatment; however, a major part of treatment is often directed at the signs of the disease and is aimed at relieving pain, correcting abnormalities, and allowing healing to occur.
+**Elimination of the cause of the disease** may involve drugs that kill bacteria or parasites, antidotes for poisons, or surgery to correct defects or displacements.
+**Use of drugs to correct diarrhea or constipation** is done depending on the specific case. Although such drugs might seem to be a logical choice, they are not beneficial in every situation. For example, diarrhea can actually be a defense mechanism for the animal, helping it to eliminate harmful organisms and their toxins. In addition, the available drugs may not always give consistent results.
+**Replacement of fluids and electrolytes (salts)** is necessary in cases where the animal is at risk of dehydration, such as from excessive vomiting or diarrhea.
+**Relief of distension** (bloating) by surgery may be required if the digestive tract has become obstructed or distended with gas, fluid, or food.
+**Pain relief** is sometimes provided. However, a cat being given pain medicine must be watched carefully to ensure that the pain relief is not masking a condition that is becoming worse.
+### Treatment and Control of Infectious Disease
+Bacterial and parasitic diseases of the digestive system are often treated with medications designed to kill the infectious organisms. Antibiotics (drugs effective against bacteria) are commonly given daily by mouth for several days until recovery is apparent, although their effectiveness in treating digestive system disease is still uncertain, and their prolonged use may be harmful. Antibiotics may be given by injection when septicemia (an infection of the blood) is apparent or likely to occur. Your veterinarian will make the decision to prescribe antibacterial medication based on the suspected disease, likelihood of benefits, previous results, and cost of treatment.
+Advances in understanding the life cycles of parasites, coupled with the discovery of effective antiparasitic drugs, have made successful treatment and control of gastrointestinal parasites possible. Response to treatment is usually rapid, and a single treatment is often all that is needed unless reinfection occurs or the damage caused by the parasites is particularly severe.
+Control of digestive diseases and parasites depends on practicing good sanitation and hygiene. This is achieved primarily by providing adequate space for your cat and by regular cleaning of its living areas and litter box. In addition, adequate nutrition and housing will minimize the stress on your cat and help it to stay healthy.
+## For More Information
+Also see professional content regarding [the digestive system](https://www.msdvetmanual.com/digestive-system/digestive-system-introduction).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences

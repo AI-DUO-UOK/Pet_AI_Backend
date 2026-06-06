@@ -1,0 +1,17 @@
+* Multimedia
+# Parts of the Nervous System in Dogs
+ByThomas Schubert, DVM, DACVIM, DABVP, Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida
+* Multimedia|
+The **central nervous system** includes the spinal cord and the brain. The brain is divided into 3 main sections—the **brain stem**, which controls many basic life functions, the **cerebrum**, which is the center of conscious decision-making, and the **cerebellum**, which is involved in movement and motor control. The spinal cord of dogs is divided into regions that correspond to the vertebral bodies (the bones that make up the spine) in the following order from neck to tail: cervical, thoracic, lumbar, sacral, and caudal segments. Specialized tissues called the **meninges** cover the brain and spinal cord, and cerebrospinal fluid surrounds and protects the brain and spinal cord.
+The **peripheral nervous system** consists of the nerves that are found throughout the rest of the body.
+Nervous system, dog
+## Neurons
+Both the central and peripheral nervous systems contain billions of cells known as neurons. Neurons connect with each other to form neurological circuits. Information travels along these circuits via electrical signals.
+All neurons have a center portion called a **cell body** and 2 extensions called **dendrites** and **axons**. Dendrites receive signals from other neurons and transmit electrical charges _to_ the cell body. Axons transmit the electrical charges _away_ from the cell body. When the current reaches the end of the axon, the axon releases chemicals called **neurotransmitters**. Neuro-transmitters pass the signal to the dendrites of other neurons, or to muscles or glands.
+Neurons in the peripheral nervous system combine to form pairs of **spinal nerves** and pairs of **cranial nerves**. The spinal nerves arise from the spinal cord and extend axons outward into the front and hind legs and to the bladder, anus, and tail. These nerves subdivide into smaller nerves that cover the entire surface and interior of the body. The cranial nerves include sensory and motor neurons that connect the head and face to the brain.
+### Types of Neurons
+**Sensory neurons** carry information from the body to the spinal cord or brain stem, and then on to the cerebellum, brain stem, and cerebrum for interpretation. Sensory information includes sensations of pain, position, touch, temperature, taste, hearing, balance, vision, and smell.
+**Motor neurons** carry responses to the sensory information from the spinal cord and brain to the rest of the body. Inside the spinal cord, the axons of motor neurons form bundles known as **tracts**, which transmit this information to motor peripheral nerves going to muscles in the limbs. Motor neurons are important for voluntary movements and muscle control.
+A specialized set of neurons controls and regulates basic, unconscious bodily functions that support life, such as the pumping of the heart and digestion. These neurons make up what is called the **autonomic nervous system**, which sends axons from the brain stem and spinal cord to various areas of the body such as the heart muscle, the digestive system, and the pupils of the eyes.
+Test your Knowledge nowTake a Quiz!
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**

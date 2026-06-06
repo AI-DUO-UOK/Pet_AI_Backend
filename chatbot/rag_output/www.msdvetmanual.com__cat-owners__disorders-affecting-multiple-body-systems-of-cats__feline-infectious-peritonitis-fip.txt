@@ -1,0 +1,65 @@
+1. <[Disorders Affecting Multiple Body Systems of Cats](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Feline Infectious Peritonitis (FIP)
+By[Julie K. Levy](https://www.researchgate.net/profile/Julie_Levy%20), DVM, PhD, DACVIM, University of Florida College of Veterinary Medicine;[Staci Hutsell](https://www.msdvetmanual.com/authors/hutsell-staci), DVM, University of Florida College of Veterinary Medicine
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3247885
+* [Signs and Diagnosis](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-infectious-peritonitis-fip#Signs-and-Diagnosis_v3247893)|
+* [Treatment, Prevention, and Control](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-infectious-peritonitis-fip#Treatment,-Prevention,-and-Control_v3247960)|
+* Multimedia|
+
+Feline infectious peritonitis (often called FIP) is a severe, usually fatal disease caused by a feline coronavirus. Coronaviruses are a family of viruses that chiefly cause respiratory infections. The disease is seen worldwide. Although a large number of cats may be infected with the feline coronavirus, only a few develop the severe form of the disease. It is unknown why only certain cats are affected, but it is thought that a mutation within the virus and an inappropriate immune response by the individual cat may be responsible. Cats of all ages and either sex can develop feline infectious peritonitis, but the disease is most frequent in cats 6 months to 2 years old. Although the disease can occur in any breed, purebred cats (including Persian, Abyssinian, Bengal, Birman, Himalayan, Ragdoll, and Rex breeds) are most likely to be affected. Kittens raised in infected colonies may contract the virus from their mothers or from carriers (infected cats with no obvious signs of disease) when their maternal immunity decreases at 5 to 6 weeks of age.
+Most infections probably result from ingestion of the virus. Transmission by inhalation is also possible. Because cats shed particles of the virus in feces, litter box exposure is the most important source of infection. The virus can also be transmitted through saliva, by mutual grooming, sharing the same food bowl, sneezing, and through close contact. Cats living in multiple-cat households are at greater risk of the disease. It has been suggested that this disease can move across the placenta from mother to developing kitten; however, the frequency with which this occurs is unknown.
+Previously, two forms of this disease were recognized: a wet form (effusive) and a dry (non-effusive) form. In the wet form, obvious fluid build-up is present within the abdomen and chest. In the dry form, inflammatory cells accumulate in various organs, such as the liver, kidneys, eyes, and brain. However, characteristics of both the wet and dry forms usually are present to some extent.
+## Signs and Diagnosis
+Coronavirus infection usually has no signs. In some cases, however, **signs can include the following** :
+* diarrhea
+* vomiting
+* stunted growth
+* upper respiratory signs
+* weight loss
+
+This stage may last several days or months if severe.
+The signs of feline infectious peritonitis vary depending on which organs are involved. Many organs, including the liver, kidneys, pancreas, CNS, and eyes, can be affected. The length of time between infection and mutation of the virus and development of signs varies between cats. Affected cats may be alert or depressed. Some eat with a normal or even increased appetite; others refuse to eat. Fever, weight loss, and/or jaundice may be noted.
+Signs of Feline Infectious Peritonitis
+|
+* Progressive distention of the abdomen due to fluid buildup
+* Lung involvement and difficulty breathing
+* Fever lasting 2 to 5 weeks
+* Loss of appetite
+* Weight loss
+* Depression
+* History of vague illness, including longterm fever, malaise, weight loss, and occasionally major organ system failure (kidneys, liver)
+* Eye and central nervous system signs may occur simultaneously or independently
+* About 50% of all cats have signs related to involvement of abdominal organs (kidney, liver, spleen, pancreas, lymph nodes)
+
+|
+| --- |
+Some cats have noticeable fluid build-up in the abdomen causing it to look distended. About one-third of cats with effusive disease have lung involvement and difficulty breathing. Fluid may also accumulate around the heart.
+Cats without obvious fluid build-up usually have a history of vague illness. This includes repeated fever, malaise, weight loss, and occasionally organ failure (most often the kidneys or liver).
+Involvement of the eyes and central nervous system is common and may occur either simultaneously or independently of other signs. When the eyes are affected, there may be bleeding or accumulation of pus in one or both eyes. Other ocular changes, including blindness, can also occur. The most common sign of nervous system involvement is poor coordination of muscles with slight paralysis progressing to generalized failure of muscle coordination. Convulsions (seizures), tremors, personality changes, and increased sensitivity to touch may also be seen.
+Your veterinarian can diagnose feline infectious peritonitis based on the cat’s medical history, signs found during a physical examination, and results of laboratory tests. Ultrasonography or surgical biopsies may also be necessary. The diagnosis can be challenging to make, especially in cats without fluid build-up, and may require a combination of multiple types of tests.
+## Treatment, Prevention, and Control
+Until recently, no specific treatment was available for feline infectious peritonitis. New antiviral drugs offer hope for effective treatment but are not yet widely available.
+Treatment with drugs that reduce inflammation and suppress immune reactions, along with supportive care, can make the cat more comfortable.
+When a cat in a household develops feline infectious peritonitis, all in-contact cats will have already been exposed to the same virus. Fortunately, in most cases, in-contact cats will not develop the disease. (Recall that most cats that are infected with coronavirus never develop feline infectious peritonitis.) However, cats with feline infectious peritonitis should not have contact with any new cats, especially kittens, that have not been exposed to the virus. In addition, if your cat died because of the disease, you should wait 2 months before obtaining another cat to be sure that the virus is no longer present in the environment.
+A vaccine is available against feline infectious peritonitis. The American Association of Feline Practitioners lists the FIP vaccine as “not generally recommended.”
+Other measures to reduce exposure include frequent removal of feces (the primary source of coronavirus), early weaning, and isolation of cats that test positive for coronavirus antibodies. Additionally, isolation and testing of cats after shows, proper sanitation and cleaning using viral disinfectants, and vaccination against other feline viruses can reduce exposure. These control measures should be combined with an overall preventive health program. However, in households or facilities with large numbers of cats, it can be very difficult to eliminate feline coronavirus and, as such, there will be a risk for the development of feline infectious peritonitis.
+## For More Information
+Also see professional content regarding [feline infectious peritonitis](https://www.msdvetmanual.com/infectious-diseases/feline-infectious-peritonitis/feline-infectious-peritonitis).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

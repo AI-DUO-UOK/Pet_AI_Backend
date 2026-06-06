@@ -1,0 +1,35 @@
+1. <[Blood Disorders of Cats](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats)
+
+* Find In Topic
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# White Blood Cell Disorders, Leukemia, and Lymphoma of Cats
+By[Nick Roman](https://www.msdvetmanual.com/authors/roman-nick), DVM, MPH, College Station Cat Clinic
+Reviewed By[Laurie Hess](https://www.msdvetmanual.com/authors/hess-laurie), DVM, DABVP, The MSD Veterinary Manual
+Reviewed/Revised Modified Mar 2026
+v108069573
+[White blood cells](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/white-blood-cells-of-cats) (leukocytes) include neutrophils, lymphocytes, monocytes, eosinophils, and basophils. Complete blood counts (CBCs) measure the numbers of each type and help diagnose disease. An increased total count is called **leukocytosis**. A decreased count is called **leukopenia**.
+**Neutrophilia** (a high number of neutrophils) is often caused by inflammation, by hormones in the body that are associated with stress, or by corticosteroid drugs.
+**Neutropenia** (a low number of neutrophils) occurs when neutrophils stick to damaged vessels, are used up in severe infections, are destroyed, or are produced in low numbers in the bone marrow. It occurs in cases of overwhelming bacterial infections, some drug reactions (which can cause **pancytopenia** , a condition in which all blood cells show low counts), and viral diseases such as [feline leukemia virus (FeLV)](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-leukemia-virus-felv) infection and [distemper](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-panleukopenia).
+**Eosinophilia** (a high number of eosinophils) occurs in cases of [allergic reactions](https://www.msdvetmanual.com/cat-owners/skin-disorders-of-cats/allergies-of-cats), infections by parasites (for example, fleas and intestinal worms), and inflammation of the intestines, kidneys, lungs, or skin. It can also appear with some cancers.
+**Hypereosinophilic syndrome** , in which the number of eosinophils remains very high and they invade organs, has been reported in cats. The cause of this syndrome is unknown, and repeated tests might be required for diagnosis.
+**Eosinopenia** (a low number of eosinophils) often results from stress or corticosteroid treatment.
+**Chédiak‑Higashi syndrome** , an inherited condition in Persian cats and [people](https://www.msdmanuals.com/professional/immunology-allergic-disorders/immunodeficiency-disorders/ch%C3%A9diak-higashi-syndrome), causes defective white blood cells, [platelet](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/platelets-of-cats) abnormalities, and decreased skin and eye pigment, leading to increased infections and bleeding.
+**Pelger‑Huët anomaly** is an inherited condition in which certain white blood cells (granulocytes) appear immature but usually function normally. Many affected cats have no symptoms, but severe forms can include bone abnormalities and higher infection risk.
+**Leukemia** is a type of cancer marked by an increased number of abnormal white blood cells in the blood and bone marrow.
+* In **acute leukemia** , many immature abnormal cells replace normal bone marrow cells, causing severe illness, [anemia](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/anemia-in-cats), and low numbers of platelets. The outlook for affected cats is generally poor, and treatment is relatively ineffective over the long term.
+* In **chronic leukemia** , the abnormal cells are more mature. Counts of other cells usually remain normal. Affected cats often have few symptoms, respond better to treatment, and survive longer.
+
+**Lymphoma** is a cancer related to leukemia that involves lymphocytes and usually starts in the lymph nodes or lymphoid tissues, such as the spleen.
+Because lymphocytes are present throughout the body, lymphoma can arise in the chest, digestive tract, kidneys, brain and spinal cord, eyes, skin, or nose.
+If immature white blood cells are evident in the blood, veterinarians often investigate for leukemia or lymphoma in other parts of the body and recommend treatment based on lab findings and disease location.
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

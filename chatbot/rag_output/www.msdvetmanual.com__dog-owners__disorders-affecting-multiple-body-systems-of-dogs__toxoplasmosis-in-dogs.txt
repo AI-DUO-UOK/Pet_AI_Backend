@@ -1,0 +1,25 @@
+1. <[Disorders Affecting Multiple Body Systems of Dogs](https://www.msdvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs)
+
+* Find In Topic
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Toxoplasmosis in Dogs
+By[J. P. Dubey](https://www.ars.usda.gov/people-locations/person/?person-id=1472%20), MVSc, PhD, Animal Parasitic Diseases Laboratory, Beltsville Agricultural Research Center, USDA
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3208864
+Toxoplasmosis is caused by _Toxoplasma gondii_ , a protozoan parasite that infects humans and other warmblooded animals. It is found worldwide.
+Felines (members of the cat family) are the only definitive hosts of the parasite. (A definitive host is an animal that a parasite requires in order to mature normally.) Both [wild and domestic cats ](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/toxoplasmosis-in-cats)serve as the main reservoir of infection. In dogs, a generalized infection may occur as the parasites travel through the body and invade the tissues.
+Adult animals with vigorous immune systems control the spread of the parasite efficiently; therefore, toxoplasmosis usually causes no signs in healthy dogs. However, in puppies, the parasites may spread throughout the body. Signs of infection include fever, diarrhea, cough, difficulty breathing, jaundice, seizures, and death. Adult animals with weakened immune systems are extremely susceptible to developing sudden, generalized toxoplasmosis.
+In many cases, treatment is not necessary. If warranted, your veterinarian will prescribe antibiotics to treat toxoplasmosis. Anticonvulsant medications may be used to control seizures. Fluids or other medication given by intravenous injection may be necessary for animals that are dehydrated or severely debilitated due to the infection.
+Transmission of toxoplasmosis to people is an important problem. In some areas of the world, as much as 60% of the human population has antibodies to the organism and are likely to be persistently infected. Toxoplasmosis is a major concern for people with weakened immune systems. In these individuals, toxoplasmosis usually affects the nervous system and results from the emergence of _T gondii_ from tissue cysts located in the brain as immunity wanes rather than from primary _T gondii_ infection. Toxoplasmosis is also a concern for pregnant women because the organism can migrate across the placenta and cause birth defects. Infection may occur after eating undercooked meat or accidental consumption of cysts from cat feces. To prevent infection, people handling meat should wash their hands thoroughly with soap and water after contact, and also thoroughly wash all cutting boards, sink tops, knives, and other materials. The organism present in meat is killed by contact with soap and water. They can also be killed by exposure to extreme cold or heat. Tissue cysts in meat are killed by heating the meat throughout to 67°C (152.6°F) or by cooling to −13°C (8.6°F). Toxoplasma in tissue cysts are also killed by exposure to gamma irradiation. Meat of any animal should be cooked to 67°C (152.6°F) before consumption, and tasting meat while cooking or while seasoning should be avoided. Pregnant women should avoid contact with cat litter, soil, and raw meat. Pet cats should be fed only dry, canned, or cooked food. The cat litter box should be emptied daily, preferably not by a pregnant woman. Gloves should be worn while gardening. Vegetables should be washed thoroughly before eating, because they may have been contaminated with cat feces.
+**Also see professional content regarding**[ toxoplasmosis](https://www.msdvetmanual.com/generalized-conditions/toxoplasmosis/toxoplasmosis-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

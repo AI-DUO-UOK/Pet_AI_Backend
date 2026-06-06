@@ -1,0 +1,44 @@
+1. <[Heart and Blood Vessel Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Diagnosis of Cardiovascular Disease in Dogs
+By[Suzanne M. Cunningham](http://vetprofiles.tufts.edu/doctor/suzanne-cunningham%20), DVM, DACVIM-Cardiology, Department of Clinical Sciences, Cummings School of Veterinary Medicine, Tufts University;
+[Kursten V. Roderick](https://www.msdvetmanual.com/authors/roderick-kursten), DVM, Tufts University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3201241
+* [General Signs of Cardiovascular Disease](https://www.msdvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/diagnosis-of-cardiovascular-disease-in-dogs#General-Signs-of-Cardiovascular-Disease_v3201285)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/diagnosis-of-cardiovascular-disease-in-dogs#For-More-Information_v34434754)|
+* Multimedia|
+
+A veterinarian often diagnoses cardiovascular disease by reviewing the medical history and signs, conducting a physical examination, and interpreting the results of specific tests or imaging procedures. The physical examination includes using a stethoscope to listen to the sounds made by the dog’s internal organs, especially the heart, lungs, and abdominal organs, and examining parts of the body by feeling with hands and fingers to distinguish between solid and fluid-filled swellings and to examine pulses. Imaging techniques include x-rays; electrocardiography (recording electrical activity of the heart); and echocardiography (a type of ultrasonography). Most cardiovascular diseases can be highly suspected by physical examination and x-rays. X-rays are also used to monitor the progression of congestive heart failure. Electrocardiography is specific for diagnosis of arrhythmias. Echocardiography is excellent for confirming tentative diagnoses, for assessing the severity of leaky heart valves or narrowed vessels, for evaluating chamber sizes and heart muscle function, for diagnosing high blood pressure in the lungs, for identifying birth defects in the heart, for detecting heart tumors, or for detecting pericardial disease (problems with the membrane surrounding the heart). Occasionally, more specialized tests such as cardiac catheterization (using a thin flexible tube inserted and threaded through an artery into the heart) or nuclear studies (x‑ray tests that include injection of radioactive isotopes) are necessary. Heartworm disease is diagnosed best by performing a blood test to detect the presence of female heartworms.
+Electrocardiogram, dog
+| --- |
+Common Types of Imaging Used to Diagnose Heart Disease
+|  |
+| --- |
+| **X-rays** |
+| X-rays (also called radiographs) of the chest frequently help diagnose heart disease in pets. Finding generalized enlargement of the heart or enlargement of specific heart chambers makes the presence of heart disease more likely. The images may also provide clues as to the specific disease present. For example, fluid in the lungs is a common finding in congestive heart failure. Although chest x-rays are useful in evaluating patients with heart disease, they have certain limitations. The presence of fluid in the lungs does not definitively confirm a disease originating from the heart or exclude another origin, such as pulmonary (lung) disease. Also, assessment of overall heart size and the size of specific heart chambers is typically far less accurate than testing by echocardiography (ultrasonography). |
+|  |
+| **Electrocardiography** |
+|  Electrocardiography is the recording of the heart’s electrical activity from the body surface with the use of electrodes. It can be used to identify heart arrhythmias, such as bradycardia (slower than expected rhythm), tachycardia (faster than expected rhythm), or other abnormalities of rhythm (such as sinus arrhythmia or sinus arrest). Electrocardiography can also detect conduction disturbances, or failures of the electrical signals that cause the heart to contract to pass through the heart tissue. These include first-, second-, and third-degree atrioventricular block. Finally, electrocardiography can identify chamber enlargement, which is indicated by waveform abnormalities shown on the electrocardiogram recording. Different readings suggest enlargement of the different chambers. While the electrocardiogram may suggest chamber enlargement, chest x-rays and echocardiography (ultrasonography) are more effective.  |
+|  |
+| **Echocardiography** |
+| Echocardiography is a type of ultrasonography used to evaluate the heart, the aorta, and the pulmonary artery. Echocardiography complements other diagnostic procedures by examining and displaying the working heart and moving images of its action. Heart chamber and wall dimensions can be determined; the physical structure and motion of valves can be seen; and pressure differences, blood flow volumes, and several measurements of heart function can be calculated. |
+|  |
+| **Cardiac Catheterization** |
+| Cardiac catheterization involves the placement of specialized catheters (thin, flexible tubes) into the heart, aorta, or pulmonary artery. Most of the time now, cardiac catheterization is done to surgically repair defects in the heart. |
+Many heart disorders are more common in certain breeds. For example, mitral regurgitation is more common in Cavalier King Charles Spaniels, dilated cardiomyopathy is common in middle-aged Doberman Pinschers, and arrhythmogenic right ventricular cardiomyopathy usually affects Boxers. Older Miniature Schnauzers may develop specific types of arrhythmias, and tetralogy of Fallot is more common in young Wirehaired Fox Terriers. Knowledge of these and other breed associations with heart disease can often help your veterinarian make a diagnosis.
+## General Signs of Cardiovascular Disease
+Dogs showing signs of heart disease may have a history of exercise intolerance, weakness, coughing, difficulty breathing, increased breathing rate, abdominal swelling (caused by fluid pooling in the abdomen), loss of consciousness due to lack of blood flow to the brain (fainting), a bluish tinge to skin and membranes due to a lack of oxygen in the blood, or loss of appetite and weight. More rarely, swelling of the legs, jaundice (yellowing of the eyes, skin, or membranes), or coughing up blood or bloody mucous may be noted. Your veterinarian may recommend that you count the number of breaths your dog takes per minute when your dog is resting at home. This can be an effective way for you to monitor the development or progression of congestive heart failure in dogs with heart disease.
+## For More Information
+Also see professional content regarding [diagnosis of cardiovascular disease](https://www.msdvetmanual.com/circulatory-system/cardiovascular-system-introduction/diagnosis-of-cardiovascular-disease-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences

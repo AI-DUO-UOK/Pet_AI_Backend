@@ -1,0 +1,68 @@
+1. <[Brain, Spinal Cord, and Nerve Disorders of Cats](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# The Neurologic Evaluation in Cats
+By[Thomas Schubert](https://www.researchgate.net/profile/Thomas_Schubert6%20), DVM, DACVIM, DABVP, Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3245765
+* [The Neurologic Examination](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats/the-neurologic-evaluation-in-cats#The-Neurologic-Examination_v3245769)|
+* [Laboratory Tests and Imaging](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats/the-neurologic-evaluation-in-cats#Laboratory-Tests-and-Imaging_v3245788)|
+* Multimedia|
+
+Evaluation of the nervous system begins with an accurate history and general physical examination, followed by a neurologic examination. There are a number of specific physical tests that can be carried out to evaluate the functioning of the various components of the nervous system. These include tests of various reflexes, muscle function and control, and posture and gait.
+Laboratory tests are often needed to diagnose the specific problem. Common diagnostic tests include blood tests, urinalysis, analysis of the cerebrospinal fluid, x-rays, computed tomography (CT) scans, magnetic resonance imaging (MRI), and evaluation of the electrical activity of the brain, peripheral nerves, and muscles.
+## The Neurologic Examination
+A neurologic examination evaluates 1) the head (cranial nerves), 2) the gait, or walk, 3) the neck and front legs, and 4) the torso, hindlimbs, anus, and tail. Your cat’s reflexes will also be tested to determine, if possible, the location of the injury in the brain, spinal cord, or nerves in the peripheral nervous system.
+### Evaluation of Mentation
+Your cat's quality and level of consciousness (bright, alert, and responsive; quiet but alert and responsive; obtunded; stuporous; or comatose) will be assessed.
+### Evaluation of the Cranial Nerves
+The 12 pairs of cranial nerves extend from specific segments of the brainstem to the left and right sides of the head. They include the nerves that transmit smell, those responsible for vision and the movement of the eyes, those that control facial movements, those responsible for hearing and balance, and those responsible for chewing, swallowing, vocalizing, and movement of the tongue (see table The Cranial Nerves below). Testing the reflexes of these nerves can help identify the location of the damage. Your veterinarian will perform specific tests designed to pinpoint any signs of dysfunction in these nerves.
+Table
+The Cranial Nerves
+Table
+The Cranial Nerves
+The Cranial Nerves
+| Nerve  | Function  |
+| --- | --- |
+| Olfactory  | Transmit smell  |
+| Optic  | Necessary for vision; carry the sensory nerves for certain eye reflexes  |
+| Oculomotor  | Carry motor neurons that control most of the muscles of the eye  |
+| Trochlear  | Carry motor neurons that control other muscles of the eye  |
+| Trigeminal  | Include 3 main branches: the motor nerve to the muscles of the jaw, sensory nerves to the mouth and nasal cavity, and sensory nerves that carry pain sensations from the cornea (the sensitive outermost part of the eyeball)  |
+| Abducent  | Carry motor neurons that control other muscles of the eye  |
+| Facial  | Control the muscles responsible for facial expression (ears, eyelids, nose, and mouth)  |
+| Vestibulocochlear  | These nerves are divided into 2 parts: the cochlear nerve, which responds to sound; and the vestibular nerve, which functions to maintain posture and balance  |
+| Glossopharyngeal  | Provide sensory and motor control of the throat and vocal chords  |
+| Vagus  | Provide sensory and motor control for the major internal organs, including the heart and the digestive tract  |
+| Spinal accessory  | Carry sensory and motor information for the muscles of the head and upper neck  |
+| Hypoglossal nerves  | The motor nerves to the tongue  |
+An evaluation of the cranial nerves tests mental activity, head posture and coordination, and reflexes on the head. Signs identified during this evaluation indicate an injury or disease of the brain. Signs of damage to the cerebrum and brainstem can include mental deterioration, constant pacing, seizures, depression, coma, or a head turn or circling in one direction. A head tilt, bobbing, tremors, or other unusual head movements may indicate damage to the cerebellum.
+### Evaluation of Gait (Walking)
+Your veterinarian will evaluate the gait by watching your cat as it walks, runs, turns, steps to the side, and backs up. Signs of dysfunction include circling, weakness or complete paralysis of any limbs, falling, stumbling, rolling, or loss of coordination.
+### Evaluation of the Neck and Front Legs
+Evaluation of the neck and front legs will include searching for evidence of pain and loss of muscle size or tone, which may indicate an injury to the upper spinal cord. Various types of tests are done to help detect minor spinal cord injuries.
+Spinal reflexes, postural reactions and conscious proprioception, muscle condition, and the ability to feel touch and pain are also evaluated.
+### Evaluation of the Torso, Hind Limbs, Anus, and Tail
+The trunk, or torso, is evaluated for abnormal posture or position of the vertebrae, pain, loss of feeling or hypersensitivity to light touch or pinpricking, and loss of muscle mass. Some tests used to evaluate the nerves of the neck and front legs (_see_ above) are also used to evaluate the torso and hindlimbs. Various reflexes can also be evaluated. Loss of muscle around the torso or hindlimbs can indicate damage to a nerve associated with that muscle.
+## Laboratory Tests and Imaging
+**Blood tests** are often used to detect metabolic disorders, some of which can affect nervous system activity. Blood tests can also identify other conditions, including lead poisoning, certain infections, and myasthenia gravis, an autoimmune disease in which the connections between nerve and muscle are blocked and weakness results. Biopsies of muscle, nerves, and the brain may also be necessary.
+**Analysis of cerebrospinal fluid** (the fluid that surrounds the brain and spinal cord) is often useful for diagnosing a central nervous system disorder. Cerebrospinal fluid is collected from the base of the skull or from the lower back in a procedure called a **spinal tap**. An unusually high amount of protein in the cerebrospinal fluid may indicate encephalitis (inflammation of the brain), meningitis (inflammation of the covering of the brain), cancer, or a compressive injury of the spinal cord. Increased numbers of white blood cells in the cerebrospinal fluid indicate an inflammation or infection. Other disorders that can be identified by cerebrospinal fluid analysis include bacterial or fungal infections, internal bleeding, brain abscesses, and some types of tumors. Cerebrospinal fluid can also be tested for the presence of infectious diseases.
+Several different types of radiographic tests can be used to detect disorders of the nervous system. **Plain x-rays** of the skull and spine can detect fractures, misalignment (subluxation) of vertebrae, infections, or bone cancer. However, in most infections or cancers of the brain and spinal cord, plain x-rays appear normal. In a procedure known as **myelography,** a special liquid dye is injected into the cerebrospinal canal. This dye can highlight specific types of spinal problems, such as herniated (“slipped”) disks and spinal cord tumors. **Computed tomography (CT)** and **magnetic resonance imaging (MRI) scans** can also help evaluate changes in bone structure, internal bleeding, abscesses, inflammation, and certain nervous system cancers.
+Other tests may be used in some cases. An **electroencephalogram****(EEG)** records electrical activity in the brain. Results are abnormal in meningitis or encephalitis, head injuries, and brain tumors. An electroencephalogram can sometimes help determine the cause and severity of a seizure. An **electromyogram****(EMG)** records electrical activity in muscles. In this test, a nerve is stimulated electrically, and the speed of conduction along the neurons is calculated. This technique can detect nerve injury and myasthenia gravis. A **brainstem auditory evoked response (BAER)** records electrical activity in the pathway from the sound receptors in the ear to the brainstem and cerebrum. In cases of deafness caused by nerve damage, the BAER generates no response. Brain-stem disorders may also change the BAER.
+### For More Information
+Also see professional content regarding [the neurologic evaluation](https://www.msdvetmanual.com/nervous-system/the-neurologic-examination/the-neurologic-examination-of-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

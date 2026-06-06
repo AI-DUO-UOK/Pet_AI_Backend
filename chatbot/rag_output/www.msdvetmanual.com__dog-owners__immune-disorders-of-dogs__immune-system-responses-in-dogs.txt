@@ -1,0 +1,78 @@
+1. <[Immune Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Immune System Responses in Dogs
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3204618
+* [Physical Barriers](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs#Physical-Barriers_v3204627)|
+* [Nonspecific Immunity](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs#Nonspecific-Immunity_v3204702)|
+* [Specific Immunity](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs#Specific-Immunity_v3204708)|
+* [Mounting an Immune Response](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs#Mounting-an-Immune-Response_v3204714)|
+* [Types of Immune System Disorders](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs#Types-of-Immune-System-Disorders_v3204722)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs#For-More-Information_v34439920)|
+* Multimedia|
+
+The primary role of the immune system is to defend the body against foreign invaders or abnormal cells that invade or attack it. In order to do this, the immune system must distinguish between “self” and “non-self.” By recognizing invading microorganisms (such as viruses), chemical agents, or other foreign substances that are “non-self,” a body can protect itself from attack. Substances that stimulate an immune response in the body are called antigens. Antigens may be contained within or on bacteria, viruses, other microorganisms, or cancer cells. Antigens may also exist on their own—for example, as pollen or food molecules. A normal immune response consists of recognizing a foreign antigen, mobilizing forces to defend against it, and attacking it.
+There are 3 lines of defense against invaders: physical barriers, nonspecific (or innate) immunity, and specific (or adaptive) immunity. Nonspecific and specific immunity involve various white blood cells.
+## Physical Barriers
+The first lines of defense against invaders are mechanical or physical barriers. These include the skin, the cornea of the eye, and the membranes lining the respiratory, digestive, urinary, and reproductive tracts. As long as these barriers remain unbroken, many invaders cannot penetrate them. However, if a barrier is broken (for example, if the skin is broken by a wound), the risk of infection is increased.
+In addition, the physical barriers are defended by "good" bacteria that live in the area and by secretions containing enzymes that can destroy harmful bacteria. Examples are tears in the eyes, secretions in the digestive tract, and normal "gut flora" (bacteria) that live in the digestive tract.
+## Nonspecific Immunity
+Nonspecific (innate) immunity is present at birth. It is so named because its components treat all foreign substances in much the same way. Acute inflammation is the most important process involved in nonspecific immunity. During inflammation, white blood cells (such as neutrophils and macrophages) rapidly travel from the blood into the tissues to kill invading organisms and remove injured cells. Other white blood cells involved in nonspecific immunity are monocytes (which develop into macrophages), eosinophils, basophils, and natural killer cells ( see also [White Blood Cells of Dogs](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cells-of-dogs)). These nonspecific types of white blood cells usually act on their own to destroy invaders. The complement system and cytokines are molecules produced by the immune system that also participate in nonspecific immunity.
+Table
+Specialized Cells and Molecules of the Immune System
+Table
+Specialized Cells and Molecules of the Immune System
+Specialized Cells and Molecules of the Immune System
+| Lymphocytes  | Small white blood cells found in all organs and tissues. There are 2 principal types: B lymphocytes (B cells), which mature in the bone marrow, and T lymphocytes (T cells), which mature in the thymus.  |
+| --- | --- |
+| B cells  | These lymphocytes are responsible for the production of antibodies, an important part of the immune response.  |
+| T cells  | These lymphocytes include **killer (cytotoxic) T cells** , which detect and kill cells that are abnormal (such as cancer cells), and **helper T cells** , which help other lymphocytes mount an immune response.  |
+| Antigens  | Any substances that can induce an immune response.  |
+| Antigen-presenting cells  | Specialized cells that engulf antigens and process them so that they can be recognized by lymphocytes.  |
+| Neutrophils  | All-purpose scavenger cells that ingest and destroy antigens and cell debris.  |
+| Macrophages  | White blood cells that stimulate healing and remove antigens, injured cells, and neutrophils from tissue.  |
+| Eosinophils  | White blood cells that ingest bacteria and other foreign cells, participate in allergic reactions, and help destroy cancer cells.  |
+| Mast cells  | Cells that release histamine and other substances involved in allergic reactions.  |
+| Cytokines  | The immune system’s messengers, typically small proteins, which help regulate an immune response by delivering signals from one cell to another.  |
+| Antibodies  | Also called **immunoglobulins** , antibodies are proteins produced by B cells that interact with specific antigens. They can form immune complexes, label antigens for removal by other cells, or block the ability of a virus to enter its target cell.  |
+## Specific Immunity
+Specific (adaptive) immunity is not present at birth; it is acquired. As the immune system encounters different antigens, it learns the best way to attack each antigen, and it begins to develop a memory for that antigen. Specific immunity is so named because it tailors its attack to a specific antigen previously encountered. It takes time to develop specific immunity after initial exposure to a new antigen; however, when the antigen is encountered in the future, the response is more rapid and more effective than that generated by nonspecific immunity. Specific immunity involves the action of lymphocytes (B cells and T cells), antibodies, antigen-presenting cells, and cytokines.
+Most vaccines work by stimulating the development of specific immunity. Vaccinations have been developed for many diseases in animals and are an effective way of enhancing the immune response.
+## Mounting an Immune Response
+To destroy invaders, the immune system must first recognize them. It can make this distinction because all cells have unique markers on their surface that identify them. A cell with markers on its surface that are not identical to those on the body’s own cells is identified as being foreign. The immune system then attacks that cell.
+Some white blood cells (B cells) recognize invaders, or antigens, directly. When a B cell recognizes and attaches to the antigen, it produces antibodies, which coat the surface of the virus or bacteria to stop it from multiplying or infecting other cells. This process is called neutralization. Antibodies also label the foreign invaders so that other immune defenses can find and attack them. To prevent inappropriate immune responses, B cells usually require "permission" from helper T cells to produce antibodies.
+T-cells are  white blood cells that also need help from cells that first ingest the invader and break it into fragments. The fragments are then presented to the T cells so that they can recognize and destroy them. These helper cells are called antigen presenting cells.
+Antigens and T cells
+| --- |
+After an infectious organism has been eliminated, most of the immune cells and antibodies that fought the infection disappear. However, a small group of “memory” immune cells remain in the body. If the memory cells are later exposed to an antigen that they remember, they help the body respond much faster and with a stronger response. This is the reason why vaccinations are successful in preventing many diseases. Vaccinations prime the immune system to respond quickly by exposing the T and B cells to antigens present on the infectious organism.
+## Types of Immune System Disorders
+The immune system does not always function properly. Immune system disorders, called immune-mediated disorders, occur when the immune system is overactive or underactive. Disorders resulting from an underactive immune system, called immunodeficiencies, put animals at an increased risk for infections. Alternatively, an overactive immune system can attack parts of its own body that it misidentifies as foreign, causing what is known as an autoimmune disorder. At other times, the immune system overreacts to foreign invaders by producing too many antibodies or other chemicals (known as hypersensitivity or allergic reactions). There are 4 general classifications or types of these disorders.
+### Type I Reactions (Anaphylaxis)
+Type I reactions are excessive immune responses triggered by antibodies, mast cells, and eosinophils. It includes allergic reactions, the most serious of which is anaphylaxis. Anaphylaxis is a rare, life-threatening, immediate allergic reaction to something that has entered the body (for example, eaten or injected). In a normal immune system, the binding of an antigen to an antibody activates various cells, which produce chemicals such as histamines. In anaphylaxis, the body activates an excessive number of cells, resulting in the production of very large numbers of histamines and other chemicals. These chemicals can affect various organs such as the blood vessels and muscles. The severity of the reaction depends on the type and amount of antigen, the amount of antibodies produced, and the route of exposure. Agents that can cause anaphylactic and allergic reactions include biting insects, vaccines, drugs, food, and blood products. The most common signs include restlessness, excitement, swelling of the face, drooling, vomiting, abdominal pain, diarrhea, difficulty breathing, shock, collapse, convulsions, and death.
+### Type II Reactions (Antibody-mediated Cytotoxic Reactions)
+Type II reactions occur when an antibody binds to an antigen present at the surface of its own cells. This antibody–antigen complex then activates a cell-killing series of proteins called complement, resulting in cell death and tissue damage. An infection can trigger this reaction, or "cross-reactive" antibodies can target normal cells. Some animals appear to be born with a higher risk of this disorder.
+Signs of Type II hypersensitivity vary, and they depend on the organ in which the reaction is occurring. Immune-mediated destruction of red blood cells and platelets are the most common Type II reactions. The skin and muscles are other potential targets. The method of diagnosis also varies depending on the affected organ. Supportive treatment consists of elimination of the infectious agent (if determined) and anti-inflammatory or immunosuppressive drug treatment.
+### Type III Reactions (Immune Complex Disease)
+Type III reactions occur when a large number of antigen–antibody complexes lodge in certain organs, causing damage to blood vessels. There are many possible reasons for the continuous presence of antigens, including persistent infections, cancer, and longterm exposure to inhaled antigens. In addition, antibody responses to certain drugs can occur, particularly in the case of long-acting drugs or drugs that are given continually over a long period of time. Some animals can react and produce antibodies against self antigens. However, in many cases, the cause of the disease is unidentifiable.
+The most commonly affected sites include the joints, skin, kidneys, lungs, and brain. Signs vary and may include fever, skin lesions, lameness that shifts from leg to leg, painful or swollen joints, behavioral changes, vomiting, diarrhea, and abdominal pain. An immune complex disease is usually diagnosed with blood tests, biopsies, and by ruling out other causes of disease. Treatment generally includes supportive treatment for the affected organ, removal of the causative agent, or treatment of the infection (such as appropriate antibiotic treatment for bacterial infection). Anti-inflammatory drugs may be needed to stop the continued formation of immune complexes and to decrease the inflammation associated with these reactions.
+### Type IV Reactions (Cell-mediated Reactions)
+Type IV or delayed hypersensitivity occurs more than 24 hours after the body was exposed to an antigen. Unlike the other types of reactions that involve antibodies, Type IV reactions involve immune cells, such as T cells and macrophages. The antigens responsible for the development of Type IV reactions can come from bacteria, parasites, viruses, chemicals, and certain cells. This type of reaction can occur in any organ. For this reason the signs will vary. The reaction is diagnosed based on excluding other causes for organ-specific diseases and by laboratory tests on the tissue. The goals of treatment are to provide supportive treatment based on the organ-specific disease process, to identify (if possible) and eliminate the source of the antigen causing the reaction, and to control inflammation and immune suppression.
+## For More Information
+Also see professional content regarding [immune system responses](https://www.msdvetmanual.com/immune-system/the-biology-of-the-immune-system/biology-of-the-immune-system-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

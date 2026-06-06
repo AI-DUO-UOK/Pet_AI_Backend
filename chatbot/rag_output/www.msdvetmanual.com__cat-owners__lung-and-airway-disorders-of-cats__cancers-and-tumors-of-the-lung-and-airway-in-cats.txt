@@ -1,0 +1,44 @@
+1. <[Lung and Airway Disorders of Cats](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Cancers and Tumors of the Lung and Airway in Cats
+By[Ned F. Kuehn](https://www.researchgate.net/scientific-contributions/80151229-Ned-F-Kuehn%20), DVM, MS, DACVIM, Michigan Veterinary Specialists
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3246361
+* [Tumors of the Nose and Sinuses](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/cancers-and-tumors-of-the-lung-and-airway-in-cats#Tumors-of-the-Nose-and-Sinuses_v3246366)|
+* [Tumors of the Larynx and Trachea](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/cancers-and-tumors-of-the-lung-and-airway-in-cats#Tumors-of-the-Larynx-and-Trachea_v3246373)|
+* [Primary Lung Tumors](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/cancers-and-tumors-of-the-lung-and-airway-in-cats#Primary-Lung-Tumors_v3246377)|
+* [Metastatic Lung Tumors](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/cancers-and-tumors-of-the-lung-and-airway-in-cats#Metastatic-Lung-Tumors_v3246384)|
+
+The respiratory system can be a host to many different types of tumors and cancers. The following are the more common tumors found in the lungs and airways of cats.
+## Tumors of the Nose and Sinuses
+Tumors of the nose and sinuses are relatively uncommon in cats as compared to dogs. The incidence is higher in male cats. The average age at time of diagnosis is 12 years. In cats, more than 90% of nasal tumors are cancerous (malignant). The most common tumor types are carcinomas and lymphomas. In general, if untreated, survival is 3 to 5 months after diagnosis.
+Chronic nasal discharge containing mucus, pus, or blood is the most common sign. Initially, the discharge may involve one side of the nose, but it often becomes 2‑sided. Periodic sneezing, bleeding from the nose, and snoring may occur. Deformities of the face and mouth and/or protruding eyeballs may be seen depending on the tissues affected by the tumor. Excessive tearing and inflammation of the cornea may occur. If the tumor extends to the brain, cats can display neurologic signs, such as disorientation, blindness, seizures, and coma.
+Diagnosis is based on the history and clinical signs. Nasal x-rays or computed tomography (CT) scans may show evidence of tumor presence. Nasal CT scans are preferred because they provide better detail than x-rays when attempting to distinguish tumors of the nose from other causes of chronic nasal discharge. A biopsy of tumor tissue can provide a definite diagnosis.
+The recommended treatment largely depends on the tumor type and the extent of disease. Treatments such as aggressive surgical removal of the tumor, chemotherapy, radiation therapy, or combinations of these provide a more favorable outlook when the diagnosis is made early.
+## Tumors of the Larynx and Trachea
+Tumors of the larynx and trachea are rare in cats. They can be benign (inflammatory polyps) or malignant (such as squamous cell carcinoma, lymphosarcoma, and adenocarcinoma). The most common signs of tumors of the larynx include labored breathing when inhaling or after exercise; high-pitched, noisy breathing; voice change (hoarseness or loss of voice); and coughing. Similar signs are associated with tumors of the trachea. A diagnosis can often be made from the history and clinical findings and by eliminating other causes of upper airway obstruction or coughing. The tumor mass may be seen by the veterinarian during examination of the larynx or trachea with an endoscope. Definitive diagnosis can be made after a biopsy. Treatment involves surgically removing the tumor. Some types of tumors respond to radiation therapy.
+## Primary Lung Tumors
+Tumors that originate in the lung (primary lung tumors) are very rare in cats. Metastatic lung disease is more common than primary lung tumors in cats. Although cats are less prone to developing primary lung cancer than dogs, the reported incidence has increased during the last 20 years. This may be due to an increased average life span, better detection and awareness, or, possibly, increasing exposure to cancer-causing agents in the environment. Most primary lung tumors are diagnosed at an average age of 12 years in cats. All breeds and both genders appear to be equally affected. Of the primary lung tumors in cats, more than 80% are malignant (cancerous).
+The signs indicating a primary lung tumor can vary, depending on the location of the tumor, speed of tumor growth, and presence of previous or current lung disease. Coughing is uncommon in cats; general signs of illness such as poor appetite, weight loss, and rapid, labored breathing, are more common signs. Fluid accumulation around the lungs (called pleural effusion) is common in cats with primary lung tumors. Lethargy, wheezing, vomiting, fever, or lameness may also be seen.
+Chest x-rays are the first step in making a diagnosis; however, a definitive diagnosis of lung cancer requires a sample of tissue (biopsy).
+Surgery to remove the portion of the lung containing the tumor is the recommended treatment in most cases. Tumors that cannot be operated on or those that have spread may be treated with chemotherapy. Recurrence or spread of the tumor is a common cause of death.
+## Metastatic Lung Tumors
+A metastatic lung tumor is one that originates in another part of the body and then spreads to the lungs. A malignant tumor may spread only to the lungs or to other organs as well. The signs of metastatic lung disease are similar to those of primary lung tumors (_see_ above). The severity of signs depends on the location of the tumor and whether the lesions are single or multiple. The diagnosis is similar to that for primary lung tumors. If your cat develops a tumor that is prone to metastasize to the lungs, your veterinarian will likely recommend chest x-rays. However, x-rays cannot detect small tumors (less than 3 millimeters in size), so computed tomography (CT scan) may also be necessary.
+The major goal of cancer treatment is to prevent metastasis. Some slow-growing or single metastatic tumors can be removed with surgery. Chemotherapy or radiation therapy may be useful with certain tumor types that are not well suited for surgery. Because spread to the lung occurs late in the clinical course of a malignant tumor, the outlook is poor.
+## For More Information
+Also see professional content regarding [cancer and tumors of the lung and airways](https://www.msdvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/neoplasia-of-the-respiratory-system-in-dogs-and-cats).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

@@ -1,0 +1,52 @@
+1. <[Immune Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Involving Immune Complexes (Type III Reactions) in Dogs
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3204879
+* [Glomerulonephritis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#Glomerulonephritis_v3204883)|
+* [Systemic Lupus Erythematosus (Lupus)](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#Systemic-Lupus-Erythematosus-\(Lupus\)_v3204891)|
+* [Vasculitis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#Vasculitis_v3204900)|
+* [Anterior Uveitis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#Anterior-Uveitis_v3204907)|
+* [Immune-mediated Arthritis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#Immune-mediated-Arthritis_v3204918)|
+* [Immune-mediated Meningitis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#Immune-mediated-Meningitis_v3204943)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs#For-More-Information_v34439974)|
+* Multimedia|
+
+When antibodies bind to persistent antigens, they can create immune complexes. These antigen-antibody complexes can get lodged in small blood vessels and stimulate inappropriate inflammation of the surrounding tissue. Immune complex disorders are among the most common immune-mediated diseases. The location in the body where the immune complexes are deposited determines the signs and the course of the disease.
+## Glomerulonephritis
+Glomerulonephritis ( see also [Glomerular Disease](https://www.msdvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/noninfectious-diseases-of-the-urinary-system-in-dogs#v3208029)) is inflammation of the glomeruli (microscopic filtering units) in the kidneys. The inflammation develops when immune complexes become trapped in the glomeruli. This leads to activation of the body’s inflammatory defense system, which, in turn, damages the glomeruli. The immune complexes often form as a consequence of some other disease, such as an infection or cancer. However, in many dogs with glomerulonephritis, the triggering cause cannot be determined. Glomerulonephritis results in an excessive loss of protein in the urine (proteinuria). The finding of protein in the urine during a urine test may be the first indication that your dog has glomerulonephritis. Treatment includes treating any underlying diseases, reducing the amount of protein lost in the urine, managing any existing kidney disease, and giving immunosuppressive drugs to reduce the formation of the immune complexes. If it goes untreated, the disease can lead to chronic kidney failure.
+## Systemic Lupus Erythematosus (Lupus)
+Systemic lupus erythematosus (often simply called lupus) is a rare autoimmune disease that is seen in both people and dogs. Dogs with lupus have antibodies in their blood that are targeted against their own body tissues. Lupus causes widespread abnormalities of the skin, heart, lungs, kidneys, joints, nervous system, and blood (decreased red blood cell or platelet numbers). Multiple organs are usually affected.
+Lupus causes such a wide variety of signs that it can be confused with many different diseases. The signs of lupus may be acute (sudden onset and short duration) or chronic (of long duration and recurring), and they often come and go. The signs may include a fluctuating fever; lameness that shifts from one leg to another; arthritis affecting multiple joints; painful muscles; anemia; a low white blood cell count; mouth ulcers; skin changes including hair loss, skin crusting, ulceration, and scar formation; and involvement of internal organs such as the thyroid gland, spleen, or kidneys.
+A blood test for specific antibodies is the usual method of diagnosing lupus. Blood tests are also used to check for the presence of liver or kidney damage and to look for anemia, low platelet counts, and other changes associated with the disease. Drugs are usually prescribed to treat the disorder. Your veterinarian will be able to determine the most appropriate treatment for your pet.
+## Vasculitis
+Vasculitis (inflammation of blood vessels) caused by immune complexes occurs in dogs. Skin abnormalities are seen as purplish red dots, ulcerations, and scabs. Depending on which blood vessels are involved, signs appear on the lower legs, paws, ears, mouth, or tongue. Drugs are a frequent cause of vasculitis in dogs. The disorder is diagnosed by performing tests on samples removed from the affected areas (biopsies). Vasculitis is treated by stopping the offending drug (if implicated as the cause) or by giving drugs that suppress the immune system.
+## Anterior Uveitis
+One cause of anterior uveitis ( see [Inflammation of the Anterior Uvea](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-anterior-uvea-in-dogs#v3204110)) is the action of antibody-antigen complexes on the iris, which causes inflammation of the eye. Anterior uveitis often occurs during the recovery phase of infectious canine hepatitis, caused by a virus. Treatment of immune-mediated anterior uveitis include medications to support healing in the eye and entire body.
+## Immune-mediated Arthritis
+**Canine rheumatoid arthritis** is an autoimmune disease that produces inflammation and swelling of the joints. The condition is believed to occur as a result of immune complexes that are deposited in the tissue surrounding the joints. Animals with rheumatoid arthritis often have painful joints. This can be seen as a lameness that shifts from leg to leg and difficulty rising, walking, or climbing. The carpal (wrist), tarsal (ankle), and toe joints are the most commonly affected and may have signs of inflammation such as excessive warmth or swelling. The dog may also have a persistent fever. In addition to signs, x-rays of the joints, blood testing, and laboratory analysis of fluid removed from the joints may assist in diagnosis. Your veterinarian can prescribe drugs that affect the immune system to help a pet with rheumatoid arthritis. Follow the directions carefully for administration of medication.
+**Plasmacytic-lymphocytic synovitis** may be a variant of rheumatoid arthritis. This disease occurs in medium and large breeds of dogs. The most common sign is hind limb lameness, with the knee being the joint most commonly affected. A combination of drugs that control inflammation and the immune system is often needed to treat this disorder.
+**Idiopathic polyarthritis** is inflammation of multiple joints with unknown cause. It usually does not affect other parts of the body. It is most common in large dogs, particularly German Shepherds, Doberman Pinschers, retrievers, spaniels, and pointers. In toy breeds, it is most frequent in Toy Poodles, Yorkshire Terriers, and Chihuahuas, or mixes. Diagnosis is based on the history of recurring fever that does not improve after antibiotic treatment, lethargy, poor appetite, and stiffness or lameness. The disease may be controlled with 3-5 months of corticosteroid treatment. Additional drugs are required in dogs that do not respond to steroids.
+Arthritis in dogs
+| --- |
+## Immune-mediated Meningitis
+Immune-mediated meningitis causes an inflammation of the layers of tissue covering the brain and spinal cord. These coverings, called the meninges, become inflamed and thickened due to an invasion of inflammatory cells. In juvenile or young adult Beagles, Boxers, German Shorthaired Pointers, and Akitas, the signs consist of recurring bouts of fever, severe neck pain and rigidity, reluctance to move, and depression. Attacks last for 5 to 10 days, with periods of a week or more between attacks in which the dog is mostly or completely normal. The disease is diagnosed through a complete medical history, physical examination, blood tests, and analysis of the fluid around the spine (cerebrospinal fluid). The disease often improves on its own over several months. However, in some dogs it becomes chronic and does not respond well to treatment. Corticosteroids are used in some cases to reduce the severity of the signs. More severe forms of the disease, which are not as responsive to treatment, have been reported in Bernese Mountain Dogs and Akitas.
+## For More Information
+Also see professional content regarding [Type III reactions](https://www.msdvetmanual.com/immune-system/immunologic-diseases/hypersensitivity-diseases-in-animals#v3277380).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

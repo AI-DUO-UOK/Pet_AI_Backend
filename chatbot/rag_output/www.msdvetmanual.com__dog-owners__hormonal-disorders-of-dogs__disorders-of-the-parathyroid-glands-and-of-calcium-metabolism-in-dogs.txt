@@ -1,0 +1,73 @@
+1. <[Hormonal Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders of the Parathyroid Glands and of Calcium Metabolism in Dogs
+By[Mark E. Peterson](https://animalendocrine.com/staff/dr-mark-e-peterson/%20), DVM, DACVIM-SAIM, Animal Endocrine Clinic, New York
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3203626
+* [Calcium-regulating Hormones](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#Calcium-regulating-Hormones_v3203635)|
+* [Hypercalcemia (High Blood Calcium Levels)](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#Hypercalcemia-\(High-Blood-Calcium-Levels\)_v3203644)|
+* [Hypocalcemia (Low Blood Calcium Levels)](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#Hypocalcemia-\(Low-Blood-Calcium-Levels\)_v3203654)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#For-More-Information_v34429104)|
+* Multimedia|
+
+The way in which the body processes calcium and phosphate, the function of vitamin D (which acts more like a hormone than a vitamin), and the formation of bone are all tied together into a system that involves 2 other hormones—parathyroid hormone and calcitonin—that are secreted by the parathyroid and thyroid glands.
+Disorders of calcium and phosphorus metabolism that affect the skeletal system are discussed in the chapter on bone, joint, and muscle disorders ( see [Disorders Associated with Calcium, Phosphorus, and Vitamin D in Dogs](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs)).
+## Calcium-regulating Hormones
+Calcium is an essential component of the skeleton, and it has important functions in muscle contraction, blood clotting, enzyme activity, the nervous system, and hormone release, among others. Precise control of calcium in the body is vital to health. Parathyroid hormone, vitamin D, and calcitonin all interact to keep the level of calcium steady, despite variations in intake and excretion. Other hormones may also contribute to maintaining the balance of calcium in the body.
+**Parathyroid hormone** is synthesized and stored in the parathyroid glands, which are located on either side of the thyroid gland in the neck. The synthesis of this hormone is regulated by a feedback mechanism that involves the level of blood calcium. The primary function of parathyroid hormone is to control the level of calcium by affecting the movement of calcium into and out of bone, the retention of calcium by the kidneys, and absorption of calcium from the digestive tract.
+**Vitamin D** is the second major hormone involved in the regulation of calcium metabolism. In several species, including horses and people, vitamin D is formed in the skin after exposure to ultraviolet light (such as sunshine). In contrast, dogs are not able to form enough vitamin D in the skin and depend on dietary intake. Parathyroid hormone and conditions that stimulate its secretion, as well as reduced phosphate levels, increase the formation of active vitamin D. Conversely, high levels of phosphorus in the blood reduce vitamin D activation. Under certain conditions, such as pregnancy and growth, other hormones can stimulate the formation of active vitamin D.
+**Calcitonin** is a hormone secreted by certain cells of the thyroid gland in mammals. When the level of blood calcium increases, calcitonin is released to prevent hypercalcemia (abnormally high levels of calcium).
+## Hypercalcemia (High Blood Calcium Levels)
+Hypercalcemia is an abnormally high level of calcium in the blood. Excessive calcium in the blood is harmful to all tissues but especially the kidneys, nervous system, heart, and blood vessels. Extremely high calcium levels can be life threatening. The signs associated with this condition depend on how high the calcium level is, how quickly it develops, and how long it lasts. The most common signs are increased thirst and urination, followed by reduced appetite, vomiting, constipation, weakness, depression, muscle twitching, and seizures.
+In dogs, hypercalcemia is often associated with tumors (especially lymphoma, anal sac tumors, and multiple myeloma), an underactive adrenal gland (Addison disease), or kidney disease. Less common causes include an overactive parathyroid gland, vitamin D overdose, and granulomatous disease ( see Table: [Causes and Treatment of Increased Blood Calcium Levels (Hypercalcemia)](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#v55077054)).
+Hypercalcemia is treated by identifying and treating the underlying condition that is causing it. However, the cause may not always be apparent. Supportive treatment, including fluids, diuretics (“water pills”), and glucocorticoids, is often needed to lower the level of calcium in the blood. Additional drugs are also available. Specific treatments are listed in the table [Causes and Treatment of Increased Blood Calcium Levels (Hypercalcemia)](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#v55077054).
+Table
+Causes and Treatment of Increased Blood Calcium Levels (Hypercalcemia)
+Table
+Causes and Treatment of Increased Blood Calcium Levels (Hypercalcemia)
+Causes and Treatment of Increased Blood Calcium Levels (Hypercalcemia)
+| Cause  | Reason  | Treatment  |
+| --- | --- | --- |
+| Primary hyperparathyroidism (relatively rare in dogs)  | Parathyroid glands are overactive (often due to a tumor) and secrete excessive parathyroid hormone  | Removal or destruction of tumor  |
+| Hypercalcemia caused by cancer (malignant hypercalcemia)  | Increased bone breakdown and resorption triggered by cancer cells causes higher levels of calcium in blood  | Depends on specific type of cancer  |
+| Hypoadrenocorticism (Addison’s disease)  | Multiple factors involved; up to 30% of dogs with Addison’s disease have increased calcium levels  | Treatment of underlying disease normalizes calcium levels  |
+| Chronic kidney failure  | Exact mechanism unknown  | Supportive care  |
+| Vitamin toxicity  | Vitamin D supplements taken in excess (for example, to treat hypoparathyroidism); accidental ingestion of calcipotriene (a human psoriasis medicine) or of rodent poisons containing calcitriol (no longer widely available in the US)  | Adjustment of vitamin D dosage (if from medication); calcipotriene poisonings are often fatal  |
+| Granulomatous disease (masses of white blood cells that can form because of certain fungal and parasitic infections)  | Inflammation activates the type of white blood cells that can increase levels of vitamin D  | Treatment of underlying disease, for example, antifungal drugs or surgery  |
+| Houseplants (_Cestrum diurnum_ [the day-blooming jessa-mine], _Solanum malacoxylon, Triestum flavescens_)  | Contain substance similar to vitamin D that may cause hypercalcemia when accidentally eaten  | Supportive care; corticosteroids  |
+| Bone tumors (rare)  | Breakdown of bone increases blood calcium levels  | Depends on specific type of cancer  |
+## Hypocalcemia (Low Blood Calcium Levels)
+Hypocalcemia is an abnormally low level of calcium in the blood, leading to twitching, muscle tremors, and seizures. The causes of hypocalcemia include previous surgical removal of the parathyroid glands (leading to hypoparathyroidism), kidney disease or failure, and calcium imbalance in nursing females.
+**Hypoparathyroidism** is characterized by low calcium levels, high phosphate levels, and either temporary or permanent insufficiency of parathyroid hormone. It is uncommon in dogs, but can be caused by previous removal of the parathyroid glands as a treatment for hyperthyroidism or for a parathyroid tumor. Common signs of hypocalcemia include muscle tremors and twitches, muscle contraction, and generalized convulsions. Diagnosis is based on history, signs, low calcium and high phosphorus levels, and the blood parathyroid hormone level. Other causes of hypocalcemia must be eliminated.
+The goal of treatment is to return the level of blood calcium to normal and to eliminate the underlying cause. If an animal is having muscle spasms or seizures because of low calcium levels, immediate treatment with intravenous calcium is needed. Dietary supplements of calcium, often along with vitamin D, are prescribed for longterm treatment.
+**Chronic kidney failure** is probably the most common cause of hypocalcemia. However, the hypocalcemia that occurs with kidney failure does not tend to lead to the nervous system signs that are seen in hypoparathyroidism. Treatment usually involves dietary restriction and treatment to lower phosphate concentration in the blood.
+Several other disorders can also cause hypocalcemia ( see Table: [Causes and Treatment of Low Blood Calcium Levels (Hypocalcemia)](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs#v55077129)).
+Table
+Causes and Treatment of Low Blood Calcium Levels (Hypocalcemia)
+Table
+Causes and Treatment of Low Blood Calcium Levels (Hypocalcemia)
+Causes and Treatment of Low Blood Calcium Levels (Hypocalcemia)
+| Cause  | Reason  | Treatment  |
+| --- | --- | --- |
+| Hypoparathyroidism  | Deficiency of parathyroid hormone leads to low blood calcium levels  | See page content  |
+| Chronic kidney failure  | Damaged kidney does not effectively regulate calcium levels  | Most cases are mild; if needed, lower blood phosphate concentration through diet and medication  |
+| Eclampsia (puerperal tetany)  | Occurs in lactating females; may be due to imbalance between intake and outflow of calcium  | Intravenous calcium; weaning of litter if possible  |
+| Chelating agents (for example, ethylene glycol in antifreeze)  | Chelating agent binds to calcium  | Depends on the chelating agent involved  |
+## For More Information
+Also see professional content regarding [the parathyroid gland and calcium metabolism disorders](https://www.msdvetmanual.com/endocrine-system/the-parathyroid-glands-and-disorders-of-calcium-regulation-in-dogs-and-cats).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

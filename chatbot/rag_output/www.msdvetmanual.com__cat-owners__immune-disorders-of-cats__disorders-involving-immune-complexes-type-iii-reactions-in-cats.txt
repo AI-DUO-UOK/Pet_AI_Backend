@@ -1,0 +1,34 @@
+1. <[Immune Disorders of Cats](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Involving Immune Complexes (Type III Reactions) in Cats
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3245305
+* [Glomerulonephritis](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-immune-complexes-type-iii-reactions-in-cats#Glomerulonephritis_v3245309)|
+* [Systemic Lupus Erythematosus (Lupus)](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-immune-complexes-type-iii-reactions-in-cats#Systemic-Lupus-Erythematosus-\(Lupus\)_v3245316)|
+* [Anterior Uveitis](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-immune-complexes-type-iii-reactions-in-cats#Anterior-Uveitis_v3245325)|
+
+When antibodies bind to persistent antigens, they can create immune complexes. These antigen-antibody complexes can get lodged in small blood vessels and stimulate inappropriate inflammation of the surrounding tissue. Immune complex disorders are among the most common immune-mediated diseases. The location in the body where the immune complexes are deposited determines the signs and the course of the disease.
+## Glomerulonephritis
+[Glomerulonephritis](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats/noninfectious-diseases-of-the-urinary-system-of-cats#v3247536) is inflammation of the glomeruli (the microscopic filtering units) in the kidneys. The inflammation develops when immune complexes become trapped in the glomeruli. This leads to activation of the body’s inflammatory defense system, which, in turn, damages the glomeruli. The immune complexes often form as a consequence of some other disease, especially infections with [feline leukemia virus](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/congenital-and-inherited-disorders-affecting-multiple-body-systems-of-cats) (FELV), [feline immunodeficiency virus](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/congenital-and-inherited-disorders-affecting-multiple-body-systems-of-cats) (FIV), or [feline infectious peritonitis (FIP)](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-infectious-peritonitis-fip) virus. Inflammatory diseases or cancer may also be the cause. However, in many cats with glomerulonephritis, the triggering cause cannot be determined. Glomerulonephritis results in an excessive loss of protein in the urine (proteinuria). The finding of protein in the urine during a urine test (urinalysis) may be the first indication that your cat has glomerulonephritis. Other signs include trouble breathing or the abnormal accumulation of fluid in the abdomen or under the skin. Treatment includes managing any underlying diseases, reducing the amount of protein lost in the urine, managing any existing kidney disease, and, possibly, giving immunosuppressive drugs to reduce the formation of the immune complexes. If it goes untreated, the disease can lead to chronic kidney failure.
+## Systemic Lupus Erythematosus (Lupus)
+Systemic lupus erythematosus (often simply called lupus) is an autoimmune disease that is rare in cats. Pets with lupus form immune complexes and have antibodies in their blood that are targeted against their own body tissues. Lupus causes widespread abnormalities of the skin, mouth, muscles, nervous system, blood vessels, lungs, kidneys, joints, nervous system, and blood (anemia and/or decreased platelet numbers). Cats with lupus can develop life-threatening glomerulonephritis (see above). Multiple organs are usually affected. The history, signs of disease, physical exam, and a blood test are used to diagnose lupus. Longterm treatment with corticosteroids and other drugs that suppress the immune system are prescribed to treat the disorder. Your veterinarian will determine the most appropriate treatment for your pet.
+## Anterior Uveitis
+[Anterior uveitis](https://www.msdvetmanual.com/cat-owners/eye-disorders-of-cats/disorders-of-the-anterior-uvea-in-cats#v3244893) is inflammation of the front part of the eye. One cause of [anterior uveitis](https://www.msdvetmanual.com/cat-owners/eye-disorders-of-cats/disorders-of-the-anterior-uvea-in-cats#v3244893) is the action of antibody-antigen complexes on the iris, which causes inflammation. This type of uveitis is often caused by _Toxoplasma_ parasites or by the [feline infectious peritonitis virus](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-infectious-peritonitis-fip) in cats. Treatment of immune-mediated anterior uveitis may include medications to support healing in the eye and oral drugs that suppress the immune system.
+### For More Information
+Also see professional content regarding [Type III reactions](https://www.msdvetmanual.com/immune-system/immunologic-diseases/hypersensitivity-diseases-in-animals#v3277380).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

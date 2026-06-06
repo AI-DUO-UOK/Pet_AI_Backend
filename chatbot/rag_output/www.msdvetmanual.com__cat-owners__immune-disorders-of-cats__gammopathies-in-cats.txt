@@ -1,0 +1,19 @@
+1. <[Immune Disorders of Cats](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats)
+
+* Find In Topic
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Gammopathies in Cats
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3245402
+The body sometimes produces too many antibodies (immunoglobulins). Gammopathies are conditions in which there is a dramatic rise in the production of antibodies. There are 2 general types: polyclonal and monoclonal. In polyclonal gammopathies, levels of all the major immunoglobulins are increased. In monoclonal gammopathies, the levels of only a single type of immunoglobulin are increased.
+**Polyclonal gammopathies** result from longterm stimulation of the immune system. They may occur when a cat has longterm skin disease or longterm viral, bacterial, or fungal infections. Some longterm parasitic infections, cancers, rickettsial diseases, and immunologic diseases (for example, systemic lupus erythematosus) may also cause polyclonal gammopathies. Often, the cause is not known. Cats with [feline infectious peritonitis](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-infectious-peritonitis-fip) may initially have a monoclonal gammopathy that progresses to polyclonal.
+**Monoclonal gammopathies** may be either benign and associated with no known cause or associated with immunoglobulin-secreting cancers (called myelomas). The signs of monoclonal gammopathies vary depending on the location and severity of the source tumor(s). For example, tumors frequently develop in the cavities of flat bones in the skull, ribs, and pelvis and in the spinal cord. Fractures of diseased bones can lead to central nervous system problems, spinal disorders, or to pain and lameness. Signs can also be caused by the presence of the monoclonal antibodies themselves. For example, disease can occur when excessive antibodies accumulate in tissues, thicken blood, or suppress the formation of other antibodies.
+The tumors that produce antibody secretions can be treated with chemotherapy. Remission may occur after treatment, but the overall outlook is poor and relapse is common after 6 to 12 months.
+**Also see professional content regarding**[ gammopathies](https://www.msdvetmanual.com/immune-system/immunologic-diseases/gammopathies-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences

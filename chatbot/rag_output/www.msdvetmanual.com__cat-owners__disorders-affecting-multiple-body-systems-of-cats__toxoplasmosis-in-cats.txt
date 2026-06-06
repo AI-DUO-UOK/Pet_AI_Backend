@@ -1,0 +1,33 @@
+1. <[Disorders Affecting Multiple Body Systems of Cats](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Toxoplasmosis in Cats
+By[J. P. Dubey](https://www.ars.usda.gov/people-locations/person/?person-id=1472%20), MVSc, PhD, Animal Parasitic Diseases Laboratory, Beltsville Agricultural Research Center, USDA
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3248293
+* Multimedia|
+
+Toxoplasmosis is caused by _Toxoplasma gondii_ , a protozoan parasite that infects humans and other warm-blooded animals. It has been found worldwide. Wild and domestic felines (members of the cat family) are the only definitive hosts of the parasite. Infected cats can transmit the disease to humans and other animals.
+There are 3 infectious stages of _Toxoplasma gondii_ : tachyzoites (rapidly multiplying form), bradyzoites (tissue cyst form), and sporozoites (in oocysts, its immature form). The parasite is transmitted by consumption of infectious oocysts in cat feces, consumption of tissue cysts in infected meat, and by transfer of tachyzoites from mother to fetus through the placenta. Cats generally develop immunity after the initial infection; therefore, they shed oocysts only once in their lifetime (from approximately 3 days after infection and for about 20 days thereafter).
+Transmission of Toxoplasmosis to People
+| Exposure to feces from infected cats can cause toxoplasmosis in people, although more likely sources of infection are eating undercooked meat and handling raw meat. Still, it is recommended that pregnant women and immunocompromised individuals avoid exposure to cat feces—for example, they should not clean litter boxes or pans and should wear gloves when gardening. Any areas known to be contaminated with cat feces should be avoided. |
+| --- |
+The tachyzoite is the stage responsible for tissue damage. Therefore, signs depend on the number of tachyzoites released, the ability of the infected cat’s immune system to limit tachyzoite spread, and the organs damaged by the tachyzoites. Because adult animals with normally functioning immune systems control tachyzoite spread efficiently, cats with toxoplasmosis usually have no signs of illness. However, in kittens or in adults with suppressed immune systems (such as those infected with the feline leukemia or immunodeficiency viruses) tachyzoites spread throughout the body. The signs include fever, diarrhea, cough, difficulty breathing, jaundice, seizures, and death.
+Laboratory tests are used to diagnose toxoplasmosis. In many cases, treatment is not necessary in infected cats. If warranted, your veterinarian will prescribe antibiotics to treat toxoplasmosis. Anticonvulsant medications may be used to control seizures. Fluids or intravenous feeding may be necessary for animals that are dehydrated or severely weakened due to the infection.
+Toxoplasmosis is a major concern for people with immune system dysfunction (such as people infected with the human immunodeficiency virus or HIV). In these individuals, toxoplasmosis usually leads to inflammation of the brain. Toxoplasmosis is also a major concern for pregnant women because tachyzoites can migrate across the placenta and cause birth defects in human fetuses. Infection may occur after eating undercooked meat or accidental consumption of cysts from cat feces. To prevent infection, people handling meat should wash their hands thoroughly with soap and water after contact, and also thoroughly wash all cutting boards, sink tops, knives, and other materials. The organism present in meat is killed by contact with soap and water. It can also be killed by exposure to extreme cold or heat. Tissue cysts in meat are killed by heating the meat throughout to 67°C (152.6°F) or by cooling to −13°C (8.6°F). Toxoplasma cysts in tissue are also killed by exposure to gamma irradiation. Meat of any animal should be cooked to 67°C (152.6°F) before consumption, and tasting meat while cooking or while seasoning should be avoided. Pregnant women should avoid contact with cat litter, soil, and raw meat. Pet cats should be fed only dry, canned, or cooked food. The cat litter box should be emptied daily, preferably not by a pregnant woman. Gloves should be worn while gardening. Vegetables should be washed thoroughly before eating, because they may have been contaminated with cat feces.
+**Also see professional content regarding**[ toxoplasmosis](https://www.msdvetmanual.com/generalized-conditions/toxoplasmosis/toxoplasmosis-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

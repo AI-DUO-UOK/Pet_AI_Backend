@@ -1,0 +1,45 @@
+1. <[Lung and Airway Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Cancers and Tumors of the Lung and Airway in Dogs
+By[Ned F. Kuehn](https://www.researchgate.net/scientific-contributions/80151229-Ned-F-Kuehn%20), DVM, MS, DACVIM, Michigan Veterinary Specialists
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3206559
+* [Tumors of the Nose and Sinuses](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/cancers-and-tumors-of-the-lung-and-airway-in-dogs#Tumors-of-the-Nose-and-Sinuses_v3206564)|
+* [Tumors of the Larynx and Trachea](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/cancers-and-tumors-of-the-lung-and-airway-in-dogs#Tumors-of-the-Larynx-and-Trachea_v3206571)|
+* [Primary Lung Tumors](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/cancers-and-tumors-of-the-lung-and-airway-in-dogs#Primary-Lung-Tumors_v3206576)|
+* [Metastatic Lung Tumors](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/cancers-and-tumors-of-the-lung-and-airway-in-dogs#Metastatic-Lung-Tumors_v3206584)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/cancers-and-tumors-of-the-lung-and-airway-in-dogs#For-More-Information_v34441513)|
+
+The respiratory system can be a host to many different tumors. The following are the more common tumors found in the lungs and airways of dogs.
+## Tumors of the Nose and Sinuses
+Tumors of the nose and sinuses account for about 1 to 2% of all canine tumors. The incidence is slightly higher in males and in older dogs. The average age at time of diagnosis is 9.5–10 years of age. In dogs, virtually all of these tumors are cancerous (malignant). Long-nosed and medium-nosed breeds appear to be at higher risk than short-nosed (brachycephalic) breeds. Tumors of the nose and sinuses tend to aggressively invade surrounding tissues but are not as prone to spread to other areas of the body (metastasize). When they do metastasize, the most commonly affected sites are the lymph nodes, lungs, and brain. In general, if untreated, survival is 3 to 5 months after diagnosis.
+Chronic nasal discharge containing mucus, pus, or blood is the most common sign. Initially, the discharge involves one side of the nose, but it often becomes 2-sided. Periodic sneezing, bleeding from the nose, and snoring may occur. Deformities of the face and mouth result from the destruction of bony or soft-tissue nasal and sinus structures. Extension of these tumors behind the eyeballs can result in protruding eyeballs, excessive tear production, and inflammation of the cornea. Late in the disease, central nervous system signs, such as disorientation, blindness, seizures, stupor, and coma, may develop if the tumor extends into the upper skull.
+Diagnosis is based on the history and clinical signs. Nasal x-rays or computed tomography (CT) scans typically show increased density of the nasal cavity and sinuses as well as evidence of bone destruction. Nasal CT scans are preferred because they provide better detail than x-rays when attempting to distinguish tumors of the nose from other causes of chronic nasal discharge. A biopsy of tumor tissue can provide a definite diagnosis.
+The recommended treatment largely depends on the tumor type and the extent of disease. Treatments such as aggressive surgical removal of the tumor, drug therapies, radiation therapy, or combinations of these provide a more favorable outlook when diagnosis is made early.
+## Tumors of the Larynx and Trachea
+Tumors of the larynx and trachea are rare in dogs. The most common signs of tumors of the larynx include labored breathing when inhaling or after exercise; high-pitched noisy breathing; voice change (hoarse bark or loss of voice); and coughing. Similar signs, including coughing, labored breathing, and high-pitched, noisy breathing, are associated with tumors of the trachea. The animal may cough up blood, but this is rare. The degree of labored breathing often relates to the degree of obstruction of the windpipe.
+A diagnosis can often be made from the history and clinical findings and by eliminating other causes of upper airway obstruction or coughing. The tumor mass may be seen by the veterinarian during examination of the larynx or trachea with an endoscope or on x-rays. Definitive diagnosis can be made after a biopsy. Treatment involves surgically removing the tumor. Some types of tumors respond to radiation therapy.
+## Primary Lung Tumors
+Tumors that originate in the lung (primary lung tumors) are rare in dogs. Metastatic lung cancers (cancers that spread to the lungs from other locations) are much more common in dogs than primary lung cancers. However, primary lung cancers are being seen more frequently over the last 20 years. This is likely attributable to an increased average life span, better detection and awareness, or, possibly, increasing exposure to cancer-causing agents in the environment. Most primary lung tumors are diagnosed at an average age of 10 to 12 years in dogs. All breeds and both genders appear to be equally affected. Of the primary lung tumors in dogs, more than 80% are malignant (cancerous). Primary lung tumors can spread to other areas of the lungs, lymph nodes, bones, and the brain, although spread to other organs may also occur.
+Primary lung tumors have variable signs, which depend on the location of the tumor, rate of tumor growth, and the presence of previous or current lung disease. The most common signs in dogs include coughing, weight loss, lethargy, and labored breathing. Other signs include poor appetite, reduced exercise tolerance, rapid breathing, wheezing, vomiting or regurgitation, fever, and lameness. However, 25% of dogs show no signs related to the tumor.
+Chest x-rays are the first step in making a diagnosis in animals that have signs suggesting lung cancer. However, many primary lung tumors are identified when x-rays are taken for other reasons. A definitive diagnosis of lung cancer requires a sample of tissue (biopsy).
+Surgery to remove the portion of the lung containing the tumor is the recommended treatment in most cases. Tumors that cannot be operated on or those that have spread may be treated with chemotherapy. A dog with a single primary lung tumor that has not spread to the lymph nodes has the longest average survival time (an average of 12 months); if the lymph nodes are involved or multiple tumors are found at the time of diagnosis, survival time is shortened to only 2 months. Recurrence or spread of the tumor is a common cause of death.
+## Metastatic Lung Tumors
+A metastatic lung tumor is one that originates in another part of the body and then spreads to the lungs. A tumor may spread to the lungs through the blood or lymph systems or by direct extension of tumor cells from a nearby location in the body. The signs of metastatic lung disease are similar to those of primary lung tumors except that coughing is less common. The severity of signs depends on the location of the tumor and whether the lesions are single or multiple. The diagnosis and treatment are similar to that for primary lung tumors. Chemotherapy or radiation therapy may be useful with certain tumor types that are not well-suited for surgery. Dogs that have tumors that commonly metastasize to the lungs should have chest x-rays done before surgery to help determine whether metastasis has occurred. However, more than 40% of dogs with metastatic lung tumors have tumors that are too small to be seen on x-rays. Computed tomography (CT scan) can be performed to identify some of these lung tumors. Because spread to the lung occurs late in the clinical course of a malignant tumor, the outlook is poor.
+## For More Information
+Also see professional content regarding [cancer and tumors of the lung and airway](https://www.msdvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/neoplasia-of-the-respiratory-system-in-dogs-and-cats).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

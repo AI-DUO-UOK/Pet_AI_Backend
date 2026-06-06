@@ -1,0 +1,17 @@
+# White Blood Cell Disorders, Leukemia, and Lymphoma of Cats
+White blood cells (leukocytes) include neutrophils, lymphocytes, monocytes, eosinophils, and basophils. Complete blood counts (CBCs) measure the numbers of each type and help diagnose disease. An increased total count is called **leukocytosis**. A decreased count is called **leukopenia**.
+**Neutrophilia** (a high number of neutrophils) is often caused by inflammation, by hormones in the body that are associated with stress, or by corticosteroid drugs.
+**Neutropenia** (a low number of neutrophils) occurs when neutrophils stick to damaged vessels, are used up in severe infections, are destroyed, or are produced in low numbers in the bone marrow. It occurs in cases of overwhelming bacterial infections, some drug reactions (which can cause **pancytopenia**, a condition in which all blood cells show low counts), and viral diseases such as feline leukemia virus (FeLV) infection and distemper.
+**Eosinophilia** (a high number of eosinophils) occurs in cases of allergic reactions, infections by parasites (for example, fleas and intestinal worms), and inflammation of the intestines, kidneys, lungs, or skin. It can also appear with some cancers.
+**Hypereosinophilic syndrome**, in which the number of eosinophils remains very high and they invade organs, has been reported in cats. The cause of this syndrome is unknown, and repeated tests might be required for diagnosis.
+**Eosinopenia** (a low number of eosinophils) often results from stress or corticosteroid treatment.
+**Chédiak‑Higashi syndrome**, an inherited condition in Persian cats and people, causes defective white blood cells, platelet abnormalities, and decreased skin and eye pigment, leading to increased infections and bleeding.
+**Pelger‑Huët anomaly** is an inherited condition in which certain white blood cells (granulocytes) appear immature but usually function normally. Many affected cats have no symptoms, but severe forms can include bone abnormalities and higher infection risk.
+**Leukemia** is a type of cancer marked by an increased number of abnormal white blood cells in the blood and bone marrow.
+* In **acute leukemia**, many immature abnormal cells replace normal bone marrow cells, causing severe illness, anemia, and low numbers of platelets. The outlook for affected cats is generally poor, and treatment is relatively ineffective over the long term.
+* In **chronic leukemia**, the abnormal cells are more mature. Counts of other cells usually remain normal. Affected cats often have few symptoms, respond better to treatment, and survive longer.
+**Lymphoma** is a cancer related to leukemia that involves lymphocytes and usually starts in the lymph nodes or lymphoid tissues, such as the spleen.
+Because lymphocytes are present throughout the body, lymphoma can arise in the chest, digestive tract, kidneys, brain and spinal cord, eyes, skin, or nose.
+If immature white blood cells are evident in the blood, veterinarians often investigate for leukemia or lymphoma in other parts of the body and recommend treatment based on lab findings and disease location.
+Test your Knowledge nowTake a Quiz!
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**

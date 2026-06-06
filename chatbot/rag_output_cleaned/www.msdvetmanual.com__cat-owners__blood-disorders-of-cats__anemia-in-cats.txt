@@ -1,0 +1,79 @@
+# Anemia in Cats
+A lower-than-normal number of red blood cells in the bloodstream is called anemia. It can result from blood loss, destruction of red blood cells, or decreased red blood cell production. When there are too few red blood cells, the blood carries less oxygen and animals become weak and tired.
+Anemia is a symptom of disease, not a final diagnosis. The treatment and final outcome of anemia depend on the cause.
+Major causes of anemia include:
+* loss of blood
+* destruction of red blood cells
+* decreased production of red blood cells
+In cases of severe blood loss, a decrease in the body's overall amount of blood and in the blood's ability to deliver sufficient oxygen to organs is usually the reason for death.
+Decreased red blood cell production can result from disease that directly affects the bone marrow or from other causes. Some causes include infections (such as infection with [feline leukemia virus [FeLV]]()), inherited conditions, chronic kidney disease (CKD) drugs, toxins, and autoimmune disease. Some drugs, such as acetaminophen, can destroy red blood cells and cause anemia in cats.
+Anemia is classified as regenerative or nonregenerative:
+* In **regenerative anemias**, the bone marrow responds to the low red blood cell count by increasing the production of red blood cells.
+* In **nonregenerative anemias**, the bone marrow does not respond to the low red blood cell counts. Nonregenerative anemias often result either from bone marrow disease or from CKD.
+## What Are the Symptoms of Anemia?
+Symptoms of anemia depend on how severe it is, how quickly it developed, and what caused it. Sudden, severe anemia can lead to collapse and death if more than one‑third of the body's total amount of blood is rapidly lost and not replaced. After rapid blood loss, the animal often has a fast heart rate, pale gums, and low blood pressure.
+The cause of anemia might be obvious, such as major trauma that causes massive bleeding. If no bleeding is evident from outside the body, the veterinarian will look for hidden bleeding inside the body, such as from a ruptured tumor on the spleen, a clotting disorder, or a severe parasite infection. If red blood cells are being destroyed inside the body, the cat might look jaundiced (have yellow gums, skin, or eye whites).
+Cats with long‑term anemia have time to adjust to having fewer red blood cells, so symptoms develop slowly. Signs of chronic anemia include tiredness, weakness, and poor appetite. Physical symptoms often include pale gums, a fast heart rate, and sometimes an enlarged spleen or heart murmur.
+## How Is Anemia Diagnosed?
+A complete medical history is important for diagnosing anemia. Your veterinarian might ask:
+* How long has the cat had symptoms?
+* Has the cat been exposed to toxins such as rat poisons, heavy metals (such as lead, zinc, or copper), or poisonous plants?
+* What drugs and vaccines has the cat received?
+* Where has the cat traveled?
+* Has the cat had other illnesses?
+The vet might draw blood for a complete blood count (CBC) to help determine how severe the anemia is, how the bone marrow is responding, and what the condition of other blood cells is. Additional tests might be done to evaluate the size and shape of red blood cells and to detect red blood cell parasites.
+## Regenerative Anemias
+Regenerative anemias are anemias that occur when the bone marrow can still make new red blood cells. The main types are blood loss anemia and hemolytic anemia.
+**Blood loss anemia** happens when a cat loses blood quickly or over time. Sudden, heavy bleeding can cause shock and death if about one‑third of the blood volume is lost and not treated rapidly with IV (intravenous) fluids and/or transfusions.
+Bleeding might be obvious (for example, from a serious injury) or hidden. If no clear source is evident, the veterinarian will look for clotting disorders, bleeding tumors, stomach or intestinal ulcers, and parasites.
+Slow, long‑term blood loss can cause **iron‑deficiency anemia**, in which red blood cells are small and have low amounts of hemoglobin. In kittens, iron-deficiency anemia is usually caused by fleas, lice, or intestinal worms. In older cats, ulcers or tumors in the digestive tract are a more likely cause.
+**Hemolytic anemia** occurs when red blood cells are destroyed faster than they are produced. Most hemolytic anemias are regenerative. Causes include immune system diseases, damage to small blood vessels, physical injury to red blood cells, metabolic disorders, toxins, infections, and inherited conditions.
+A very serious form of hemolytic anemia is **immune‑mediated hemolytic anemia (IMHA)**, in which the immune system does not recognize red blood cells as “self” and makes antibodies against them. Sometimes these antibodies also attack young red blood cells in the bone marrow, so the anemia becomes nonregenerative.
+IMHA can occur on its own or be triggered by tumors, infections, drugs, or vaccines. Affected cats show typical symptoms of anemia, such as weakness and pale gums, and often jaundice, fever, and an enlarged spleen. Illness can develop gradually or very suddenly. The goal of treatment is to stop red blood cell destruction by giving the animal strong immune‑suppressing drugs, to provide blood transfusions as needed, and to manage any underlying disease.
+### Anemia From Toxins, Infections, or Genetic Diseases
+Many toxins can cause anemia if they are swallowed accidentally or if medications are misused. Important examples of anemia-causing toxins include:
+* human and veterinary drugs: acetaminophen, aspirin, naproxen, penicillin, many antibiotics, some antiparasitic products
+* plants and foods: oak, red maple, bracken fern, onions, fava beans
+* chemicals and heavy metals: copper, lead, selenium, zinc
+It is important to give the veterinarian a list of all your pet's medications, supplements, and possible exposures to toxins.
+Numerous infections can lead to anemia by damaging red blood cells or interfering with bone marrow. In cats, key infectious causes include:
+Blood tests are needed to identify these infections.
+Some cats are born with red blood cell disorders that cause chronic or recurring anemia:
+1. **Pyruvate kinase deficiency**, which occurs in cat breeds such as Abyssinians and Somalis, causes long‑term hemolytic anemia that can come and go. Some cats improve with spleen removal or corticosteroids.
+2. **Porphyria** causes porphyrins (components of hemoglobin) to build up. It can affect cats, people, and other animals.
+Specific tests are available for these inherited conditions.
+### Anemia From Neonatal Isoerythrolysis or Hypophosphatemia
+**Neonatal isoerythrolysis** is a severe immune‑mediated anemia in newborn kittens. It occurs when a kitten nurses colostrum from a queen whose milk contains antibodies against the kitten's red blood cells.
+This can happen if the queen was exposed to a different blood type during a previous pregnancy or received an unmatched blood transfusion. Type B cats naturally have antibodies against type A blood, so type A or AB kittens nursing from a type B queen are at risk.
+Antibodies from the colostrum enter the kittens’ bloodstream and attach to red blood cells, causing them to rupture. Kittens look normal at birth but develop severe hemolytic anemia within 2–3 days and might die if not treated right away.
+Neonatal isoerythrolysis is diagnosed via blood tests. The treatment is to stop the kitten from nursing from the queen’s colostrum, give the kitten safe colostrum or a milk replacer, and provide supportive care, including transfusions if needed.
+Neonatal isoerythrolysis can be prevented by blood-typing the queen and kittens, withholding risky colostrum, and using colostrum that does not contain harmful antibodies.
+Anemia can also occur in cats that have **hypophosphatemia**, a low blood phosphate level. Phosphate levels can be low in some cats that have diabetes mellitus or fatty liver disease, or in cats recovering from starvation (refeeding syndrome), when minerals rapidly shift into cells. Anemia results when low phosphate levels cause red blood cells to break down.
+## Nonregenerative Anemias
+In nonregenerative anemias, the bone marrow is not able to produce enough new red blood cells. Common causes include chronic kidney disease, poor nutrition, bone marrow disorders, and long‑term inflammation or illness.
+Nutritional deficiencies cause anemia when the diet lacks nutrients needed for red blood cell production. Such anemia usually develops slowly and might begin as a regenerative anemia that becomes nonregenerative after key nutrients are used up.
+Important nutrients include iron, copper, vitamin B12, vitamin B6, riboflavin, niacin, vitamin E, protein, and energy sources. In cats, iron‑deficiency anemia can occur, but it is more often due to chronic blood loss than to low amounts of iron in the diet.
+**Anemia from chronic disease** is typically mild to moderate and is the most common anemia in animals. It occurs in cats that have long‑standing infections or inflammation, tumors, liver disease, or hormonal disorders such as adrenal disease or low thyroid function.
+Anemia can result from chronic conditions such as these because inflammatory cells release cytokines, which are proteins that decrease iron availability, shorten red blood cell lifespan, and interfere with bone marrow regeneration. Treating the underlying condition usually improves the anemia.
+Chronic kidney disease (CKD) is a frequent cause of anemia. The kidneys make erythropoietin, a hormone that stimulates red blood cell production in the marrow. Diseased kidneys make less erythropoietin, so red blood cell production falls and anemia develops. A synthetic form of erythropoietin can be given to the patient for treatment, and extra iron is often needed to support new cell production.
+### Anemia From Bone Marrow Diseases
+Bone marrow diseases can cause nonregenerative anemia and also decrease white blood cells and platelets. When bone marrow damage is extensive, levels of white blood cells usually drop first, then platelets, then red blood cells.
+### Aplastic Anemia
+Aplastic anemia is a severe bone marrow disorder in which normal blood‑forming centers in the body are greatly decreased and replaced by fat. Affected cats have very low red and white blood cell counts and low platelets.
+Causes of aplastic anemia in cats include FeLV infection, drugs such as methimazole and some chemotherapy agents, toxins, radiation, and sometimes immune‑mediated attack. Bone marrow tests are required for diagnosis.
+The goal in treating aplastic anemia is to remove the cause when possible, provide supportive care with antibiotics and transfusions, and use immune‑suppressing or marrow‑stimulating drugs as needed. Bone marrow transplantation can help in select cases.
+### Anemia From Pure Red Cell Aplasia
+In pure red cell aplasia, only the immature cells that will develop into red blood cells are affected. The bone marrow shows a marked decrease in cells that form red blood cells, but other cell lines might be normal.
+This condition has been reported in cats, including some with FeLV. Some cases are immune‑mediated and respond to immune‑suppressing drugs. Severe anemia might require transfusions.
+### Anemia From Primary Leukemias
+Primary leukemias are cancers in which abnormal white blood cells crowd out normal blood‑forming cells, causing anemia and low counts of white blood cells and platelets. They are uncommon in cats, but when they occur, they are often linked to FeLV or FIV.
+Acute leukemias develop suddenly, with many immature cells and a poor response to chemotherapy. Chronic leukemias progress more slowly, involve overproduction of one cell line, respond better to treatment, and are less likely to cause anemia.
+### Anemia From Myelodysplasia
+Myelodysplasia (myelodysplastic syndrome) is a disorder in which blood‑forming cells do not develop correctly. This syndrome leads to nonregenerative anemia and sometimes low counts of white blood cells or platelets and is considered the stage before the development of leukemia.
+Myelodysplasia is common in FeLV‑positive cats but can also result from other tumors, some drugs, or stem cell mutations. Some cats respond to synthetic hormones and steroids. Blood transfusions can provide support.
+Myelodysplasia can progress to leukemia, and many cats eventually die or are euthanized because of infection, bleeding, or severe anemia.
+### Anemia From Myelofibrosis
+Myelofibrosis is a slowly developing disease in which normal bone marrow cells are replaced by abnormal cells, causing marrow failure, anemia, and enlargement of the spleen and liver. It can arise on its own or after cancer, immune‑mediated hemolytic anemia, radiation, or inherited conditions.
+Myelofibrosis is diagnosed via bone marrow biopsy under anesthesia. Treatment depends on the cause but usually involves immune‑suppressing drugs, which increase infection risk, so careful management and follow‑up are needed.
+Test your Knowledge nowTake a Quiz!
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**

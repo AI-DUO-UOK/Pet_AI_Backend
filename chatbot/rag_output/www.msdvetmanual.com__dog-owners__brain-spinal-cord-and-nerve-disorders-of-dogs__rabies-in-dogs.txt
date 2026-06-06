@@ -1,0 +1,46 @@
+1. <[Brain, Spinal Cord, and Nerve Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Rabies in Dogs
+By[Charles E. Rupprecht](https://www.researchgate.net/profile/Charles_Rupprecht2%20), VMD, PhD, LYSSA LLC
+Reviewed/Revised Feb 2018 | Modified Sept 2024
+v3206070
+* [Signs and Diagnosis](https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs#Signs-and-Diagnosis_v3206077)|
+* [Control of Rabies](https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs#Control-of-Rabies_v3206083)|
+* [Management of Suspected Rabies Cases](https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs#Management-of-Suspected-Rabies-Cases_v3206088)|
+* [Risk of Passing Rabies to People](https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs#Risk-of-Passing-Rabies-to-People_v3206091)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs#For-More-Information_v34440381)|
+
+Rabies is a viral infection of the nervous system that mainly affects carnivores and bats, although it can affect any mammal. It is caused by the rabies virus. It causes sudden, progressive inflammation in the brain and spinal cord. Once clinical signs appear, it is fatal. Rabies is found throughout the world, although a few countries are declared rabies-free due to successful elimination programs. Islands that have a strict quarantine program in effect are often rabies-free. In North America and Europe, rabies has been mostly eliminated in domestic dogs, although it affects wildlife, especially foxes, raccoons, skunks, and bats.
+Transmission is almost always by the bite of an infected animal, when the saliva containing the rabies virus is introduced into the body. The virus can be in the body for weeks before signs develop. Most cases in dogs develop within 21 to 80 days after exposure, but the incubation period may be considerably shorter or longer.
+## Signs and Diagnosis
+Most rabid animals show signs of central nervous system disturbance. The most reliable indicators are sudden and severe behavioral changes and unexplained paralysis that worsens over time. Behavioral changes can include sudden loss of appetite, signs of apprehension or nervousness, irritability, and hyperexcitability. The animal may seek solitude, or an otherwise unfriendly animal may become friendly. Uncharacteristic aggressiveness can develop, and wild animals may lose their fear of people. Animals that are normally nocturnal may be seen wandering around during the daytime.
+The furious form of rabies is the classic “mad-dog” syndrome, although it is seen in all species. The animal becomes irritable and may viciously and aggressively use its teeth and claws with the slightest provocation. The posture is alert and anxious, with pupils dilated. Noise can invite attack. Such animals lose fear and caution of other animals. Young pups seek out human companionship and are overly playful, but will bite even when petted and become vicious within a few hours. As the disease progresses, seizures and lack of muscle coordination are common. Death is caused by progressive paralysis.
+The paralytic form of rabies (or "dumb rabies") usually involves paralysis of the throat and jaw muscles, often with excess salivation and inability to swallow. Drooping of the lower jaw is common. These animals may not be vicious and rarely attempt to bite. People can be infected by this form when examining the dog’s mouth or giving it medication with bare hands. Paralysis progresses throughout the body and death occurs within a few hours.
+Diagnosis is difficult, especially in areas where rabies is not common. Early stages of rabies can be easily confused with other diseases or with normal aggressive tendencies. A rabies diagnosis must be verified with laboratory tests. The animal must be euthanized and the remains sent for laboratory analysis.
+## Control of Rabies
+The World Health Organization (WHO) has strict guidelines to control rabies in the dog population. These guidelines include: 1) notification of suspected cases, with euthanasia of dogs with clinical signs and those bitten by suspected rabid animals; 2) leash laws and quarantine to reduce contact between susceptible dogs; 3) a mass immunization program with continued boosters; 4) stray dog control and euthanasia of unvaccinated dogs that roam freely; and 5) dog registration programs.
+Rabies vaccination programs are strictly enforced. The Compendium of Animal Rabies Control recommends vaccination every 3 years, after an initial series of 2 vaccines, 1 year apart. Because rabies is being seen more frequently in cats, they should also be vaccinated.
+## Management of Suspected Rabies Cases
+In areas where rabies is known to exist in the wildlife population (including bats), an animal bitten or otherwise exposed by a wild, carnivorous mammal or a bat that is not available for testing should be regarded as having been exposed to rabies. The National Association of State Public Health Veterinarians recommends that any unvaccinated dog exposed to rabies be euthanized immediately. If the owner is unwilling to do this, the animal must be placed in strict isolation, with no human or animal contact, for 6 months and be vaccinated against rabies 1 month before release. If an exposed animal is currently vaccinated, it should be revaccinated immediately and closely observed for 45 days.
+## Risk of Passing Rabies to People
+When a person is exposed to an animal suspected of rabies, the risk of rabies transmission should be evaluated carefully. Raccoons, foxes, skunks, and other wild carnivores and bats present a considerable risk where the disease is found, regardless of whether or not abnormal behavior has been seen. Insect-eating bats, though small, can inflict wounds with their teeth and should never be caught or handled with bare hands. Bat bites may be ignored or go unnoticed, so direct contact with bats could be considered a risk of virus exposure.
+Any wild carnivore or bat suspected of exposing a person to rabies should be considered rabid unless proved otherwise by laboratory diagnosis; ideally, this includes bats in direct contact with people, such as those found in rooms with sleeping or otherwise unaware persons. Wildlife, including wolf hybrids, should never be kept as pets; if a pet wild animal or wolf hybrid exposes a person or domestic animal to rabies, it should be euthanized and tested for rabies.
+Any healthy domestic dog, cat, or ferret, whether vaccinated or not, that bites a person or otherwise deposits saliva into a fresh wound, should be confined for 10 days for observation. If the animal develops signs within those 10 days, it should be promptly euthanized and submitted for testing. If the animal responsible for the exposure is stray or unwanted, it should be euthanized and submitted for testing immediately.
+Pre-exposure vaccination is strongly recommended for all people in high-risk groups, such as veterinary staff, animal control officers, rabies and diagnostic laboratory workers, and travelers working in countries where canine rabies is prevalent. However, pre-exposure vaccination alone cannot be relied on in the event of later exposure to rabies virus and must be supplemented by additional doses of vaccine. For healthy, unvaccinated people bitten by a rabid animal, treatment consists of wound care, local injection of rabies antibodies into the wound, and several doses of vaccine over a 2-week period. When provided in a timely and appropriate manner, modern postexposure treatment virtually assures human survival.
+## For More Information
+Also see professional content regarding [rabies](https://www.msdvetmanual.com/nervous-system/rabies/rabies-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

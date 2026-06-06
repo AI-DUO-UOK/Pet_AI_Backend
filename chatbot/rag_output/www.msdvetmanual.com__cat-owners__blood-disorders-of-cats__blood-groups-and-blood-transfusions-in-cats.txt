@@ -1,0 +1,39 @@
+1. <[Blood Disorders of Cats](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Blood Groups and Blood Transfusions in Cats
+By[Nick Roman](https://www.msdvetmanual.com/authors/roman-nick), DVM, MPH, College Station Cat Clinic
+Reviewed By[Laurie Hess](https://www.msdvetmanual.com/authors/hess-laurie), DVM, DABVP, The MSD Veterinary Manual
+Reviewed/Revised Modified Mar 2026
+v108069209
+* [How Is Blood Typing Done?](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/blood-groups-and-blood-transfusions-in-cats#How-Is-Blood-Typing-Done?_v108069219)|
+* [How Are Blood Transfusions Done?](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/blood-groups-and-blood-transfusions-in-cats#How-Are-Blood-Transfusions-Done?_v108069228)|
+
+Blood groups in cats are divided into a system of three types—A, B, and AB—based on the presence of certain antigens (proteins or sugars) on the surface of [red blood cells](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/red-blood-cells-of-cats). Type A is the most common (about 99% of US cats), but some pure breeds are more likely to have type B. Type AB is rare.
+In 2007, researchers found a new feline blood group separate from the AB system and named it Mik, after “Mike,” the first cat in which it was discovered. Since then, four or five additional blood groups, called feline erythrocyte antigens (FEAs 1–5), have been identified. Mik might be the same as FEA 1.
+There are no universal blood donor cats, because cats' immune systems produce antibodies that attack blood group antigens they don't normally have on their red blood cells (resulting in a condition called [hemolytic anemia](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/anemia-in-cats#430572c0-0bbb-4dbb-b754-df0a709b435e)).
+Just as in people, in cats blood typing is used to match blood donors and recipients; there are even some animal blood banks.
+## How Is Blood Typing Done?
+A cat’s blood type is determined by mixing a small blood sample with specific antibodies and observing the reaction. The blood type must be known before a [transfusion](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/blood-groups-and-blood-transfusions-in-cats#ec268929-c53d-4e83-803c-7b8c6153eabd) is given.
+A crossmatch test is also done to ensure that a recipient can safely receive blood from a specific blood donor. In crossmatching, components of donor blood are mixed with the recipient’s blood to check for bad reactions.
+If the donor's blood is incompatible with a recipient's blood, even a single transfusion can cause the transfused red blood cells to be rapidly destroyed.
+## How Are Blood Transfusions Done?
+Blood transfusions are often needed in emergencies, such as severe bleeding or sudden destruction of red blood cells resulting from an infection or a toxin. Transfusions can also be used to treat [anemia](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/anemia-in-cats) from other causes. Animals with [clotting disorders](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/bleeding-and-clotting-disorders-in-cats) might need repeated transfusions.
+Whole blood, artificial blood substitutes, or just red blood cells, plasma, or [platelets](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/platelets-of-cats) can be given during a transfusion.
+Transfusions must be done carefully because of possible side effects. The most serious potential side effect is the rapid destruction of transfused red blood cells (the reaction is called hemolysis). Hemolysis is uncommon in domestic animals.
+Other complications from transfusions include the spread of infections—such as [feline leukemia virus (FeLV)](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-leukemia-virus-felv) infection or [immune-deficiency diseases](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/immune-deficiency-diseases-in-cats)—from an infected donor. Donors should be tested for infectious diseases before giving blood.
+If too much blood is transfused, [pulmonary edema](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/pulmonary-edema-in-cats) (fluid buildup in the lungs) can occur. Other, less common reactions include fever, hives, or vomiting.
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

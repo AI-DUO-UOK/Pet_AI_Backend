@@ -1,0 +1,76 @@
+1. <[Bone, Joint, and Muscle Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Associated with Calcium, Phosphorus, and Vitamin D in Dogs
+By[Walter Grünberg](https://www.linkedin.com/in/walter-gruenberg-805a7812/%20), PhD, DECAR, DECBHM, Assoc DACVIM, Faculty of Veterinary Medicine, Justus-Liebig-Universität Giessen, Giessen, Germany
+Reviewed/Revised Mar 2018 | Modified Sept 2024
+v3205188
+* [Rickets](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs#Rickets_v3205199)|
+* [Adult Rickets (Osteomalacia)](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs#Adult-Rickets-\(Osteomalacia\)_v3205207)|
+* [Rubber Jaw Syndrome (Fibrous Osteodystrophy)](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs#Rubber-Jaw-Syndrome-\(Fibrous-Osteodystrophy\)_v3205216)|
+* [Hypoparathyroidism](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs#Hypoparathyroidism_v3205265)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs#For-More-Information_v34423757)|
+* Multimedia|
+
+**Also see professional content regarding**[ disorders associated with calcium, phosphorus and Vitamin D](https://www.msdvetmanual.com/musculoskeletal-system/dystrophies-associated-with-calcium-phosphorus-and-vitamin-d/overview-of-dystrophies-associated-with-calcium-phosphorus-and-vitamin-d-in-animals).
+Defective bone formation is called osteodystrophy. It is caused in most cases by deficiencies or imbalances of calcium, phosphorus, vitamin D, and the hormone that regulates them (parathyroid hormone), all of which are important in creating and maintaining strong, healthy bones.
+The primary source of calcium and phosphorus is the diet, but a number of factors affect how the body absorbs calcium and phosphorus. These include the source of the minerals as well as the levels of vitamin D in the body. Vitamin D is obtained either through the diet or by exposure to sunlight. Because of the role it plays in the body, if the vitamin or its activity is decreased, calcium and phosphorus absorption are reduced. Abnormalities of the bones can result, as well as other nutritional and metabolic complications.
+In general, supplementing a dog’s diet with too much calcium or phosphorus can increase its susceptibility to diseases to which it is genetically prone. Specifically, giant-breed dogs fed excess calcium are more likely to develop osteochondrosis ([Osteochondrosis](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/other-joint-disorders-in-dogs#v3205292)) and hypertrophic osteodystrophy ([Hypertrophic Osteodystrophy](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/bone-disorders-in-dogs#v3205504)).
+## Rickets
+Rickets is a rare disease of young, growing animals that causes soft and deformed bones. It is commonly caused by insufficient phosphorus or vitamin D in the diet. More rarely, calcium deficiency is to blame. An excess of calcium has caused rickets-like signs in some dogs. As in most diets causing defective bone formation (osteodystrophies), the cause is typically an imbalance in the ratio of calcium to phosphorus in the diet. Animals fed all-meat diets commonly develop rickets.
+Signs may include bone pain and swelling, a stiff gait or limp, difficulty in rising, bowed limbs, and fractures. Affected puppies may become quiet and reluctant to play. Touching the bones will cause pain, and folding fractures of long bones and vertebrae are common. In folding fractures, pressure on the bones causes them to slowly “fold” over and deform instead of fracturing. X-rays will show distortions in the bone. In advanced cases, limbs can be deformed due to the bones growing at unequal rates.
+The outlook for treating rickets is good if there are no broken bones or irreversible damage to the bone. The primary treatment is to correct the diet. Exposure to sunlight (ultraviolet radiation) will also increase the production of vitamin D.
+**Studies show that many homemade diets for dogs are deficient in minerals and fail to achieve a proper calcium-to-phosphorus ratio. Therefore a high-quality commercial food, or one designed by a credentialed veterinary nutritionist, is recommended.**
+## Adult Rickets (Osteomalacia)
+Osteomalacia develops similarly to rickets but in mature bones. Because bones mature at different rates, both rickets and osteomalacia can be seen in the same animal.
+Affected animals may fail to thrive and may crave and eat substances such as paint chips, clay, plaster, or dirt. Fractures are most commonly found in the ribs, pelvis, and long bones (such as the main bones of the front and hind legs). Deformities may also be seen in the spine, including an abnormal inward curving of the spine in the lower area of the back (**lordosis**) or an abnormal outward curving of the spine (**kyphosis**).
+To establish a firm diagnosis, veterinarians will evaluate a dog’s diet to make sure it provides enough calcium, phosphorus, and vitamin D for healthy bones. X‑rays will reveal the effects of severe osteomalacia on the skeleton.
+Affected animals should be confined for the first few weeks while the diet is corrected. The response to proper nutrition is rapid. Within 1 week the animals become more active and show an improved attitude. Jumping or climbing must be prevented because the skeleton is still susceptible to fractures. Restrictions can usually be relaxed after 3 weeks, but confinement with limited movement is recommended until the skeleton returns to normal. Response to treatment can be monitored using x-rays.
+## Rubber Jaw Syndrome (Fibrous Osteodystrophy)
+Two metabolic disorders in dogs produce rubber jaw syndrome: primary hyperparathyroidism and hyperparathyroidism due to kidney disease.
+### Primary Hyperparathyroidism
+In primary hyperparathyroidism, the parathyroid gland produces too much parathyroid hormone. This hormone controls the metabolism of calcium and phosphorus in the body. The disease occurs infrequently in older dogs.
+When too much parathyroid hormone is released over a long period of time, minerals are leached from the skeleton and replaced by immature fibrous connective tissue. This condition, called **fibrous osteodystrophy** , affects the entire skeleton but tends to concentrate in the bones of the skull.
+Dogs with primary hyperparathyroidism may become lame and develop fractures of the long bones after minor physical trauma. Compression fractures in the spine place pressure on the spinal cord, which may disable motor and sensory functions. In some cases the condition causes a thickening of facial bones. Nasal cavities may be damaged and teeth loosened. Some dogs lose the ability to close the mouth properly and develop slow-healing sores in the gums. Often the jaw-bones become coarsely thickened, while bones in the skull grow thin and appear “moth-eaten” in x-rays. The name “rubber jaw” syndrome refers to advanced cases in which the jaw can be twisted gently due to the degeneration of the bone.
+Tests on animals with primary hyperparathyroidism will show an abnormally high level of calcium in the blood. Other tests can be performed to determine phosphorus and parathyroid hormone levels. Because abnormally high levels of calcium in the blood may be associated with many other diseases, an animal must be thoroughly examined before confirming a diagnosis of primary hyperparathyroidism.
+The goal of treatment is to eliminate the source of excessive parathyroid hormone production. If a tumor is causing the increased parathyroid hormone levels, it must be removed. If high levels of calcium persist a week or longer after surgery or recur after initial improvement, a second tumor or the spread of cancer from a malignant tumor may be causing the problem.
+### Hyperparathyroidism due to Kidney Disease
+Hyperparathyroidism can be a complication of longterm kidney disease or kidney failure characterized by increased levels of parathyroid hormone. This type is more common than primary hyperparathyroidism ( see [Primary Hyperparathyroidism](https://www.msdvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs#v3205224)). With progressive kidney disease, excess phosphate in the blood lowers calcium levels. The lowered calcium level in turn triggers an increase in parathyroid hormone levels. In addition, the kidneys are necessary to produce the active form of vitamin D (calcitriol). Too little calcitriol leads to further increases in parathyroid hormone levels.
+Signs of Hyperparathyroidism Due to Kidney Disease
+|
+* Signs of kidney disease may be seen, including vomiting, dehydration, and increased thirst or urination.
+* The jawbone may become soft and pliable.
+* Teeth loosen and fall out.
+* Growth or thickening of bones in the head may lead to facial swelling.
+* Stiffness or lameness of the legs may occur.
+* Fractures occur after minor trauma.
+
+|   |
+| --- | --- |
+Signs of hyperparathyroidism caused by kidney disease include the most common signs of kidney malfunction (vomiting, dehydration, excessive thirst and urination, and depression). Physical changes to the skeleton vary with the level of kidney malfunction from minor to severe. Severely defective fibrous bone formation may accompany advanced kidney failure. Excessive growth or thickening of bone tissue, such as facial swelling, may be seen in younger dogs.
+While the entire skeleton may be affected, more dramatic changes are visible in the bones of the skull, particularly in the jaw. Jawbones become softened and pliable (known as “rubber jaw” syndrome). During early stages, the teeth may loosen and fall out, or interfere with chewing. The condition may prevent the proper closure of the jaw, resulting in drooling and causing the dog’s tongue to stick out. Long bones are less dramatically affected, but lameness, stiff gait, and fractures after minor trauma may occur.
+This type of hyperparathyroidism is diagnosed when laboratory test results show abnormalities consistent with kidney malfunction. Lab work will also reveal increased levels of parathyroid hormone in the blood.
+Treatment options include modifying the diet, supplementing it with active vitamin D (calcitriol), and giving medication that binds phosphate. Any underlying kidney disease must be managed as well. Prescription diets with restricted dietary phosphorus are available. Your veterinarian can give you specific recommendations for proper treatment options for your pet. Be sure to follow those recommendations and any prescriptions precisely as directed.
+## Hypoparathyroidism
+In hypoparathyroidism, either lower than normal amounts of parathyroid hormone are secreted or the hormone secreted is unable to function normally. This, in turn, affects the levels of calcium and phosphorus. Smaller breeds such as Miniature Schnauzers are particularly susceptible, but other breeds may be affected.
+Various disorders can disable the secretion of parathyroid hormone. The parathyroid glands may be damaged or inadvertently removed during thyroid surgery. If adequate tissue remains, however, glands will often regenerate following damage, eliminating the signs. Inflammation of the parathyroid glands, throat cancer, and canine distemper virus can also cause hypoparathyroidism. Rarely, the parathyroid glands fail to form in some puppies.
+Affected dogs are restless, nervous, and unable to control muscle movements. They may appear weak and have intermittent tremors that become convulsions. Longterm hypoparathyroidism can also cause abnormal hardening of certain parts of the body (such as ligaments), decreased mental function, cataracts, and reduction in bone volume.
+To diagnose this disorder, a veterinarian will look for signs and the results of laboratory tests. Blood tests may show lowered calcium levels and higher than normal phosphorus levels. How well an animal responds to treatment may affect the diagnosis.
+The prolonged contraction of muscles should be treated initially by restoring blood calcium levels to near normal. A veterinarian can accomplish this by giving calcium gluconate through the vein. Longterm maintenance of blood calcium levels is necessary if parathyroid hormone secretion is impaired. This can be attempted with a diet high in calcium, low in phosphorus, and supplemented with calcium and vitamin D3. Your veterinarian will be able to advise you as to the appropriate treatment options.
+## For More Information
+Also see professional content regarding [disorders associated with calcium, phosphorus, and Vitamin D](https://www.msdvetmanual.com/musculoskeletal-system/dystrophies-associated-with-calcium-phosphorus-and-vitamin-d/overview-of-dystrophies-associated-with-calcium-phosphorus-and-vitamin-d-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

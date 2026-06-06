@@ -1,0 +1,51 @@
+1. <[Metabolic Disorders of Cats](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Introduction to Metabolic Disorders of Cats
+By[Andrew J. Allen](https://www.msdvetmanual.com/authors/allen-andrew), DVM, PhD, DACVIM-LAIM, Department of Veterinary Clinical Sciences, College of Veterinary Medicine, Washington State University
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3247647
+* [Metabolic Storage Disorders](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats/introduction-to-metabolic-disorders-of-cats#Metabolic-Storage-Disorders_v3247651)|
+* [Metabolic Disorders Caused by Changes in Nutritional Needs](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats/introduction-to-metabolic-disorders-of-cats#Metabolic-Disorders-Caused-by-Changes-in-Nutritional-Needs_v3247734)|
+* Multimedia|
+
+**Metabolism** refers to all processes in the body that break down and convert ingested substances to provide the energy and nutrients needed to sustain life. Foods, liquids, and drugs all generally undergo metabolic processes within the body. Many foods are complex materials that must be broken down into simpler substances, which in turn become “building blocks” for the body to use as needed. For example, protein is broken down into amino acids, which are used in several metabolic reactions. **Enzymes** made by the body are necessary for many metabolic processes. Whenever the function of an enzyme is affected, a metabolic disorder can develop. Metabolic disorders are important because they affect energy production or damage tissues. They may be genetic (inherited) or acquired. Acquired metabolic disorders are more common and significant.
+## Metabolic Storage Disorders
+Metabolic storage disorders usually result from the body’s inability to break down some substance because of the partial or complete lack of a certain enzyme. The substance can build up to a toxic level, or the body is unable to produce a substance that it needs. Although storage diseases are often widespread throughout the body, most clinical signs are due to the effects on the central nervous system. Metabolic storage disorders can be either genetic or acquired.
+**Genetic (inherited) storage diseases** are named according to the specific metabolic byproduct that builds up in the body. Certain breeds of cats are more prone to certain storage diseases than others ( see Table: [Breeds of Cats Prone to Genetic Storage Diseases](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats/introduction-to-metabolic-disorders-of-cats#v55081029)). Kittens typically appear normal at birth, and clinical signs begin within a few weeks to months. These diseases are progressive and usually fatal because specific treatments do not exist.
+Table
+Breeds of Cats Prone to Genetic Storage Diseases
+Table
+Breeds of Cats Prone to Genetic Storage Diseases
+Breeds of Cats Prone to Genetic Storage Diseases
+| Disease  | Breeds  |
+| --- | --- |
+| Ceroid lipofuscinosis  | Domestic cats  |
+| Gangliosidoses  |  Domestic cats Korat Siamese  |
+| Globoid cell leukodystrophy (Krabbe disease)  | Domestic shorthair  |
+| Glycogenosis  |  Domestic shorthair Norwegian forest cats  |
+| Mannosidosis  |  Domestic cats Persian  |
+| Mucopolysaccharidosis type I  |  Domestic shorthair Korat Siamese  |
+| Mucopolysaccharidosis type IV  | Siamese  |
+| Porphyria (associated with anemia)  |  Domestic shorthair Siamese  |
+| Sphingomyelinosis  |  Domestic shorthair Siamese  |
+## Metabolic Disorders Caused by Changes in Nutritional Needs
+Some metabolic disorders are caused by an increased demand for a specific element or nutrient that has become deficient under certain conditions. For example, in **hypoglycemia ,** the animal’s metabolic reserves are unable to sustain sugar (or glucose) in the blood at a level needed for normal function. Likewise, in **hypocalcemia ,** the level of calcium in the blood is too low. In some cases, dietary intake of a nutrient, such as calcium, is rapidly used up for an ongoing, high metabolic need, such as producing milk for kittens.
+The difference between metabolic diseases caused by changes in nutritional needs and nutritional deficiencies is often subtle. Typically, nutritional deficiencies are longterm conditions that develop gradually and can be corrected through dietary supplementation. Metabolic diseases usually begin suddenly and respond dramatically to administration of the deficient nutrient (although affected animals may need dietary supplements to avoid recurrence). Because metabolic disorders related to changes in nutritional needs are serious and develop suddenly, accurate and rapid diagnosis is essential. Ideally, diagnostic tests can be used to predict the chance of disease occurring so that either it can be prevented or preparations can be made for rapid treatment.
+### For More Information
+Also see professional content regarding [metabolic disorders](https://www.msdvetmanual.com/metabolic-disorders/metabolic-disorders-introduction).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

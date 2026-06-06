@@ -1,0 +1,2224 @@
+{
+  "total_files": 443,
+  "successfully_cleaned": 443,
+  "failed": 0,
+  "total_input_chars": 2913346,
+  "total_output_chars": 2326576,
+  "files": {
+    "www.msdvetmanual.com.txt": {
+      "input_chars": 3258,
+      "output_chars": 1666,
+      "compression_ratio": 48.86433394720687
+    },
+    "www.msdvetmanual.com__cat-owners__behavior-of-cats.txt": {
+      "input_chars": 429,
+      "output_chars": 109,
+      "compression_ratio": 74.5920745920746
+    },
+    "www.msdvetmanual.com__cat-owners__behavior-of-cats__behavior-problems-in-cats.txt": {
+      "input_chars": 16535,
+      "output_chars": 14483,
+      "compression_ratio": 12.410039310553367
+    },
+    "www.msdvetmanual.com__cat-owners__behavior-of-cats__diagnosing-behavior-problems-in-cats.txt": {
+      "input_chars": 10043,
+      "output_chars": 8953,
+      "compression_ratio": 10.85333067808424
+    },
+    "www.msdvetmanual.com__cat-owners__behavior-of-cats__introduction-to-behavior-of-cats.txt": {
+      "input_chars": 2767,
+      "output_chars": 2017,
+      "compression_ratio": 27.10516805204193
+    },
+    "www.msdvetmanual.com__cat-owners__behavior-of-cats__normal-social-behavior-in-cats.txt": {
+      "input_chars": 4350,
+      "output_chars": 3600,
+      "compression_ratio": 17.24137931034483
+    },
+    "www.msdvetmanual.com__cat-owners__behavior-of-cats__treatment-of-behavior-problems-in-cats.txt": {
+      "input_chars": 19158,
+      "output_chars": 17476,
+      "compression_ratio": 8.779622089988514
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats.txt": {
+      "input_chars": 436,
+      "output_chars": 116,
+      "compression_ratio": 73.39449541284404
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__anemia-in-cats.txt": {
+      "input_chars": 16570,
+      "output_chars": 13104,
+      "compression_ratio": 20.917320458660228
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__babesiosis-in-cats.txt": {
+      "input_chars": 4589,
+      "output_chars": 2492,
+      "compression_ratio": 45.69623011549358
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__bleeding-and-clotting-disorders-in-cats.txt": {
+      "input_chars": 8185,
+      "output_chars": 6144,
+      "compression_ratio": 24.935858277336585
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__blood-groups-and-blood-transfusions-in-cats.txt": {
+      "input_chars": 4928,
+      "output_chars": 2766,
+      "compression_ratio": 43.871753246753244
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__chagas-disease-in-cats.txt": {
+      "input_chars": 2066,
+      "output_chars": 1141,
+      "compression_ratio": 44.77250726040658
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__diseases-caused-by-blood-parasites-in-cats.txt": {
+      "input_chars": 6372,
+      "output_chars": 3946,
+      "compression_ratio": 38.072818581293156
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__erythrocytosis-polycythemia-in-cats.txt": {
+      "input_chars": 2690,
+      "output_chars": 1647,
+      "compression_ratio": 38.77323420074349
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__introduction-to-blood-disorders-of-cats.txt": {
+      "input_chars": 2735,
+      "output_chars": 1642,
+      "compression_ratio": 39.96343692870201
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__platelets-of-cats.txt": {
+      "input_chars": 2821,
+      "output_chars": 1641,
+      "compression_ratio": 41.82913860333215
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__red-blood-cells-of-cats.txt": {
+      "input_chars": 3387,
+      "output_chars": 2063,
+      "compression_ratio": 39.09064068497196
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__surra-in-cats.txt": {
+      "input_chars": 2323,
+      "output_chars": 1391,
+      "compression_ratio": 40.12053379250968
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__white-blood-cell-disorders-leukemia-and-lymphoma-of-cats.txt": {
+      "input_chars": 4757,
+      "output_chars": 3221,
+      "compression_ratio": 32.289257935673746
+    },
+    "www.msdvetmanual.com__cat-owners__blood-disorders-of-cats__white-blood-cells-of-cats.txt": {
+      "input_chars": 6155,
+      "output_chars": 4499,
+      "compression_ratio": 26.904955320877335
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats.txt": {
+      "input_chars": 454,
+      "output_chars": 134,
+      "compression_ratio": 70.48458149779735
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__bone-disorders-in-cats.txt": {
+      "input_chars": 9945,
+      "output_chars": 7827,
+      "compression_ratio": 21.29713423831071
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__components-of-the-musculoskeletal-system-in-cats.txt": {
+      "input_chars": 2945,
+      "output_chars": 2075,
+      "compression_ratio": 29.541595925297116
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__congenital-and-inherited-disorders-of-bones-joints-and-muscles-in-cats.txt": {
+      "input_chars": 4954,
+      "output_chars": 2846,
+      "compression_ratio": 42.551473556721845
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-cats.txt": {
+      "input_chars": 10569,
+      "output_chars": 8783,
+      "compression_ratio": 16.89847667707446
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__introduction-to-bone-joint-and-muscle-disorders-in-cats.txt": {
+      "input_chars": 1778,
+      "output_chars": 1148,
+      "compression_ratio": 35.43307086614173
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__joint-disorders-in-cats.txt": {
+      "input_chars": 13102,
+      "output_chars": 10615,
+      "compression_ratio": 18.981834834376432
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__lameness-in-cats.txt": {
+      "input_chars": 2941,
+      "output_chars": 2114,
+      "compression_ratio": 28.11968718123088
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__muscle-disorders-in-cats.txt": {
+      "input_chars": 5530,
+      "output_chars": 3682,
+      "compression_ratio": 33.41772151898734
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__overview-of-musculoskeletal-disorders-and-diseases-in-cats.txt": {
+      "input_chars": 4063,
+      "output_chars": 3217,
+      "compression_ratio": 20.82205267044056
+    },
+    "www.msdvetmanual.com__cat-owners__bone-joint-and-muscle-disorders-of-cats__sarcocystosis-in-cats.txt": {
+      "input_chars": 2874,
+      "output_chars": 2075,
+      "compression_ratio": 27.80097425191371
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats.txt": {
+      "input_chars": 460,
+      "output_chars": 140,
+      "compression_ratio": 69.56521739130434
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__central-nervous-system-disorders-caused-by-parasites-in-cats.txt": {
+      "input_chars": 7906,
+      "output_chars": 6020,
+      "compression_ratio": 23.855299772324813
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__congenital-and-inherited-disorders-of-the-nervous-system-in-cats.txt": {
+      "input_chars": 10409,
+      "output_chars": 7576,
+      "compression_ratio": 27.216831588048805
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__disorders-of-the-peripheral-nerves-in-cats.txt": {
+      "input_chars": 14946,
+      "output_chars": 12175,
+      "compression_ratio": 18.540077612739193
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__disorders-of-the-spinal-column-and-cord-in-cats.txt": {
+      "input_chars": 17181,
+      "output_chars": 14108,
+      "compression_ratio": 17.886036901228096
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__dysautonomia-in-cats.txt": {
+      "input_chars": 3265,
+      "output_chars": 2471,
+      "compression_ratio": 24.318529862174575
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__facial-paralysis-in-cats.txt": {
+      "input_chars": 4225,
+      "output_chars": 3387,
+      "compression_ratio": 19.83431952662722
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__leg-paralysis-in-cats.txt": {
+      "input_chars": 3900,
+      "output_chars": 3305,
+      "compression_ratio": 15.256410256410257
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__meningitis-and-encephalitis-in-cats.txt": {
+      "input_chars": 3196,
+      "output_chars": 2329,
+      "compression_ratio": 27.127659574468087
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__motion-sickness-in-cats.txt": {
+      "input_chars": 2071,
+      "output_chars": 1197,
+      "compression_ratio": 42.201834862385326
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__nervous-system-disorders-and-effects-of-injuries-in-cats.txt": {
+      "input_chars": 5849,
+      "output_chars": 4692,
+      "compression_ratio": 19.781159172508122
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__parts-of-the-nervous-system-in-cats.txt": {
+      "input_chars": 4203,
+      "output_chars": 3299,
+      "compression_ratio": 21.50844634784678
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__principles-of-therapy-of-the-nervous-system-in-cats.txt": {
+      "input_chars": 3207,
+      "output_chars": 2118,
+      "compression_ratio": 33.95696913002806
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__rabies-in-cats.txt": {
+      "input_chars": 7661,
+      "output_chars": 6169,
+      "compression_ratio": 19.47526432580603
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__the-nervous-system-in-cats.txt": {
+      "input_chars": 1999,
+      "output_chars": 1165,
+      "compression_ratio": 41.72086043021511
+    },
+    "www.msdvetmanual.com__cat-owners__brain-spinal-cord-and-nerve-disorders-of-cats__the-neurologic-evaluation-in-cats.txt": {
+      "input_chars": 9458,
+      "output_chars": 8188,
+      "compression_ratio": 13.427786001268771
+    },
+    "www.msdvetmanual.com__cat-owners__caring-for-cats__giving-medicine-to-a-cat.txt": {
+      "input_chars": 2260,
+      "output_chars": 1488,
+      "compression_ratio": 34.159292035398224
+    },
+    "www.msdvetmanual.com__cat-owners__caring-for-cats__kitten-care.txt": {
+      "input_chars": 4008,
+      "output_chars": 2773,
+      "compression_ratio": 30.813373253493015
+    },
+    "www.msdvetmanual.com__cat-owners__caring-for-cats__parasites-in-cats.txt": {
+      "input_chars": 3299,
+      "output_chars": 2398,
+      "compression_ratio": 27.31130645650197
+    },
+    "www.msdvetmanual.com__cat-owners__caring-for-cats__routine-health-care-of-cats.txt": {
+      "input_chars": 4668,
+      "output_chars": 3051,
+      "compression_ratio": 34.6401028277635
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats.txt": {
+      "input_chars": 440,
+      "output_chars": 120,
+      "compression_ratio": 72.72727272727273
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__congenital-and-inherited-disorders-of-the-digestive-system-in-cats.txt": {
+      "input_chars": 16766,
+      "output_chars": 13799,
+      "compression_ratio": 17.69652868901348
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__dental-development-of-cats.txt": {
+      "input_chars": 1468,
+      "output_chars": 891,
+      "compression_ratio": 39.30517711171662
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__dental-disorders-of-cats.txt": {
+      "input_chars": 15267,
+      "output_chars": 13092,
+      "compression_ratio": 14.246413833759085
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-caused-by-bacteria-of-the-digestive-system-in-cats.txt": {
+      "input_chars": 7586,
+      "output_chars": 6024,
+      "compression_ratio": 20.59056156076984
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-caused-by-protozoa-of-the-digestive-system-in-cats.txt": {
+      "input_chars": 7210,
+      "output_chars": 5962,
+      "compression_ratio": 17.309292649098474
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-esophagus-in-cats.txt": {
+      "input_chars": 7566,
+      "output_chars": 5641,
+      "compression_ratio": 25.44277028813111
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-liver-and-gallbladder-in-cats.txt": {
+      "input_chars": 33714,
+      "output_chars": 28922,
+      "compression_ratio": 14.213679776947263
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-mouth-in-cats.txt": {
+      "input_chars": 14774,
+      "output_chars": 12642,
+      "compression_ratio": 14.430756734804383
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-pancreas-in-cats.txt": {
+      "input_chars": 10466,
+      "output_chars": 8328,
+      "compression_ratio": 20.428052742212877
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-pharynx-in-cats.txt": {
+      "input_chars": 2310,
+      "output_chars": 1715,
+      "compression_ratio": 25.757575757575758
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-rectum-and-anus-in-cats.txt": {
+      "input_chars": 7340,
+      "output_chars": 5631,
+      "compression_ratio": 23.283378746594007
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__disorders-of-the-stomach-and-intestines-in-cats.txt": {
+      "input_chars": 24944,
+      "output_chars": 21825,
+      "compression_ratio": 12.504008980115454
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__gastrointestinal-parasites-of-cats.txt": {
+      "input_chars": 12010,
+      "output_chars": 10405,
+      "compression_ratio": 13.36386344712739
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__introduction-to-digestive-disorders-of-cats.txt": {
+      "input_chars": 14621,
+      "output_chars": 12639,
+      "compression_ratio": 13.555844333492917
+    },
+    "www.msdvetmanual.com__cat-owners__digestive-disorders-of-cats__vomiting-in-cats.txt": {
+      "input_chars": 5402,
+      "output_chars": 4554,
+      "compression_ratio": 15.697889670492415
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats.txt": {
+      "input_chars": 462,
+      "output_chars": 142,
+      "compression_ratio": 69.26406926406928
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__amyloidosis-in-cats.txt": {
+      "input_chars": 3334,
+      "output_chars": 2533,
+      "compression_ratio": 24.025194961007802
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__anthrax-in-cats.txt": {
+      "input_chars": 4518,
+      "output_chars": 3925,
+      "compression_ratio": 13.125276671093399
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__congenital-and-inherited-disorders-affecting-multiple-body-systems-of-cats.txt": {
+      "input_chars": 8286,
+      "output_chars": 6245,
+      "compression_ratio": 24.631909244508808
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__ehrlichiosis-and-related-infections-in-cats.txt": {
+      "input_chars": 3742,
+      "output_chars": 2906,
+      "compression_ratio": 22.340994120791024
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__feline-immunodeficiency-virus-fiv.txt": {
+      "input_chars": 3694,
+      "output_chars": 2755,
+      "compression_ratio": 25.419599350297784
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__feline-infectious-peritonitis-fip.txt": {
+      "input_chars": 8219,
+      "output_chars": 6912,
+      "compression_ratio": 15.90217788052074
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__feline-leukemia-virus-felv.txt": {
+      "input_chars": 5858,
+      "output_chars": 4962,
+      "compression_ratio": 15.29532263571185
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__feline-panleukopenia.txt": {
+      "input_chars": 4523,
+      "output_chars": 3495,
+      "compression_ratio": 22.728277691797484
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__fungal-infections-in-cats.txt": {
+      "input_chars": 18488,
+      "output_chars": 15276,
+      "compression_ratio": 17.373431414971876
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__glanders-farcy-in-cats.txt": {
+      "input_chars": 2225,
+      "output_chars": 1405,
+      "compression_ratio": 36.853932584269664
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__introduction-to-disorders-affecting-multiple-body-systems-of-cats.txt": {
+      "input_chars": 1654,
+      "output_chars": 920,
+      "compression_ratio": 44.37726723095526
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__leishmaniosis-leishmaniasis-in-cats.txt": {
+      "input_chars": 2624,
+      "output_chars": 1813,
+      "compression_ratio": 30.90701219512195
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__leptospirosis-in-cats.txt": {
+      "input_chars": 2703,
+      "output_chars": 1648,
+      "compression_ratio": 39.03070662227155
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__lyme-disease-lyme-borreliosis-in-cats.txt": {
+      "input_chars": 3991,
+      "output_chars": 3376,
+      "compression_ratio": 15.409671761463295
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__melioidosis-in-cats.txt": {
+      "input_chars": 4008,
+      "output_chars": 3169,
+      "compression_ratio": 20.933133732534927
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__nocardiosis-in-cats.txt": {
+      "input_chars": 4188,
+      "output_chars": 3143,
+      "compression_ratio": 24.952244508118437
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__peritonitis-in-cats.txt": {
+      "input_chars": 3906,
+      "output_chars": 2968,
+      "compression_ratio": 24.01433691756273
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__plague-in-cats.txt": {
+      "input_chars": 7303,
+      "output_chars": 5938,
+      "compression_ratio": 18.69094892509927
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__q-fever-in-cats.txt": {
+      "input_chars": 2992,
+      "output_chars": 2189,
+      "compression_ratio": 26.838235294117652
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__tetanus-in-cats.txt": {
+      "input_chars": 3296,
+      "output_chars": 2461,
+      "compression_ratio": 25.333737864077666
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__toxoplasmosis-in-cats.txt": {
+      "input_chars": 5108,
+      "output_chars": 4255,
+      "compression_ratio": 16.699295223179323
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__trichinellosis-trichinosis-in-cats.txt": {
+      "input_chars": 3729,
+      "output_chars": 2808,
+      "compression_ratio": 24.698310539018507
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__tuberculosis-in-cats.txt": {
+      "input_chars": 3049,
+      "output_chars": 2200,
+      "compression_ratio": 27.845195145949486
+    },
+    "www.msdvetmanual.com__cat-owners__disorders-affecting-multiple-body-systems-of-cats__tularemia-in-cats.txt": {
+      "input_chars": 3932,
+      "output_chars": 3121,
+      "compression_ratio": 20.625635808748733
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats.txt": {
+      "input_chars": 434,
+      "output_chars": 114,
+      "compression_ratio": 73.73271889400922
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats__deafness-in-cats.txt": {
+      "input_chars": 2673,
+      "output_chars": 1779,
+      "compression_ratio": 33.445566778900115
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats__disorders-of-the-outer-ear-in-cats.txt": {
+      "input_chars": 8190,
+      "output_chars": 6015,
+      "compression_ratio": 26.55677655677655
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats__ear-structure-and-function-in-cats.txt": {
+      "input_chars": 3258,
+      "output_chars": 2238,
+      "compression_ratio": 31.30755064456722
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats__otitis-externa-external-ear-infection-in-cats.txt": {
+      "input_chars": 4203,
+      "output_chars": 2914,
+      "compression_ratio": 30.668570068998335
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats__otitis-media-and-interna-in-cats-middle-and-inner-ear-infections.txt": {
+      "input_chars": 4185,
+      "output_chars": 2916,
+      "compression_ratio": 30.32258064516129
+    },
+    "www.msdvetmanual.com__cat-owners__ear-disorders-of-cats__tumors-of-the-ear-canal-in-cats.txt": {
+      "input_chars": 4956,
+      "output_chars": 3238,
+      "compression_ratio": 34.665052461662626
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats.txt": {
+      "input_chars": 434,
+      "output_chars": 114,
+      "compression_ratio": 73.73271889400922
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__cancers-and-tumors-of-the-eye-in-cats.txt": {
+      "input_chars": 4835,
+      "output_chars": 3066,
+      "compression_ratio": 36.587383660806616
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__chlamydial-conjunctivitis-in-cats-feline-pneumonitis.txt": {
+      "input_chars": 3235,
+      "output_chars": 2460,
+      "compression_ratio": 23.956723338485318
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-anterior-uvea-in-cats.txt": {
+      "input_chars": 7038,
+      "output_chars": 4639,
+      "compression_ratio": 34.08638817845979
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-conjunctiva-in-cats.txt": {
+      "input_chars": 5479,
+      "output_chars": 3828,
+      "compression_ratio": 30.133235991969343
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-cornea-in-cats.txt": {
+      "input_chars": 4432,
+      "output_chars": 3014,
+      "compression_ratio": 31.994584837545126
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-eyelids-in-cats.txt": {
+      "input_chars": 6943,
+      "output_chars": 5466,
+      "compression_ratio": 21.273224830764804
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-lens-in-cats.txt": {
+      "input_chars": 3989,
+      "output_chars": 2612,
+      "compression_ratio": 34.51992980696916
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-nasal-cavity-and-tear-ducts-in-cats.txt": {
+      "input_chars": 4207,
+      "output_chars": 2892,
+      "compression_ratio": 31.257428096030427
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-optic-nerve-in-cats.txt": {
+      "input_chars": 3897,
+      "output_chars": 2524,
+      "compression_ratio": 35.23222992045163
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-cats.txt": {
+      "input_chars": 6253,
+      "output_chars": 4271,
+      "compression_ratio": 31.696785542939388
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__eye-disorders-resulting-from-generalized-diseases-in-cats.txt": {
+      "input_chars": 6348,
+      "output_chars": 5335,
+      "compression_ratio": 15.957781978575925
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__eye-structure-and-function-in-cats.txt": {
+      "input_chars": 8073,
+      "output_chars": 6929,
+      "compression_ratio": 14.170692431561992
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__eyeworm-disease-thelaziasis-in-cats.txt": {
+      "input_chars": 2107,
+      "output_chars": 1337,
+      "compression_ratio": 36.54485049833887
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__glaucoma-in-cats.txt": {
+      "input_chars": 2748,
+      "output_chars": 1889,
+      "compression_ratio": 31.259097525473067
+    },
+    "www.msdvetmanual.com__cat-owners__eye-disorders-of-cats__prolapse-of-the-eye-in-cats.txt": {
+      "input_chars": 2000,
+      "output_chars": 1243,
+      "compression_ratio": 37.849999999999994
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats.txt": {
+      "input_chars": 453,
+      "output_chars": 133,
+      "compression_ratio": 70.6401766004415
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__acquired-heart-and-blood-vessel-disorders-in-cats.txt": {
+      "input_chars": 16316,
+      "output_chars": 13679,
+      "compression_ratio": 16.162049521941658
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__blood-clots-and-aneurysms-in-cats.txt": {
+      "input_chars": 7141,
+      "output_chars": 5183,
+      "compression_ratio": 27.419128973533113
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__congenital-and-inherited-disorders-of-the-cardiovascular-system-of-cats.txt": {
+      "input_chars": 18877,
+      "output_chars": 16768,
+      "compression_ratio": 11.17232611114054
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__diagnosis-of-cardiovascular-disease-in-cats.txt": {
+      "input_chars": 8425,
+      "output_chars": 7004,
+      "compression_ratio": 16.866468842729976
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__heart-disease-and-heart-failure-in-cats.txt": {
+      "input_chars": 5450,
+      "output_chars": 3912,
+      "compression_ratio": 28.220183486238536
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__heart-failure-in-cats.txt": {
+      "input_chars": 8894,
+      "output_chars": 7259,
+      "compression_ratio": 18.383179671688776
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__heartworm-disease-in-cats.txt": {
+      "input_chars": 6137,
+      "output_chars": 4686,
+      "compression_ratio": 23.64347401010266
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__introduction-to-heart-and-blood-vessel-disorders-in-cats.txt": {
+      "input_chars": 8253,
+      "output_chars": 6402,
+      "compression_ratio": 22.42820792439113
+    },
+    "www.msdvetmanual.com__cat-owners__heart-and-blood-vessel-disorders-of-cats__treatment-of-cardiovascular-disease-in-cats.txt": {
+      "input_chars": 4136,
+      "output_chars": 2786,
+      "compression_ratio": 32.640232108317214
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats.txt": {
+      "input_chars": 439,
+      "output_chars": 119,
+      "compression_ratio": 72.89293849658314
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__disorders-of-the-adrenal-glands-in-cats.txt": {
+      "input_chars": 3752,
+      "output_chars": 2981,
+      "compression_ratio": 20.54904051172708
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__disorders-of-the-pancreas-in-cats.txt": {
+      "input_chars": 9421,
+      "output_chars": 7918,
+      "compression_ratio": 15.953720411845874
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-cats.txt": {
+      "input_chars": 11025,
+      "output_chars": 8681,
+      "compression_ratio": 21.260770975056687
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__disorders-of-the-pituitary-gland-in-cats.txt": {
+      "input_chars": 9415,
+      "output_chars": 7734,
+      "compression_ratio": 17.85448751991503
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__disorders-of-the-thyroid-gland-in-cats.txt": {
+      "input_chars": 7389,
+      "output_chars": 6059,
+      "compression_ratio": 17.99972932737853
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__introduction-to-hormonal-disorders-of-cats.txt": {
+      "input_chars": 10557,
+      "output_chars": 9063,
+      "compression_ratio": 14.151747655583968
+    },
+    "www.msdvetmanual.com__cat-owners__hormonal-disorders-of-cats__neuroendocrine-tissue-tumors-in-cats.txt": {
+      "input_chars": 2537,
+      "output_chars": 1666,
+      "compression_ratio": 34.33188805675995
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats.txt": {
+      "input_chars": 437,
+      "output_chars": 117,
+      "compression_ratio": 73.22654462242562
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats.txt": {
+      "input_chars": 11265,
+      "output_chars": 8429,
+      "compression_ratio": 25.175321793164674
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__disorders-involving-cell-mediated-immunity-type-iv-reactions-in-cats.txt": {
+      "input_chars": 2194,
+      "output_chars": 1397,
+      "compression_ratio": 36.32634457611669
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__disorders-involving-cytotoxic-antibodies-type-ii-reactions-in-cats.txt": {
+      "input_chars": 6754,
+      "output_chars": 5180,
+      "compression_ratio": 23.304708320994973
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__disorders-involving-immune-complexes-type-iii-reactions-in-cats.txt": {
+      "input_chars": 5815,
+      "output_chars": 3473,
+      "compression_ratio": 40.27515047291488
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__gammopathies-in-cats.txt": {
+      "input_chars": 2767,
+      "output_chars": 2095,
+      "compression_ratio": 24.286230574629563
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__immune-deficiency-diseases-in-cats.txt": {
+      "input_chars": 8630,
+      "output_chars": 6614,
+      "compression_ratio": 23.3603707995365
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__immune-system-responses-in-cats.txt": {
+      "input_chars": 14996,
+      "output_chars": 12975,
+      "compression_ratio": 13.476927180581487
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__immune-system-tumors-in-cats.txt": {
+      "input_chars": 2806,
+      "output_chars": 1148,
+      "compression_ratio": 59.08766928011404
+    },
+    "www.msdvetmanual.com__cat-owners__immune-disorders-of-cats__the-immune-system-of-cats.txt": {
+      "input_chars": 1697,
+      "output_chars": 909,
+      "compression_ratio": 46.434885091337655
+    },
+    "www.msdvetmanual.com__cat-owners__introduction-to-cats.txt": {
+      "input_chars": 433,
+      "output_chars": 113,
+      "compression_ratio": 73.90300230946882
+    },
+    "www.msdvetmanual.com__cat-owners__introduction-to-cats__introduction-to-cats.txt": {
+      "input_chars": 4532,
+      "output_chars": 3381,
+      "compression_ratio": 25.397175639894087
+    },
+    "www.msdvetmanual.com__cat-owners__introduction-to-cats__physical-description-of-cats.txt": {
+      "input_chars": 5239,
+      "output_chars": 3665,
+      "compression_ratio": 30.043901507921355
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats.txt": {
+      "input_chars": 455,
+      "output_chars": 135,
+      "compression_ratio": 70.32967032967032
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats__congenital-and-inherited-disorders-of-the-urinary-system-of-cats.txt": {
+      "input_chars": 10314,
+      "output_chars": 8251,
+      "compression_ratio": 20.001939111886756
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats__detecting-disorders-of-the-kidneys-and-urinary-tract-of-cats.txt": {
+      "input_chars": 5085,
+      "output_chars": 3968,
+      "compression_ratio": 21.966568338249758
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats__infectious-diseases-of-the-urinary-system-of-cats.txt": {
+      "input_chars": 8791,
+      "output_chars": 6796,
+      "compression_ratio": 22.693663974519396
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats__noninfectious-diseases-of-the-urinary-system-of-cats.txt": {
+      "input_chars": 38760,
+      "output_chars": 33040,
+      "compression_ratio": 14.75748194014448
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats__the-urinary-system-of-cats.txt": {
+      "input_chars": 1938,
+      "output_chars": 1096,
+      "compression_ratio": 43.446852425180595
+    },
+    "www.msdvetmanual.com__cat-owners__kidney-and-urinary-tract-disorders-of-cats__urinary-stones-uroliths-calculi-in-cats.txt": {
+      "input_chars": 7654,
+      "output_chars": 6388,
+      "compression_ratio": 16.540371047818137
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats.txt": {
+      "input_chars": 446,
+      "output_chars": 126,
+      "compression_ratio": 71.74887892376682
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__allergic-pneumonitis-in-cats.txt": {
+      "input_chars": 3937,
+      "output_chars": 2942,
+      "compression_ratio": 25.273050546101096
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__bronchitis-in-cats.txt": {
+      "input_chars": 1359,
+      "output_chars": 409,
+      "compression_ratio": 69.90434142752024
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__cancers-and-tumors-of-the-lung-and-airway-in-cats.txt": {
+      "input_chars": 7239,
+      "output_chars": 5594,
+      "compression_ratio": 22.724133167564574
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__diaphragmatic-hernia-in-cats.txt": {
+      "input_chars": 3064,
+      "output_chars": 2124,
+      "compression_ratio": 30.678851174934728
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__disorders-of-the-chest-cavity-of-cats.txt": {
+      "input_chars": 2965,
+      "output_chars": 2120,
+      "compression_ratio": 28.499156829679595
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__emphysema-in-cats.txt": {
+      "input_chars": 2112,
+      "output_chars": 1314,
+      "compression_ratio": 37.78409090909091
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__feline-respiratory-disease-complex-feline-viral-rhinotracheitis-feline-calicivirus.txt": {
+      "input_chars": 8768,
+      "output_chars": 7386,
+      "compression_ratio": 15.761861313868607
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__introduction-to-lung-and-airway-disorders-of-cats.txt": {
+      "input_chars": 14260,
+      "output_chars": 12173,
+      "compression_ratio": 14.63534361851332
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__laryngeal-disorders-in-cats.txt": {
+      "input_chars": 4352,
+      "output_chars": 3546,
+      "compression_ratio": 18.520220588235293
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__lung-flukes-in-cats.txt": {
+      "input_chars": 2079,
+      "output_chars": 1244,
+      "compression_ratio": 40.16354016354017
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__lungworm-infection-in-cats.txt": {
+      "input_chars": 2772,
+      "output_chars": 1937,
+      "compression_ratio": 30.122655122655118
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__nasopharyngeal-polyps-in-cats.txt": {
+      "input_chars": 1888,
+      "output_chars": 967,
+      "compression_ratio": 48.78177966101694
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__pharyngitis-in-cats.txt": {
+      "input_chars": 2635,
+      "output_chars": 1841,
+      "compression_ratio": 30.13282732447817
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__pneumonia-in-cats.txt": {
+      "input_chars": 8365,
+      "output_chars": 6901,
+      "compression_ratio": 17.501494321578004
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__pulmonary-edema-in-cats.txt": {
+      "input_chars": 1655,
+      "output_chars": 938,
+      "compression_ratio": 43.32326283987915
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__pulmonary-thromboembolism-in-cats.txt": {
+      "input_chars": 2619,
+      "output_chars": 1651,
+      "compression_ratio": 36.960672012218396
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__rhinitis-and-sinusitis-in-cats.txt": {
+      "input_chars": 4344,
+      "output_chars": 3178,
+      "compression_ratio": 26.84162062615101
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__tonsillitis-in-cats.txt": {
+      "input_chars": 2239,
+      "output_chars": 1404,
+      "compression_ratio": 37.29343456900403
+    },
+    "www.msdvetmanual.com__cat-owners__lung-and-airway-disorders-of-cats__tracheobronchitis-bronchitis-bronchial-asthma-in-cats.txt": {
+      "input_chars": 3481,
+      "output_chars": 2782,
+      "compression_ratio": 20.080436656133294
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats.txt": {
+      "input_chars": 440,
+      "output_chars": 120,
+      "compression_ratio": 72.72727272727273
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__congenital-erythropoietic-porphyria-in-cats.txt": {
+      "input_chars": 2221,
+      "output_chars": 1345,
+      "compression_ratio": 39.441692931112115
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__disorders-of-calcium-metabolism-in-cats.txt": {
+      "input_chars": 4725,
+      "output_chars": 3381,
+      "compression_ratio": 28.44444444444445
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__disorders-of-magnesium-metabolism-in-cats.txt": {
+      "input_chars": 2035,
+      "output_chars": 1186,
+      "compression_ratio": 41.71990171990172
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__disorders-of-potassium-metabolism-in-cats.txt": {
+      "input_chars": 2795,
+      "output_chars": 1761,
+      "compression_ratio": 36.99463327370304
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__fever-of-unknown-origin-in-cats.txt": {
+      "input_chars": 5753,
+      "output_chars": 4232,
+      "compression_ratio": 26.438379975664873
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__introduction-to-metabolic-disorders-of-cats.txt": {
+      "input_chars": 5623,
+      "output_chars": 4258,
+      "compression_ratio": 24.275297883691984
+    },
+    "www.msdvetmanual.com__cat-owners__metabolic-disorders-of-cats__malignant-hyperthermia-in-cats.txt": {
+      "input_chars": 3122,
+      "output_chars": 2547,
+      "compression_ratio": 18.417680973734786
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats.txt": {
+      "input_chars": 443,
+      "output_chars": 123,
+      "compression_ratio": 72.23476297968398
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__infertility-in-cats.txt": {
+      "input_chars": 4286,
+      "output_chars": 3270,
+      "compression_ratio": 23.70508632757816
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__introduction-to-reproductive-disorders-of-cats.txt": {
+      "input_chars": 1584,
+      "output_chars": 784,
+      "compression_ratio": 50.5050505050505
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__mammary-breast-tumors-in-cats.txt": {
+      "input_chars": 2451,
+      "output_chars": 1544,
+      "compression_ratio": 37.00530395756834
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__management-of-reproduction-of-cats.txt": {
+      "input_chars": 11352,
+      "output_chars": 9748,
+      "compression_ratio": 14.129668780831572
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__reproductive-disorders-of-female-cats.txt": {
+      "input_chars": 11085,
+      "output_chars": 8898,
+      "compression_ratio": 19.72936400541272
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__reproductive-disorders-of-male-cats.txt": {
+      "input_chars": 7914,
+      "output_chars": 6132,
+      "compression_ratio": 22.51705837755875
+    },
+    "www.msdvetmanual.com__cat-owners__reproductive-disorders-of-cats__the-gonads-and-genital-tract-of-cats.txt": {
+      "input_chars": 6605,
+      "output_chars": 5126,
+      "compression_ratio": 22.39212717638153
+    },
+    "www.msdvetmanual.com__cat-owners__selecting-and-providing-a-home-for-a-cat__proper-nutrition-for-cats.txt": {
+      "input_chars": 7526,
+      "output_chars": 5476,
+      "compression_ratio": 27.238905128886525
+    },
+    "www.msdvetmanual.com__cat-owners__selecting-and-providing-a-home-for-a-cat__providing-a-home-for-a-cat.txt": {
+      "input_chars": 3176,
+      "output_chars": 1889,
+      "compression_ratio": 40.52267002518891
+    },
+    "www.msdvetmanual.com__cat-owners__selecting-and-providing-a-home-for-a-cat__providing-a-litter-box-for-a-cat.txt": {
+      "input_chars": 3539,
+      "output_chars": 2743,
+      "compression_ratio": 22.49222944334558
+    },
+    "www.msdvetmanual.com__cat-owners__selecting-and-providing-a-home-for-a-cat__selecting-a-cat.txt": {
+      "input_chars": 7731,
+      "output_chars": 5724,
+      "compression_ratio": 25.960419091967402
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats.txt": {
+      "input_chars": 435,
+      "output_chars": 115,
+      "compression_ratio": 73.5632183908046
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__allergies-of-cats.txt": {
+      "input_chars": 9753,
+      "output_chars": 8091,
+      "compression_ratio": 17.040910489080286
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__congenital-and-inherited-skin-disorders-of-cats.txt": {
+      "input_chars": 9012,
+      "output_chars": 7084,
+      "compression_ratio": 21.393697292498892
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__dermatitis-and-dermatologic-problems-in-cats.txt": {
+      "input_chars": 2769,
+      "output_chars": 1916,
+      "compression_ratio": 30.805344889851927
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__diagnosis-of-skin-disorders-in-cats.txt": {
+      "input_chars": 3529,
+      "output_chars": 2706,
+      "compression_ratio": 23.32105412298101
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__eosinophilic-granuloma-complex-in-cats.txt": {
+      "input_chars": 2915,
+      "output_chars": 2109,
+      "compression_ratio": 27.65008576329331
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__fleas-of-cats.txt": {
+      "input_chars": 10547,
+      "output_chars": 9001,
+      "compression_ratio": 14.658196643595334
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__flies-and-mosquitoes-of-cats.txt": {
+      "input_chars": 13798,
+      "output_chars": 11513,
+      "compression_ratio": 16.56037106827076
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__hair-loss-alopecia-in-cats.txt": {
+      "input_chars": 6493,
+      "output_chars": 5468,
+      "compression_ratio": 15.786231326043431
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__hives-and-rashes-urticaria-in-cats.txt": {
+      "input_chars": 2385,
+      "output_chars": 1609,
+      "compression_ratio": 32.53668763102725
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__itching-pruritus-in-cats.txt": {
+      "input_chars": 4270,
+      "output_chars": 3182,
+      "compression_ratio": 25.480093676814985
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__lice-of-cats.txt": {
+      "input_chars": 5033,
+      "output_chars": 4248,
+      "compression_ratio": 15.59705940790781
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__mite-infestation-mange-acariasis-scabies-of-cats.txt": {
+      "input_chars": 14656,
+      "output_chars": 11946,
+      "compression_ratio": 18.49072052401747
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__parasitic-worms-of-the-skin-in-cats.txt": {
+      "input_chars": 2131,
+      "output_chars": 1386,
+      "compression_ratio": 34.96011262318161
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__photosensitization-in-cats.txt": {
+      "input_chars": 3989,
+      "output_chars": 3187,
+      "compression_ratio": 20.10528954625219
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__pox-infection-in-cats.txt": {
+      "input_chars": 3324,
+      "output_chars": 2595,
+      "compression_ratio": 21.931407942238266
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__pyoderma-in-cats.txt": {
+      "input_chars": 3340,
+      "output_chars": 2587,
+      "compression_ratio": 22.54491017964072
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__ringworm-dermatophytosis-in-cats.txt": {
+      "input_chars": 4018,
+      "output_chars": 3096,
+      "compression_ratio": 22.946739671478344
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__structure-of-the-skin-in-cats.txt": {
+      "input_chars": 7143,
+      "output_chars": 5651,
+      "compression_ratio": 20.88758224835503
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__ticks-of-cats.txt": {
+      "input_chars": 4962,
+      "output_chars": 4055,
+      "compression_ratio": 18.278919790407087
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__treatment-of-skin-disorders-in-cats.txt": {
+      "input_chars": 2681,
+      "output_chars": 1702,
+      "compression_ratio": 36.516225289071244
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__tumors-of-the-skin-in-cats.txt": {
+      "input_chars": 36636,
+      "output_chars": 32518,
+      "compression_ratio": 11.240310077519378
+    },
+    "www.msdvetmanual.com__cat-owners__skin-disorders-of-cats__whole-body-disorders-that-affect-the-skin-in-cats.txt": {
+      "input_chars": 3380,
+      "output_chars": 2451,
+      "compression_ratio": 27.485207100591712
+    },
+    "www.msdvetmanual.com__dog-owners__behavior-of-dogs__behavior-modification-in-dogs.txt": {
+      "input_chars": 19725,
+      "output_chars": 18423,
+      "compression_ratio": 6.600760456273768
+    },
+    "www.msdvetmanual.com__dog-owners__behavior-of-dogs__behavior-problems-in-dogs.txt": {
+      "input_chars": 14570,
+      "output_chars": 13244,
+      "compression_ratio": 9.100892244337677
+    },
+    "www.msdvetmanual.com__dog-owners__behavior-of-dogs__diagnosing-behavior-problems-in-dogs.txt": {
+      "input_chars": 13828,
+      "output_chars": 12447,
+      "compression_ratio": 9.986982933179057
+    },
+    "www.msdvetmanual.com__dog-owners__behavior-of-dogs__introduction-to-behavior-of-dogs.txt": {
+      "input_chars": 2688,
+      "output_chars": 2034,
+      "compression_ratio": 24.33035714285714
+    },
+    "www.msdvetmanual.com__dog-owners__behavior-of-dogs__normal-social-behavior-in-dogs.txt": {
+      "input_chars": 6840,
+      "output_chars": 6076,
+      "compression_ratio": 11.169590643274852
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs.txt": {
+      "input_chars": 436,
+      "output_chars": 116,
+      "compression_ratio": 73.39449541284404
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__anemia-in-dogs.txt": {
+      "input_chars": 20494,
+      "output_chars": 19080,
+      "compression_ratio": 6.899580364984869
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__bleeding-disorders-of-dogs.txt": {
+      "input_chars": 22711,
+      "output_chars": 20283,
+      "compression_ratio": 10.690854651930781
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__blood-groups-and-blood-transfusions-in-dogs.txt": {
+      "input_chars": 3447,
+      "output_chars": 2298,
+      "compression_ratio": 33.333333333333336
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__blood-parasites-of-dogs.txt": {
+      "input_chars": 14468,
+      "output_chars": 12047,
+      "compression_ratio": 16.733480785181087
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__erythrocytosis-and-polycythemia-in-dogs.txt": {
+      "input_chars": 3101,
+      "output_chars": 2281,
+      "compression_ratio": 26.443082876491452
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__introduction-to-blood-disorders-of-dogs.txt": {
+      "input_chars": 4021,
+      "output_chars": 2884,
+      "compression_ratio": 28.276548122357624
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__malignant-lymphoma-in-dogs.txt": {
+      "input_chars": 7112,
+      "output_chars": 5466,
+      "compression_ratio": 23.143982002249718
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__platelets-of-dogs.txt": {
+      "input_chars": 2589,
+      "output_chars": 1796,
+      "compression_ratio": 30.62958671301661
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__red-blood-cells-of-dogs.txt": {
+      "input_chars": 5338,
+      "output_chars": 4457,
+      "compression_ratio": 16.50430872986137
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__white-blood-cell-disorders-of-dogs.txt": {
+      "input_chars": 7328,
+      "output_chars": 5342,
+      "compression_ratio": 27.101528384279472
+    },
+    "www.msdvetmanual.com__dog-owners__blood-disorders-of-dogs__white-blood-cells-of-dogs.txt": {
+      "input_chars": 6164,
+      "output_chars": 4958,
+      "compression_ratio": 19.565217391304344
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs.txt": {
+      "input_chars": 454,
+      "output_chars": 134,
+      "compression_ratio": 70.48458149779735
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__bone-disorders-in-dogs.txt": {
+      "input_chars": 12855,
+      "output_chars": 10230,
+      "compression_ratio": 20.420070011668614
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__components-of-the-musculoskeletal-system-in-dogs.txt": {
+      "input_chars": 2327,
+      "output_chars": 1598,
+      "compression_ratio": 31.32788998710786
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__congenital-and-inherited-disorders-of-bones-joints-and-muscles-in-dogs.txt": {
+      "input_chars": 7747,
+      "output_chars": 5101,
+      "compression_ratio": 34.155156834903835
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs.txt": {
+      "input_chars": 13886,
+      "output_chars": 11294,
+      "compression_ratio": 18.66628258677805
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__hip-dysplasia.txt": {
+      "input_chars": 2831,
+      "output_chars": 1977,
+      "compression_ratio": 30.16601907453197
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__introduction-to-bone-joint-and-muscle-disorders-of-dogs.txt": {
+      "input_chars": 1374,
+      "output_chars": 670,
+      "compression_ratio": 51.2372634643377
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__lameness-in-dogs.txt": {
+      "input_chars": 3659,
+      "output_chars": 2629,
+      "compression_ratio": 28.149767696091832
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__muscle-disorders-in-dogs.txt": {
+      "input_chars": 12324,
+      "output_chars": 9476,
+      "compression_ratio": 23.109380071405383
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__osteoarthritis-degenerative-joint-disease.txt": {
+      "input_chars": 2784,
+      "output_chars": 1932,
+      "compression_ratio": 30.603448275862068
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__other-joint-disorders-in-dogs.txt": {
+      "input_chars": 15778,
+      "output_chars": 13262,
+      "compression_ratio": 15.946254278108762
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__overview-of-musculoskeletal-disorders-and-diseases-in-dogs.txt": {
+      "input_chars": 4246,
+      "output_chars": 3307,
+      "compression_ratio": 22.114931700423924
+    },
+    "www.msdvetmanual.com__dog-owners__bone-joint-and-muscle-disorders-of-dogs__sarcocystosis-in-dogs.txt": {
+      "input_chars": 2938,
+      "output_chars": 2124,
+      "compression_ratio": 27.705922396187887
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs.txt": {
+      "input_chars": 460,
+      "output_chars": 140,
+      "compression_ratio": 69.56521739130434
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__central-nervous-system-disorders-caused-by-parasites-in-dogs.txt": {
+      "input_chars": 5567,
+      "output_chars": 3644,
+      "compression_ratio": 34.54284174600324
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__congenital-and-inherited-disorders-of-the-nervous-system-in-dogs.txt": {
+      "input_chars": 16493,
+      "output_chars": 13698,
+      "compression_ratio": 16.94658339901777
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__disorders-of-the-peripheral-nerves-and-neuromuscular-junction-in-dogs.txt": {
+      "input_chars": 18036,
+      "output_chars": 15207,
+      "compression_ratio": 15.68529607451763
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__disorders-of-the-spinal-column-and-cord-in-dogs.txt": {
+      "input_chars": 20315,
+      "output_chars": 17825,
+      "compression_ratio": 12.256952990401182
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__dysautonomia-in-dogs.txt": {
+      "input_chars": 1811,
+      "output_chars": 1097,
+      "compression_ratio": 39.42573163997791
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__facial-paralysis-in-dogs.txt": {
+      "input_chars": 4417,
+      "output_chars": 3588,
+      "compression_ratio": 18.768394838125424
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__leg-paralysis-in-dogs.txt": {
+      "input_chars": 5035,
+      "output_chars": 4083,
+      "compression_ratio": 18.907646474677264
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__meningitis-and-encephalitis-in-dogs.txt": {
+      "input_chars": 3848,
+      "output_chars": 2966,
+      "compression_ratio": 22.92099792099792
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__motion-sickness-in-dogs.txt": {
+      "input_chars": 2005,
+      "output_chars": 1338,
+      "compression_ratio": 33.266832917705734
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__nervous-system-disorders-and-effects-of-injuries-in-dogs.txt": {
+      "input_chars": 7304,
+      "output_chars": 5388,
+      "compression_ratio": 26.232201533406354
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__parts-of-the-nervous-system-in-dogs.txt": {
+      "input_chars": 4219,
+      "output_chars": 3315,
+      "compression_ratio": 21.426878407205496
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__principles-of-therapy-of-the-nervous-system-in-dogs.txt": {
+      "input_chars": 3529,
+      "output_chars": 2120,
+      "compression_ratio": 39.92632473788609
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__rabies-in-dogs.txt": {
+      "input_chars": 8533,
+      "output_chars": 6882,
+      "compression_ratio": 19.348412047345597
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__the-nervous-system-of-dogs.txt": {
+      "input_chars": 2024,
+      "output_chars": 1175,
+      "compression_ratio": 41.94664031620553
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__the-neurologic-evaluation-of-dogs.txt": {
+      "input_chars": 10606,
+      "output_chars": 9018,
+      "compression_ratio": 14.972656986611355
+    },
+    "www.msdvetmanual.com__dog-owners__brain-spinal-cord-and-nerve-disorders-of-dogs__tick-paralysis-in-dogs.txt": {
+      "input_chars": 4334,
+      "output_chars": 3409,
+      "compression_ratio": 21.342870327641904
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs.txt": {
+      "input_chars": 440,
+      "output_chars": 120,
+      "compression_ratio": 72.72727272727273
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__congenital-and-inherited-disorders-of-the-digestive-system-of-dogs.txt": {
+      "input_chars": 23866,
+      "output_chars": 20821,
+      "compression_ratio": 12.758736277549653
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__dental-development-of-dogs.txt": {
+      "input_chars": 2634,
+      "output_chars": 1471,
+      "compression_ratio": 44.15337889141989
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__dental-disorders-of-dogs.txt": {
+      "input_chars": 15737,
+      "output_chars": 13946,
+      "compression_ratio": 11.380822265997326
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-caused-by-bacteria-in-the-digestive-system-of-dogs.txt": {
+      "input_chars": 8855,
+      "output_chars": 6872,
+      "compression_ratio": 22.394127611518922
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-caused-by-protozoa-in-the-digestive-system-of-dogs.txt": {
+      "input_chars": 9266,
+      "output_chars": 7617,
+      "compression_ratio": 17.796244334124754
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-of-the-esophagus-in-dogs.txt": {
+      "input_chars": 13787,
+      "output_chars": 10914,
+      "compression_ratio": 20.838471023427864
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-of-the-liver-and-gallbladder-in-dogs.txt": {
+      "input_chars": 33396,
+      "output_chars": 28399,
+      "compression_ratio": 14.962869804767042
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-of-the-mouth-in-dogs.txt": {
+      "input_chars": 26562,
+      "output_chars": 23852,
+      "compression_ratio": 10.202544989082153
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-of-the-pharynx-throat-in-dogs.txt": {
+      "input_chars": 2704,
+      "output_chars": 1728,
+      "compression_ratio": 36.094674556213015
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-of-the-rectum-and-anus-in-dogs.txt": {
+      "input_chars": 13278,
+      "output_chars": 10737,
+      "compression_ratio": 19.13691821057388
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__disorders-of-the-stomach-and-intestines-in-dogs.txt": {
+      "input_chars": 43237,
+      "output_chars": 38757,
+      "compression_ratio": 10.361495940976484
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__gastrointestinal-parasites-of-dogs.txt": {
+      "input_chars": 22037,
+      "output_chars": 20151,
+      "compression_ratio": 8.558333711485233
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__introduction-to-digestive-disorders-of-dogs.txt": {
+      "input_chars": 15682,
+      "output_chars": 13341,
+      "compression_ratio": 14.927942864430555
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__pancreatitis-and-other-disorders-of-the-pancreas-in-dogs.txt": {
+      "input_chars": 12942,
+      "output_chars": 10697,
+      "compression_ratio": 17.34662339669294
+    },
+    "www.msdvetmanual.com__dog-owners__digestive-disorders-of-dogs__vomiting-in-dogs.txt": {
+      "input_chars": 5245,
+      "output_chars": 4191,
+      "compression_ratio": 20.09532888465205
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs.txt": {
+      "input_chars": 462,
+      "output_chars": 142,
+      "compression_ratio": 69.26406926406928
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__actinobacillosis-in-dogs.txt": {
+      "input_chars": 2273,
+      "output_chars": 1459,
+      "compression_ratio": 35.81170259568852
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__actinomycosis-in-dogs.txt": {
+      "input_chars": 3381,
+      "output_chars": 2556,
+      "compression_ratio": 24.40106477373558
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__amyloidosis-in-dogs.txt": {
+      "input_chars": 2981,
+      "output_chars": 2180,
+      "compression_ratio": 26.870177792687024
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__anthrax-in-dogs.txt": {
+      "input_chars": 5538,
+      "output_chars": 4730,
+      "compression_ratio": 14.590104730949804
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__botulism-in-dogs.txt": {
+      "input_chars": 2084,
+      "output_chars": 1247,
+      "compression_ratio": 40.16314779270633
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__canine-distemper-hardpad-disease.txt": {
+      "input_chars": 5604,
+      "output_chars": 4768,
+      "compression_ratio": 14.917915774446822
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__canine-herpesvirus.txt": {
+      "input_chars": 3414,
+      "output_chars": 2769,
+      "compression_ratio": 18.892794376098422
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__congenital-and-inherited-disorders-affecting-multiple-body-systems-of-dogs.txt": {
+      "input_chars": 5237,
+      "output_chars": 3898,
+      "compression_ratio": 25.56807332442238
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__ehrlichiosis-and-related-infections-in-dogs.txt": {
+      "input_chars": 6311,
+      "output_chars": 5471,
+      "compression_ratio": 13.310093487561403
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__enterotoxemia-in-dogs.txt": {
+      "input_chars": 1761,
+      "output_chars": 919,
+      "compression_ratio": 47.813742191936406
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__fungal-infections-in-dogs.txt": {
+      "input_chars": 28096,
+      "output_chars": 23477,
+      "compression_ratio": 16.440062642369025
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__glanders-farcy-in-dogs.txt": {
+      "input_chars": 1555,
+      "output_chars": 950,
+      "compression_ratio": 38.90675241157556
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__infectious-canine-hepatitis.txt": {
+      "input_chars": 4236,
+      "output_chars": 3378,
+      "compression_ratio": 20.25495750708215
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__introduction-to-disorders-affecting-multiple-body-systems-of-dogs.txt": {
+      "input_chars": 1369,
+      "output_chars": 850,
+      "compression_ratio": 37.910883856829805
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__leishmaniosis-visceral-leishmaniasis-in-dogs.txt": {
+      "input_chars": 4176,
+      "output_chars": 3341,
+      "compression_ratio": 19.995210727969347
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__leptospirosis-in-dogs.txt": {
+      "input_chars": 5614,
+      "output_chars": 4767,
+      "compression_ratio": 15.08728179551122
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__lyme-disease-lyme-borreliosis-in-dogs.txt": {
+      "input_chars": 7140,
+      "output_chars": 6264,
+      "compression_ratio": 12.268907563025211
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__melioidosis-in-dogs.txt": {
+      "input_chars": 3994,
+      "output_chars": 3155,
+      "compression_ratio": 21.006509764646975
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__neosporosis-in-dogs.txt": {
+      "input_chars": 2382,
+      "output_chars": 1545,
+      "compression_ratio": 35.13853904282116
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__nocardiosis-in-dogs.txt": {
+      "input_chars": 3830,
+      "output_chars": 3017,
+      "compression_ratio": 21.227154046997388
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__peritonitis-in-dogs.txt": {
+      "input_chars": 3913,
+      "output_chars": 3102,
+      "compression_ratio": 20.725785842064916
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__plague-in-dogs.txt": {
+      "input_chars": 4331,
+      "output_chars": 3486,
+      "compression_ratio": 19.510505656892175
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__rocky-mountain-spotted-fever-tick-fever-in-dogs.txt": {
+      "input_chars": 4238,
+      "output_chars": 3386,
+      "compression_ratio": 20.10382255781029
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__salmon-poisoning-disease-and-elokomin-fluke-fever-in-dogs.txt": {
+      "input_chars": 4711,
+      "output_chars": 3886,
+      "compression_ratio": 17.512205476544263
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__tetanus-in-dogs.txt": {
+      "input_chars": 3507,
+      "output_chars": 2648,
+      "compression_ratio": 24.49386940404904
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__toxoplasmosis-in-dogs.txt": {
+      "input_chars": 4276,
+      "output_chars": 3327,
+      "compression_ratio": 22.193638914873716
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__trichinellosis-trichinosis-in-dogs.txt": {
+      "input_chars": 3613,
+      "output_chars": 2700,
+      "compression_ratio": 25.269858843066707
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__tuberculosis-in-dogs.txt": {
+      "input_chars": 2864,
+      "output_chars": 2032,
+      "compression_ratio": 29.05027932960894
+    },
+    "www.msdvetmanual.com__dog-owners__disorders-affecting-multiple-body-systems-of-dogs__tularemia-rabbit-fever-in-dogs.txt": {
+      "input_chars": 3719,
+      "output_chars": 3123,
+      "compression_ratio": 16.02581339069642
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs.txt": {
+      "input_chars": 434,
+      "output_chars": 114,
+      "compression_ratio": 73.73271889400922
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs__deafness-in-dogs.txt": {
+      "input_chars": 3330,
+      "output_chars": 2727,
+      "compression_ratio": 18.108108108108112
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs__disorders-of-the-outer-ear-in-dogs.txt": {
+      "input_chars": 12216,
+      "output_chars": 8943,
+      "compression_ratio": 26.79273084479371
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs__ear-infections-and-otitis-externa-in-dogs.txt": {
+      "input_chars": 6725,
+      "output_chars": 5583,
+      "compression_ratio": 16.981412639405203
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs__ear-structure-and-function-in-dogs.txt": {
+      "input_chars": 3055,
+      "output_chars": 2036,
+      "compression_ratio": 33.35515548281506
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs__otitis-media-and-interna-middle-and-inner-ear-infections-in-dogs.txt": {
+      "input_chars": 3632,
+      "output_chars": 2798,
+      "compression_ratio": 22.962555066079293
+    },
+    "www.msdvetmanual.com__dog-owners__ear-disorders-of-dogs__tumors-of-the-ear-canal-in-dogs.txt": {
+      "input_chars": 2738,
+      "output_chars": 1920,
+      "compression_ratio": 29.87582176771366
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs.txt": {
+      "input_chars": 434,
+      "output_chars": 114,
+      "compression_ratio": 73.73271889400922
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__cancers-and-tumors-of-the-eye-in-dogs.txt": {
+      "input_chars": 5543,
+      "output_chars": 4759,
+      "compression_ratio": 14.14396536171748
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-anterior-uvea-in-dogs.txt": {
+      "input_chars": 7402,
+      "output_chars": 5366,
+      "compression_ratio": 27.506079437989726
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-conjunctiva-in-dogs.txt": {
+      "input_chars": 4857,
+      "output_chars": 3206,
+      "compression_ratio": 33.992176240477654
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-cornea-in-dogs.txt": {
+      "input_chars": 8398,
+      "output_chars": 6681,
+      "compression_ratio": 20.445344129554655
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-eyelids-in-dogs.txt": {
+      "input_chars": 7528,
+      "output_chars": 5696,
+      "compression_ratio": 24.335812964930923
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-lens-in-dogs.txt": {
+      "input_chars": 6077,
+      "output_chars": 4728,
+      "compression_ratio": 22.198453184136913
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-nasal-cavity-and-tear-ducts-in-dogs.txt": {
+      "input_chars": 5998,
+      "output_chars": 4170,
+      "compression_ratio": 30.476825608536174
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-optic-nerve-in-dogs.txt": {
+      "input_chars": 4330,
+      "output_chars": 2819,
+      "compression_ratio": 34.89607390300231
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-orbit-in-dogs.txt": {
+      "input_chars": 2348,
+      "output_chars": 1600,
+      "compression_ratio": 31.85689948892675
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-dogs.txt": {
+      "input_chars": 8795,
+      "output_chars": 7175,
+      "compression_ratio": 18.41955656623081
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__eye-disorders-resulting-from-generalized-diseases.txt": {
+      "input_chars": 2175,
+      "output_chars": 1390,
+      "compression_ratio": 36.0919540229885
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__eye-structure-and-function-in-dogs.txt": {
+      "input_chars": 7301,
+      "output_chars": 6167,
+      "compression_ratio": 15.532118887823588
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__eyeworm-disease-thelaziasis-in-dogs.txt": {
+      "input_chars": 2471,
+      "output_chars": 1677,
+      "compression_ratio": 32.13273978146499
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__glaucoma-in-dogs.txt": {
+      "input_chars": 3665,
+      "output_chars": 2919,
+      "compression_ratio": 20.35470668485675
+    },
+    "www.msdvetmanual.com__dog-owners__eye-disorders-of-dogs__prolapse-of-the-eye-in-dogs.txt": {
+      "input_chars": 2078,
+      "output_chars": 1297,
+      "compression_ratio": 37.5842155919153
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs.txt": {
+      "input_chars": 453,
+      "output_chars": 133,
+      "compression_ratio": 70.6401766004415
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__acquired-heart-and-blood-vessel-disorders-in-dogs.txt": {
+      "input_chars": 24836,
+      "output_chars": 22105,
+      "compression_ratio": 10.996134643259781
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__blood-clots-and-aneurysms-in-dogs.txt": {
+      "input_chars": 5973,
+      "output_chars": 4395,
+      "compression_ratio": 26.4188849824209
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__congenital-and-inherited-disorders-of-the-cardiovascular-system-in-dogs.txt": {
+      "input_chars": 28767,
+      "output_chars": 26219,
+      "compression_ratio": 8.85737129349602
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__diagnosis-of-cardiovascular-disease-in-dogs.txt": {
+      "input_chars": 7200,
+      "output_chars": 6060,
+      "compression_ratio": 15.833333333333332
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__heart-disease-in-dogs.txt": {
+      "input_chars": 5590,
+      "output_chars": 3821,
+      "compression_ratio": 31.64579606440071
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__heart-failure-in-dogs.txt": {
+      "input_chars": 12715,
+      "output_chars": 11124,
+      "compression_ratio": 12.512780180888717
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__heartworm-disease-in-dogs.txt": {
+      "input_chars": 10934,
+      "output_chars": 9522,
+      "compression_ratio": 12.913846716663613
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__introduction-to-heart-and-blood-vessel-disorders-in-dogs.txt": {
+      "input_chars": 8775,
+      "output_chars": 6924,
+      "compression_ratio": 21.094017094017094
+    },
+    "www.msdvetmanual.com__dog-owners__heart-and-blood-vessel-disorders-of-dogs__treatment-of-cardiovascular-disease-in-dogs.txt": {
+      "input_chars": 4257,
+      "output_chars": 3213,
+      "compression_ratio": 24.52431289640592
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs.txt": {
+      "input_chars": 439,
+      "output_chars": 119,
+      "compression_ratio": 72.89293849658314
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__disorders-of-the-adrenal-glands-in-dogs.txt": {
+      "input_chars": 6756,
+      "output_chars": 5232,
+      "compression_ratio": 22.557726465364127
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__disorders-of-the-pancreas-in-dogs.txt": {
+      "input_chars": 9751,
+      "output_chars": 8277,
+      "compression_ratio": 15.116398318121217
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs.txt": {
+      "input_chars": 11137,
+      "output_chars": 8787,
+      "compression_ratio": 21.10083505432343
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__disorders-of-the-pituitary-gland-in-dogs.txt": {
+      "input_chars": 10659,
+      "output_chars": 8809,
+      "compression_ratio": 17.356224786565345
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__disorders-of-the-thyroid-gland-in-dogs.txt": {
+      "input_chars": 8391,
+      "output_chars": 6929,
+      "compression_ratio": 17.423429865331908
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__introduction-to-hormonal-disorders-of-dogs.txt": {
+      "input_chars": 10661,
+      "output_chars": 9044,
+      "compression_ratio": 15.167432698621141
+    },
+    "www.msdvetmanual.com__dog-owners__hormonal-disorders-of-dogs__neuroendocrine-tissue-tumors-in-dogs.txt": {
+      "input_chars": 2967,
+      "output_chars": 1962,
+      "compression_ratio": 33.872598584428715
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-dogs.txt": {
+      "input_chars": 9835,
+      "output_chars": 7157,
+      "compression_ratio": 27.229283172343667
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs.txt": {
+      "input_chars": 6210,
+      "output_chars": 3480,
+      "compression_ratio": 43.961352657004824
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__disorders-involving-cytotoxic-antibodies-type-ii-reactions-in-dogs.txt": {
+      "input_chars": 8179,
+      "output_chars": 6383,
+      "compression_ratio": 21.95867465460325
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__disorders-involving-immune-complexes-type-iii-reactions-in-dogs.txt": {
+      "input_chars": 9748,
+      "output_chars": 7354,
+      "compression_ratio": 24.558883873615102
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__gammopathies-in-dogs.txt": {
+      "input_chars": 2909,
+      "output_chars": 2149,
+      "compression_ratio": 26.125816431763493
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__immune-deficiency-diseases-in-dogs.txt": {
+      "input_chars": 8609,
+      "output_chars": 6409,
+      "compression_ratio": 25.5546521082588
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__immune-system-responses-in-dogs.txt": {
+      "input_chars": 14389,
+      "output_chars": 12362,
+      "compression_ratio": 14.08714990617833
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__immune-system-tumors-in-dogs.txt": {
+      "input_chars": 3602,
+      "output_chars": 2651,
+      "compression_ratio": 26.40199888950583
+    },
+    "www.msdvetmanual.com__dog-owners__immune-disorders-of-dogs__the-immune-system-of-dogs.txt": {
+      "input_chars": 1866,
+      "output_chars": 968,
+      "compression_ratio": 48.12433011789925
+    },
+    "www.msdvetmanual.com__dog-owners__introduction-to-dogs__description-of-dogs.txt": {
+      "input_chars": 10706,
+      "output_chars": 8120,
+      "compression_ratio": 24.154679618905284
+    },
+    "www.msdvetmanual.com__dog-owners__kidney-and-urinary-tract-disorders-of-dogs.txt": {
+      "input_chars": 455,
+      "output_chars": 135,
+      "compression_ratio": 70.32967032967032
+    },
+    "www.msdvetmanual.com__dog-owners__kidney-and-urinary-tract-disorders-of-dogs__congenital-and-inherited-disorders-of-the-urinary-system-in-dogs.txt": {
+      "input_chars": 12181,
+      "output_chars": 10072,
+      "compression_ratio": 17.3138494376488
+    },
+    "www.msdvetmanual.com__dog-owners__kidney-and-urinary-tract-disorders-of-dogs__detecting-disorders-of-the-kidneys-and-urinary-tract-in-dogs.txt": {
+      "input_chars": 4455,
+      "output_chars": 3645,
+      "compression_ratio": 18.181818181818176
+    },
+    "www.msdvetmanual.com__dog-owners__kidney-and-urinary-tract-disorders-of-dogs__infectious-diseases-of-the-urinary-system-in-dogs.txt": {
+      "input_chars": 12350,
+      "output_chars": 10233,
+      "compression_ratio": 17.141700404858295
+    },
+    "www.msdvetmanual.com__dog-owners__kidney-and-urinary-tract-disorders-of-dogs__noninfectious-diseases-of-the-urinary-system-in-dogs.txt": {
+      "input_chars": 44388,
+      "output_chars": 39618,
+      "compression_ratio": 10.746147607461475
+    },
+    "www.msdvetmanual.com__dog-owners__kidney-and-urinary-tract-disorders-of-dogs__the-urinary-system-of-dogs.txt": {
+      "input_chars": 1920,
+      "output_chars": 1108,
+      "compression_ratio": 42.29166666666667
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs.txt": {
+      "input_chars": 446,
+      "output_chars": 126,
+      "compression_ratio": 71.74887892376682
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__accumulation-of-fluid-or-air-in-the-chest-cavity-in-dogs.txt": {
+      "input_chars": 2339,
+      "output_chars": 1494,
+      "compression_ratio": 36.12654980761009
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__allergic-pneumonitis-in-dogs.txt": {
+      "input_chars": 4432,
+      "output_chars": 3327,
+      "compression_ratio": 24.93231046931408
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__bronchitis-in-dogs.txt": {
+      "input_chars": 1336,
+      "output_chars": 403,
+      "compression_ratio": 69.83532934131736
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__cancers-and-tumors-of-the-lung-and-airway-in-dogs.txt": {
+      "input_chars": 8612,
+      "output_chars": 6785,
+      "compression_ratio": 21.214584300975382
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__canine-influenza-flu.txt": {
+      "input_chars": 3840,
+      "output_chars": 2889,
+      "compression_ratio": 24.765625000000004
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__canine-nasal-mites.txt": {
+      "input_chars": 3125,
+      "output_chars": 2299,
+      "compression_ratio": 26.432
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__diaphragmatic-hernia-in-dogs.txt": {
+      "input_chars": 3000,
+      "output_chars": 2207,
+      "compression_ratio": 26.43333333333333
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__emphysema-in-dogs.txt": {
+      "input_chars": 2264,
+      "output_chars": 1466,
+      "compression_ratio": 35.24734982332155
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__introduction-to-lung-and-airway-disorders-of-dogs.txt": {
+      "input_chars": 14310,
+      "output_chars": 12319,
+      "compression_ratio": 13.91334730957372
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__kennel-cough-infectious-tracheobronchitis-in-dogs.txt": {
+      "input_chars": 1342,
+      "output_chars": 409,
+      "compression_ratio": 69.5230998509687
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__laryngitis-in-dogs.txt": {
+      "input_chars": 4482,
+      "output_chars": 3582,
+      "compression_ratio": 20.080321285140567
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__lung-flukes-in-dogs.txt": {
+      "input_chars": 2107,
+      "output_chars": 1272,
+      "compression_ratio": 39.629805410536314
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__lungworm-infection-in-dogs.txt": {
+      "input_chars": 4153,
+      "output_chars": 3098,
+      "compression_ratio": 25.40332289910908
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__paralysis-of-the-larynx-in-dogs.txt": {
+      "input_chars": 2347,
+      "output_chars": 1533,
+      "compression_ratio": 34.68257349808266
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__pharyngitis-in-dogs.txt": {
+      "input_chars": 2303,
+      "output_chars": 1509,
+      "compression_ratio": 34.47676943117672
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__pneumonia-in-dogs.txt": {
+      "input_chars": 8256,
+      "output_chars": 7169,
+      "compression_ratio": 13.16618217054264
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__pulmonary-edema-in-dogs.txt": {
+      "input_chars": 1831,
+      "output_chars": 990,
+      "compression_ratio": 45.93118514472966
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__pulmonary-thromboembolism-in-dogs.txt": {
+      "input_chars": 3328,
+      "output_chars": 1745,
+      "compression_ratio": 47.566105769230774
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__rhinitis-and-sinusitis-in-dogs.txt": {
+      "input_chars": 4778,
+      "output_chars": 3795,
+      "compression_ratio": 20.57346169945584
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__tonsillitis-in-dogs.txt": {
+      "input_chars": 3226,
+      "output_chars": 2391,
+      "compression_ratio": 25.883446993180414
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__tracheal-collapse-in-dogs.txt": {
+      "input_chars": 1632,
+      "output_chars": 915,
+      "compression_ratio": 43.93382352941176
+    },
+    "www.msdvetmanual.com__dog-owners__lung-and-airway-disorders-of-dogs__tracheobronchitis-bronchitis-in-dogs.txt": {
+      "input_chars": 7304,
+      "output_chars": 6060,
+      "compression_ratio": 17.03176341730559
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs.txt": {
+      "input_chars": 440,
+      "output_chars": 120,
+      "compression_ratio": 72.72727272727273
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs__disorders-of-calcium-metabolism-in-dogs.txt": {
+      "input_chars": 6017,
+      "output_chars": 4378,
+      "compression_ratio": 27.23948811700183
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs__disorders-of-magnesium-metabolism-in-dogs.txt": {
+      "input_chars": 1752,
+      "output_chars": 1175,
+      "compression_ratio": 32.9337899543379
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs__fatigue-and-exercise-in-dogs.txt": {
+      "input_chars": 2464,
+      "output_chars": 1918,
+      "compression_ratio": 22.159090909090907
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs__fever-of-unknown-origin-in-dogs.txt": {
+      "input_chars": 5466,
+      "output_chars": 4063,
+      "compression_ratio": 25.667764361507505
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs__introduction-to-metabolic-disorders-of-dogs.txt": {
+      "input_chars": 6145,
+      "output_chars": 4590,
+      "compression_ratio": 25.305126118795773
+    },
+    "www.msdvetmanual.com__dog-owners__metabolic-disorders-of-dogs__malignant-hyperthermia-in-dogs.txt": {
+      "input_chars": 4042,
+      "output_chars": 3237,
+      "compression_ratio": 19.915883226125686
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs.txt": {
+      "input_chars": 443,
+      "output_chars": 123,
+      "compression_ratio": 72.23476297968398
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__brucellosis-in-dogs.txt": {
+      "input_chars": 2893,
+      "output_chars": 2114,
+      "compression_ratio": 26.92706533010716
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__infertility-in-dogs.txt": {
+      "input_chars": 3587,
+      "output_chars": 2758,
+      "compression_ratio": 23.111235015333143
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__introduction-to-reproductive-disorders-of-dogs.txt": {
+      "input_chars": 1672,
+      "output_chars": 872,
+      "compression_ratio": 47.84688995215311
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__mammary-breast-tumors-in-dogs.txt": {
+      "input_chars": 2977,
+      "output_chars": 2167,
+      "compression_ratio": 27.20859926100101
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__management-of-reproduction-in-dogs.txt": {
+      "input_chars": 12432,
+      "output_chars": 10667,
+      "compression_ratio": 14.197232947232951
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__reproductive-disorders-of-female-dogs.txt": {
+      "input_chars": 13301,
+      "output_chars": 10596,
+      "compression_ratio": 20.33681678069318
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__reproductive-disorders-of-male-dogs.txt": {
+      "input_chars": 12404,
+      "output_chars": 10436,
+      "compression_ratio": 15.865849725894876
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__the-gonads-and-genital-tract-of-dogs.txt": {
+      "input_chars": 5691,
+      "output_chars": 4261,
+      "compression_ratio": 25.12739413108417
+    },
+    "www.msdvetmanual.com__dog-owners__reproductive-disorders-of-dogs__transmissible-venereal-tumor-in-dogs.txt": {
+      "input_chars": 2150,
+      "output_chars": 1338,
+      "compression_ratio": 37.76744186046511
+    },
+    "www.msdvetmanual.com__dog-owners__routine-care-of-dogs.txt": {
+      "input_chars": 433,
+      "output_chars": 113,
+      "compression_ratio": 73.90300230946882
+    },
+    "www.msdvetmanual.com__dog-owners__routine-care-of-dogs__puppy-care.txt": {
+      "input_chars": 5033,
+      "output_chars": 3647,
+      "compression_ratio": 27.53824756606398
+    },
+    "www.msdvetmanual.com__dog-owners__routine-care-of-dogs__routine-health-care-of-dogs.txt": {
+      "input_chars": 8204,
+      "output_chars": 5616,
+      "compression_ratio": 31.545587518283767
+    },
+    "www.msdvetmanual.com__dog-owners__selecting-and-providing-a-home-for-a-dog.txt": {
+      "input_chars": 453,
+      "output_chars": 133,
+      "compression_ratio": 70.6401766004415
+    },
+    "www.msdvetmanual.com__dog-owners__selecting-and-providing-a-home-for-a-dog__providing-a-home-for-a-dog.txt": {
+      "input_chars": 6969,
+      "output_chars": 4895,
+      "compression_ratio": 29.76036734108194
+    },
+    "www.msdvetmanual.com__dog-owners__selecting-and-providing-a-home-for-a-dog__selecting-a-dog.txt": {
+      "input_chars": 8277,
+      "output_chars": 5995,
+      "compression_ratio": 27.57037574000242
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs.txt": {
+      "input_chars": 435,
+      "output_chars": 115,
+      "compression_ratio": 73.5632183908046
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__abscesses-between-the-toes-interdigital-furunculosis-in-dogs.txt": {
+      "input_chars": 5149,
+      "output_chars": 4188,
+      "compression_ratio": 18.663818217129535
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__allergies-in-dogs.txt": {
+      "input_chars": 9269,
+      "output_chars": 8037,
+      "compression_ratio": 13.291617218685946
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__congenital-and-inherited-skin-disorders-in-dogs.txt": {
+      "input_chars": 18290,
+      "output_chars": 16117,
+      "compression_ratio": 11.880809185347186
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__dermatitis-and-dermatologic-problems-in-dogs.txt": {
+      "input_chars": 2874,
+      "output_chars": 2085,
+      "compression_ratio": 27.45302713987474
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__dermatophilosis-in-dogs.txt": {
+      "input_chars": 2789,
+      "output_chars": 2055,
+      "compression_ratio": 26.317676586590178
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__diagnosis-of-skin-disorders-in-dogs.txt": {
+      "input_chars": 3941,
+      "output_chars": 3118,
+      "compression_ratio": 20.883024613042377
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__eosinophilic-granuloma-complex-in-dogs.txt": {
+      "input_chars": 2393,
+      "output_chars": 1621,
+      "compression_ratio": 32.26076055160886
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__fleas-of-dogs.txt": {
+      "input_chars": 12046,
+      "output_chars": 10201,
+      "compression_ratio": 15.316287564336706
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__flies-and-mosquitoes-of-dogs.txt": {
+      "input_chars": 18608,
+      "output_chars": 15836,
+      "compression_ratio": 14.896818572656922
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__hair-loss-alopecia-in-dogs.txt": {
+      "input_chars": 6433,
+      "output_chars": 5529,
+      "compression_ratio": 14.052541582465416
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__hives-and-rashes-urticaria-in-dogs.txt": {
+      "input_chars": 2747,
+      "output_chars": 1863,
+      "compression_ratio": 32.18056061157627
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__hygromas-in-dogs.txt": {
+      "input_chars": 1976,
+      "output_chars": 1242,
+      "compression_ratio": 37.145748987854255
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__hyperpigmentation-acanthosis-nigricans-in-dogs.txt": {
+      "input_chars": 4439,
+      "output_chars": 3661,
+      "compression_ratio": 17.526469925658926
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__itching-pruritus-in-dogs.txt": {
+      "input_chars": 5345,
+      "output_chars": 4373,
+      "compression_ratio": 18.185219831618337
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__lice-of-dogs.txt": {
+      "input_chars": 5141,
+      "output_chars": 4121,
+      "compression_ratio": 19.840497957595794
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__mite-infestation-mange-acariasis-scabies-in-dogs.txt": {
+      "input_chars": 13302,
+      "output_chars": 11329,
+      "compression_ratio": 14.832356036686212
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__nasal-dermatoses-in-dogs.txt": {
+      "input_chars": 3179,
+      "output_chars": 2421,
+      "compression_ratio": 23.843976093111042
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__parasitic-worms-of-the-skin-in-dogs.txt": {
+      "input_chars": 4909,
+      "output_chars": 3571,
+      "compression_ratio": 27.25606029741291
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__photosensitization-in-dogs.txt": {
+      "input_chars": 3916,
+      "output_chars": 3156,
+      "compression_ratio": 19.40755873340143
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__pyoderma-in-dogs.txt": {
+      "input_chars": 5280,
+      "output_chars": 4441,
+      "compression_ratio": 15.89015151515152
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__ringworm-dermatophytosis-in-dogs.txt": {
+      "input_chars": 3635,
+      "output_chars": 2687,
+      "compression_ratio": 26.079779917469047
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__seborrhea-in-dogs.txt": {
+      "input_chars": 7421,
+      "output_chars": 6481,
+      "compression_ratio": 12.666756501819165
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__structure-of-the-skin-in-dogs.txt": {
+      "input_chars": 7192,
+      "output_chars": 5800,
+      "compression_ratio": 19.354838709677423
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__ticks-of-dogs.txt": {
+      "input_chars": 6685,
+      "output_chars": 5570,
+      "compression_ratio": 16.679132385938665
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__treatment-of-skin-disorders-in-dogs.txt": {
+      "input_chars": 3446,
+      "output_chars": 2633,
+      "compression_ratio": 23.592571096923965
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__tumors-of-the-skin-in-dogs.txt": {
+      "input_chars": 59686,
+      "output_chars": 54598,
+      "compression_ratio": 8.524612136849507
+    },
+    "www.msdvetmanual.com__dog-owners__skin-disorders-of-dogs__whole-body-disorders-that-affect-the-skin-in-dogs.txt": {
+      "input_chars": 4302,
+      "output_chars": 3373,
+      "compression_ratio": 21.594607159460722
+    },
+    "www.msdvetmanual.com__n3wbr_nds.txt": {
+      "input_chars": 526,
+      "output_chars": 184,
+      "compression_ratio": 65.0190114068441
+    },
+    "www.msdvetmanual.com__veterinary-topics.txt": {
+      "input_chars": 608,
+      "output_chars": 172,
+      "compression_ratio": 71.71052631578947
+    }
+  }
+}

@@ -1,0 +1,17 @@
+# Blood Groups and Blood Transfusions in Cats
+Blood groups in cats are divided into a system of three types—A, B, and AB—based on the presence of certain antigens (proteins or sugars) on the surface of red blood cells. Type A is the most common (about 99% of US cats), but some pure breeds are more likely to have type B. Type AB is rare.
+In 2007, researchers found a new feline blood group separate from the AB system and named it Mik, after “Mike,” the first cat in which it was discovered. Since then, four or five additional blood groups, called feline erythrocyte antigens (FEAs 1–5), have been identified. Mik might be the same as FEA 1.
+There are no universal blood donor cats, because cats' immune systems produce antibodies that attack blood group antigens they don't normally have on their red blood cells (resulting in a condition called hemolytic anemia).
+Just as in people, in cats blood typing is used to match blood donors and recipients; there are even some animal blood banks.
+## How Is Blood Typing Done?
+A cat’s blood type is determined by mixing a small blood sample with specific antibodies and observing the reaction. The blood type must be known before a transfusion is given.
+A crossmatch test is also done to ensure that a recipient can safely receive blood from a specific blood donor. In crossmatching, components of donor blood are mixed with the recipient’s blood to check for bad reactions.
+If the donor's blood is incompatible with a recipient's blood, even a single transfusion can cause the transfused red blood cells to be rapidly destroyed.
+## How Are Blood Transfusions Done?
+Blood transfusions are often needed in emergencies, such as severe bleeding or sudden destruction of red blood cells resulting from an infection or a toxin. Transfusions can also be used to treat anemia from other causes. Animals with clotting disorders might need repeated transfusions.
+Whole blood, artificial blood substitutes, or just red blood cells, plasma, or platelets can be given during a transfusion.
+Transfusions must be done carefully because of possible side effects. The most serious potential side effect is the rapid destruction of transfused red blood cells (the reaction is called hemolysis). Hemolysis is uncommon in domestic animals.
+Other complications from transfusions include the spread of infections—such as feline leukemia virus (FeLV) infection or immune-deficiency diseases—from an infected donor. Donors should be tested for infectious diseases before giving blood.
+If too much blood is transfused, pulmonary edema (fluid buildup in the lungs) can occur. Other, less common reactions include fever, hives, or vomiting.
+Test your Knowledge nowTake a Quiz!
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**

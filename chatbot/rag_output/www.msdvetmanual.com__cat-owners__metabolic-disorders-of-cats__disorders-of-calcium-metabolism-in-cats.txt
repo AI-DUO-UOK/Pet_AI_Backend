@@ -1,0 +1,46 @@
+1. <[Metabolic Disorders of Cats](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders of Calcium Metabolism in Cats
+By[Jean A. Hall](https://vetmed.oregonstate.edu/people/jean-hall%20), DVM, PhD, DACVIM, Department of Biomedical Sciences, Carlson College of Veterinary Medicine, Oregon State University
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3247745
+* [Puerperal Hypocalcemia](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats/disorders-of-calcium-metabolism-in-cats#Puerperal-Hypocalcemia_v39460829)|
+* [Hypocalcemia in Critically Ill or Injured Cats](https://www.msdvetmanual.com/cat-owners/metabolic-disorders-of-cats/disorders-of-calcium-metabolism-in-cats#Hypocalcemia-in-Critically-Ill-or-Injured-Cats_v39460862)|
+
+Calcium is an essential component of the skeleton, and it has important functions in muscle contraction, blood clotting, enzyme activity, the nervous system, and hormone release, among others. Many different metabolic disorders affect calcium metabolism and can lead to abnormal levels of calcium in the blood ( see also [Disorders of the Parathyroid Glands and of Calcium Metabolism in Cats](https://www.msdvetmanual.com/cat-owners/hormonal-disorders-of-cats/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-cats)). A high level of calcium is known as hypercalcemia, whereas a low level is called hypocalcemia.
+## Puerperal Hypocalcemia
+Immediate veterinary medical treatment is needed for cats with puerperal hypocalcemia.
+In cats, a disorder of calcium metabolism known as puerperal hypocalcemia may occur within the first few weeks after giving birth, when the mammary glands are producing the greatest amount of milk. Hypocalcemia most likely results from loss of calcium into the milk. Other names for this condition include **postpartum hypocalcemia, periparturient hypocalcemia, puerperal tetany, and eclampsia**. This life-threatening condition is less common in cats than in dogs. Low levels of calcium in the blood can cause seizures.
+Early signs of puerperal hypocalcemia may include:
+* listlessness
+* restlessness
+* lack of appetite
+* tremors
+* twitching
+* muscle spasms
+* stiffness
+* incoordination
+* unwillingness to let kittens nurse
+
+As the condition worsens, severe tremors, repeated and prolonged contraction of muscles (tetany), rapid heartbeat, fever, seizures, and coma may develop.
+A tentative diagnosis is based on the history, physical examination, clinical signs, and response to treatment. A blood test to determine the level of calcium confirms the diagnosis.
+Immediate veterinary medical treatment is needed for cats with puerperal hypocalcemia. Calcium solutions given intravenously usually result in improvement within 15 minutes. Kittens should not be allowed to nurse for 12 to 24 hours. During this period, they should be fed a milk substitute or other appropriate diet. If they are older than 4 weeks, they should be weaned (transitioned from breast milk to solid food). After the acute crisis, calcium supplements are given for the rest of the lactation. Vitamin D supplements also may be used to increase calcium absorption from the intestines.
+Puerperal hypocalcemia is likely to recur with future pregnancies. Preventive measures include feeding a high-quality, nutritionally balanced, and appropriate diet during pregnancy and lactation, making sure food and water is always available while the cat is lactating, and feeding kittens with supplemental milk replacer early in lactation and with solid food after 3 to 4 weeks of age.
+**Also see professional content regarding**[ puerperal hypocalcemia](https://www.msdvetmanual.com/metabolic-disorders/disorders-of-calcium-metabolism/eclampsia-in-small-animals).
+## Hypocalcemia in Critically Ill or Injured Cats
+Critically ill cats can develop low blood calcium (hypocalcemia). Animals with body-wide inflammation triggered by a severe infection (called sepsis) are particularly at risk. The signs of hypocalcemia due to critical illness or injury are similar to those seen in dogs with puerperal hypocalcemia (excitability, tremors, twitching, or seizures).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

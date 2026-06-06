@@ -1,0 +1,42 @@
+1. <[Digestive Disorders of Cats](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Caused by Protozoa of the Digestive System in Cats
+By[Sharon Patton](https://www.msdvetmanual.com/authors/patton-sharon), MS, PhD, Department of Biomedical and Diagnostic Sciences, College of Veterinary Medicine, University of Tennessee;[Peter D. Constable](https://www.msdvetmanual.com/authors/constable-peter), BVSc (Hons), MS, PhD, DACVIM, College of Veterinary Medicine, University of Illinois at Urbana-Champaign
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3244130
+* [Amebiasis](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-protozoa-of-the-digestive-system-in-cats#Amebiasis_v3244133)|
+* [Coccidiosis](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-protozoa-of-the-digestive-system-in-cats#Coccidiosis_v3244218)|
+* [Giardiasis](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-protozoa-of-the-digestive-system-in-cats#Giardiasis_v3244227)|
+
+Protozoa are single-celled organisms that can sometimes cause disease. They may be free-living or parasites. Some of the more common diseases caused by protozoa in cats are discussed below.
+## Amebiasis
+Amebiasis is a disease caused by the amoeba _Entamoeba histolytica_. It causes inflammation of the large intestine, which produces persistent diarrhea. Amebiasis is common in people, sometimes seen in dogs and cats, and rare in other mammals. Humans are the natural host for this species and the usual source of infection for domestic animals. Cats become infected by eating food or water contaminated with feces containing infective cysts, which are a dormant form of the parasite.
+_Entamoeba histolytica_ lives inside the large intestine and will sometimes produce no obvious signs. On the other hand, it can invade the intestinal lining and produce inflammation, wounds, and bleeding. In short-term disease, severe diarrhea may develop. This disease may be fatal, become long-lasting, or improve spontaneously. Cats with longterm infection may show weight loss, poor appetite, straining to defecate, and diarrhea. Any of these signs may be continuous or may come and go.
+The disease is diagnosed by the presence of active or dormant _E. histolytica_ in feces or biopsies of sores in the colon. If infection has occurred outside of the intestine, the parasites may be difficult to detect. Antibiotics may be prescribed to treat this illness.
+## Coccidiosis
+Coccidiosis is an invasion and destruction of intestinal tissues by any of several protozoa. Coccidiosis can cause illness in cats but while infections are very common, signs associated with infection are much less common.
+Coccidia more commonly infect kittens and tend to infect animals that have been weakened in some way. Therefore, signs of illness caused by coccidiosis are most prevalent during stress caused by weaning.. Usually, coccidiosis is associated with other infections, suppression of the immune system, or stress. Almost every cat will become infected with the coccidia _Isospora felis_ at some point in its life. Infection results when an animal eats infective egg cysts (oocysts). These oocysts enter the environment in the feces of an infected animal, but they are unable to cause infection until they develop further under the right environmental conditions.
+The most common signs in severe cases are diarrhea (sometimes bloody), weight loss, and dehydration. Your veterinarian will combine the results of fecal examinations with observations of signs and intestinal abnormalities to confirm the diagnosis.
+Treatment may be unnecessary in cats because they usually eliminate the infection spontaneously, although sick animals can be treated with medication if needed.
+Sanitation is important, especially in catteries or other places where large numbers of animals are housed. Feces should be removed frequently, and fecal contamination of food and water should be prevented. Cages and utensils should be disinfected daily. Raw meat should not be fed. Insect control is also important.
+## Giardiasis
+Giardiasis is a longterm, intestinal protozoal infection caused by species of _Giardia_. It is seen worldwide in most domestic and wild mammals, many birds, and people. Infection is common in cats. _Giardia_ has been reported to be found in up to 39% of fecal samples from pet and shelter cats, with a higher rate of infection in younger animals.
+_Giardia_ protozoa live in the small intestine, where they attach and multiply. They produce cysts that are passed in the feces. Transmission occurs when cats ingest these cysts, either through contact with an infected cat or a contaminated environment. _Giardia_ cysts survive well in the environment, and only a small number of organisms are needed to cause infection. Shedding of cysts by an infected cat may be continuous over several days and weeks but is often intermittent. It is currently unclear whether the same species of _Giardia_ can infect both domestic animals and people. It appears that some _Giardia_ species can infect a variety of mammals, whereas others only infect a single species.
+_Giardia_ infection in cats sometimes causes no signs. In other cases, it causes a poor appetite, weight loss, and longterm diarrhea, which can be continual or intermittent, particularly in kittens. Feces usually are soft, poorly formed, pale, foul-smelling, contain mucus, and appear fatty. Occasionally vomiting occurs. A diagnosis is usually made by identifying _Giardia_ cysts or _Giardia_ antigen in stool samples. _Giardia_ cysts are not shed all the time, so several fecal tests may be needed for diagnosis.
+To treat giardiasis, your veterinarian will likely prescribe a drug or combination of drugs that are effective against protozoa. A vaccine is available for cats in some countries. Your veterinarian can tell you whether or not this vaccine is appropriate for your cat.
+_Giardia_ cysts in the feces are a source of infection and reinfection for cats, particularly those in crowded conditions, such as catteries. Prompt removal of feces limits environmental contamination. Cysts contaminating the hair of cats may be a source of reinfection. Shampooing and rinsing the animals well can help remove cysts from hair. Cats may be infected with a type of _Giardia_ species that only infects cats, but they may occasionally have a type that also infects people. Cat feces should be disposed of promptly. It is important to wash your hands properly after handling infected animals or their feces.
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

@@ -1,0 +1,53 @@
+* Multimedia
+# Bone Disorders in Dogs
+ByJoseph Harari, MS, DVM, DACVS, Veterinary Surgical Specialists, Spokane, WA
+* Multimedia|
+Bone disorders can be developmental, infectious, nutritional, or due to bone tumors, trauma, or unknown causes.
+## Developmental Bone Disorders
+Developmental bone disorders appear in young animals when the bones do not grow correctly. They may be congenital (present at birth) or occur as the animal grows. Some of the more common causes include hereditary breed characteristics and dietary imbalances.
+### Angular Limb Deformities
+Abnormal development of the bones of the foreleg (the radius and ulna) can occur after injury to growth plates. It may also be hereditary in some breeds (such as Bulldogs, Pugs, Boston Terriers, Basset Hounds, and Dachshunds). Irregular growth of the 2 bones leads to shortened limbs, bowing of the bones, partial displacement of the elbow joint, and bending or twisting of the carpus (wrist).
+Growth plates, dog
+This condition results in lameness. Movement of the elbow or carpal joints is painful, and range of motion is reduced. X-rays may reveal the extent of bone deformity.
+Treatment is based on correcting the position, shape, and length of the limb, and reestablishing normal joint movement. Surgical procedures include corrective surgery and stabilization with internal or external implants. The outlook for recovery is good as long as the limb deformities are not severe.
+### Craniomandibular Osteopathy
+Craniomandibular osteopathy is a bone disorder of growing dogs that affects the lower jaw (mandible) and the round bones behind the ears (tympanic bullae) of Terrier breeds. Certain portions of the normal bone are resorbed and replaced by immature bone. The cause is unknown, but it is probably genetic.
+Signs may vary widely. They include mouth discomfort, weight loss, fever, and painful enlargement of the lower jaw. X-rays are used to confirm the diagnosis.
+Treatment may involve the prescription of appropriate pain relievers or cortico-steroids to reduce inflammation and discomfort. A soft-food diet is usually recommended. The outlook for recovery is good, because the bone growth stops when the animal matures.
+### Hypertrophic Osteodystrophy
+This disorder affects the areas where growth occurs in the long bones of young, growing dogs, usually of large or giant breeds. The exact cause is unknown.
+Signs include pain and swelling in the radius and ulna, fever, loss of appetite, and depression. Affected dogs may be lame and reluctant to move. These signs may come and go. Deformities may develop in severely affected dogs. X-rays can help confirm the diagnosis.
+Treatment is aimed at relieving pain; for example, nonsteroidal anti-inflammatory drugs may be prescribed. Supportive fluid care and dietary changes (as recommended by a veterinarian) may also be helpful.
+### Osteochondromatosis (Multiple Exostoses)
+Osteochondromatosis is an uncommon disorder of young dogs characterized by multiple bony growths (known as osteochondromas) that arise from the surface of the long bones, vertebrae, and ribs. Animals may have no signs, and diagnosis is confirmed by x-rays and physical examination of the growths. If lameness or pain develops, the masses can be surgically removed.
+### Panosteitis
+Panosteitis causes bone inflammation, primarily of the long bones, in young, rapidly growing dogs of large and giant breeds. The inflammation may involve single or multiple bones. It appears spontaneously and lasts only as long as the dog is growing, whether or not it is treated. The exact cause is unknown, although some factors thought to play a role include genetics (in German Shepherds), stress, infection, or the body’s own metabolic and immune responses.
+The condition generally affects dogs 6 to 16 months old. Animals are lame and feverish, have no appetite, and show signs of pain when the affected bones are handled. These signs may come and go. X-rays are used to confirm the diagnosis. Treatment is aimed at relieving pain and discomfort. Nonsteroidal anti-inflammatory drugs or other pain relievers as prescribed by a veterinarian can be used when signs are present. Although it is uncertain whether diets high in protein and calories or dietary supplementation play a role in the development of this condition, it is suggested that such diets be avoided in young, growing dogs.
+### Retained Ulnar Cartilage Cores
+Retained ulnar cartilage cores is a disorder of the growth plate of the ulna in young large and giant dogs. Abnormal bone formation, in which bone does not harden appropriately, occurs. As a result, bone growth is restrained in the affected forelimb. The exact cause is uncertain, although diet may play a role.
+Signs include lameness and angular limb deformities ( see Angular Limb Deformities). X-rays are useful to confirm the diagnosis. Dietary supplementation should be stopped, and appropriate nutrition discussed with your veterinarian. Surgical division or removal of the bone may also be necessary to reduce limb deformation. The outlook for recovery is based on the severity of the condition.
+## Osteomyelitis
+Osteomyelitis is inflammation of the bone. The condition is most often associated with bacterial infection, although fungal diseases may also cause osteomyelitis. Factors contributing to infection include an inadequate blood supply to the bone, trauma, inflammation, bone damage, and the spread of an infectious agent through the bloodstream.
+General signs of osteomyelitis include lameness and pain. Dogs may have pus-filled sores at the wound site, fever, persistent lack of appetite, and depression. X‑rays, laboratory tests, and cultures to identify the source of infection can all help to confirm the diagnosis.
+Longterm treatment with antibiotics, either injected or given by mouth, is the usual treatment. Additionally, flushing of the wound; removal of dead, damaged, or infected tissue; and removal of loose implants are recommended. Open or closed wound drainage and bone grafting can also be performed. In persistent cases, limb amputation may be necessary. The outlook for recovery varies based on the severity of the infection and on how long it has remained untreated.
+## Hypertrophic Osteopathy
+Hypertrophic osteopathy is excessive thickening or growth of bone tissues of long bones in dogs occurring after tumors or infectious masses develop in the chest or abdominal cavity. The exact cause is unknown, but may be related to a reduced flow to blood to the bones.
+Signs include lameness, long-bone pain, and signs of body cavity tumors. X-rays are used to reveal the primary tumors and bone reactions. Treatment includes chest or abdominal surgery to remove tumors and the surgical cutting of the nerve to block a reflex associated with the bone changes.
+## Nutritional Osteopathies
+For additional information on nutritional osteopathies,  See also heading on page Disorders Associated with Calcium, Phosphorus, and Vitamin D in Dogs.
+Reduced bone mass, bone deformities, bony growths, fractures, and loose teeth (rubber jaw) are all conditions that can result from nutritional disturbances. These disturbances affect parathyroid hormone function and the metabolism of calcium and vitamins in the body. Specific causes may include an unbalanced diet resulting in an abnormally high level of parathyroid hormone (secondary nutritional hyperparathyroidism) or an abnormally high level of parathyroid hormone caused by kidney damage (secondary renal hyperparathyroidism), a deficiency of vitamin D, and excessive intake of vitamin A. Diagnosis is by blood tests, x-rays, and identification of any underlying nutritional cause. Treatment is aimed at reversing the specific cause. Surgery is rarely needed.
+## Bone Tumors
+Skeletal tumors can be benign or malignant (cancerous). They can either begin in the bone or spread from other areas of the body. The most common primary bone tumor is osteosarcoma of the radius, humerus, femur, or tibia.
+Signs include lameness, bone swelling, and fractures of the bone that are not caused by injury. X-rays of the affected limb can help confirm the diagnosis. Chest x-rays should be performed to look for any original tumors that may be spreading to the lungs. A bone biopsy is required to confirm the diagnosis.
+The outlook for long-term survival is guarded, but treatments such as surgery, chemotherapy, or radiation therapy can prolong the dog’s life in the short term.
+## Bone Fractures
+Bone fractures are often caused by car accidents, firearms, fights, or falls. Fractures can involve single or multiple breaks in the bone and may be open (also called compound) or closed. Open fractures have a wound or break in the skin that is associated with the fracture; closed fractures are those that do not produce an open wound. The shape and severity of the fracture depends on the force and type of the trauma.
+Bone fracture types
+Signs of fracture usually include lameness, pain, and swelling. X-rays are useful in determining the type and extent of the fracture. Treatment is based on the type of fracture, the dog’s age and health, the owner’s finances, and the surgeon’s technical expertise.
+Incomplete fractures in young, healthy dogs can be treated with external splints or casts. Other injuries are treated with external devices (fixators), bone plates, screws, orthopedic wires, or pins. Bone grafts are frequently used to help healing. Antibiotics are given to keep open fractures from becoming infected. Appropriate pain-relieving medication is used to reduce discomfort. Physical therapy or rehabilitation after the surgery is critical to the healing process.
+Bone fracture treatments
+The outlook for recovery is usually good, depending on the injury and the success of the surgery. Follow-up care includes x-rays and veterinary checkups to assess how the fracture is healing. Removal of internal implants like bone plates or screws is not necessary unless complications such as stress protection, infection, and soft-tissue irritation develop.
+## For More Information
+Also see professional content regarding bone disorders in dogs.
+Test your Knowledge nowTake a Quiz!
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**

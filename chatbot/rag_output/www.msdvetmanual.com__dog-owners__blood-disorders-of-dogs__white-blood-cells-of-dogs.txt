@@ -1,0 +1,38 @@
+1. <[Blood Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# White Blood Cells of Dogs
+By[Susan M. Cotter](http://vetprofiles.tufts.edu/faculty/susan-cotter%20), DVM, DACVIM, Cummings School of Veterinary Medicine, Tufts University
+Reviewed/Revised Dec 2017 | Modified Sept 2024
+v3200770
+* [Phagocytes](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cells-of-dogs#Phagocytes_v3200776)|
+* [Lymphocytes](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cells-of-dogs#Lymphocytes_v3200788)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cells-of-dogs#For-More-Information_v34432111)|
+
+The function of white blood cells (also called leukocytes) is to defend the body against infection. There are 2 main types of white blood cells formed in the bone marrow: phagocytes and lymphocytes.
+## Phagocytes
+Phagocytes (from the Greek word meaning “to eat”) are cells in the bloodstream and tissues that surround and consume foreign particles, cell waste material, and bacteria. Their main function is to defend against invading microorganisms by engulfing and destroying them. There are 2 types of phagocytes: granulocytes and mononuclear phagocytes.
+**Granulocytes** protect against bacteria, fungi, and parasites. Some types of granulocytes are involved in allergic reactions. Neutrophils are the most numerous of the white blood cells and are the first line of defense against bacterial invasion. Eosinophils and basophils are involved both in protection against some parasites and in the response to allergy. **Mononuclear phagocytes** have a single nucleus. They travel from the blood to tissues where they become large cells called macrophages that consume foreign particles and cell debris.
+As with red blood cells, the production and number of phagocytes are tightly regulated by chemical messengers of the blood, including interleukins (chemicals found in white blood cells that stimulate them to fight infection). Unlike the red blood cells, which remain circulating in the blood, the phagocytes use the blood’s circulatory system as a pathway to the tissues. Because of this, the number of phagocytes in the blood can provide an indication of circumstances in the tissues and the function of the bone marrow. For example, the number of neutrophils increases when inflammation is present anywhere in the body. An abnormal response, such as a low number of circulating white blood cells due to marrow failure, infections, drugs, or toxins, can lower resistance to bacterial infections. Finally, those elements that produce phagocytes may become cancerous, resulting in a disease called myelogenous leukemia.
+## Lymphocytes
+Lymphocytes are white blood cells that recognize "non-self" antigens, such as infectious organisms, foreign tissue, and cancer cells. Lymphocyte production in mammals begins in the bone marrow. Lymphocytes then become T cells, B cells, or natural killer cells. Lymphocytes destined to protect cells from disease travel to the thymus (an organ located at the base of the neck) where they become T cells under the influence of hormones there. **T cells** are responsible for a variety of functions, especially fighting off viral infections and cancers. Most T cells remain in the circulation, but some are also present in the spleen and lymph nodes. The **B cells** are responsible for producing antibodies that coat invading organisms or foreign substances, marking them for elimination by the immune system. For example, bacteria coated with antibody are more easily recognized and removed by neutrophils or macrophages. **Natural killer cells** and some types of T cells ("cytotoxic" T cells) destroy foreign material, whereas antibodies and other T cells ("helper" T cells) stimulate other components of the immune system to do so. If lymphocytes are reduced or abnormal, the dog is immunodeficient and susceptible to a wide range of infections.
+Antibody molecules are called **immunoglobulins**. They fall into several classes, each of which has a different function. For example, one class (IgA) is commonly found in the lungs and intestines; another (IgM) is the first antibody produced in response to newly recognized foreign microorganisms; a third (IgG) is the main antibody in the bloodstream; and a fourth (IgE) is involved in allergic reactions.
+Lymphocytes usually act appropriately to rid the body of foreign “invaders” that cause disease. However, sometimes lymphocytes do not react appropriately. One inappropriate response occurs when antibodies are produced against the body’s own cells, such as red blood cells. Another inappropriate response of the immune system is allergy. When antibody-primed cells are exposed to an allergen, the allergic reaction may be mild (hives) or life-threatening (anaphylaxis).
+An increase in the number of lymphocytes in the bloodstream occurs in some species as a response to the secretion of epinephrine (a hormone also known as adrenaline). A reduction in the number of circulating lymphocytes may be caused by hormones that may also be secreted in times of stress. Unusual lymphocytes may be seen in the blood in response to antigenic stimulation, such as vaccination.
+Malignant tumors originating in a lymph node (lymphoma) or lymphoid leukemia can also occur.
+## For More Information
+Also see professional content regarding [white blood cells](https://www.msdvetmanual.com/circulatory-system/hematopoietic-system-introduction/white-blood-cells-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

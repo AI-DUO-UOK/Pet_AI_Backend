@@ -1,0 +1,49 @@
+1. <[Digestive Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Caused by Bacteria in the Digestive System of Dogs
+By[Alicja E. Tabor](https://qaafi.uq.edu.au/profile/492/ala-tabor%20), BSc, PhD, Centre for Animal Science, Queensland Alliance for Agriculture and Food Innovation, The University of Queensland;[Walter Grünberg](https://www.linkedin.com/in/walter-gruenberg-805a7812/%20), PhD, DECAR, DECBHM, Assoc DACVIM, Faculty of Veterinary Medicine, Justus-Liebig-Universität Giessen, Giessen, Germany;[Thomas W. Swerczek](https://www.researchgate.net/profile/Thomas_Swerczek%20), DVM, PhD, Department of Veterinary Science, University of Kentucky
+Reviewed/Revised May 2018 | Modified Jan 2025
+v3202619
+* [_Campylobacter_ Infection](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-bacteria-in-the-digestive-system-of-dogs#Campylobacter-Infection_v3202622)|
+* [_Helicobacter_ Infection](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-bacteria-in-the-digestive-system-of-dogs#Helicobacter-Infection_v3202630)|
+* [_Salmonella_ Infection](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-bacteria-in-the-digestive-system-of-dogs#Salmonella-Infection_v3202636)|
+* [Tyzzer Disease](https://www.msdvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-bacteria-in-the-digestive-system-of-dogs#Tyzzer-Disease_v3202645)|
+
+Certain bacteria may cause gastrointestinal disease in dogs. The most common of these are discussed below.
+## _Campylobacter_ Infection
+Gastrointestinal campylobacteriosis is a bacterial disease. It is caused by related bacteria of the _Campylobacter_ and _Arcobacter_ genera. These organisms, along with a number of other species of _Campylobacter_ , can be isolated from infected dogs that do not show signs of infection (carriers) as well as from dogs that show signs of the illness. This disease can be transmitted to humans. Animals, including dogs (especially those recently adopted from shelters), and wild animals maintained in captivity can serve as sources of human infection.
+Exposure to feces of infected animals and food- or waterborne transmission appear to be the most common routes of infection. One suspected source of infection for pets and people is eating undercooked poultry and other raw meat or dairy products. Wild birds also may be important sources of water contamination.
+Typical signs include mucus-laden, watery, or bile-streaked diarrhea (with or without blood). Fever may also be present. Intermittent diarrhea may persist for more than 2 weeks; in some, the intermittent diarrhea may continue for months. The diarrhea appears to be most severe in young dogs. The bacteria may also cause a pregnant dog to miscarry her unborn puppies. To diagnose campylobacteriosis, a veterinarian will test the animal’s feces and blood for evidence of infection.
+To choose an appropriate antibiotic, veterinarians must determine which species of _Campylobacter_ or _Arcobacter_ is present. Unfortunately, some dogs will remain as carriers for the bacteria even after antibiotic treatment. Therefore, cleaning of the environment and frequently testing of the stool is necessary.
+**Also see professional content regarding**[ campylobacter infection](https://www.msdvetmanual.com/digestive-system/enteric-campylobacteriosis/enteric-campylobacteriosis-in-animals).
+## _Helicobacter_ Infection
+In humans, _Helicobacter pylori_ bacteria have been associated with stomach inflammation, ulcers, and stomach cancer. Although _H. pylori_ has not been found in dogs, several other species of _Helicobacter_ have been isolated. So far, it is not known whether the bacteria causes inflammation in the stomach. It is rarely associated with gastrointestinal ulcers. Whether their presence predisposes the infected animal to food allergies, inflammatory bowel disease, or cancer is also not yet known. All of the dogs in some studies tested positive for _Helicobacter_ infections.
+Several tests, including biopsy of the stomach lining, may be used by your veterinarian to diagnose the presence of the bacteria. Confirming the diagnosis requires culturing the bacteria in a laboratory. Several types of antibiotics have been used to treat the infection in dogs. In many cases, however, the bacteria recur. Whether this is due to reinfection or failure of the antibiotics to completely eliminate them following treatment is not known. Some dogs vomited less after treatment, even when the bacteria remained.
+It is possible that dogs could pass _Helicobacter_ species to humans. Although the extent of the risk is unknown, it is prudent for pet owners to practice good hygiene (e.g,.washing hands after petting a dog and not allowing a dog to lick a person's face).
+**Also see professional content regarding**[ Helicobacter infection](https://www.msdvetmanual.com/digestive-system/diseases-of-the-stomach-in-small-animals/helicobacter-infection-in-small-animals).
+## _Salmonella_ Infection
+Many species of _Salmonella_ bacteria can cause gastrointestinal illness. A _Salmonella_ infection can cause severe blood poisoning (septicemia) or inflammation of the intestine. The disease is infrequent in dogs. Infected dogs are often carriers of _Salmonella_ : they do not show any signs of disease but can intermittently spread it to others.
+When disease is seen, it is often associated with hospitalization, another infection or disease in adult dogs, or exposure to large numbers of the bacteria in puppies. Signs include sudden diarrhea and blood poisoning. Pneumonia may be evident. _Salmonella_ infection is likely to cause miscarriage in pregnant dogs. Diagnosis is based on signs of disease and on the laboratory examination of feces or tissues.
+Early treatment is essential for blood poisoning. In many cases, antibiotics are given intravenously. Fluids may be given intravenously as well. The intestinal form of the disease is difficult to treat effectively. Antibiotics are not always recommended, due to concerns about the development of antibiotic resistant bacteria, as well as concerns about the effects of antibiotics on normal intestinal bacteria of dogs. Although the signs of disease may disappear, eliminating the bacteria from the body is difficult, particularly in adult dogs.
+Because of the above problems, it is particularly important to follow your veterinarian’s directions carefully if your pet is infected with _Salmonella_. The medication selected and both the timing of the doses and the duration of treatment are important in eliminating the infection.
+_Salmonella_ can be transmitted from dogs to humans, so care should be taken to avoid contact with feces from an infected dog.
+**Also see professional content regarding**[ salmonella infection](https://www.msdvetmanual.com/digestive-system/salmonellosis/salmonellosis-in-animals).
+## Tyzzer Disease
+Tyzzer disease is an infection caused by the bacterium _Clostridium piliforme._ It affects a wide range of animals; however, the disease is rare in dogs. Infection most likely results from oral exposure to infective spores from the environment or contact with affected or carrier animals. The bacteria primarily affect cells in the intestine, liver, and heart. The disease most often affects young, healthy animals that are subjected to stress. In some species, the disease occurs along with other diseases, such as distemper and mycotic pneumonia in dogs.
+Signs vary, but may include decreased activity, loss of appetite, fever, jaundice, and diarrhea. Before death, there are convulsions and coma. A diagnosis of Tyzzer disease is based on laboratory examination of feces or tissue samples for the presence of the bacteria. Blood tests can also be used to look for the presence of antibodies against the bacteria. Little is known about the effectiveness of antibiotics for treatment; some antibiotics are known to aggravate the disease. Dogs suspected of being infected may be treated with intravenous fluids and appropriate antibiotics.
+**Also see professional content regarding**[ Tyzzer disease](https://www.msdvetmanual.com/digestive-system/tyzzer-disease/tyzzer-disease-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

@@ -1,0 +1,46 @@
+1. <[Brain, Spinal Cord, and Nerve Disorders of Cats](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Central Nervous System Disorders Caused by Parasites in Cats
+By[Charles M. Hendrix](https://www.vetmed.auburn.edu/faculty/hendrix-charles/%20), DVM, PhD, Department of Pathobiology, College of Veterinary Medicine, Auburn University;[Rick Atwell](https://veterinary-science.uq.edu.au/profile/2476/professor-rick-atwell%20), BVSc, PhD, FACVSc, University of Queensland
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3245974
+* [Flukes](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats/central-nervous-system-disorders-caused-by-parasites-in-cats#Flukes_v3245987)|
+* [Roundworms](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats/central-nervous-system-disorders-caused-by-parasites-in-cats#Roundworms_v3245992)|
+* [Disease from Insects](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats/central-nervous-system-disorders-caused-by-parasites-in-cats#Disease-from-Insects_v3246000)|
+* [Tick Paralysis](https://www.msdvetmanual.com/cat-owners/brain-spinal-cord-and-nerve-disorders-of-cats/central-nervous-system-disorders-caused-by-parasites-in-cats#Tick-Paralysis_v39370600)|
+
+A number of parasites (including worms and insects) are associated with central nervous system disease. Diagnosis requires eliminating other possible causes of illness, such as rabies, and identifying the specific parasite responsible.
+## Flukes
+Two species of _Paragonimus_ lung flukes can accidentally migrate to the nervous system and produce cysts in the brain and spinal cord of cats, dogs, and people.
+Schistosomes, or blood flukes, normally deposit their eggs in the blood vessels of the gut and urinary bladder, from which they pass into the external environment via the feces or urine. Some eggs, however, may get into the bloodstream and reach the central nervous system where they form capsules. This condition has been seen in people and domestic animals.
+## Roundworms
+Several types of intestinal worms (nematodes) are found in domestic animals.
+The larvae of some roundworms, including _Toxocara_ species, can invade the central nervous system and cause localized damage in cats. _Toxocara_ larvae may also invade the eye and cause vision loss in people.
+_Baylisascaris procyonis_ is a roundworm found in the small intestine of raccoons. Its larvae can infect people and domesticated animals and migrate to the central nervous system. This parasite can also cause central nervous system and eye damage in people, particularly children.
+_Dirofilaria immitis_ is more commonly known as the canine heartworm, but it can also affect cats. In addition to the heart and lungs, other parts of the body, including the central nervous system and the eye, can be infected.
+_Gurltia paralysans_ is found in the spinal veins of cats and has reportedly produced a high incidence of paralysis.
+## Disease from Insects
+**Myiasis** is the development of certain types of larval flies (maggots, bots, and warbles) within the body’s tissues or organs. The larvae of _Cuterebra_ , which are deposited under the skin in dogs or cats, have been known to wander into the central nervous system and affect the cerebrum or cerebellum. Treatment of myiasis in the central nervous system is experimental. Antiparasitic drugs may be recommended to eliminate certain insect larvae from the nervous system. Corticosteroid drugs are often recommended to prevent additional inflammatory damage and pressure on the brain during treatment. (Also see [Flies and Mosquitoes](https://www.msdvetmanual.com/cat-owners/skin-disorders-of-cats/flies-and-mosquitoes-of-cats).)
+## Tick Paralysis
+Tick paralysis is a sudden, progressive motor paralysis caused by a salivary toxin that attacks the nervous system. Certain species of ticks are known to cause tick paralysis. People (especially children) and many other animals may be affected. Human cases of tick paralysis caused by the genera _Ixodes, Dermacentor_ , and _Amblyomma_ have been reported in Australia, North America, Europe, and South Africa. These 3 genera plus _Rhipicephalus, Haemaphysalis, Otobius_ , and _Argas_ have been associated with paralysis in animals. Cats seem to be resistant to the disease caused by these ticks, except in Australia where _Ixodes holocyclus_ causes a severe and sometimes fatal paralysis in cats.
+Signs typically appear 3 to 5 days after attachment of the _Ixodes holocyclus_ female tick, but the timing can vary. Early signs include a change in voice, weakness of the rear limbs, breathing abnormalities, gagging, coughing, vomiting, and dilated pupils. As the toxicity progresses, weakness or paralysis of the breathing muscles becomes life threatening. Cats are also prone to "asthma-like" constriction of the airways and often breathe with increased focus and effort. Cats with moderate or severe toxicities can also be anxious. If stressed or handled too roughly, these cats can deteriorate quickly and die.
+The presence of a tick along with the sudden (within 12 to 24 hours) appearance of leg weakness and/or difficulty breathing is diagnostic. If the tick is not still attached, the presence of a tick “crater” (a small hole surrounded by a slightly raised and red area) can help confirm the diagnosis. Other diseases and disorders can have the same signs as tick paralysis, but in areas where ticks are prevalent, tick paralysis is a strong possibility.
+Treatment involves removing all ticks. If all ticks are not removed, death can occur due to paralysis of the muscles responsible for breathing. Cases of tick paralysis not caused by _Ixodes holocyclus_ typically improve within 24 hours, with complete recovery in 72 hours. Unfortunately, removal of _Ixodes holocyclus_ ticks does not stop the disease. Topical treatment with any product to kill attached ticks must only be done with chemicals that are safe for use in cats. In Australia, treatment for _Ixodes holocyclus_ paralysis involves a specific antiserum (tick hyperimmune serum), in addition to treatment to minimize stress and support respiration. Severely fatigued animals may require anesthesia to improve breathing and oxygenation, allow muscles to rest, and overcome exhaustion. Asthma-like signs in cats can be difficult to treat because routine medications often do not work.
+With early treatment, most animals recover from tick paralysis. However, approximately 5% of affected animals will die despite appropriate treatment. In general, cats tend to be less severely affected and have better outcomes than dogs. Applying pesticides that prevent tick infestations (that are safe for use in cats) can help protect cats, but they cannot completely prevent disease. If you live in an area where ticks are prevalent, it is important to thoroughly search your pets' coats for ticks on a daily basis. Vaccines are not available to prevent tick paralysis.
+### For More Information
+Also see professional content regarding [CNS diseases caused by parasites](https://www.msdvetmanual.com/nervous-system/central-nervous-system-diseases-caused-by-helminths-and-arthropods/overview-of-central-nervous-system-diseases-in-animals-caused-by-helminths-and-arthropods).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

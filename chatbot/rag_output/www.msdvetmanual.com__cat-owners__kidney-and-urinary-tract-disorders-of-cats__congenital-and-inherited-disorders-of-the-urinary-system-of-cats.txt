@@ -1,0 +1,60 @@
+1. <[Kidney and Urinary Tract Disorders of Cats](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Congenital and Inherited Disorders of the Urinary System of Cats
+By[Scott D. Fitzgerald](https://cvm.msu.edu/directory/fitzgerald%20), DVM, PhD, DACVP, DACPV, Department of Pathobiology and Diagnostic Investigation, College of Veterinary Medicine, Michigan State University
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3247317
+* [Disorders of the Kidneys](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats/congenital-and-inherited-disorders-of-the-urinary-system-of-cats#Disorders-of-the-Kidneys_v3247321)|
+* [Disorders of the Ureters](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats/congenital-and-inherited-disorders-of-the-urinary-system-of-cats#Disorders-of-the-Ureters_v3247356)|
+* [Disorders of the Bladder](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats/congenital-and-inherited-disorders-of-the-urinary-system-of-cats#Disorders-of-the-Bladder_v3247368)|
+* [Disorders of the Urethra](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats/congenital-and-inherited-disorders-of-the-urinary-system-of-cats#Disorders-of-the-Urethra_v3247382)|
+
+Certain urinary tract abnormalities are inherited or congenital (present at birth). These abnormalities are caused by abnormal genes or produced by injury, disease, or exposure to toxic substances in the womb. They may or may not cause health problems later in your pet’s life. These types of abnormalities are rare, but important to consider, if your cat has urinary tract problems.
+## Disorders of the Kidneys
+There are many congenital and inherited problems that affect the kidneys. Among these are kidney dysplasia and hypoplasia, failure of the kidney(s) to develop, polycystic kidneys, and kidney cysts.
+### Kidney Malformations
+Kidney malformations, called **renal dysplasias** , occur when a cat’s kidneys do not develop properly before birth. When the kidneys are unusually small, the condition is called **hypoplasia**. These abnormalities occur only occasionally in cats. One or both kidneys can be affected. When both kidneys are affected, the kitten will typically die shortly after birth. When only one kidney is malformed, the other kidney often enlarges to compensate for the lost function. Signs typically develop when cats are between 6 months and 2 years of age, and may include vomiting, decreased appetite, and increased thirst or urination. There is no effective cure. Care for affected cats consists of managing the problems associated with the kidney failure that results from these conditions.
+### Failure to Develop
+Rarely, one or both kidneys fail to develop (a condition called renal agenesis). This condition is always accompanied by a lack of the tube that connects the kidney to the bladder (the ureter). The reproductive organs may also be underdeveloped. A cat in which both kidneys have failed to develop will die shortly after birth. However, a cat with one functioning kidney can live a full and healthy life. In this case, the condition is usually discovered by accident.
+### Polycystic Kidneys
+Polycystic kidneys have multiple cysts (enclosed, fluid-filled sacs) inside the functional part of the organ. Affected cats may also have cysts in the liver. The kidneys may be greatly enlarged, which a veterinarian may be able to feel during a physical examination. Problems caused by this condition can range from none at all to progressive kidney failure. This condition may be inherited in Persian cats and domestic longhair cats. Your veterinarian can diagnose polycystic kidneys by examining your pet, taking x-rays, performing ultrasonography, or performing exploratory abdominal surgery.
+### Simple Kidney Cysts
+These usually occur as a single cyst. They generally do not interfere with normal kidney function. It is unclear what causes them, and they are usually identified by accident.
+### Perirenal Pseudocysts
+Pseudocysts (or "false cysts") are rare but can develop outside of the functional part of the kidney in cats. It is unknown why they develop, but the kidney typically functions normally. As they grow, the pseudocysts cause the cat's abdomen to enlarge. The veterinarian may be able to feel a large mass near the kidney. The diagnosis is made using contrast x-rays or ultrasonography. Treatment involves surgery to drain and remove as much of the pseudocyst as possible. After surgery, most cats do well.
+### Other Kidney Disorders
+Other congenital problems include kidneys that are not positioned correctly, kidneys that are fused together, and **[nephroblastoma](https://www.msdvetmanual.com/cat-owners/kidney-and-urinary-tract-disorders-of-cats/noninfectious-diseases-of-the-urinary-system-of-cats#v3247574)** , a cancer that develops in the kidneys of young animals as a result of abnormal kidney tissue growth in the womb.
+## Disorders of the Ureters
+Several abnormalities can affect the ureter, the tube that connects the kidneys to the bladder. Normal, healthy cats have 2 ureters, 1 for each kidney.
+### Ectopic Ureter
+An **ectopic ureter** is one that opens somewhere other than into the bladder. Ectopic ureters could empty urine into the urethra (the tube used for urination), or in females, the uterus or vagina. This defect can occur in cats, but it is [much more common in dogs](https://www.msdvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/congenital-and-inherited-disorders-of-the-urinary-system-in-dogs#v3207841).
+Other problems can occur along with an ectopic ureter. An enlarged ureter caused by blockage of urine flow may be seen. This condition eventually leads to enlargement of the kidney due to the backup of urine. Abnormally small kidneys or bladder as well as urine leakage caused by problems with the urethral sphincter may also be found along with an ectopic ureter.
+A common sign of ectopic ureter is continuous dripping of urine. Because urine that remains on skin or other tissues is irritating, this dripping can cause cats to develop inflammation of the genital region. Animals that have one ectopic ureter and one healthy ureter may be able to urinate normally. Not being able to urinate normally may be a sign that both ureters are abnormally placed.
+Your veterinarian can diagnose this condition using x-rays taken after a special dye is given intravenously. The dye traces the course of the ureter and marks the location where it connects to the urinary bladder.
+Ectopic ureters can be treated by surgically moving the ureter to the correct place, or, in severe cases, removing the affected ureter and the accompanying kidney. Some cats will still leak urine after surgery, but medications can minimize this.
+### Other Disorders of the Ureter
+Other abnormalities of the ureter include failure to develop, the presence of more than the usual 2 ureters, and enlargement of the end of the ureter that connects to the bladder (ureterocele). Surgery is usually used to correct ureteroceles.
+## Disorders of the Bladder
+The bladder is a muscular sac that stores the urine produced by the kidneys. Several congenital and inherited problems can affect the bladder.
+### Urachal Remnants
+The **urachus** is a cord of fibrous tissue that normally extends from the bladder to the navel. Before birth, the urachus is a tube that connects the bladder to the umbilical cord so that wastes can be removed. After birth, it normally closes and becomes a solid cord. In some animals, however, the urachus does not close properly after birth. Depending on which portion of the urachus remains open, these abnormalities are called a patent urachus or an umbilical urachal sinus. Other problems include urachal diverticula (small sac-like structures attached to the urachus) and urachal cysts. Signs include an inability to control urination, urine scalding (due to the fact that urine is caustic) of the skin near the navel, and urinary tract infections. Your veterinarian can diagnose these problems using x‑rays taken after a special dye is placed into the bladder. Treatment usually includes surgery and, sometimes, antibiotics.
+### Other Disorders of the Bladder
+Other inherited or congenital bladder conditions in cats include the presence of more than one bladder, an abnormally developed or underdeveloped bladder, failure of the bladder to develop, and a bladder that is turned inside-out. Usually these problems occur along with other abnormalities of the urinary tract. Your veterinarian can diagnose these problems based on physical examination, observation of your pet while it urinates, and contrast x‑rays. Treatment varies depending on the type of problem.
+## Disorders of the Urethra
+The urethra connects the bladder to the outside of the body. It is the tube through which urine passes when your cat urinates. Congenital urethral problems in cats are uncommon. Some of the conditions that do occur include failure of the urethra to develop, a urethra that does not open all the way or does not open at all, openings of the urethra that are on the underside or on top of the penis rather than on the tip in males, multiple urethras, urethral diverticula (small pouches that form in the urethra that become inflamed and painful), an abnormal opening between the urethra and the rectum, and an unusually narrow urethra.
+**Also see professional content regarding**[ congenital and inherited disorders of the urinary system](https://www.msdvetmanual.com/urinary-system/congenital-and-inherited-anomalies-of-the-urinary-system/overview-of-congenital-and-inherited-anomalies-of-the-urinary-system-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

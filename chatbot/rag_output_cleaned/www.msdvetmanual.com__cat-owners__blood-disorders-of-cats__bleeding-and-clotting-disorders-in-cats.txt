@@ -1,0 +1,34 @@
+# Bleeding and Clotting Disorders in Cats
+When bleeding occurs, the process of blood clotting begins to stop blood loss. This process requires:
+* adequate platelets
+* normal clotting proteins
+* blood vessels that can constrict and support clot formation
+An injured blood vessel gets narrow, platelets stick to the damaged area and to each other, and clotting proteins form fibrous protein strands (called fibrin) that trap cells and create a firm clot. Later, other proteins stop the clotting process and dissolve the clot.
+Bleeding and clotting disorders can be present at birth (inherited) or develop later (be acquired). Acquired clotting disorders are more common than inherited ones.
+There are different types of bleeding and clotting disorders:
+* Clotting‑protein defects usually cause delayed bleeding, deep bruises, bleeding into joints or body cavities, or large collections of clotted blood called hematomas.
+* Platelet problems more often cause small surface bruises, nosebleeds, black stools from intestinal bleeding, or prolonged bleeding after injections or surgery.
+* Some diseases cause the blood to form clots excessively, leading to blocked arteries.
+Blood‑clotting tests identify major defects, but mild problems might not be detected.
+## Clotting-Protein Disorders
+Congenital clotting‑protein disorders appear early in life, when clotting factors are present in very low numbers or are dysfunctional. Severe defects can be fatal soon after birth. If a clotting factor works at 5–10% of normal, kittens might survive but show bleeding by the time they're 6 months old, often when they're being vaccinated or neutered.
+* **Hemophilia A** (factor VIII deficiency) is the most common inherited bleeding disorder in cats. Affected animals bleed for a long time after injury or surgery, but they rarely bleed spontaneously. Diagnosing hemophilia A in kittens younger than 6 months old is challenging because clotting-protein production is still developing. Treatment requires repeated transfusions of whole blood or plasma.
+* **Hemophilia B** (factor IX deficiency) is less common than hemophilia A, but it has been reported in several breeds. Very low levels of factor IX often cause death near the time of birth, and moderately low levels can lead to bleeding into joints and body cavities or bleeding during teething or surgery. The treatment is fresh frozen plasma.
+* **Factor XII deficiency** does not cause abnormal bleeding and is usually found on screening tests. Combined deficiencies of factors II, VII, IX, and X have been reported in Devon Rex cats. Bleeding in cases of factor XII deficiency often decreases with vitamin K, and it might lessen with age.
+Most clotting proteins are made in the liver, so liver disease can lower their levels.
+Exposure to anticoagulant rodenticides (rat poisons) can block protein production that depends on vitamin K and cause widespread bruising and internal bleeding. If you suspect your pet has been exposed to rat poison, see your vet immediately.
+**Disseminated intravascular coagulation (DIC)** is a severe condition in which many tiny clots form throughout the bloodstream. These clots use up platelets and clotting factors and cause uncontrollable bleeding and organ failure.
+DIC usually follows severe infections, heat stroke, major trauma, burns, or tumors. Treatment focuses on the underlying cause and intensive support, but the outlook is often poor.
+Some diseases involve abnormal blood clotting. Cats with **cardiomyopathy** (heart muscle disease) often form clots in major arteries because of damage to the heart wall and abnormal blood flow. These clots can block blood flow to the legs and cause sudden pain and paralysis. Cats with heart disease caused by hyperthyroidism might be given medications that lower the risk of clots by changing platelet activity. Veterinarians choose the treatment, including blood thinners, that works best for each cat’s condition.
+## Platelet Disorders
+Platelet disorders include too few platelets (**thrombocytopenia**), poor platelet function, or too many platelets (**thrombocytosis**).
+Thrombocytopenia is common and can result from immune‑mediated destruction, cancer, liver disease, infections, certain drugs, DIC, or unknown causes. Affected cats might show gum or skin bruises, nosebleeds, black stools, or prolonged bleeding after injury. Treatment might include rest, immune‑suppressing drugs, and transfusions.
+Some cancers trigger DIC, which further lowers platelet numbers. Drug‑induced thrombocytopenia can occur when drugs such as estrogen, some antibiotics, aspirin, acetaminophen, or penicillin suppress platelet production or destroy circulating platelets. These reactions are rare and usually improve after the drug is stopped, but bone marrow can take a long time to recover. **Because cats explore with their mouths, it is important to securely store medications.**
+Congenital platelet function disorders include Chédiak‑Higashi syndrome and Von Willebrand disease:
+* In **Chédiak‑Higashi syndrome**, abnormal white blood cells, pigment cells, and platelets lead to pale fur color, frequent infections, and excessive bleeding after procedures. This syndrome occurs in some Persian cats.
+* In **Von Willebrand disease**, the sticking together of platelets and the formation of clots are impaired because a protein called von Willebrand factor is defective or absent. This disease is common in dogs. In cats, it is rare but has been reported.
+Acquired platelet function problems can occur with immune system diseases, chronic kidney disease (CKD) or chronic liver disease, and certain drugs. These problems are diagnosed from blood tests and symptoms.
+## Blood Vessel Disorders
+Blood vessel disorders such as **Ehlers‑Danlos syndrome** are rare congenital defects in the material that makes up blood vessel walls. Affected cats have very loose, fragile skin and can bruise easily or form clots because their blood vessels are weak. There is no cure, and the focus in managing the disease is to prevent injury.
+Test your Knowledge nowTake a Quiz!
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**

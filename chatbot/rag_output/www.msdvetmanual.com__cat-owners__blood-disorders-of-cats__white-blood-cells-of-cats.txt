@@ -1,0 +1,52 @@
+1. <[Blood Disorders of Cats](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# White Blood Cells of Cats
+By[Nick Roman](https://www.msdvetmanual.com/authors/roman-nick), DVM, MPH, College Station Cat Clinic
+Reviewed By[Laurie Hess](https://www.msdvetmanual.com/authors/hess-laurie), DVM, DABVP, The MSD Veterinary Manual
+Reviewed/Revised Modified Mar 2026
+v108069147
+* [What Do Phagocytes Do?](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/white-blood-cells-of-cats#What-Do-Phagocytes-Do?_v108069151)|
+* [What Do Lymphocytes Do?](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/white-blood-cells-of-cats#What-Do-Lymphocytes-Do?_v108069166)|
+
+White blood cells protect the body from infection. There are two main types: **phagocytes** and **lymphocytes**.
+## What Do Phagocytes Do?
+Phagocytes (from the Greek word meaning “to eat”) move through the blood and body's organs, where they surround and digest foreign material, cell waste, and bacteria. Their main job is to defend against invading microorganisms.
+There are two kinds of phagocytes: granulocytes and monocytes.
+* **Granulocytes** protect against bacteria, parasites, and fungi. Some granulocytes also take part in [allergic reactions](https://www.msdvetmanual.com/cat-owners/skin-disorders-of-cats/allergies-of-cats). One type of granulocyte is the **neutrophil**. Neutrophils are the most common type of white blood cell and are the first line of defense against bacteria. Other granulocytes (called **eosinophils** and **basophils**) help protect against some parasites and are involved in allergic reactions.
+* **Monocytes** leave the blood and enter the body's organs, where they are then referred to as **macrophages**. These cells surround and digest foreign material and waste produced by cells.
+
+As with [red blood cells](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/red-blood-cells-of-cats), the body tightly controls the production and number of phagocytes via chemical signals in the blood.
+Unlike red blood cells, which stay in the bloodstream, phagocytes travel through blood vessels into the body's organs where they are needed. This is why the number of phagocytes in the blood can reflect what's happening in organs. For instance, when there is inflammation in an organ, the number of neutrophils in the blood increases, reflecting their importance in fighting inflammation.
+When the number of neutrophils is very low (due to bone marrow failure, drugs, or toxins), the body's ability to fend off bacterial infections is decreased.
+## What Do Lymphocytes Do?
+Lymphocytes recognize and attack specific infectious organisms that have invaded the body. They also help destroy foreign material in the body and cancer cells.
+Lymphocytes develop in the bone marrow and become either T cells, B cells, or natural killer cells:
+* Lymphocytes that protect the body from disease move from the bone marrow to the thymus (an organ at the base of the neck), where hormones turn them into **T cells**. Most T cells circulate in the blood, but some are in the spleen and lymph nodes. Some T cells (called **helper T cells**) activate other parts of the immune system. Other T cells (called **cytotoxic T cells**) are activated to recognize and destroy specific targets, such as virus-infected cells or cancer cells.
+* **B cells** produce antibodies that can trigger responses by the immune system or wrap around foreign organisms or substances to mark them for the immune system to remove. For example, antibodies can coat bacteria so that [phagocytes](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/white-blood-cells-of-cats#007c02e4-28b1-4303-b6d5-6fca7815a3d6) can more easily surround and digest them.
+Antibody molecules (also called immunoglobulins) are divided into several classes (called IgA, IgE, IgG, and IgM), each with a different role:
+* IgA is commonly found in the lungs and intestines.
+* IgE is involved in allergic reactions.
+* IgG is the main antibody in the bloodstream.
+* IgM is the first antibody produced against new infections.
+* **Natural killer cells** destroy foreign material directly. Unlike cytotoxic T cells, they do not have to be activated first.
+
+If the number of lymphocytes is low or they don't function normally, a cat’s immune system will be weak, and the cat will be vulnerable to infection.
+Lymphocytes usually respond appropriately to get rid of disease‑causing invaders. Problems arise when antibodies attack the body’s own cells, such as red blood cells. Attacks like these result in conditions called autoimmune diseases, such as [immune‑mediated hemolytic anemia](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/anemia-in-cats#430572c0-0bbb-4dbb-b754-df0a709b435e).
+[Allergic reactions](https://www.msdvetmanual.com/cat-owners/skin-disorders-of-cats/allergies-of-cats) are another abnormal response by the immune system. When immune system cells encounter an allergen (an allergy-causing substance), the reaction can be mild (such as hives) or severe and life‑threatening (a condition called anaphylaxis).
+**Lymphocytosis** is an increase in lymphocyte numbers. It can occur when the body is fighting infection, when the hormone epinephrine (adrenaline) is released, or in certain cancers.
+**Lymphocytopenia** is a decrease in the number of lymphocytes. The number of lymphocytes might decrease when an animal is being given corticosteroid drugs or the body is responding to a stressful situation (such as illness, a change in environment, or other stresses).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

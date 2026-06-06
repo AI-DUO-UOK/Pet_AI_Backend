@@ -1,0 +1,47 @@
+1. <[Hormonal Disorders of Cats](https://www.msdvetmanual.com/cat-owners/hormonal-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders of the Pancreas in Cats
+By[David Bruyette](https://www.veterinarydiagnosticinvestigation.com/about-us%20), DVM, DACVIM, Anivive Lifesciences, Inc.
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3244517
+* [Diabetes Mellitus](https://www.msdvetmanual.com/cat-owners/hormonal-disorders-of-cats/disorders-of-the-pancreas-in-cats#Diabetes-Mellitus_v3244528)|
+* [Functional Islet Cell Tumors (Insulinomas)](https://www.msdvetmanual.com/cat-owners/hormonal-disorders-of-cats/disorders-of-the-pancreas-in-cats#Functional-Islet-Cell-Tumors-\(Insulinomas\)_v3244538)|
+* [For More Information](https://www.msdvetmanual.com/cat-owners/hormonal-disorders-of-cats/disorders-of-the-pancreas-in-cats#For-More-Information_v39357541)|
+
+The pancreas is composed of several types of cells that have distinct functions involved in the production of hormones and digestive enzymes. The **exocrine pancreas** produces enzymes that are essential for the digestion of complex dietary components such as proteins, triglycerides, and complex carbohydrates. The exocrine pancreas also secretes large amounts of bicarbonate, which buffers stomach acid. [Disorders of the exocrine pancreas](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-of-the-pancreas-in-cats) are discussed with digestive disorders, because they relate to digestion. The **endocrine pancreas** produces the hormones insulin and glucagon, which regulate blood sugar levels. The functions and disorders of the endocrine pancreas are discussed in this section.
+The **islets of Langerhans** in the pancreas consist of 3 different types of cells, each of which produces a different hormone. Most of the cells, which are called beta cells, produce insulin. Insulin affects, either directly or indirectly, the function of every organ in the body, particularly the liver, fat cells, and muscle. In general, insulin increases the transfer of glucose and other compounds into body cells. It also decreases the rate of fat, protein, and carbohydrate breakdown.
+The other 2 cell types in the islets of Langerhans produce the hormones glucagon and somatostatin. When blood glucose levels drop, glucagon is released. Glucagon helps convert stored carbohydrates into glucose so they can be used as energy.
+Insulin and glucagon work together to keep the concentration of glucose in the blood and other body fluids within a relatively narrow range. Glucagon controls glucose release from the liver, and insulin controls glucose transport into numerous body tissues.
+## Diabetes Mellitus
+Diabetes mellitus (often called simply diabetes) is a chronic disorder characterized by increased blood sugar levels caused by either a deficiency of insulin or a resistance to insulin. Middle-aged to older cats are affected most commonly. Diabetes mellitus occurs in all feline breeds equally and in both males and females. In one study, obese male cats were more likely to have diabetes than females.
+A number of mechanisms are responsible for decreased insulin production and secretion, but usually they involve destruction of islet cells. In many cats with diabetes, a protein called amyloid collects in and damages the islet cells. The cat's own immune system can also destroy islet cells. Obesity increases the risk of insulin resistance in both cats and dogs.
+Diabetes can often develop gradually, and the signs may not be noticed at first. Common signs include increased thirst and urination, along with increased appetite and weight loss. Stress, obesity, and the administration of corticosteroid drugs can also increase the severity of these signs. Cats may also develop weakness in the hindlimbs (called diabetic neuropathy). Diabetic animals often develop longterm or recurrent infections. An enlarged liver is common. [Hepatic lipidosis](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-of-the-liver-and-gallbladder-in-cats) ("fatty liver disease") may also occur in cats with diabetes.
+A diagnosis of diabetes mellitus is based on finding high levels of sugar in the blood and urine after a period of fasting. In cats, the blood sugar level commonly increases under stress, such as drawing a blood sample, and multiple evaluations may be needed to confirm the diagnosis.
+Your understanding of the disease and daily care of your pet are critical to successfully managing diabetes. Treatment involves a combination of weight loss, diet, insulin injections, and possibly oral medications. Your veterinarian will determine the amount and timing of your pet’s meals, and the dosage and timing of insulin injections. Follow these recommendations very closely. Blood glucose measurements are necessary to ensure that the disease is being controlled. Your veterinarian may recommend that you perform this monitoring at home to get the most reliable results. Your veterinarian will interpret these results to make any necessary changes in treatment over time.
+Different insulins have different properties and concentrations. It is important to administer insulin as prescribed using the correct syringe type (typically U-40 for long-acting veterinary insulins, like PZI and glargine, used in cats).
+In some newly diagnosed cats, diabetic remission (reversal) occurs, and the cat no longer requires insulin administration. Remission usually occurs within 3 to 4 months of initiating diet changes and insulin treatment. Careful monitoring of blood glucose levels can help identify whether your cat is undergoing remission.
+Do not make changes in the amount or timing of insulin treatments or diet without consulting your veterinarian. Overdosing insulin can result in life-threatening low blood sugar (hypoglycemia); underdosing insulin can have serious longterm effects on the regulation of your cat's diabetes. Signs of dangerously low blood sugar include weakness, lack of coordination, seizures, and collapse. If these signs are seen after giving your cat insulin, call your veterinarian immediately. He or she may make recommendations to quickly increase your cat's blood sugar level before arriving at the veterinary office. Significantly low blood sugar is a medical emergency and requires immediate treatment.
+Bexagliflozin and velaglifolozin, belonging to a new class of oral antidiabetic agents called SGLT2 inhibitors, have recently been approved for use in cats.
+Untreated or poorly treated diabetes mellitus can result in a serious life-threatening complication called diabetic ketoacidosis. This is a medical emergency that requires immediate treatment and hospitalization to correct. Signs of ketoacidosis include increased thirst and urination, lethargy, weakness, decreased appetite, and trouble breathing. If your cat has any of these signs, it should be seen by a veterinarian right away.
+## Functional Islet Cell Tumors (Insulinomas)
+Tumors in the islet cells of the pancreas often produce and secrete the hormones normally secreted by the gland. The most common pancreatic islet tumor affects the insulin-secreting beta cells and is called an insulinoma. Other hormones and products can also be produced and secreted by islet cell tumors. Insulinomas are not common in cats.
+Signs result from excessive insulin secretion, which leads to low blood sugar (hypoglycemia). Initially, signs include weakness, fatigue after exercise, muscle twitching, lack of coordination, confusion, and possibly changes of temperament. Animals are easily agitated, occasionally becoming excited and restless. Periodic seizures may occur. A cat might also collapse, appearing to have fainted.
+Signs occur infrequently at first, but become more frequent and last longer as the disease progresses. Episodes may be brought on by exercise or by fasting or eating (which stimulates the release of insulin and lowers blood sugar levels). Signs resolve quickly after glucose treatment. Repeated episodes of prolonged and severe low blood sugar can result in irreversible brain damage. Diagnosis is based on a history of periodic weakness, collapse, or seizures, along with tests indicating low blood sugar.
+Removing the tumor surgically can correct the low blood sugar and nervous system signs, unless permanent damage has already occurred. However, if the tumor has already spread, blood sugar levels may remain low after surgery. Unfortunately, insulinomas are often malignant, but cats can live for more than a year with a good quality of life if all of the large tumors are removed. Quality of life can sometimes be maintained in affected animals by modifying the diet and giving glucocorticoids or other drugs.
+## For More Information
+Also see professional content regarding [the pancreas](https://www.msdvetmanual.com/endocrine-system/the-pancreas).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

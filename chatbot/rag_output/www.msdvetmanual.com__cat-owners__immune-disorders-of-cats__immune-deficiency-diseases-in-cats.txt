@@ -1,0 +1,48 @@
+1. <[Immune Disorders of Cats](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Immune-deficiency Diseases in Cats
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Aug 2018 | Modified Mar 2026
+v3245344
+* [Deficiencies in Phagocytosis](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/immune-deficiency-diseases-in-cats#Deficiencies-in-Phagocytosis_v3245349)|
+* [Selective Immunodeficiencies](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/immune-deficiency-diseases-in-cats#Selective-Immunodeficiencies_v3245365)|
+* [Immunodeficiencies Caused by Viruses](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/immune-deficiency-diseases-in-cats#Immunodeficiencies-Caused-by-Viruses_v3245369)|
+* Multimedia|
+
+Like people, cats can develop diseases and conditions that impair the function of their immune systems. Immune deficiency diseases have serious consequences and often lower the body’s defenses against infection. Some are inherited, and others are caused by viral infections (for example, feline immunodeficiency virus infection), malnutrition, stress, poisons, or cancer. Animals with inherited immune deficiency should not be bred.
+## Deficiencies in Phagocytosis
+Phagocytosis is an essential mechanism of the immune system. Phagocytes are cells that engulf (phagocytize), digest, and kill foreign invaders. Phagocytes rapidly respond to infections as part of the [nonspecific (innate) immune response](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/immune-system-responses-in-cats#v39358618). They can also serve as part of the adaptive immune system by presenting antigens to other cells in the adaptive system, thereby alerting them to the presence of the foreign invaders. Phagocytes are produced in the bone marrow, spread throughout the body via the bloodstream, and then gather in either tissue or the blood. They are found in the skin, mucous membranes, spleen, lymph nodes, the coverings of the brain and spinal cord, bone marrow, and blood vessels throughout the body.
+Phagocytosis
+| --- |
+A deficiency in phagocytosis can be caused by a low number of phagocytes in the blood or by a defect in their ability to act normally. They can be congenital (a birth defect) or acquired (caused by diseases or drugs). The deficiency increases susceptibility to bacterial infections of the skin, respiratory system, and gastrointestinal tract.
+Because a cat with reduced numbers of phagocytes has trouble fighting diseases, infections can easily develop into life-threatening complications. These infections respond poorly to antibiotics. Some conditions in cats that are known to affect phagocytosis include viruses such as feline leukemia, feline panleukopenia, and feline immunodeficiency; various disorders of white blood cell production; and bone marrow disorders. Certain drugs can also suppress the production of phagocytes.
+## Selective Immunodeficiencies
+Persian cats have a tendency to develop severe and sometimes protracted infections of the skin, fur, and claws. Many are caused by fungal infections, including "[ringworm](https://www.msdvetmanual.com/cat-owners/skin-disorders-of-cats/ringworm-dermatophytosis-in-cats)." In some Persian cats, the fungal infections invade the skin and cause the formation of small fleshy or grainy masses called **mycetomas**. Your veterinarian can recommend a treatment program for these infections.
+## Immunodeficiencies Caused by Viruses
+**Parvovirus** occurs in both dogs and cats. This viral disease, called **[feline panleukopenia](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-panleukopenia) ,** causes a severe and short-term reduction in the number of neutrophils and in the lymphocyte responsiveness. These failures of the immune system allow the virus to thrive and increase the risk of fungal infections such as aspergillosis, mucormycosis, and candidiasis.
+**[Feline leukemia virus (FELV)](https://www.msdvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/congenital-and-inherited-disorders-affecting-multiple-body-systems-of-cats)** infection in cats causes impairment of multiple immune functions. An infected cat will have an impaired immune system and a higher risk of acquiring infections from bacteria and other infectious agents in the environment. Dormant infections, such as feline infectious peritonitis, may suddenly flare up again.
+Feline leukemia virus is an important infectious disease of cats worldwide. In 2010, 3.1% of cats tested in the US had the virus. In addition to impairing immune function, the virus puts cats at risk for developing severe [anemia](https://www.msdvetmanual.com/cat-owners/blood-disorders-of-cats/anemia-in-cats) (decreased red blood cell levels), certain types of cancer (especially lymphoma and leukemia), intestinal disease, reproductive problems, neurologic dysfunction, and [stomatitis](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-of-the-mouth-in-cats#v3243761) (severe inflammation of the mouth).
+The infection is diagnosed using a specific blood test. Before introducing a new cat into your household, it should be tested for feline leukemia virus. Your veterinarian may also test your cat if it goes outdoors, lives with an FELV-positive cat, is sick, or has had exposure to another cat that could be infected.
+Unfortunately, there is no treatment for cats infected with this virus. Some FELV-positive cats can live for years without major complications. Be certain to schedule veterinary exams every 6 months, provide clean housing and proper nutrition, minimize stress, and avoid situations where your cat could pick up infections (such as boarding). Infected cats should be kept strictly indoors to prevent spreading the virus to other cats. Infected cats survive an average of 2.4 years after diagnosis.
+There is a vaccine available for feline leukemia virus. Your veterinarian will assess your cat annually to let you know if this vaccine is needed.
+**Feline immunodeficiency virus** (FIV) is spread from cat to cat through saliva, primarily by biting. Cats that are allowed to roam outdoors, male cats, and older cats are more likely to become infected. This viral infection attacks the immune system, leading to infections of the gums, mouth, digestive tract, urinary tract, and skin. Low red and white blood cell counts, certain cancers, or neurologic disease may also be seen. Shortly after becoming infected, cats may have a fever and enlargement of the lymph nodes (glands). However, these signs go away and the cat may appear healthy with no further signs of infection for months or years. However, once infected, cats remain infected for life and most eventually have a deterioration of immune function and increased risk of infections.
+Infection with feline immunodeficiency virus is diagnosed by a complete medical history and physical examination combined with a blood test that measures antibodies against the virus. There is no effective treatment, but supportive care and treatment of signs is important. This includes giving antibiotics for bacterial infections, providing a balanced diet, controlling parasites, keeping the cat indoors and isolated from other cats, and removing tumors.
+A vaccine for feline immunodeficiency virus is available, but not all vaccinated cats will be protected, so preventing exposure is important, even for vaccinated pets. Vaccination may also have an impact on future feline immunodeficiency test results. You should discuss whether or not your cat needs this vaccine with your veterinarian.
+### For More Information
+Also see professional content regarding [immunodeficiency diseases](https://www.msdvetmanual.com/immune-system/immunologic-diseases/immunodeficiency-diseases-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

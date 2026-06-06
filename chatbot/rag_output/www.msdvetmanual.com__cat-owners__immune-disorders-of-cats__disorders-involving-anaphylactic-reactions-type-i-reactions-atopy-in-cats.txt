@@ -1,0 +1,62 @@
+1. <[Immune Disorders of Cats](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Involving Anaphylactic Reactions (Type I Reactions, Atopy) in Cats
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3245178
+* [Anaphylactic Shock](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Anaphylactic-Shock_v3245184)|
+* [Hives and Swelling](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Hives-and-Swelling_v3245191)|
+* [Allergic Rhinitis (Nasal Allergies)](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Allergic-Rhinitis-\(Nasal-Allergies\)_v39358663)|
+* [Allergic Bronchiolitis](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Allergic-Bronchiolitis_v3245209)|
+* [Allergic Asthma](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Allergic-Asthma_v3245216)|
+* [Eosinophilic Bronchopneumopathy (formerly known as PIE Syndrome [Pulmonary Infiltration with Eosinophilia])](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Eosinophilic-Bronchopneumopathy-\(formerly-known-as-PIE-Syndrome-\[Pulmonary-Infiltration-with-Eosinophilia\]\)_v3245234)|
+* [Food Allergies](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Food-Allergies_v3245242)|
+* [Skin Allergies (Atopy or Atopic Dermatitis)](https://www.msdvetmanual.com/cat-owners/immune-disorders-of-cats/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-cats#Skin-Allergies-\(Atopy-or-Atopic-Dermatitis\)_v3245259)|
+* Multimedia|
+
+In a Type I reaction, the animal has been previously exposed to an antigen and produces an excess of antibodies. If this antigen appears in the blood, the reaction can be either body-wide (such as anaphylactic shock) or localized (such as itchy patches on the skin). If the antigen enters through the skin, a localized reaction is more common.
+## Anaphylactic Shock
+Anaphylactic shock is a rare, life-threatening, immediate allergic reaction to food, an injection, or an insect sting. The most common signs occur within seconds to minutes after exposure to the antigen. These signs include severe respiratory distress and the sudden onset of diarrhea, vomiting, excessive drooling, excitement, incoordination, shock, seizures, coma, and death. The cat’s gums are very pale, and the limbs feel cold. The heart rate is generally very fast, but the pulse is weak. Facial swelling may occur, and there may be itchiness around the face and head.
+Anaphylaxis is an extreme emergency. If you think that your cat is having an anaphylactic reaction, seek emergency veterinary assistance immediately. A veterinarian can give intravenous injections of epinephrine (adrenaline), antihistamines, anti-inflammatory drugs, and fluids to counteract the reaction. Treatment for other problems, such as difficulty breathing, may also be needed.
+## Hives and Swelling
+Hives (**urticaria**) and areas of swelling are caused by allergic reactions to drugs, vaccines, chemicals, something eaten, insect bites, or even sunlight. They generally develop within 20 minutes of being exposed to the allergen (antigen). Hives are the least severe type of anaphylactic reaction and cause small bumps to appear on the skin. Often, the hair stands up over these swellings and sometimes they itch. Swelling on the face, especially on the lips, the nose, and around the eyes, is more serious. The swelling can be so severe that the cat cannot open its eyes.
+Hives, cat
+| --- |
+Hives and swelling are usually not life threatening and typically go away by themselves once the cause of the allergic reaction is removed or passes through the body. Veterinarians often treat these reactions by providing antihistamines. Your veterinarian will make treatment decisions based on your pet’s circumstances.
+## Allergic Rhinitis (Nasal Allergies)
+Like people, cats can also have seasonal allergies (usually caused by pollen exposure), but it is less common in cats than in people. The condition can cause a watery nasal discharge and sneezing called **allergic rhinitis**. Nonseasonal rhinitis may be due to exposure to such allergens as molds, dander, bedding, or feeds. The condition is diagnosed by the presence of eosinophils (a type of white blood cell) in the nasal discharge, a favorable response after treatment with antihistamines, the disappearance of signs when the offending antigen is removed, and its seasonal nature. Although skin tests can diagnose the allergic reaction in people, skin testing is not presently an accurate means to diagnose nasal allergies in animals.
+## Allergic Bronchiolitis
+Coughing, wheezing, and difficulty breathing are the most common signs of allergic bronchiolitis, which is an inflammation of the lower portion (bronchioles) of the airway. This disease may be mistaken for other conditions, such as asthma or lungworm disease. The early signs of the disease can easily disappear with common medications. If the disease increases in severity, more powerful medication may be required. Your veterinarian can adjust the prescribed medication based on your cat’s reaction. It is usually not possible to identify the antigen causing the allergic reaction.
+## Allergic Asthma
+Allergic asthma is more often found in cats than in other animals; however, it is still less common than in humans. It occurs more frequently in summer and after going outdoors. Asthma attacks can be mild and intermittent or be lengthy and severe. Cats having mild attacks may wheeze and cough, whereas those having severe attacks can show shortness of breath and frantic attempts to inhale. The condition occurs as a result of constriction of the breathing passages triggered by the release of compounds, such as histamines, that combat allergens. Corticosteroids may be recommended to alleviate severe signs, but they do not treat the underlying cause of the asthma. Determining the allergic trigger can be difficult.
+See also [](https://www.msdvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/tracheobronchitis-bronchitis-bronchial-asthma-in-cats).
+Difficulty breathing, cat
+| --- |
+## Eosinophilic Bronchopneumopathy (formerly known as PIE Syndrome [Pulmonary Infiltration with Eosinophilia])
+Infiltration of the lungs with a thick fluid and white blood cells, called eosinophilic bronchopneumopathy, is caused by allergens, viruses, and parasites. It is uncommon in cats. Animals with the disorder generally become lethargic and have difficulty breathing with normal exercise. It is usually not possible to determine the antigen causing the reaction. Veterinarians can prescribe steroids to help control the signs.
+## Food Allergies
+Food allergies occur in cats as well as people. They often develop following an intestinal infection with a virus, bacteria, or protozoan and can lead to inflammation of the lining of the stomach and intestines. Fish, beef, milk, and chicken are the ingredients that cause food allergies most frequently in cats. The first (and sometimes only) sign is vomiting that occurs within 1 to 2 hours of eating. Weight loss, diarrhea or soft feces, skin changes, and poor coat condition may also occur. Feces usually are normal in amount and frequency, but consistency varies from semi-solid to watery. They may be extremely odorous. Severe cases of food allergies are characterized by diarrhea and sometimes by bloody feces.
+Poor coat condition, cat
+| --- |
+Both the diagnosis and treatment of food allergies are done by strictly controlling the diet at the direction of a veterinarian. Your veterinarian is likely to recommend a basic diet that includes protein and carbohydrate sources the cat has not eaten before, such as ground, cooked turkey and rice. Follow the recommended diet carefully to help identify the food that causes your pet’s allergic reaction, and do not feed any treats or table food unless directed. If signs improve while feeding the new diet and recur when feeding the old one, your veterinarian can confirm the diagnosis. Once food allergies are confirmed and signs have disappeared after restarting the new food (usually after 1 to 2 weeks), additional foods can be introduced 1 at a time until the problem food is identified. Commercial prescription diets are also available. Kittens with food allergies may grow out of them. Older animals may need special and restricted diets for the rest of their lives.
+## Skin Allergies (Atopy or Atopic Dermatitis)
+Skin allergy, also called atopy, occurs when a cat’s skin overreacts to certain allergens in the environment. In cats, food allergies are probably a more common cause of skin allergies than environmental allergens (such as pollen). Affected cats often scratch their skin and develop scabs, either small scabs across the body or larger scabs in one or more areas. They may also lose patches of hair. Veterinarians diagnose skin allergies by a medical history, physical examination, ruling out other disorders, and various tests including exclusion trials (where potential allergens are removed from the environment, if possible, and then reintroduced) and skin tests.
+The key to managing this condition is removing or restricting exposure to the allergen or contact irritant in the cat’s environment. Treatment consists of an extended series of injections of the possible allergen under the skin ("allergy shots") until improvement is noted. Several medications are available to help control the skin allergy. Your veterinarian will select a treatment program that is appropriate for your cat and its specific allergy. Atopy is typically a longterm condition that requires management throughout a cat's life.
+### For More Information
+Also see [more about allergies](https://www.msdvetmanual.com/cat-owners/skin-disorders-of-cats/allergies-of-cats) or professional content regarding [Type I reactions](https://www.msdvetmanual.com/immune-system/immunologic-diseases/hypersensitivity-diseases-in-animals#v3277240).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

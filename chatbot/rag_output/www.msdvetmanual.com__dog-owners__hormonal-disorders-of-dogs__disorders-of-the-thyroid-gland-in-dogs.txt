@@ -1,0 +1,43 @@
+1. <[Hormonal Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders of the Thyroid Gland in Dogs
+By[Mark E. Peterson](https://animalendocrine.com/staff/dr-mark-e-peterson/%20), DVM, DACVIM-SAIM, Animal Endocrine Clinic, New York;[Janice E. Kritchevsky](https://vet.purdue.edu/directory/person.php?id=30%20), VMD, DACVIM-LAIM, Department of Veterinary Clinical Sciences, College of Veterinary Medicine, Purdue University;
+[Janice E. Kritchevsky](https://vet.purdue.edu/directory/person.php?id=30%20), VMD, DACVIM-LAIM, Department of Veterinary Clinical Sciences, College of Veterinary Medicine, Purdue University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3203846
+* [Hypothyroidism](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-thyroid-gland-in-dogs#Hypothyroidism_v3203853)|
+* [Hyperthyroidism](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-thyroid-gland-in-dogs#Hyperthyroidism_v3203866)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-thyroid-gland-in-dogs#For-More-Information_v34429116)|
+
+The thyroid gland is a 2-lobed gland in the neck. It produces iodine-containing hormones, the most important of which are T3 and T4 , which affect many processes in the body. In general, the thyroid hormones regulate metabolic rate, or the speed at which body processes “run.” Too little hormone causes body processes to be sluggish. Too much causes them to run too fast.
+The secretion of thyroid hormone is regulated by a chain of events starting in the hypothalamus. The hypothalamus secretes thyrotropin-releasing hormone, which acts on the pituitary gland by stimulating it to secrete thyroid-stimulating hormone, which in turn, acts on the thyroid gland by stimulating it to secrete T3 and T4.
+Thyroid hormones act on many different cellular processes. Some of their actions occur within minutes to hours, while others take several hours or longer. Thyroid hormones in normal quantities work along with other hormones, such as growth hormone and insulin, to build tissues. However, when they are secreted in excess, they can contribute to breakdown of proteins and tissues.
+## Hypothyroidism
+In hypothyroidism, decreased levels of thyroid hormones result in a slower metabolic rate. More than 95% of cases of hypothyroidism in dogs are caused by destruction of the thyroid gland itself. Another cause is a tumor of the pituitary gland, which usually causes deficiencies of other pituitary hormones as well. Rarely, dogs can be born with a thyroid gland that does not develop or function normally. Puppies born with a pituitary disorder, such as pituitary dwarfism, can also have hypothyroidism.
+Hypothyroidism is most common in dogs 4 to 10 years old. It usually affects mid- to large-size breeds and is rare in toy and miniature breeds. Breeds most commonly affected include the Golden Retriever, Doberman Pinscher, Irish Setter, Miniature Schnauzer, Dachshund, Cocker Spaniel, and Airedale Terrier. Hypothyroidism occurs equally in both males and females, but spayed females may have a higher risk than unspayed dogs.
+Because a deficiency of thyroid hormone affects the function of all organ systems, signs vary. Most signs are directly related to slowing of metabolism, which results in mental dullness, lethargy, unwillingness or inability to exercise, and weight gain without an increase in appetite. Some dogs have trouble keeping warm and seek sources of heat. Changes in the skin and coat are common, including dryness, excessive shedding, delayed regrowth of hair, and hair thinning or hair loss (usually the same pattern on both sides), sometimes associated with increased pigmentation over points of wear. In more severe cases, the skin can thicken, especially on the forehead and face, resulting in a puffy appearance and thickened skin folds above the eyes. This puffiness, together with slight drooping of the upper eyelid, gives some dogs a “tragic” facial expression.
+Rarely, neurologic disorders, including an enlarged esophagus (megaesophagus), paralysis of the larynx and facial nerves, and severe dizziness (vestibular disease), can be associated with hypothyroidism. Unfortunately, these signs may not resolve with treatment. In rare cases, severe hypothyroidism can also induce a coma.
+In non-neutered dogs, hypothyroidism may cause various reproductive disturbances. Females may have irregular or no heat cycles and become infertile, or litter survival may be poor. Males may have lack of libido, small testicles, low sperm count, or infertility.
+During the fetal period and in the first few months of life, thyroid hormones are crucial for growth and development of the skeleton and central nervous system. Animals that are born with thyroid deficiency or that develop it early in life often show dwarfism and impaired mental development. An enlarged thyroid gland also may be detected, depending on the cause of the hypothyroidism.
+Accurately diagnosing hypothyroidism requires close evaluation of signs and various laboratory tests, including demonstration of low serum concentrations of thyroid hormones (especially T4). Because other diseases can have similar signs and lower the level of T4 in the blood, your veterinarian may need to perform additional tests, such as routine blood tests, antibody testing, administration of thyroid-stimulating hormone, ultrasonography or scintigraphy of the thyroid gland, or a therapeutic drug trial. Certain breeds, such as Greyhounds, Scottish Deerhounds, or racing Alaskan sled dogs, generally have lower T4 blood levels than other breeds. In addition, some drugs, such as glucocorticoids, can reduce blood levels of T4.
+Treatment involves increasing or replacing the missing thyroid hormone. Thyroxine (T4) is the thyroid hormone replacement most often used in dogs. The success of treatment can be measured by the amount of improvement in signs. Usually, treatment must be tried for 4 to 8 weeks before any changes in coat and body weight can be evaluated. Serum thyroid hormone concentrations are also monitored to determine whether the dosage of thyroid hormone needs adjustment. Once the dose has been stabilized, thyroid hormone levels are usually checked once or twice a year. Treatment is generally lifelong. If your dog does not improve while on thyroid medications, another disorder could be to blame, and further tests should be performed.
+## Hyperthyroidism
+Hyperthyroidism is caused by excess of the thyroid hormones, T3 and T4. Signs include weight loss, increased appetite, excitability, increase in thirst and urination, vomiting, diarrhea, and increased heart rate, all of which reflect an increased metabolic rate.
+Hyperthyroidism is much more [](https://www.msdvetmanual.com/cat-owners/hormonal-disorders-of-cats/disorders-of-the-thyroid-gland-in-cats#v3244702) than in dogs, and in cats it can be successfully treated with radiation therapy and/or medication. However, when hyperthyroidism occurs in dogs, the most likely cause is malignant cancer of the thyroid gland (thyroid carcinoma). Treatment of thyroid cancer and hyperthyroidism in dogs depends on the size of the tumor, the amount of tissue involved, and the presence of metastasis (spread of cancer to other locations in the body). Surgery, radiation therapy, or radioactive iodine are potential treatment options. Medications may improve the signs of hyperthyroidism but will not treat an underlying tumor. Because hyperthyroidism in dogs is almost always associated with thyroid cancer, the longterm outlook is poor.
+## For More Information
+Also see professional content regarding [the thyroid gland](https://www.msdvetmanual.com/endocrine-system/the-thyroid-gland).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

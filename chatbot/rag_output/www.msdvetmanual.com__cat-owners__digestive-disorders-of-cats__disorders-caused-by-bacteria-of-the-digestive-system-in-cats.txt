@@ -1,0 +1,44 @@
+1. <[Digestive Disorders of Cats](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Caused by Bacteria of the Digestive System in Cats
+By[Alicja E. Tabor](https://qaafi.uq.edu.au/profile/492/ala-tabor%20), BSc, PhD, Centre for Animal Science, Queensland Alliance for Agriculture and Food Innovation, The University of Queensland;[Walter Grünberg](https://www.linkedin.com/in/walter-gruenberg-805a7812/%20), PhD, DECAR, DECBHM, Assoc DACVIM, Faculty of Veterinary Medicine, Justus-Liebig-Universität Giessen, Giessen, Germany;[Thomas W. Swerczek](https://www.researchgate.net/profile/Thomas_Swerczek%20), DVM, PhD, Department of Veterinary Science, University of Kentucky
+Reviewed/Revised Aug 2018 | Modified Sept 2024
+v3243985
+* [_Campylobacter_ Infection](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-bacteria-of-the-digestive-system-in-cats#Campylobacter-Infection_v3243988)|
+* [_Helicobacter_ Infection](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-bacteria-of-the-digestive-system-in-cats#Helicobacter-Infection_v39356541)|
+* [_Salmonella_ Infection](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-bacteria-of-the-digestive-system-in-cats#Salmonella-Infection_v3243996)|
+* [Tyzzer Disease](https://www.msdvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-caused-by-bacteria-of-the-digestive-system-in-cats#Tyzzer-Disease_v3244003)|
+
+Certain bacteria may cause gastrointestinal disease in cats. The most common of these are discussed below.
+## _Campylobacter_ Infection
+Gastrointestinal campylobacteriosis is a bacterial disease. It is caused by bacteria of various _Campylobacter_ species. These organisms can be isolated from carrier cats (those that do not show signs) as well as ill cats. Cats, especially those recently obtained from shelters, and other animals can serve as sources of human infection.
+Exposure to feces of infected animals and food- or waterborne transmission appears to be the most common routes of infection. One suspected source of infection for pets and people is eating undercooked poultry and other raw meat or dairy products. Wild birds also may be important sources of water contamination.
+Typical signs include mucus-laden, watery, or bile-streaked diarrhea (with or without blood) that lasts 5 to 15 days; reduced appetite; abdominal pain; and occasional vomiting. Fever may also be present. Intermittent diarrhea may persist for more than 2 weeks; in some, it may last for months. The diarrhea appears to be most severe in cats less than 6 months old. To diagnose campylobacteriosis, a veterinarian will test the animal’s feces for evidence of infection.
+To choose an appropriate antibiotic, veterinarians must determine which species of _Campylobacter_ is present. Unfortunately, some cats will remain carriers of the bacteria even after antibiotic treatment. Therefore, cleaning of the environment and frequent testing of the stool is necessary. Antibiotic treatment for cats found to carry these bacteria is usually reserved for those that are young, severely affected, or a potential source of human infection. This is because other organisms are likely to be involved and antibiotic treatment is often not effective.
+## _Helicobacter_ Infection
+In humans, _Helicobacter pylori_ bacteria have been associated with stomach inflammation, ulcers, and stomach cancer. Although _Helicobacter pylori_ has not been found in cats, several other species of _Helicobacter_ have been isolated. So far, it is not known whether the bacteria causes inflammation of the stomach. It is rarely associated with gastrointestinal ulcers. Whether their presence predisposes the infected animal to cancer is also not yet known. All of the cats in some studies tested positive for _Helicobacter_ infections.
+Several tests, including biopsy of the stomach lining, may be used by your veterinarian to diagnose the presence of the bacteria. Antibiotics and other medications have been used to treat the infection in cats. In many cases, however, the bacteria recur. Whether this is due to reinfection or failure of the antibiotics to completely eliminate them after treatment is not known. Some cats vomited less after treatment, even when the bacteria remained.
+It is possible that cats could pass _Helicobacter_ species to people. Although the extent of the risk is unknown, it is prudent for pet owners to practice good hygiene (for example, washing hands after petting a cat).
+## _Salmonella_ Infection
+Many species of _Salmonella_ bacteria can cause gastrointestinal illness. A _Salmonella_ infection can cause severe blood poisoning (septicemia) or inflammation of the intestine. The disease occurs in all domestic animals, as well as humans, but it is infrequent in cats. Infected cats may become carriers of _Salmonella_ : they often do not show any signs of disease but can intermittently spread it to others.
+Signs of disease are more likely to occur during hospitalization, in cats with another infection or debilitating condition, or in kittens exposed to large numbers of the bacteria. Signs include sudden diarrhea with blood poisoning. Longterm infections can cause a miscarriage in pregnant cats. Pneumonia and conjunctivitis (inflammation of eye membranes) are sometimes present. Diagnosis is based on signs of disease and on the laboratory examination of feces, blood, or tissues.
+Early treatment is essential for blood poisoning. In many cases, antibiotics are given intravenously. Fluids may be given intravenously as well. The intestinal form of the disease is difficult to treat effectively. Antibiotics are not always recommended, due to concerns about the development of antibiotic-resistant bacteria. Although the signs of disease may disappear, eliminating the bacteria from the body is difficult, particularly in adult cats.
+## Tyzzer Disease
+Tyzzer disease is an infection caused by the bacterium _Clostridium piliforme_. It affects a wide range of animals but is rare in cats. Infection most likely results from oral exposure to infective spores from the environment or contact with carrier animals. It most often affects young, healthy animals that have been subjected to stress or other diseases (such as feline infectious peritonitis). The bacteria primarily affect cells in the intestine, liver, and heart.
+Signs vary, but may include decreased activity, loss of appetite, fever, jaundice, and diarrhea. Before death, there are convulsions and coma. A diagnosis of Tyzzer disease is based on laboratory examination of feces or tissue sections for the presence of the bacteria. Blood tests can also be used to look for the presence of antibodies against the bacteria.
+Little is known about the effectiveness of antibiotics for treatment. Some antibiotics may aggravate the disease. Cats suspected of being infected may be treated with intravenous fluids and appropriate antibiotics.
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

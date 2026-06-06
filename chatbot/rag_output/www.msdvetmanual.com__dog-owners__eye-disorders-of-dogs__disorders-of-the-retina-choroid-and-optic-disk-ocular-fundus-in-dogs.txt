@@ -1,0 +1,47 @@
+1. <[Eye Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders of the Retina, Choroid, and Optic Disk (Ocular Fundus) in Dogs
+By[Kirk N. Gelatt](https://vivo.ufl.edu/display/n7704%20), VMD, DACVO, Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3204256
+* [Inherited Diseases of the Retina](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-dogs#Inherited-Diseases-of-the-Retina_v3204260)|
+* [Inflammation of the Retina and Choroid (Chorioretinitis)](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-dogs#Inflammation-of-the-Retina-and-Choroid-\(Chorioretinitis\)_v3204283)|
+* [Retinal Detachments](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-dogs#Retinal-Detachments_v3204290)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-dogs#For-More-Information_v34435681)|
+
+The **ocular fundus** is the back of the eye opposite the pupil and includes the retina, the membrane (the choroid) between the retina and the white of the eye, and the optic disk. Diseases of the ocular fundus may occur on their own or as a part of generalized diseases. Inherited abnormalities, trauma, metabolic disturbances, generalized infections, tumors, blood disorders, high blood pressure, and nutritional deficiencies are possible underlying causes for diseases of the retina in all species.
+## Inherited Diseases of the Retina
+Inherited abnormalities may be present at birth or appear later, and are important in the development of diseases of the retina in dogs.
+### Collie Eye Anomaly
+Collie eye anomaly is an inherited eye defect present at birth in varying degrees in rough- and smooth-coated Collies. It also occurs in Shetland Sheepdogs, Border Collies, Australian Shepherds, Lancashire Heelers, Long-haired Whippets, Boykin Spaniels, and the Nova Scotia Duck Tolling Retriever. The main abnormality is an area of the choroid or the retina and choroid that fails to develop fully. More severely affected dogs may also have abnormalities close to where the optic nerve enters the eye, and some will have detachment of the retina. Blood vessel ruptures within the eye may occur. Vision is not noticeably affected unless detachment of the retina is present. A genetic test is available to confirm the presence of the disease or identify carrier dogs that could pass the disease to their puppies.
+### Abnormal Development of the Retina (Retinal Dysplasia)
+An abnormal development of the retina called retinal dysplasia is present at birth and may arise from trauma, genetic defect, or damage occurring while in the womb. Most forms of retinal dysplasia in dogs are inherited. Viral infections of the mother (for example, herpesvirus in dogs), especially during early fetal development, can result in many eye abnormalities with retinal dysplasia in puppies. Retinal dysplasia is thought to be inherited in American Cocker Spaniels, Beagles, Labrador Retrievers, Rottweilers, and Yorkshire Terriers. Small areas of retinal dysplasia may not cause any signs, or they may interfere with vision. Generalized retinal dysplasia with detachment of the retina, visual impairment, or blindness is inherited in English Springer Spaniels, Bedlington Terriers, Sealyham Terriers, Labrador Retrievers, Doberman Pinschers, and Australian Shepherds. Other eye abnormalities, including abnormally small eyes and cataracts that are present at birth, often occur together with the generalized forms of retinal dysplasia. In Labrador Retrievers and Samoyeds, retinal dysplasia may be associated with abnormal shortness of the front legs.
+### Progressive Retinal Atrophy
+Progressive retinal atrophy is the name for a group of diseases that cause degeneration of the retina. This includes inherited abnormalities of the light-sensitive cells (photoreceptor dysplasia) and degenerations that have similar signs. The inherited photoreceptor dysplasias in which signs develop in the first year occur in Irish Setters, Collies, Norwegian Elkhounds, Miniature Schnauzers, and Belgian Sheepdogs. The inherited photoreceptor degenerations in which signs develop at 3 to 5 years occur in Miniature and Toy Poodles, English and American Cocker Spaniels, Labrador Retrievers, Tibetan Terriers, Tibetan Spaniels, Papillons, English Springer Spaniels, Miniature Longhaired Dachshunds, Akitas, and Samoyeds. Progressive retinal atrophy is also inherited in Siberian Huskies and Bull Mastiffs. Many other breeds of dogs are also suspected of having inherited progressive retinal atrophy.
+The first sign of progressive retinal atrophy is usually night blindness. This progresses to total blindness over a period ranging from months to years. Cataracts are common late in the course of progressive retinal atrophy in many breeds and may mask the underlying disease of the retina. Your veterinarian will examine the back of the eye to look for retinal changes consistent with progressive retinal atrophy. The condition can be confirmed using a specialized test that measures the electrical responses of the eye (electroretinography). No effective treatment is available, although DNA tests have been developed to detect carrier and affected dogs before signs develop in many breeds.
+### Retinal Pigment Epithelial Dystrophy (Central Progressive Retinal Atrophy)
+This type of retinal degeneration occurs in Labrador Retrievers, smooth and rough Collies, Border Collies, Shetland Sheepdogs, and Briards. The condition is inherited in Labrador Retrievers. In many cases, early eye examinations can detect this disease before signs are apparent. Progressive vision loss occurs gradually over several years. Cataract formation occurs late in the disease. There is no treatment. Recent studies suggest systemic vitamin E disorders may also be important in the development of this disease complex.
+## Inflammation of the Retina and Choroid (Chorioretinitis)
+Inflammation of the retina and choroid is frequently a result of a generalized infection that affects many areas of the body. Unless the abnormalities are widespread or involve the optic nerve, they often go undetected by owners. Inflammation of the retina and choroid may be present with canine distemper (a viral disease), fungal infections, protothecosis (an algal disease), toxoplasmosis (a disease caused by a parasitic microorganism), tuberculosis, and bacterial septicemias (infections of the blood by toxic microorganisms). Therapy is directed at the systemic disease causing the inflammation.
+It is important to make sure that your pet receives regular, routine eye examinations. These examinations are important because they can often help diagnose many generalized diseases quickly and accurately.
+## Retinal Detachments
+When the retina becomes detached, it is separated from the back of the eye and from part of its blood supply, preventing it from functioning properly. In dogs, detachments of the retina are associated with retinal disorders present at birth (retinal dysplasia and Collie eye anomaly), inflammation of the retina and choroid (chorioretinitis), injury and other trauma, eye surgery, and certain tumors.
+Signs that the retina has become detached include excessive or prolonged dilation of the pupil, pupils of different sizes, vision impairment, and bleeding within the eye. Eye examinations must be performed to confirm the diagnosis.
+Detachments of the retina are treated medically with therapy directed at the primary disease or surgically to correct the detachment. Retinal degeneration may be present in the reattached areas. Your veterinarian will select the treatment approach most appropriate for your pet’s condition.
+## For More Information
+Also see professional content regarding [the ocular fundus](https://www.msdvetmanual.com/eye-diseases-and-disorders/ophthalmology/the-ocular-fundus-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

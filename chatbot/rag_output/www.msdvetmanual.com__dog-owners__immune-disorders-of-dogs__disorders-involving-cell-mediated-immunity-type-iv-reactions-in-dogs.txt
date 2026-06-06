@@ -1,0 +1,44 @@
+1. <[Immune Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Disorders Involving Cell-mediated Immunity (Type IV Reactions) in Dogs
+By[Ian Rodney Tizard](https://www.msdvetmanual.com/authors/tizard-ian), BVMS, BSc, PhD, DSc (Hons), DACVM, Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3204949
+* [Granulomatous Reactions](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#Granulomatous-Reactions_v3204955)|
+* [Old Dog Encephalitis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#Old-Dog-Encephalitis_v3204962)|
+* [Contact Hypersensitivity](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#Contact-Hypersensitivity_v3204973)|
+* [Autoimmune Thyroiditis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#Autoimmune-Thyroiditis_v3204979)|
+* [Autoimmune Adrenalitis](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#Autoimmune-Adrenalitis_v3204988)|
+* [Dry Eye (Keratoconjunctivitis Sicca, Keratitis Sicca)](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#Dry-Eye-\(Keratoconjunctivitis-Sicca,-Keratitis-Sicca\)_v3204996)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs#For-More-Information_v34439980)|
+
+This type of reaction occurs when specific types of white blood cells (called T helper cells) respond to antigens and release toxic and inflammatory substances that can damage tissues. Cell-mediated immune reactions can occur in any organ. Treatment usually involves eliminating the offending antigen (if possible) and the use of anti-inflammatory drugs and drugs that suppress the immune system, either alone or in combination.
+## Granulomatous Reactions
+Granulomatous reactions are masses of scar tissue and white blood cells that accumulate around an area of persistent infection. They are triggered by certain types of bacteria or fungi. Although cell-mediated immune responses effectively fight off these infections in most individuals, in a few animals the immune response is only partially effective and results in a mass at the site of infection.
+## Old Dog Encephalitis
+Old dog encephalitis refers to a chronic brain inflammation that can occur in a dog that had [distemper](https://www.msdvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/canine-distemper-hardpad-disease) many years earlier. In dogs that have an undetectable infection with the virus, cell-mediated immune reactions may target cells that have been infected by the virus for years.
+## Contact Hypersensitivity
+Contact hypersensitivity results from chemicals reacting with and changing normal skin proteins. These modified skin proteins are perceived as foreign invaders. The body then produces a cell-mediated immune response against them that causes skin damage. This hypersensitivity usually occurs as a result of contact with sensitizing chemicals incorporated into plastic food dishes, plastic collars, and drugs placed on the skin.
+## Autoimmune Thyroiditis
+Autoimmune thyroiditis is an immune-mediated disease that destroys the thyroid gland. The disease is particularly prevalent in Doberman Pinschers, Beagles, Golden Retrievers, and Akitas. Hypothyroidism (decreased production of thyroid hormones) may be the only detectable sign; however, this condition may occur as part of a broader immune disorder, such as lupus ( see [Disorders Involving Immune Complexes (Type III Reactions) in Dogs](https://www.msdvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs)).
+## Autoimmune Adrenalitis
+Autoimmune adrenalitis is caused by infiltration of immune cells into the adrenal glands (located next to each kidney). This causes the destruction of the glands and may lead to [Addison disease](https://www.msdvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-adrenal-glands-in-dogs#v3203573). Signs of Addison disease include weakness, loss of weight and appetite, diarrhea, and vomiting. Addison disease is most common in young, adult female dogs.
+## Dry Eye (Keratoconjunctivitis Sicca, Keratitis Sicca)
+Dry eye, or [keratoconjunctivitis sicca](https://www.msdvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-nasal-cavity-and-tear-ducts-in-dogs#v3204025), is caused by an immune reaction that destroys the tear gland. It occurs in dogs, with a genetic predisposition in Cocker Spaniels. Keratoconjunctivitis sicca can also follow a viral infection, trauma, or the use of certain antibiotics. The disease is treated by giving prescription eye drops that contain cyclosporine or other drugs that inhibit the immune response that causes the disorder. Artificial tears and other eye drops may also be indicated. Dogs with dry eye often require life-long treatment.
+## For More Information
+Also see professional content regarding [Type IV reactions](https://www.msdvetmanual.com/immune-system/immunologic-diseases/hypersensitivity-diseases-in-animals#v3277443).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings

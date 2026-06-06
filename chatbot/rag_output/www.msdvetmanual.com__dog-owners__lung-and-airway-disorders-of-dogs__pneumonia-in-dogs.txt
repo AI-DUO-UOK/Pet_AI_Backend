@@ -1,0 +1,50 @@
+1. <[Lung and Airway Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+* Multimedia
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Pneumonia in Dogs
+By[Ned F. Kuehn](https://www.researchgate.net/scientific-contributions/80151229-Ned-F-Kuehn%20), DVM, MS, DACVIM, Michigan Veterinary Specialists
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3206659
+* [Aspiration Pneumonia](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pneumonia-in-dogs#Aspiration-Pneumonia_v3206670)|
+* [Fungal Pneumonia](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pneumonia-in-dogs#Fungal-Pneumonia_v3206678)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pneumonia-in-dogs#For-More-Information_v34441555)|
+* Multimedia|
+
+Pneumonia is an inflammation of the lungs and airways that causes breathing difficulties and deficiency of oxygen in the blood. There are many possible causes. The most common cause of pneumonia is a viral infection of the lower respiratory tract. Canine distemper virus, adenovirus types 1 and 2, canine influenza virus, and parainfluenza virus cause damage to the airways and make the animal susceptible to the development of pneumonia.
+Parasitic invasion of the bronchi can also result in pneumonia. Tuberculous pneumonia, although uncommon, is sometimes seen in dogs. Fungal pneumonia (see below) is also seen in dogs. Injury to the mucous membranes of the bronchial tubes and inhalation of irritants may cause pneumonia directly, as well as making the animal susceptible to bacterial infection. Aspiration pneumonia (see below) may result from persistent vomiting, abnormal movement of the esophagus, or improperly administered medications (for example, oil or barium) or food (forced feeding).
+Signs of pneumonia include lethargy, loss of appetite, and a deep cough. Labored breathing, “blowing” of the lips, and bluish mucous membranes may be evident, especially after exercise. Body temperature is moderately increased. Complications such as pleurisy (inflammation of the lining around the lungs) or infection by additional organisms may occur.
+Diagnosis usually involves a combination of history, physical examination (including listening to the lungs with a stethoscope), and appropriate tests. Your veterinarian may be able to hear wheezing sounds within the lungs. In the later stages of pneumonia, the increased lung density caused by inflammation can be seen on x-rays. Analysis of fluid used to “wash” the airways is valuable for the diagnosis of bacterial infections. Bacterial culture and drug sensitivity testing help the veterinarian to determine the best course of antibiotic treatment, if needed. A viral infection generally results in an increased body temperature.
+Animals with pneumonia benefit from a warm, dry environment. If the mucous membranes are very bluish (indicating poor oxygen in the blood), the veterinarian may administer oxygen. Antibiotics are usually given, although the treatment may be modified based on the results of laboratory cultures, so that the drugs given best match the type of infection found. Additional treatments, such as bronchodilators and nebulization ("breathing treatments"), may be necessary. The dog may need to be reexamined frequently, including periodic chest x‑rays, to watch for improvement or recurrence, to follow an underlying disease (if one is present), or to detect any possible complications.
+## Aspiration Pneumonia
+Aspiration pneumonia is a lung infection caused by inhalation of foreign material. The severity of the inflammation depends on the material inhaled, the type of bacteria inhaled, and the distribution of foreign material in the lungs. A common cause of aspiration pneumonia is the improper administration of liquid medicines. Animals that breathe in vomit or attempt to eat or drink while partially choked are at risk for aspiration pneumonia as well. Disturbances in the normal swallowing mechanism, such as in anesthetized or comatose animals, or in animals with deformities such as cleft palate, may also lead to aspiration pneumonia. Dogs with disorders of the pharynx or esophagus (such as megaesophagus) are more likely to get aspiration pneumonia.
+A history suggesting that a foreign substance might have been inhaled is the most important clue to diagnosing this disease. Signs include coughing, exercise intolerance, labored or rapid breathing, rapid heart rate, and fever. Other signs include bluish mucous membranes and airway spasms. A sweetish, off-smelling breath may be detected, which becomes more intense as the disease progresses. This is often associated with a nasal discharge that sometimes is tinged reddish brown or green. Occasionally, evidence of the breathed-in material (for example, oil droplets) can be seen in the nasal discharge or coughed-up material.
+As with nearly all disease conditions, prevention is better than treatment. This is especially the case for aspiration pneumonia, since the outlook is poor even with treatment. The rate of death is high, and recovered animals often develop lung abscesses. Veterinarians normally use drugs and other precautions to minimize the risk of an animal inhaling fluid (such as saliva) during surgery. In addition, it is important for pet owners to not to give liquid medications faster than an animal can swallow. If an animal is known to have inhaled a foreign substance, broad-spectrum antibiotics are usually prescribed without waiting for signs of pneumonia to appear. Care and supportive treatment are the same as for other types of pneumonia.
+## Fungal Pneumonia
+Fungal pneumonia (also called mycotic pneumonia) is a fungal infection of the lung that leads to the development of pneumonia. A number of fungi have been shown to cause fungal pneumonia in domestic animals.
+Major Causes of Fungal Pneumonia
+|
+* _Aspergillus_ species
+* _Blastomyces dermatitidis_
+* _Candida_ species
+* _Coccidioides immitis_
+* _Cryptococcus neoformans_
+* _Histoplasma capsulatum_
+
+|
+| --- |
+Often these fungi are found in animals with compromised immune systems, but they can cause disease in healthy animals as well. Infection is typically caused by inhalation of spores, which can spread through the blood and lymph systems. The source of most fungal infections is believed to be soil-related rather than spread from one animal to another.
+Although fungal pneumonia cases with sudden, severe onset occur rarely, the most common course of disease is development over a long period of time. A short, moist cough is characteristic of the disease, and a thick discharge of mucous from the nose may be seen. As the disease progresses, labored breathing, weight loss, and generalized weakness develop. During examination, the veterinarian may detect harsh respiratory sounds. In advanced cases, breath sounds are decreased or almost impossible to hear. Inflammation of the lymph nodes can cause compression of the airway, making it difficult for the animal to breathe. Periodic fever can occur. Some fungal infections can cause signs in other parts of the body as well, for example in the skin, bones, and eyes.
+A tentative diagnosis of fungal pneumonia can be made if an animal with long-term respiratory disease exhibits typical signs and does not respond to antibiotic therapy. (Antibiotics are effective against bacteria but not against fungi or other organisms.) However, a definite diagnosis requires identification of the fungus using appropriate laboratory tests. X-rays and blood tests may be useful.
+Antifungal drugs are used to treat fungal pneumonia. Extended drug therapy, which may be needed for several months after signs have disappeared, is usually necessary to effectively treat the infection.
+## For More Information
+Also see professional content regarding [pneumonia](https://www.msdvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/pneumonia-in-dogs-and-cats).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences

@@ -1,0 +1,28 @@
+1. <[Lung and Airway Disorders of Dogs](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Lungworm Infection in Dogs
+By[Lora Rickard Ballweber](http://www.cvmbs.colostate.edu/DirectorySearch/Search/MemberProfile/CVMBS/850/Ballweber/Lora%20), DVM, DACVM, DEVPC, Department of Microbiology, Immunology, and Pathology, College of Veterinary Medicine and Biomedical Sciences, Colorado State University
+Reviewed/Revised Jun 2018 | Modified Sept 2024
+v3206633
+* [Other Lungworms](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/lungworm-infection-in-dogs#Other-Lungworms_v3206642)|
+* [For More Information](https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/lungworm-infection-in-dogs#For-More-Information_v34441545)|
+
+Lungworm infections in dogs are usually caused by the tracheal worm _Oslerus osleri_. They have been found in the United States, South Africa, New Zealand, India, Great Britain, France, and Australia. Adult lungworms live in nodules in the trachea of dogs, and larvated eggs laid by adults hatch there. Pups become infected from the feces or saliva of an infected dog (for example, when an infected mother licks her pups). Infection is infrequent in dogs.
+Signs of lungworm infection range from moderate, dry coughing with slightly increased respiratory rates to severe, persistent coughing and respiratory distress or even failure. Infections with no visible signs can also occur. Death is relatively uncommon in dogs infected with these lungworms. However, some nematodes that inhabit the right ventricle of the heart, such as _Angiostrongylus vasorum_ and _Dirofilaria immitis_ (see [Heartworm](https://www.msdvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/heartworm-disease-in-dogs)), both found in dogs in certain areas of the world, may be associated with lung disease. Signs relating to a heart or a lung syndrome, or to a combination of both, may occur.
+Diagnosis of lungworm infection is based on signs, known transmission patterns, and presence of larvae in feces. Examination of the airways with an endoscope (bronchoscopy) and x-rays can be helpful tools. It can be a challenge for the veterinarian to diagnose lungworm because infected animals do not always pass the larvae in their feces, and when they do, they may be few in number. Bronchoscopy can be used to collect washings from the trachea to examine for eggs, larvae, and white blood cells.
+Lungworm infection in dogs can be difficult to treat, but there is evidence that appropriate antiparasitic drugs are effective, particularly when combined with surgical removal of the nodules in the trachea. It may be necessary to continue antiparasitic treatment for up to 2 months.
+## Other Lungworms
+_Capillaria aerophila_ are parasites that are usually found in the frontal sinuses, trachea, bronchi, and nasal cavities of foxes, but they can also be found in dogs and other carnivores. Female worms produce eggs in the lungs that are coughed up and swallowed, and then passed in the feces. Dogs become infected by eating food or drinking water that is contaminated with larvated eggs. After being eaten, the eggs hatch in the intestine and then travel to the lungs through the circulatory system. Larvae mature about 40 days after infection. Clinical signs include coughing, persistent sneezing, and nasal discharge. Treatment with appropriate antiparasitic drugs is usually effective.
+Other lungworms that can infect dogs include _Crenosoma vulpis_ , _Eucoleus aerophilus_ , and _Filaroides hirthi_. _F hirthi_ is similar to _Oslerus osleri_ except that the worms live within the lung tissue.
+## For More Information
+Also see professional content regarding [lungworm infection](https://www.msdvetmanual.com/respiratory-system/lungworm-infection/lungworm-infection-in-animals).
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#dog-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences

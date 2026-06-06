@@ -1,0 +1,33 @@
+1. <[Eye Disorders of Cats](https://www.msdvetmanual.com/cat-owners/eye-disorders-of-cats)
+
+* Find In Topic
+
+IN THIS TOPIC
+
+OTHER TOPICS IN THIS CHAPTER
+
+PET OWNER VERSION
+# Eye Disorders Resulting from Generalized Diseases in Cats
+By[Kirk N. Gelatt](https://vivo.ufl.edu/display/n7704%20), VMD, DACVO, Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida
+Reviewed/Revised Jul 2018 | Modified Sept 2024
+v39352029
+Eye disorders can occur because of diseases affecting other parts of the body. They can occur with inherited, infectious, degenerative, and cancerous disorders. Often, discovering a change in the eyes can help uncover the systemic disorder sooner than if the eyes had not been examined. Diseases affecting the blood vessels or nervous system are likely to produce changes in the eyes. If your cat has a disease that affects both eyes, your veterinarian will often look for diseases in the rest of the body.
+Inflammation of the eyelid can occur with body-wide skin diseases caused by mites, fungi, or immune system disorders. Infectious diseases (such as feline herpesvirus 1 or bacterial infections) can cause sudden or recurrent inflammation of the conjunctiva (conjunctivitis). Feline herpesvirus 1 is also associated with corneal diseases, including inflammation (keratitis), corneal sequestration, and dry eye. Common infectious diseases (such as feline infectious peritonitis, toxoplasmosis, feline immunodeficiency virus, and feline leukemia virus) can also cause inflammation of the uveal tract (uveitis), retinal detachment, and glaucoma. High blood pressure (systemic hypertension) can cause sudden vision loss.
+## Feline Herpesvirus-1 (Feline Rhinotracheitis) in Cats
+Feline herpesvirus-1 (feline rhinotracheitis) is a virus that affects the eyes and respiratory tract of cats. It is very common. In fact, in some areas of the world, 97% of cats have been exposed to the virus. After exposure to feline herpesvirus-1, more than 80% of cats become "latently" infected for life. This means the virus usually remains inactive in the body but can reactivate, especially during times of stress. It is during these periods of reactivation (when the cat may or may not be showing signs of illness) that the cat can spread the virus to other cats. Approximately half of affected cats will shed the disease at some point in their lifetime. The virus is usually transmitted from cat to cat via secretions from the eyes, nose, and mouth, but it can also be spread by environmental contamination with these secretions. The disease can affect cats of all ages but is especially common in young cats. It is also common in places where stressed cats are grouped together (for example, in shelters and boarding facilities).
+Feline herpesvirus-1 causes [conjunctivitis](https://www.msdvetmanual.com/cat-owners/eye-disorders-of-cats/disorders-of-the-conjunctiva-in-cats#v3244844) (inflammation of the membranes around the eyes), [keratitis](https://www.msdvetmanual.com/cat-owners/eye-disorders-of-cats/disorders-of-the-cornea-in-cats#v3244866) (inflammation of the cornea), and corneal ulcers (sores on the cornea). Signs include reddened eyes, swollen conjunctiva, excessive blinking, eye discharge (that can be clear or colored and thick), and pain. Longterm and recurrent infections can lead to scarring on the cornea, "[dry eye](https://www.msdvetmanual.com/cat-owners/eye-disorders-of-cats/disorders-of-the-nasal-cavity-and-tear-ducts-in-cats#v3244822)," and even blindness. Feline herpesvirus-1 also commonly causes inflammation of the nasal passages ("rhinitis"), which can result in sneezing, nasal congestion, and discharge from the nose. Affected cats may also have a fever, enlarged lymph nodes, and a poor appetite. Less frequently, the virus can cause pneumonia, sores in the mouth, skin lesions, and body-wide disease. When first infected with the virus, cats often show signs for up to 3 weeks before the disease subsides on its own. Recurrent infections may be less severe, but longterm eye disease can occur.
+### Diagnosis
+Veterinarians diagnose feline herpesvirus-1 based on the cat's history and signs, results of laboratory tests, and response to antiviral treatments (see below). The presence of respiratory signs and keratitis is suggestive of disease caused by feline herpesvirus-1. If present, the appearance of classic corneal ulcers (called dendritic ulcers) confirms the diagnosis. Laboratory tests can be done on samples taken from the conjunctiva or cornea of sick cats.
+### Treatment
+Your veterinarian will recommend the best treatment for your cat. Antiviral medications can be applied to the eye or taken orally. Antibiotics are not effective against viruses, but they may be prescribed for secondary bacterial infections. Supportive treatments (such as the administration of fluids or supplemental feedings) are also necessary in severely affected cats.
+### Prevention
+Stress can stimulate the virus to reactivate and cause the disease to recur. It is important to avoid stressful situations for your cat, whenever possible. For example, infections with other diseases, the introduction of a new pet, conflicts with household or neighborhood cats, pregnancy and nursing, change in housing or environment, diet, or routine changes can all be stressful to your cat. In addition, the use of corticosteroid medications can also trigger the virus to reactivate.
+A vaccine is available for feline herpesvirus-1. It is included in the routine ("core") group of vaccines administered to kittens and cats. The vaccine does not prevent infection with the virus, but it can reduce shedding of the virus and signs of the disease. Some vaccinated cats may still show mild signs of disease. Follow your veterinarian's recommendations regarding the timing of vaccinations.
+Test your Knowledge now[Take a Quiz!](https://www.msdvetmanual.com/pages-with-widgets/quizzes#cat-owners)
+Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+* Cookie Preferences
+
+**This Site Uses Cookies and Your Privacy Choice Is Important to Us**
+We suggest you choose Customize my Settings to make your individualized choices. Accept Cookies means that you are choosing to accept third-party Cookies and that you understand this choice.
+
+Customize my Settings
