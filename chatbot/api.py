@@ -604,46 +604,39 @@ async def stream_llm_response(
     chat_history: str = ""
 ) -> AsyncGenerator[str, None]:
     """
-    Stream LLM response in sentence chunks while preserving all markdown.
+    Stream LLM response while preserving markdown structure.
     
-    Uses the exact same query_agentic_rag but streams the output.
-    Streams by sentences/lines to naturally preserve markdown formatting.
+    Streams complete markdown elements (paragraphs, lists, code blocks)
+    to ensure proper rendering and avoid breaking markdown syntax.
     
     Args:
         question: User question
         chat_history: Previous conversation history
     
     Yields:
-        Response chunks (complete sentences/lines with formatting intact)
+        Response chunks (preserving markdown structure)
     """
     try:
-        # Get full response using existing agentic RAG (unchanged logic)
+        # Get full response using existing agentic RAG
         full_response = query_agentic_rag(question=question, chat_history=chat_history)
         
-        # Simple approach: split by double newlines (paragraphs) and stream them
-        # This naturally preserves all markdown formatting
+        # Split by double newlines to preserve paragraph structure
+        # This naturally preserves all markdown formatting (lists, headings, etc.)
         paragraphs = full_response.split('\n\n')
         
         for para in paragraphs:
-            if not para.strip():
+            para = para.strip()
+            if not para:
                 continue
             
-            # For each paragraph, yield it in sentence-sized chunks
-            # This preserves headers, lists, formatting, everything
-            import re
-            
-            # Split into sentences but keep the delimiters
-            sentences = re.split(r'(?<=[.!?\n])\s+', para.strip())
-            
-            for sentence in sentences:
-                if sentence.strip():
-                    yield sentence + ' '
-                    # Shorter delay for natural streaming feel
-                    await asyncio.sleep(0.04)
-            
-            # Add paragraph break between paragraphs
-            yield '\n\n'
+            # Yield the entire paragraph at once to preserve markdown structure
+            # This ensures lists, headings, and formatting stay intact
+            yield para
             await asyncio.sleep(0.02)
+            
+            # Yield paragraph separator to maintain structure
+            yield '\n\n'
+            await asyncio.sleep(0.01)
     
     except Exception as e:
         logger.error(f"Error streaming LLM response: {e}")
