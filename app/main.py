@@ -178,7 +178,7 @@ async def upload_image(
             disease_class = tool_result.get('class', 'Unknown')
             confidence = tool_result.get('confidence', 0.0)
             
-            # Use agentic RAG to explain diagnosis
+            # Use agentic RAG to explain diagnosis (with force_rag=True to always use knowledge base)
             explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
 Provide a detailed veterinary explanation covering:
@@ -192,7 +192,8 @@ Be thorough and informative. Use formatting with headers and bullet points for c
             
             explanation_text = query_agentic_rag(
                 question=explanation_query,
-                chat_history=""
+                chat_history="",
+                force_rag=True
             )
             
             logger.info(f"Image analyzed for {disease_type}: {disease_class}")

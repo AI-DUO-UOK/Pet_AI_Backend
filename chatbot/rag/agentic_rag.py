@@ -89,7 +89,8 @@ def is_skin_or_eye_issue(question: str) -> bool:
 
 def query_agentic_rag(
     question: str,
-    chat_history: str = ""
+    chat_history: str = "",
+    force_rag: bool = False
 ) -> str:
     """
     Query the agentic RAG system using intelligent routing.
@@ -98,6 +99,7 @@ def query_agentic_rag(
     1. Whether this question needs veterinary knowledge retrieval
     2. Whether it's casual conversation that doesn't need RAG
     3. For skin/eye issues: ask for an image first before searching RAG
+    4. For CV predictions: ALWAYS use RAG (force_rag=True)
     
     This approach is simpler, more reliable, and uses native LLM capabilities
     instead of complex agent frameworks.
@@ -105,13 +107,48 @@ def query_agentic_rag(
     Args:
         question: The user's question
         chat_history: Previous conversation context for memory
+        force_rag: If True, ALWAYS use RAG (for CV model predictions)
         
     Returns:
         The LLM's response with or without RAG context
     """
     try:
+        # If force_rag is True, skip all other logic and go straight to RAG search
+        if force_rag:
+            rag_context = search_veterinary_knowledge_base(question)
+            
+            if "No relevant" in rag_context or "Error" in rag_context:
+                # If RAG fails, still provide general knowledge answer
+                final_prompt = f"""You are a helpful veterinary assistant AI.
+
+PREVIOUS CONVERSATION (if any):
+{chat_history}
+
+USER QUESTION: {question}
+
+Answer this question using your general veterinary knowledge. Be thorough and informative."""
+            else:
+                # Use RAG context
+                final_prompt = f"""You are a helpful veterinary assistant AI.
+
+Use the following retrieved context from the veterinary knowledge base to answer the user's question:
+
+VETERINARY KNOWLEDGE BASE CONTEXT:
+{rag_context}
+
+PREVIOUS CONVERSATION (if any):
+{chat_history}
+
+USER QUESTION: {question}
+
+Answer based on the retrieved context. Provide detailed, accurate veterinary advice."""
+            
+            response = llm.invoke(final_prompt)
+            return response.content
+        
         # Check if this is a skin or eye issue - if so, ask for image first
-        if is_skin_or_eye_issue(question):
+        # BUT skip this if the question already contains a CV model prediction
+        if "computer vision model detected" not in question.lower() and is_skin_or_eye_issue(question):
             image_request_prompt = f"""You are a helpful veterinary assistant AI.
 
 The user is asking about a potential skin or eye issue with their pet.
