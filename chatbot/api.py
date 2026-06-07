@@ -400,14 +400,15 @@ async def upload_image(
             # Use agentic RAG to explain diagnosis (exact same as CLI)
             explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
-Provide a detailed veterinary explanation covering:
+Respond conversationally as a friendly vet assistant. Start by saying something like "Your {animal} appears to have {disease_class}." Then explain:
 1. What is {disease_class}?
 2. Common causes and risk factors for this condition
 3. Treatment options and recommendations
 4. When to seek professional veterinary care
 5. Prevention and management tips
 
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
+Be warm, conversational, and informative. Use formatting with headers and bullet points for clarity.
+IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysis model in your response. Just give the advice naturally."""
             
             chat_history = session.get_chat_history()
             explanation_text = query_agentic_rag(
@@ -681,14 +682,15 @@ async def handle_image_analysis(
 
 User's original description: {user_input}
 
-Provide a detailed veterinary explanation covering:
+Respond conversationally as a friendly vet assistant by provide a detailed veterinary explanation. Start by saying something like "Your {animal} appears to have {disease_class}." Then explain:
 1. What is {disease_class}?
 2. Common causes and risk factors for this condition
 3. Treatment options and recommendations
 4. When to seek professional veterinary care
 5. Prevention and management tips
 
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
+Be warm, conversational, and informative. Use formatting with headers and bullet points for clarity.
+IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysis model in your response. Just give the advice naturally."""
         
         chat_history = session.get_chat_history()
         explanation_text = query_agentic_rag(

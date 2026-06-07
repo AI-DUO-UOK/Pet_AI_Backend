@@ -131,9 +131,9 @@ Answer this question using your general veterinary knowledge. Be thorough and in
                 # Use RAG context
                 final_prompt = f"""You are a helpful veterinary assistant AI.
 
-Use the following retrieved context from the veterinary knowledge base to answer the user's question:
+You have been provided with relevant veterinary information from the veterinary knowledge base to help answer the user's question.
 
-VETERINARY KNOWLEDGE BASE CONTEXT:
+RELEVANT INFORMATION FROM THE VETERINARY KNOWLEDGE BASE CONTEXT:
 {rag_context}
 
 PREVIOUS CONVERSATION (if any):
@@ -141,7 +141,7 @@ PREVIOUS CONVERSATION (if any):
 
 USER QUESTION: {question}
 
-Answer based on the retrieved context. Provide detailed, accurate veterinary advice."""
+Provide a natural, conversational response using the information available from the retrieved context. Do NOT mention "knowledge base", "retrieved context", or "RAG" in your response. Just give helpful advice naturally providing detailed and accurate veterinary advice."""
             
             response = llm.invoke(final_prompt)
             return response.content
@@ -201,9 +201,9 @@ Answer (YES/NO):"""
             # Use RAG context
             final_prompt = f"""You are a helpful veterinary assistant AI.
 
-Use the following retrieved context from the veterinary knowledge base to answer the user's question:
+You have been provided with relevant veterinary information from the veterinary knowledge base to help answer the user's question.
 
-VETERINARY KNOWLEDGE BASE CONTEXT:
+RELEVANT INFORMATION FROM THE VETERINARY KNOWLEDGE BASE CONTEXT:
 {rag_context}
 
 PREVIOUS CONVERSATION (if any):
@@ -211,7 +211,7 @@ PREVIOUS CONVERSATION (if any):
 
 USER QUESTION: {question}
 
-Answer based on the retrieved context. Provide detailed, accurate veterinary advice."""
+Provide a natural, conversational response using the information available from the retrieved context. Do NOT mention "knowledge base", "retrieved context", or "RAG" in your response. Just give helpful advice naturally providing detailed and accurate veterinary advice."""
         else:
             # Use general knowledge (no RAG)
             final_prompt = f"""You are a helpful veterinary assistant AI.
