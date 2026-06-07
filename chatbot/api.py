@@ -299,7 +299,9 @@ Do NOT use the tool yet. Just ask for the image."""
                     pet_info_parts.append(f"Additional Notes: {pp['notes']}")
                 
                 # Create pet context and save to memory so it persists throughout conversation
-                pet_context = f"PET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                from datetime import datetime
+                current_time = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
+                pet_context = f"CURRENT DATE AND TIME: {current_time}\n\nPET PROFILE:\n{chr(10).join(pet_info_parts)}"
                 session.memory.save_context(
                     {"input": "System: Pet profile initialized"},
                     {"output": pet_context}
@@ -590,7 +592,9 @@ async def send_message_stream(request: SendMessageRequest):
                         pet_info_parts.append(f"Additional Notes: {pp['notes']}")
                     
                     # Save pet profile to memory so it persists throughout conversation
-                    pet_context = f"PET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                    from datetime import datetime
+                    current_time = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
+                    pet_context = f"CURRENT DATE AND TIME: {current_time}\n\nPET PROFILE:\n{chr(10).join(pet_info_parts)}"
                     session.memory.save_context(
                         {"input": "System: Pet profile initialized"},
                         {"output": pet_context}
