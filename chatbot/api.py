@@ -51,6 +51,7 @@ class StartConversationRequest(BaseModel):
     """Request to start a new conversation"""
     animal: str  # 'dog' or 'cat'
     user_id: Optional[str] = None  # Optional user identifier
+    pet_id: Optional[str] = None  # Optional pet identifier for real user data
 
 class StartConversationResponse(BaseModel):
     """Response when starting conversation"""
@@ -82,12 +83,14 @@ class UploadImageRequest(BaseModel):
 class ConversationSession:
     """Manages a single conversation session"""
     
-    def __init__(self, session_id: str, animal: str):
+    def __init__(self, session_id: str, animal: str, pet_profile: Optional[dict] = None):
         self.session_id = session_id
         self.animal = animal
+        self.pet_profile = pet_profile or {}
         self.memory = SimpleConversationMemory()
         self.current_disease_type = None
         self.analysis_done = False
+        self.pet_initialized = False
     
     def get_chat_history(self) -> str:
         """Get formatted chat history"""
@@ -107,6 +110,18 @@ def get_session(session_id: str) -> ConversationSession:
 # API Endpoints
 # ─────────────────────────────────────────────────────────────
 
+async def fetch_pet_profile(pet_id: str) -> Optional[dict]:
+    """Fetch pet profile from the database by pet_id."""
+    try:
+        from chatbot.supabase_config import supabase
+        response = supabase.table("pets").select("*").eq("id", pet_id).execute()
+        if response.data:
+            return response.data[0]
+    except Exception as e:
+        logger.warning(f"Could not fetch pet profile for {pet_id}: {e}")
+    return None
+
+
 @app.post("/api/chat/start", response_model=StartConversationResponse)
 async def start_conversation(request: StartConversationRequest):
     """
@@ -116,7 +131,7 @@ async def start_conversation(request: StartConversationRequest):
     The session ID is used for all subsequent messages.
     
     Args:
-        request: Contains animal type ('dog' or 'cat')
+        request: Contains animal type ('dog' or 'cat'), optional pet_id for real user data
     
     Returns:
         Session ID and initial greeting
@@ -130,15 +145,31 @@ async def start_conversation(request: StartConversationRequest):
         session_id = str(uuid.uuid4())
         animal = request.animal.lower()
         
-        session = ConversationSession(session_id, animal)
+        # Fetch pet profile if pet_id is provided
+        pet_profile = None
+        if request.pet_id:
+            pet_profile = await fetch_pet_profile(request.pet_id)
+            if pet_profile:
+                logger.info(f"Fetched pet profile: {pet_profile.get('name')} for session {session_id}")
+            else:
+                logger.warning(f"Pet profile not found for pet_id: {request.pet_id}")
+        
+        session = ConversationSession(session_id, animal, pet_profile)
         _sessions[session_id] = session
+        
+        # Build welcome message
+        if pet_profile:
+            pet_name = pet_profile.get("name", "your pet")
+            message = f"🐾 Welcome back!\n\nHi! I'm your AI Pet Health Assistant, and I'm here to help with {pet_name}'s health and wellbeing."
+        else:
+            message = f"✅ Great! I'll help you with your {animal.upper()}'s health. How can I assist you today?"
         
         logger.info(f"Created new session {session_id} for {animal}")
         
         return StartConversationResponse(
             session_id=session_id,
             animal=animal,
-            message=f"✅ Great! I'll help you with your {animal.upper()}'s health. How can I assist you today?"
+            message=message
         )
     
     except HTTPException:
@@ -236,6 +267,38 @@ Do NOT use the tool yet. Just ask for the image."""
             # General health question - use agentic RAG
             chat_history = session.get_chat_history()
             
+            # Inject pet profile context on the very first message only
+            # IMPORTANT: Add to chat_history, NOT to the question string,
+            # because the question is checked by is_skin_or_eye_issue()
+            # and pet profile fields (like "Allergies") could trigger false matches.
+            if session.pet_profile and not session.pet_initialized:
+                pp = session.pet_profile
+                pet_info_parts = []
+                if pp.get("name"):
+                    pet_info_parts.append(f"Name: {pp['name']}")
+                pet_info_parts.append(f"Type: {animal}")
+                if pp.get("breed"):
+                    pet_info_parts.append(f"Breed: {pp['breed']}")
+                if pp.get("date_of_birth"):
+                    pet_info_parts.append(f"Date of Birth: {pp['date_of_birth']}")
+                if pp.get("weight"):
+                    pet_info_parts.append(f"Weight: {pp['weight']} {pp.get('weight_unit', 'kg')}")
+                if pp.get("gender"):
+                    pet_info_parts.append(f"Gender: {pp['gender']}")
+                if pp.get("blood_type"):
+                    pet_info_parts.append(f"Blood Type: {pp['blood_type']}")
+                if pp.get("allergies"):
+                    pet_info_parts.append(f"Allergies: {pp['allergies']}")
+                if pp.get("medical_conditions"):
+                    pet_info_parts.append(f"Medical Conditions: {pp['medical_conditions']}")
+                if pp.get("notes"):
+                    pet_info_parts.append(f"Additional Notes: {pp['notes']}")
+                
+                # Prepend pet profile to chat history so it appears in context
+                pet_context = f"PET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
+                session.pet_initialized = True
+            
             pet_query = f"""Pet Type: {animal}
 
 Previous Conversation:
@@ -248,7 +311,7 @@ If this is casual conversation or personal information, answer directly without 
 Be smart about deciding whether retrieval is necessary."""
             
             bot_response = query_agentic_rag(
-                question=pet_query,
+                question=user_input,
                 chat_history=chat_history
             )
             used_rag = True
@@ -487,6 +550,38 @@ async def send_message_stream(request: SendMessageRequest):
             else:
                 # General health question - use agentic RAG
                 chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
+                
+                # Inject pet profile context on the very first message only
+                # IMPORTANT: Add to chat_history, NOT to the question string,
+                # because the question is checked by is_skin_or_eye_issue()
+                # and pet profile fields (like "Allergies") could trigger false matches.
+                if session.pet_profile and not session.pet_initialized:
+                    pp = session.pet_profile
+                    pet_info_parts = []
+                    if pp.get("name"):
+                        pet_info_parts.append(f"Name: {pp['name']}")
+                    pet_info_parts.append(f"Type: {animal}")
+                    if pp.get("breed"):
+                        pet_info_parts.append(f"Breed: {pp['breed']}")
+                    if pp.get("date_of_birth"):
+                        pet_info_parts.append(f"Date of Birth: {pp['date_of_birth']}")
+                    if pp.get("weight"):
+                        pet_info_parts.append(f"Weight: {pp['weight']} {pp.get('weight_unit', 'kg')}")
+                    if pp.get("gender"):
+                        pet_info_parts.append(f"Gender: {pp['gender']}")
+                    if pp.get("blood_type"):
+                        pet_info_parts.append(f"Blood Type: {pp['blood_type']}")
+                    if pp.get("allergies"):
+                        pet_info_parts.append(f"Allergies: {pp['allergies']}")
+                    if pp.get("medical_conditions"):
+                        pet_info_parts.append(f"Medical Conditions: {pp['medical_conditions']}")
+                    if pp.get("notes"):
+                        pet_info_parts.append(f"Additional Notes: {pp['notes']}")
+                    
+                    # Prepend pet profile to chat history so it appears in context
+                    pet_context = f"PET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                    chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
+                    session.pet_initialized = True
                 
                 response_text = ""
                 async for chunk in stream_llm_response(user_input, chat_history):
