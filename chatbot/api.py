@@ -213,8 +213,12 @@ async def send_message(request: SendMessageRequest):
             if detected_disease_type != session.current_disease_type:
                 session.analysis_done = False
             session.current_disease_type = detected_disease_type
-        
-        disease_type = session.current_disease_type
+            disease_type = session.current_disease_type
+        else:
+            # No disease keywords in current message - reset disease type
+            # to prevent non-disease questions from being routed to disease flow
+            disease_type = None
+            session.current_disease_type = None
         bot_response = ""
         used_rag = False
         
@@ -294,8 +298,12 @@ Do NOT use the tool yet. Just ask for the image."""
                 if pp.get("notes"):
                     pet_info_parts.append(f"Additional Notes: {pp['notes']}")
                 
-                # Prepend pet profile to chat history so it appears in context
+                # Create pet context and save to memory so it persists throughout conversation
                 pet_context = f"PET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                session.memory.save_context(
+                    {"input": "System: Pet profile initialized"},
+                    {"output": pet_context}
+                )
                 chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
                 session.pet_initialized = True
             
@@ -501,8 +509,11 @@ async def send_message_stream(request: SendMessageRequest):
                 if detected_disease_type != session.current_disease_type:
                     session.analysis_done = False
                 session.current_disease_type = detected_disease_type
-            
-            disease_type = session.current_disease_type
+                disease_type = session.current_disease_type
+            else:
+                # No disease keywords in current message - reset disease type
+                disease_type = None
+                session.current_disease_type = None
             used_rag = False
             
             # Handle disease-specific flow
@@ -578,8 +589,12 @@ async def send_message_stream(request: SendMessageRequest):
                     if pp.get("notes"):
                         pet_info_parts.append(f"Additional Notes: {pp['notes']}")
                     
-                    # Prepend pet profile to chat history so it appears in context
+                    # Save pet profile to memory so it persists throughout conversation
                     pet_context = f"PET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                    session.memory.save_context(
+                        {"input": "System: Pet profile initialized"},
+                        {"output": pet_context}
+                    )
                     chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
                     session.pet_initialized = True
                 
