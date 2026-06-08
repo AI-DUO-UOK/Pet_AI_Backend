@@ -1,6 +1,10 @@
 import requests
 import json
+import logging
 from langchain.tools import tool
+from chatbot.vlm import analyze_medical_document_vlm
+
+logger = logging.getLogger(__name__)
 
 FASTAPI_URL = "http://127.0.0.1:8000/analyze-image"
 
@@ -60,3 +64,39 @@ def analyze_pet_image(image_path: str, animal: str, disease_type: str) -> dict:
         Dictionary containing disease prediction and confidence score
     """
     return _analyze_pet_image_impl(image_path, animal, disease_type)
+
+
+def _analyze_medical_document_vlm_impl(image_path: str) -> dict:
+    """
+    Internal implementation of medical document analysis using VLM.
+    This function contains the actual logic and can be called directly.
+    
+    Args:
+        image_path: Path to the medical document image file
+    
+    Returns:
+        Dictionary containing extracted data from the document
+    """
+    try:
+        logger.info(f"VLM Tool: Analyzing medical document: {image_path}")
+        result = analyze_medical_document_vlm(image_path)
+        logger.info(f"VLM Tool: Extraction result: {json.dumps(result, indent=2)[:500]}")
+        return result
+    except Exception as e:
+        logger.error(f"VLM Tool: Error: {e}")
+        return {"error": f"Failed to analyze medical document: {str(e)}"}
+
+
+@tool
+def analyze_medical_document(image_path: str) -> dict:
+    """
+    Analyze a medical document image (prescription, vaccine card, or medical report)
+    and extract all data in structured JSON format.
+    
+    Args:
+        image_path: Path to the medical document image file
+    
+    Returns:
+        Dictionary containing extracted data from the document
+    """
+    return _analyze_medical_document_vlm_impl(image_path)

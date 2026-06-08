@@ -1,19 +1,24 @@
 from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage
 from chatbot.llm import llm
-from chatbot.tools import analyze_pet_image
+from chatbot.tools import analyze_pet_image, analyze_medical_document
 from chatbot.memory import memory
 
 # Tools list - the @tool decorator in tools.py creates a LangChain tool
-tools = [analyze_pet_image]
+tools = [analyze_pet_image, analyze_medical_document]
 
 # Create the agent using the modern LangChain API
 # create_agent returns a CompiledStateGraph that works with messages
 _agent_graph = create_agent(
     model=llm,
     tools=tools,
-    system_prompt="""You are a helpful veterinary assistant. You can analyze pet images to detect skin and eye diseases.
-When a user provides an image path and asks about their pet's health, you should use the analyze_pet_image tool to analyze the image.
+    system_prompt="""You are a helpful veterinary assistant. You can:
+1. Analyze pet images to detect skin and eye diseases using the analyze_pet_image tool.
+2. Analyze medical documents (prescriptions, vaccine cards, medical reports) using the analyze_medical_document tool.
+
+When a user provides a pet image path and asks about their pet's health, use analyze_pet_image.
+When a user provides a medical document image, use analyze_medical_document.
+
 Always be compassionate and provide medical advice based on the analysis."""
 )
 

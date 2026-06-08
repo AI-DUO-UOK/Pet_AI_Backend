@@ -18,7 +18,7 @@ import json
 import asyncio
 
 from chatbot.main import detect_disease_type, extract_image_path, clean_agent_response
-from chatbot.tools import _analyze_pet_image_impl
+from chatbot.tools import _analyze_pet_image_impl, _analyze_medical_document_vlm_impl
 from chatbot.rag.agentic_rag import query_agentic_rag
 from chatbot.memory import SimpleConversationMemory
 from chatbot.agent import agent
@@ -445,6 +445,90 @@ IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysi
         raise
     except Exception as e:
         logger.error(f"Error uploading image: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/chat/upload-document")
+async def upload_document(
+    session_id: str = Form(...),
+    file: UploadFile = File(...)
+):
+    """
+    Upload and analyze a medical document (prescription, vaccine card, or medical report).
+    
+    This endpoint:
+    1. Saves uploaded image temporarily
+    2. Calls VLM (Qwen2.5-VL-72B) via OpenRouter to extract data in JSON
+    3. Uses Mistral to explain the extracted data conversationally
+    
+    Args:
+        session_id: Conversation session ID
+        file: Document image file upload
+    
+    Returns:
+        Extracted data and conversational explanation
+    """
+    try:
+        session = get_session(session_id)
+        
+        # Save uploaded file temporarily
+        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename or ".jpg")[1]) as tmp:
+            content = await file.read()
+            tmp.write(content)
+            tmp_path = tmp.name
+        
+        try:
+            # Analyze document using VLM
+            extracted_data = _analyze_medical_document_vlm_impl(tmp_path)
+            
+            if isinstance(extracted_data, dict) and "error" in extracted_data:
+                raise HTTPException(status_code=400, detail=extracted_data['error'])
+            
+            # Format the extracted data as a readable string for RAG context
+            extracted_json_str = json.dumps(extracted_data, indent=2)
+            
+            # Use Mistral + RAG to explain the document in conversational style
+            explanation_query = f"""The following data was extracted from a medical document (prescription, vaccine card, or medical report) using AI analysis:
+
+EXTRACTED DATA:
+{extracted_json_str}
+
+Respond conversationally as a friendly vet assistant. Explain what this document says in simple terms.
+If it's a prescription, explain the medication, dosage, and instructions clearly.
+If it's a vaccine card, explain what vaccines were given and when the next ones are due.
+If it's a medical report, summarize the findings and recommendations.
+Be clear, helpful, and reassuring. Use formatting with headers and bullet points for clarity.
+IMPORTANT: Do NOT mention the AI analysis or extraction process in your response. Just explain the document naturally."""
+            
+            chat_history = session.get_chat_history()
+            explanation_text = query_agentic_rag(
+                question=explanation_query,
+                chat_history=chat_history
+            )
+            
+            # Save to memory
+            session.memory.save_context(
+                {"input": f"Uploaded medical document: {file.filename}"},
+                {"output": f"Document analyzed. Extracted data: {extracted_json_str}\n\nExplanation: {explanation_text}"}
+            )
+            
+            logger.info(f"Session {session.session_id}: Medical document analyzed")
+            
+            return {
+                "session_id": session.session_id,
+                "extracted_data": extracted_data,
+                "explanation": explanation_text
+            }
+        
+        finally:
+            # Clean up temp file
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error uploading document: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
