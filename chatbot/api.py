@@ -704,6 +704,7 @@ The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. A
 
 Current User Question: {user_input}"""
 
+                response_text = ""
                 async for chunk in stream_llm_response(contextual_input, chat_history):
                     response_text += chunk
                     yield f"data: {json.dumps({'chunk': chunk, 'used_rag': True, 'disease_detected': None, 'done': False})}\n\n"
