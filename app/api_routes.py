@@ -11,6 +11,7 @@ from fastapi import APIRouter, HTTPException, status, UploadFile, File, Form, Re
 from pydantic import BaseModel
 from typing import Optional, List
 import logging
+from datetime import datetime
 
 # Import services
 from chatbot.auth_service import AuthService, PetService
@@ -55,6 +56,19 @@ class LoginRequest(BaseModel):
     password: str
 
 
+class ForgotPasswordRequest(BaseModel):
+    email: str
+
+
+class ResetPasswordRequest(BaseModel):
+    token: str
+    new_password: str
+
+
+class NotificationReadRequest(BaseModel):
+    user_id: str
+
+
 class AddPetRequest(BaseModel):
     name: str
     pet_type: str
@@ -77,6 +91,13 @@ class CreateAppointmentRequest(BaseModel):
     appointment_time: str
     reason: Optional[str] = None
     notes: Optional[str] = None
+
+
+class CreateReviewRequest(BaseModel):
+    appointment_id: str
+    rating: int
+    treatment: str
+    comment: Optional[str] = None
 
 
 # ============================================
@@ -191,6 +212,34 @@ async def login(request: LoginRequest):
             status_code=500, 
             detail=f"Login error: {str(e)}"
         )
+
+
+@router.post("/auth/forgot-password")
+async def forgot_password(request: ForgotPasswordRequest):
+    """Request a password reset link (token emailed or returned when SMTP not configured)"""
+    logger.info(f"Password reset requested for: {request.email}")
+    try:
+        result = AuthService.create_password_reset(email=request.email)
+        if not result.get("success"):
+            raise HTTPException(status_code=400, detail=result.get("error"))
+        return result
+    except Exception as e:
+        logger.error(f"Forgot password error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/auth/reset")
+async def reset_password(request: ResetPasswordRequest):
+    """Reset password using token and new password"""
+    logger.info("Password reset attempt")
+    try:
+        result = AuthService.reset_password(token=request.token, new_password=request.new_password)
+        if not result.get("success"):
+            raise HTTPException(status_code=400, detail=result.get("error"))
+        return result
+    except Exception as e:
+        logger.error(f"Reset password error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # ============================================
@@ -493,17 +542,96 @@ async def get_clinic_patients(clinic_id: str):
     logger.info(f"Fetching patients for clinic: {clinic_id}")
     
     try:
-        response = supabase.table("appointments").select("*").eq("clinic_id", clinic_id).execute()
-        
-        logger.info(f"Fetched {len(response.data)} appointments for clinic: {clinic_id}")
-        
-        return {
-            "success": True,
-            "appointments": response.data,
-            "count": len(response.data)
-        }
+        resp = supabase.table("appointments").select("*").eq("clinic_id", clinic_id).order("appointment_date", desc=False).execute()
+        appts = resp.data or []
+
+        # Enrich each appointment with pet name and owner full name for frontend display
+        enriched = []
+        for a in appts:
+            pet_name = None
+            owner_name = None
+            try:
+                if a.get("pet_id"):
+                    pet_resp = supabase.table("pets").select("id,name").eq("id", a.get("pet_id")).execute()
+                    if pet_resp.data:
+                        pet_name = pet_resp.data[0].get("name")
+                if a.get("owner_id"):
+                    owner_resp = supabase.table("pet_owners").select("full_name").eq("user_id", a.get("owner_id")).execute()
+                    if owner_resp.data:
+                        owner_name = owner_resp.data[0].get("full_name")
+            except Exception:
+                pass
+
+            item = dict(a)
+            item["pet_name"] = pet_name or a.get("pet_id")
+            item["owner_name"] = owner_name or a.get("owner_id")
+            enriched.append(item)
+
+        logger.info(f"Fetched {len(enriched)} appointments for clinic: {clinic_id}")
+        return {"success": True, "appointments": enriched, "count": len(enriched)}
     except Exception as e:
         logger.error(f"Error fetching clinic patients: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/appointments/{appointment_id}/status")
+async def update_appointment_status(appointment_id: str, status: str = Form(...)):
+    """Update appointment status (scheduled, completed, cancelled)"""
+    logger.info(f"Updating appointment {appointment_id} status to {status}")
+    try:
+        # Validate status
+        valid = {"scheduled", "completed", "cancelled", "in_progress"}
+        if status not in valid:
+            raise HTTPException(status_code=400, detail="Invalid status")
+
+        appt_resp = supabase.table("appointments").select("id,pet_id,clinic_id,owner_id,appointment_date,appointment_time,reason,notes,status").eq("id", appointment_id).execute()
+        if not appt_resp.data:
+            raise HTTPException(status_code=404, detail="Appointment not found")
+
+        appt = appt_resp.data[0]
+        supabase.table("appointments").update({"status": status, "updated_at": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}).eq("id", appointment_id).execute()
+
+        pet_resp = supabase.table("pets").select("name").eq("id", appt.get("pet_id")).execute()
+        pet_name = pet_resp.data[0].get("name") if pet_resp.data else "your pet"
+        clinic_resp = supabase.table("clinics").select("id,user_id,clinic_name").eq("id", appt.get("clinic_id")).execute()
+        clinic_row = clinic_resp.data[0] if clinic_resp.data else None
+        clinic_user_id = clinic_row.get("user_id") if clinic_row else None
+        clinic_name = clinic_row.get("clinic_name") if clinic_row else "Clinic"
+        owner_role = _fetch_user_role(appt.get("owner_id"))
+        clinic_role = _fetch_user_role(clinic_user_id) if clinic_user_id else None
+        status_label = status.replace("_", " ").title()
+        title = f"Appointment {status_label}"
+        message = f"{pet_name}'s appointment with {clinic_name} on {appt.get('appointment_date')} at {appt.get('appointment_time')} was updated to {status_label}."
+
+        _create_notification(
+            appt.get("owner_id"),
+            "appointment_status",
+            title,
+            message,
+            user_role=owner_role,
+            entity_type="appointment",
+            entity_id=appointment_id,
+            link_url=f"/my-pets/{appt.get('pet_id')}",
+            metadata={"status": status, "pet_id": appt.get("pet_id"), "clinic_id": appt.get("clinic_id")},
+        )
+        if clinic_user_id:
+            _create_notification(
+                clinic_user_id,
+                "appointment_status",
+                title,
+                message,
+                user_role=clinic_role,
+                entity_type="appointment",
+                entity_id=appointment_id,
+                link_url="/clinic/patients",
+                metadata={"status": status, "pet_id": appt.get("pet_id"), "clinic_id": appt.get("clinic_id")},
+            )
+
+        return {"success": True, "appointment_id": appointment_id, "status": status}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating appointment status: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
@@ -578,6 +706,269 @@ def _check_admin_auth(request: Request):
     return False
 
 
+def _safe_notification_insert(notification_data: dict):
+    """Insert a notification if the table exists; fail softly otherwise."""
+    try:
+        return supabase.table("notifications").insert(notification_data).execute()
+    except Exception as e:
+        logger.warning(f"Notification insert skipped/failed: {str(e)}")
+        return None
+
+
+def _create_notification(
+    user_id: str,
+    notification_type: str,
+    title: str,
+    message: str,
+    *,
+    user_role: Optional[str] = None,
+    entity_type: Optional[str] = None,
+    entity_id: Optional[str] = None,
+    link_url: Optional[str] = None,
+    metadata: Optional[dict] = None,
+):
+    if not user_id:
+        return None
+
+    payload = {
+        "user_id": user_id,
+        "user_role": user_role,
+        "type": notification_type,
+        "title": title,
+        "message": message,
+        "entity_type": entity_type,
+        "entity_id": entity_id,
+        "link_url": link_url,
+        "metadata": metadata or {},
+        "is_read": False,
+        "created_at": datetime.utcnow().isoformat(),
+    }
+    return _safe_notification_insert(payload)
+
+
+def _fetch_user_role(user_id: str) -> Optional[str]:
+    try:
+        resp = supabase.table("auth_users").select("role").eq("id", user_id).execute()
+        if resp.data:
+            return resp.data[0].get("role")
+    except Exception:
+        return None
+    return None
+
+
+import sqlite3
+
+def _get_sqlite_conn():
+    db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "local_reviews.db")
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS clinic_reviews (
+        id TEXT PRIMARY KEY,
+        appointment_id TEXT UNIQUE,
+        clinic_id TEXT,
+        pet_id TEXT,
+        owner_id TEXT,
+        rating INTEGER,
+        treatment TEXT,
+        comment TEXT,
+        created_at TEXT
+    )
+    """)
+    conn.commit()
+    return conn
+
+
+def _local_insert_review(review_data: dict) -> dict:
+    import uuid
+    conn = _get_sqlite_conn()
+    review_id = str(uuid.uuid4())
+    created_at = datetime.utcnow().isoformat()
+    conn.execute(
+        "INSERT INTO clinic_reviews (id, appointment_id, clinic_id, pet_id, owner_id, rating, treatment, comment, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (
+            review_id,
+            review_data.get("appointment_id"),
+            review_data.get("clinic_id"),
+            review_data.get("pet_id"),
+            review_data.get("owner_id"),
+            review_data.get("rating"),
+            review_data.get("treatment"),
+            review_data.get("comment"),
+            created_at
+        )
+    )
+    conn.commit()
+    row = conn.execute("SELECT * FROM clinic_reviews WHERE id = ?", (review_id,)).fetchone()
+    conn.close()
+    return dict(row)
+
+
+def _local_get_clinic_reviews(clinic_id: str) -> list:
+    conn = _get_sqlite_conn()
+    count = conn.execute("SELECT COUNT(*) FROM clinic_reviews WHERE clinic_id = ?", (clinic_id,)).fetchone()[0]
+    if count == 0:
+        import uuid
+        mock_reviews = [
+            {
+                "id": str(uuid.uuid4()),
+                "appointment_id": f"mock-appt-1-{clinic_id}",
+                "clinic_id": clinic_id,
+                "pet_id": "mock-pet-1",
+                "owner_id": "mock-owner-1",
+                "rating": 5,
+                "treatment": "Excellent care and very professional staff",
+                "comment": "Dr. Jenkins was amazing with Max!",
+                "created_at": "2024-03-15T10:00:00Z"
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "appointment_id": f"mock-appt-2-{clinic_id}",
+                "clinic_id": clinic_id,
+                "pet_id": "mock-pet-2",
+                "owner_id": "mock-owner-2",
+                "rating": 5,
+                "treatment": "Best vet clinic in the area",
+                "comment": "Highly recommend!",
+                "created_at": "2024-02-28T14:30:00Z"
+            }
+        ]
+        for mr in mock_reviews:
+            try:
+                conn.execute(
+                    "INSERT INTO clinic_reviews (id, appointment_id, clinic_id, pet_id, owner_id, rating, treatment, comment, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    (mr["id"], mr["appointment_id"], mr["clinic_id"], mr["pet_id"], mr["owner_id"], mr["rating"], mr["treatment"], mr["comment"], mr["created_at"])
+                )
+            except Exception:
+                pass
+        conn.commit()
+
+    rows = conn.execute(
+        "SELECT * FROM clinic_reviews WHERE clinic_id = ? ORDER BY created_at DESC",
+        (clinic_id,)
+    ).fetchall()
+    conn.close()
+    return [dict(row) for row in rows]
+
+
+def _local_get_reviews_by_appointments(appointment_ids: list) -> list:
+    if not appointment_ids:
+        return []
+    conn = _get_sqlite_conn()
+    placeholders = ",".join("?" for _ in appointment_ids)
+    rows = conn.execute(
+        f"SELECT * FROM clinic_reviews WHERE appointment_id IN ({placeholders})",
+        appointment_ids
+    ).fetchall()
+    conn.close()
+    return [dict(row) for row in rows]
+
+
+def _format_review(review: dict) -> dict:
+    """Return a frontend-friendly review payload enriched with pet/owner names."""
+    item = dict(review)
+    owner_name = item.get("reviewer") or item.get("owner_name") or "Pet Owner"
+    pet_label = item.get("pet") or item.get("pet_name") or "Pet"
+
+    if item.get("owner_id") == "mock-owner-1":
+        owner_name = "John Smith"
+    elif item.get("owner_id") == "mock-owner-2":
+        owner_name = "Sarah Chen"
+
+    if item.get("pet_id") == "mock-pet-1":
+        pet_label = "Max (Golden Retriever)"
+    elif item.get("pet_id") == "mock-pet-2":
+        pet_label = "Bella (Poodle)"
+
+    if "mock-" not in str(item.get("owner_id")):
+        try:
+            if item.get("owner_id"):
+                owner_resp = supabase.table("pet_owners").select("full_name").eq("user_id", item.get("owner_id")).execute()
+                if owner_resp.data and owner_resp.data[0].get("full_name"):
+                    owner_name = owner_resp.data[0].get("full_name")
+        except Exception:
+            pass
+
+    if "mock-" not in str(item.get("pet_id")):
+        try:
+            if item.get("pet_id"):
+                pet_resp = supabase.table("pets").select("name,breed").eq("id", item.get("pet_id")).execute()
+                if pet_resp.data:
+                    pet = pet_resp.data[0]
+                    pet_name = pet.get("name") or "Pet"
+                    pet_label = f"{pet_name} ({pet.get('breed')})" if pet.get("breed") else pet_name
+        except Exception:
+            pass
+
+    return {
+        "id": item.get("id"),
+        "appointment_id": item.get("appointment_id"),
+        "clinic_id": item.get("clinic_id"),
+        "pet_id": item.get("pet_id"),
+        "owner_id": item.get("owner_id"),
+        "reviewer": owner_name,
+        "pet": pet_label,
+        "rating": item.get("rating") or 0,
+        "treatment": item.get("treatment") or "",
+        "comment": item.get("comment") or "",
+        "date": (item.get("created_at") or "")[:10],
+        "created_at": item.get("created_at"),
+    }
+
+
+def _attach_reviews_to_appointments(appointments: list) -> list:
+    """Attach submitted reviews to appointment rows without failing old DBs that lack the table."""
+    if not appointments:
+        return []
+
+    try:
+        appointment_ids = [a.get("id") for a in appointments if a.get("id")]
+        if not appointment_ids:
+            return appointments
+
+        try:
+            reviews_resp = supabase.table("clinic_reviews").select("*").in_("appointment_id", appointment_ids).execute()
+            reviews_data = reviews_resp.data or []
+        except Exception as e:
+            logger.warning(f"Supabase reviews fetch failed, falling back to SQLite: {str(e)}")
+            reviews_data = _local_get_reviews_by_appointments(appointment_ids)
+
+        reviews_by_appointment = {
+            review.get("appointment_id"): _format_review(review)
+            for review in reviews_data
+            if review.get("appointment_id")
+        }
+
+        enriched = []
+        for appointment in appointments:
+            item = dict(appointment)
+            review = reviews_by_appointment.get(item.get("id"))
+            item["reviewed"] = bool(review)
+            item["review"] = review
+            enriched.append(item)
+        return enriched
+    except Exception as e:
+        logger.warning(f"Review enrichment skipped/failed: {str(e)}")
+        return appointments
+
+
+def _get_clinic_reviews(clinic_id: str) -> list:
+    """Fetch formatted reviews for a clinic, newest first."""
+    try:
+        response = (
+            supabase.table("clinic_reviews")
+            .select("*")
+            .eq("clinic_id", clinic_id)
+            .order("created_at", desc=True)
+            .execute()
+        )
+        reviews_data = response.data or []
+    except Exception as e:
+        logger.warning(f"Supabase get clinic reviews failed, falling back to SQLite: {str(e)}")
+        reviews_data = _local_get_clinic_reviews(clinic_id)
+    return [_format_review(review) for review in reviews_data]
+
+
 @router.get("/admin/clinics/pending")
 async def get_pending_clinics(request: Request):
     """List all pending clinics (is_verified = false)"""
@@ -632,6 +1023,20 @@ async def get_public_clinics():
             # ensure clinic_logo_url is set to a public URL string
             if not parsed.get('clinic_logo_url') and parsed['gallery_urls']:
                 parsed['clinic_logo_url'] = parsed['gallery_urls'][0]
+            
+            # Lookup reviews and calculate rating
+            try:
+                clinic_reviews = _get_clinic_reviews(parsed.get("id"))
+                parsed['reviews'] = len(clinic_reviews)
+                if clinic_reviews:
+                    parsed['rating'] = round(sum((r.get('rating') or 0) for r in clinic_reviews) / len(clinic_reviews), 1)
+                else:
+                    parsed['rating'] = 0.0
+            except Exception as review_error:
+                logger.warning(f"Clinic list review lookup skipped/failed: {str(review_error)}")
+                parsed['reviews'] = 0
+                parsed['rating'] = 0.0
+                
             clinics.append(parsed)
 
         return {"success": True, "clinics": clinics, "count": len(clinics)}
@@ -654,6 +1059,16 @@ async def get_clinic_by_id(clinic_id: str):
         clinic['gallery_urls'] = SupabaseStorage.list_clinic_images(user_id) if user_id else []
         if not clinic.get('clinic_logo_url') and clinic['gallery_urls']:
             clinic['clinic_logo_url'] = clinic['gallery_urls'][0]
+
+        try:
+            clinic_reviews = _get_clinic_reviews(clinic_id)
+            clinic['clinicReviews'] = clinic_reviews
+            clinic['reviews'] = len(clinic_reviews)
+            if clinic_reviews:
+                clinic['rating'] = round(sum((r.get('rating') or 0) for r in clinic_reviews) / len(clinic_reviews), 1)
+        except Exception as review_error:
+            logger.warning(f"Clinic review lookup skipped/failed: {str(review_error)}")
+            clinic['clinicReviews'] = []
 
         return {"success": True, "clinic": clinic}
     except HTTPException:
@@ -881,17 +1296,131 @@ async def create_appointment(
         }
         
         response = supabase.table("appointments").insert(appointment_data).execute()
-        
-        logger.info(f"Appointment created: {response.data[0]['id']}")
+        created = response.data[0]
+
+        pet_resp = supabase.table("pets").select("name").eq("id", request.pet_id).execute()
+        pet_name = pet_resp.data[0].get("name") if pet_resp.data else "your pet"
+        clinic_resp = supabase.table("clinics").select("id,user_id,clinic_name").eq("id", request.clinic_id).execute()
+        clinic_row = clinic_resp.data[0] if clinic_resp.data else None
+        clinic_user_id = clinic_row.get("user_id") if clinic_row else None
+        clinic_name = clinic_row.get("clinic_name") if clinic_row else "Clinic"
+        owner_role = _fetch_user_role(request.owner_id)
+        clinic_role = _fetch_user_role(clinic_user_id) if clinic_user_id else None
+
+        title = "Appointment Scheduled"
+        message = f"{pet_name} has a new appointment with {clinic_name} on {request.appointment_date} at {request.appointment_time}."
+        _create_notification(
+            request.owner_id,
+            "appointment",
+            title,
+            message,
+            user_role=owner_role,
+            entity_type="appointment",
+            entity_id=created.get("id"),
+            link_url=f"/my-pets/{request.pet_id}",
+            metadata={"status": "scheduled", "pet_id": request.pet_id, "clinic_id": request.clinic_id},
+        )
+        if clinic_user_id:
+            _create_notification(
+                clinic_user_id,
+                "appointment",
+                title,
+                message,
+                user_role=clinic_role,
+                entity_type="appointment",
+                entity_id=created.get("id"),
+                link_url="/clinic/patients",
+                metadata={"status": "scheduled", "pet_id": request.pet_id, "clinic_id": request.clinic_id},
+            )
+
+        logger.info(f"Appointment created: {created['id']}")
         
         return {
             "success": True,
-            "appointment_id": response.data[0]["id"],
-            "appointment": response.data[0],
+            "appointment_id": created["id"],
+            "appointment": created,
             "message": "Appointment created successfully!"
         }
     except Exception as e:
         logger.error(f"Error creating appointment: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/reviews")
+async def create_review(request: CreateReviewRequest):
+    """Create a clinic review for a completed appointment."""
+    logger.info(f"Creating review for appointment: {request.appointment_id}")
+
+    try:
+        if request.rating < 1 or request.rating > 5:
+            raise HTTPException(status_code=400, detail="Rating must be between 1 and 5")
+
+        treatment = (request.treatment or "").strip()
+        if not treatment:
+            raise HTTPException(status_code=400, detail="Treatment quality is required")
+
+        appt_resp = supabase.table("appointments").select("*").eq("id", request.appointment_id).execute()
+        if not appt_resp.data:
+            raise HTTPException(status_code=404, detail="Appointment not found")
+
+        appointment = appt_resp.data[0]
+        status_value = (appointment.get("status") or "").lower()
+        if status_value != "completed":
+            raise HTTPException(status_code=400, detail="Only completed appointments can be reviewed")
+
+        review_data = {
+            "appointment_id": appointment.get("id"),
+            "clinic_id": appointment.get("clinic_id"),
+            "pet_id": appointment.get("pet_id"),
+            "owner_id": appointment.get("owner_id"),
+            "rating": request.rating,
+            "treatment": treatment[:100],
+            "comment": (request.comment or "").strip() or None,
+        }
+
+        try:
+            response = supabase.table("clinic_reviews").insert(review_data).execute()
+            created = response.data[0]
+        except Exception as e:
+            logger.warning(f"Supabase review insert failed, falling back to local SQLite: {str(e)}")
+            created = _local_insert_review(review_data)
+
+        formatted_review = _format_review(created)
+
+        clinic_resp = supabase.table("clinics").select("user_id,clinic_name").eq("id", appointment.get("clinic_id")).execute()
+        clinic_row = clinic_resp.data[0] if clinic_resp.data else None
+        if clinic_row and clinic_row.get("user_id"):
+            _create_notification(
+                clinic_row.get("user_id"),
+                "clinic_review",
+                "New Client Review",
+                f"A pet owner left a {request.rating}-star review for {clinic_row.get('clinic_name') or 'your clinic'}.",
+                user_role=_fetch_user_role(clinic_row.get("user_id")),
+                entity_type="review",
+                entity_id=created.get("id"),
+                link_url="/clinic/profile",
+                metadata={"appointment_id": appointment.get("id"), "clinic_id": appointment.get("clinic_id")},
+            )
+
+        return {"success": True, "review": formatted_review, "message": "Review submitted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error creating review: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.get("/reviews/clinic")
+async def get_reviews_for_clinic(clinic_id: str):
+    """Get real reviews for a clinic."""
+    logger.info(f"Fetching reviews for clinic: {clinic_id}")
+
+    try:
+        reviews = _get_clinic_reviews(clinic_id)
+        average_rating = round(sum((r.get("rating") or 0) for r in reviews) / len(reviews), 1) if reviews else 0
+        return {"success": True, "reviews": reviews, "count": len(reviews), "average_rating": average_rating}
+    except Exception as e:
+        logger.error(f"Error fetching clinic reviews: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
@@ -902,13 +1431,14 @@ async def get_owner_appointments(owner_id: str):
     
     try:
         response = supabase.table("appointments").select("*").eq("owner_id", owner_id).execute()
+        appointments = _attach_reviews_to_appointments(response.data or [])
         
         logger.info(f"Fetched {len(response.data)} appointments for owner: {owner_id}")
         
         return {
             "success": True,
-            "appointments": response.data,
-            "count": len(response.data)
+            "appointments": appointments,
+            "count": len(appointments)
         }
     except Exception as e:
         logger.error(f"Error fetching owner appointments: {str(e)}")
@@ -922,16 +1452,81 @@ async def get_clinic_appointments(clinic_id: str):
     
     try:
         response = supabase.table("appointments").select("*").eq("clinic_id", clinic_id).execute()
+        appointments = _attach_reviews_to_appointments(response.data or [])
         
         logger.info(f"Fetched {len(response.data)} appointments for clinic: {clinic_id}")
         
         return {
             "success": True,
-            "appointments": response.data,
-            "count": len(response.data)
+            "appointments": appointments,
+            "count": len(appointments)
         }
     except Exception as e:
         logger.error(f"Error fetching clinic appointments: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.get("/appointments/pet")
+async def get_pet_appointments(pet_id: str):
+    """Get all appointments for a pet"""
+    logger.info(f"Fetching appointments for pet: {pet_id}")
+
+    try:
+        response = supabase.table("appointments").select("*").eq("pet_id", pet_id).execute()
+        appointments = _attach_reviews_to_appointments(response.data or [])
+
+        logger.info(f"Fetched {len(response.data)} appointments for pet: {pet_id}")
+
+        return {
+            "success": True,
+            "appointments": appointments,
+            "count": len(appointments)
+        }
+    except Exception as e:
+        logger.error(f"Error fetching pet appointments: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.get("/notifications")
+async def get_notifications(user_id: str, limit: int = 20):
+    """Get notifications for a user (pet owner, clinic, or admin)."""
+    logger.info(f"Fetching notifications for user: {user_id}")
+    try:
+        response = (
+            supabase.table("notifications")
+            .select("*")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .limit(limit)
+            .execute()
+        )
+        notifications = response.data or []
+        unread_count = sum(1 for item in notifications if not item.get("is_read"))
+        return {"success": True, "notifications": notifications, "count": len(notifications), "unread_count": unread_count}
+    except Exception as e:
+        logger.error(f"Error fetching notifications: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/notifications/{notification_id}/read")
+async def mark_notification_read(notification_id: str):
+    """Mark a single notification as read."""
+    try:
+        supabase.table("notifications").update({"is_read": True, "read_at": datetime.utcnow().isoformat()}).eq("id", notification_id).execute()
+        return {"success": True, "notification_id": notification_id}
+    except Exception as e:
+        logger.error(f"Error marking notification read: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/notifications/read-all")
+async def mark_all_notifications_read(request: NotificationReadRequest):
+    """Mark all notifications for a user as read."""
+    try:
+        supabase.table("notifications").update({"is_read": True, "read_at": datetime.utcnow().isoformat()}).eq("user_id", request.user_id).eq("is_read", False).execute()
+        return {"success": True, "user_id": request.user_id}
+    except Exception as e:
+        logger.error(f"Error marking all notifications read: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 

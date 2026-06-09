@@ -8,6 +8,10 @@ import os
 from typing import Dict, Optional
 from chatbot.supabase_config import supabase, SupabaseStorage
 from chatbot.rbac import AuthorizationService, Permission
+import secrets
+import smtplib
+from email.mime.text import MIMEText
+from datetime import datetime, timedelta
 
 
 class AuthService:
@@ -341,6 +345,123 @@ class AuthService:
                 "success": False,
                 "error": f"Error fetching profile: {str(e)}"
             }
+
+    @staticmethod
+    def create_password_reset(email: str) -> Dict:
+        """
+        Generate a password reset token for the given email, store a hashed token and expiry,
+        and attempt to send a reset link via SMTP if configured. Returns success (always true
+        for security reasons) and optionally the reset link when email delivery is not configured.
+        """
+        try:
+            if not email:
+                return {"success": False, "error": "Email is required"}
+
+            # Find user by email
+            resp = supabase.table("auth_users").select("id,email").eq("email", email).execute()
+            if not resp.data:
+                # Don't reveal whether email exists
+                return {"success": True, "message": "If that email is registered, a reset link has been sent."}
+
+            user = resp.data[0]
+            user_id = user.get("id")
+
+            # Generate token and store hashed version
+            token = secrets.token_urlsafe(32)
+            token_hash = hashlib.sha256(token.encode()).hexdigest()
+            now = datetime.utcnow()
+            expires_at = (now + timedelta(hours=1)).isoformat()
+
+            supabase.table("password_reset_tokens").insert({
+                "user_id": user_id,
+                "token_hash": token_hash,
+                "created_at": now.isoformat(),
+                "expires_at": expires_at,
+                "used": False,
+            }).execute()
+
+            # Build reset link
+            frontend_base = os.getenv("FRONTEND_URL", "http://localhost:3000")
+            reset_link = f"{frontend_base}/auth/reset?token={token}"
+
+            # Try to send email using SMTP if configured
+            smtp_host = os.getenv("SMTP_HOST")
+            smtp_port = int(os.getenv("SMTP_PORT", "0") or 0)
+            smtp_user = os.getenv("SMTP_USER")
+            smtp_pass = os.getenv("SMTP_PASS")
+            support_from = os.getenv("SUPPORT_FROM", "no-reply@petai.local")
+
+            email_sent = False
+            if smtp_host and smtp_port and smtp_user and smtp_pass:
+                try:
+                    msg = MIMEText(f"You requested a password reset. Click the link to reset your password:\n\n{reset_link}\n\nIf you didn't request this, ignore this email.")
+                    msg["Subject"] = "Reset your Pet AI password"
+                    msg["From"] = support_from
+                    msg["To"] = email
+
+                    server = smtplib.SMTP(smtp_host, smtp_port, timeout=10)
+                    server.starttls()
+                    server.login(smtp_user, smtp_pass)
+                    server.sendmail(support_from, [email], msg.as_string())
+                    server.quit()
+                    email_sent = True
+                except Exception as e:
+                    # Log and continue; do not fail the request
+                    try:
+                        import logging
+                        logging.getLogger(__name__).warning(f"SMTP send failed: {str(e)}")
+                    except Exception:
+                        pass
+
+            # For non-configured SMTP, return the reset_link in response for dev/testing
+            result = {"success": True, "message": "If that email is registered, a reset link has been sent."}
+            if not email_sent:
+                result["reset_link"] = reset_link
+
+            return result
+
+        except Exception as e:
+            return {"success": False, "error": f"Error creating reset token: {str(e)}"}
+
+    @staticmethod
+    def reset_password(token: str, new_password: str) -> Dict:
+        """
+        Validate a password reset token and set the new password for the associated user.
+        Token is expected to be the raw token string (not hashed).
+        """
+        try:
+            if not token or not new_password:
+                return {"success": False, "error": "Token and new password are required"}
+
+            token_hash = hashlib.sha256(token.encode()).hexdigest()
+            now = datetime.utcnow().isoformat()
+
+            # Look up token
+            resp = supabase.table("password_reset_tokens").select("id,user_id,expires_at,used").eq("token_hash", token_hash).execute()
+            if not resp.data:
+                return {"success": False, "error": "Invalid or expired token"}
+
+            row = resp.data[0]
+            if row.get("used"):
+                return {"success": False, "error": "Token already used"}
+
+            expires_at = row.get("expires_at")
+            if expires_at and expires_at < now:
+                return {"success": False, "error": "Token expired"}
+
+            user_id = row.get("user_id")
+
+            # Update user's password_hash
+            new_hash = AuthService.hash_password(new_password)
+            supabase.table("auth_users").update({"password_hash": new_hash}).eq("id", user_id).execute()
+
+            # Mark token as used
+            supabase.table("password_reset_tokens").update({"used": True}).eq("id", row.get("id")).execute()
+
+            return {"success": True, "message": "Password updated successfully"}
+
+        except Exception as e:
+            return {"success": False, "error": f"Reset failed: {str(e)}"}
 
 
 class PetService:
