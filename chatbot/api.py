@@ -9,7 +9,7 @@ from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from typing import Optional, Dict, AsyncGenerator
+from typing import Optional, Dict, AsyncGenerator, Any
 import uuid
 import os
 import tempfile
@@ -52,6 +52,7 @@ class StartConversationRequest(BaseModel):
     animal: str  # 'dog' or 'cat'
     user_id: Optional[str] = None  # Optional user identifier
     pet_id: Optional[str] = None  # Optional pet identifier for real user data
+    pet_profile: Optional[Dict[str, Any]] = None
 
 class StartConversationResponse(BaseModel):
     """Response when starting conversation"""
@@ -83,7 +84,7 @@ class UploadImageRequest(BaseModel):
 class ConversationSession:
     """Manages a single conversation session"""
     
-    def __init__(self, session_id: str, animal: str, pet_profile: Optional[dict] = None):
+    def __init__(self, session_id: str, animal: str, pet_profile: Optional[Dict[str, Any]] = None):
         self.session_id = session_id
         self.animal = animal
         self.pet_profile = pet_profile or {}
@@ -97,6 +98,10 @@ class ConversationSession:
         memory_vars = self.memory.load_memory_variables({})
         return memory_vars.get('chat_history', '')
 
+    def get_pet_context(self) -> str:
+        """Get selected pet profile context for LLM prompts."""
+        return format_pet_profile_context(self.animal, self.pet_profile)
+
 # Store active sessions
 _sessions: Dict[str, ConversationSession] = {}
 
@@ -105,6 +110,41 @@ def get_session(session_id: str) -> ConversationSession:
     if session_id not in _sessions:
         raise HTTPException(status_code=404, detail=f"Session {session_id} not found")
     return _sessions[session_id]
+
+
+def format_pet_profile_context(animal: str, pet_profile: Dict[str, Any]) -> str:
+    """Build a compact pet profile context block for prompts."""
+    if not pet_profile:
+        return f"Selected Pet Profile:\n- Type: {animal}"
+
+    field_labels = {
+        "name": "Name",
+        "type": "Type",
+        "breed": "Breed",
+        "age": "Age",
+        "date_of_birth": "Date of birth",
+        "gender": "Gender",
+        "blood_type": "Blood type",
+        "allergies": "Allergies",
+        "medical_conditions": "Medical conditions",
+        "notes": "Notes",
+        "microchip_id": "Microchip ID",
+    }
+    lines = ["Selected Pet Profile:"]
+    for key, label in field_labels.items():
+        value = pet_profile.get(key)
+        if value is not None and str(value).strip():
+            lines.append(f"- {label}: {value}")
+
+    weight = pet_profile.get("weight")
+    if weight is not None and str(weight).strip():
+        weight_unit = pet_profile.get("weight_unit") or ""
+        lines.append(f"- Weight: {weight} {weight_unit}".strip())
+
+    if not any(line.startswith("- Type:") for line in lines):
+        lines.append(f"- Type: {animal}")
+
+    return "\n".join(lines)
 
 # ─────────────────────────────────────────────────────────────
 # API Endpoints
@@ -145,7 +185,7 @@ async def start_conversation(request: StartConversationRequest):
         session_id = str(uuid.uuid4())
         animal = request.animal.lower()
         
-        # Fetch pet profile if pet_id is provided
+        # Fetch pet profile if pet_id is provided, or use direct pet_profile
         pet_profile = None
         if request.pet_id:
             pet_profile = await fetch_pet_profile(request.pet_id)
@@ -153,6 +193,8 @@ async def start_conversation(request: StartConversationRequest):
                 logger.info(f"Fetched pet profile: {pet_profile.get('name')} for session {session_id}")
             else:
                 logger.warning(f"Pet profile not found for pet_id: {request.pet_id}")
+        elif request.pet_profile:
+            pet_profile = request.pet_profile
         
         session = ConversationSession(session_id, animal, pet_profile)
         _sessions[session_id] = session
@@ -237,7 +279,10 @@ async def send_message(request: SendMessageRequest):
                 if session.analysis_done:
                     # Follow-up question after analysis
                     chat_history = session.get_chat_history()
-                    followup_query = f"""You have already diagnosed and discussed a {disease_type} condition with this {animal}.
+                    pet_context = session.get_pet_context()
+                    followup_query = f"""{pet_context}
+
+You have already diagnosed and discussed a {disease_type} condition with this {animal}.
 
 Previous Conversation:
 {chat_history}
@@ -255,7 +300,10 @@ Provide helpful, accurate veterinary advice based on the question asked."""
                     used_rag = True
                 else:
                     # Ask for image (using agent)
+                    pet_context = session.get_pet_context()
                     enriched_input = f"""
+{pet_context}
+
 Pet Type: {animal}
 Issue Type: {disease_type} disease
 
@@ -276,32 +324,9 @@ Do NOT use the tool yet. Just ask for the image."""
             # because the question is checked by is_skin_or_eye_issue()
             # and pet profile fields (like "Allergies") could trigger false matches.
             if session.pet_profile and not session.pet_initialized:
-                pp = session.pet_profile
-                pet_info_parts = []
-                if pp.get("name"):
-                    pet_info_parts.append(f"Name: {pp['name']}")
-                pet_info_parts.append(f"Type: {animal}")
-                if pp.get("breed"):
-                    pet_info_parts.append(f"Breed: {pp['breed']}")
-                if pp.get("date_of_birth"):
-                    pet_info_parts.append(f"Date of Birth: {pp['date_of_birth']}")
-                if pp.get("weight"):
-                    pet_info_parts.append(f"Weight: {pp['weight']} {pp.get('weight_unit', 'kg')}")
-                if pp.get("gender"):
-                    pet_info_parts.append(f"Gender: {pp['gender']}")
-                if pp.get("blood_type"):
-                    pet_info_parts.append(f"Blood Type: {pp['blood_type']}")
-                if pp.get("allergies"):
-                    pet_info_parts.append(f"Allergies: {pp['allergies']}")
-                if pp.get("medical_conditions"):
-                    pet_info_parts.append(f"Medical Conditions: {pp['medical_conditions']}")
-                if pp.get("notes"):
-                    pet_info_parts.append(f"Additional Notes: {pp['notes']}")
-                
-                # Create pet context and save to memory so it persists throughout conversation
                 from datetime import datetime
                 current_time = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
-                pet_context = f"CURRENT DATE AND TIME: {current_time}\n\nPET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                pet_context = f"CURRENT DATE AND TIME: {current_time}\n\n{session.get_pet_context()}"
                 session.memory.save_context(
                     {"input": "System: Pet profile initialized"},
                     {"output": pet_context}
@@ -309,7 +334,8 @@ Do NOT use the tool yet. Just ask for the image."""
                 chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
                 session.pet_initialized = True
             
-            pet_query = f"""Pet Type: {animal}
+            pet_context = session.get_pet_context()
+            pet_query = f"""{pet_context}
 
 Previous Conversation:
 {chat_history}
@@ -398,7 +424,10 @@ async def upload_image(
             confidence = tool_result.get('confidence', 'N/A')
             
             # Use agentic RAG to explain diagnosis (exact same as CLI)
-            explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+            pet_context = session.get_pet_context()
+            explanation_query = f"""{pet_context}
+
+The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
 Respond conversationally as a friendly vet assistant. Start by saying something like "Your {animal} appears to have {disease_class}." Then explain:
 1. What is {disease_class}?
@@ -618,7 +647,10 @@ async def send_message_stream(request: SendMessageRequest):
                 else:
                     if session.analysis_done:
                         # Follow-up question
-                        follow_up_prompt = f"The user is asking a follow-up question about the {disease_type} condition we discussed earlier: '{user_input}'"
+                        pet_context = session.get_pet_context()
+                        follow_up_prompt = f"""{pet_context}
+
+The user is asking a follow-up question about the {disease_type} condition we discussed earlier: '{user_input}'"""
                         
                         # Stream RAG response with history
                         chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
@@ -635,7 +667,10 @@ async def send_message_stream(request: SendMessageRequest):
                         yield f"data: {json.dumps({'chunk': '', 'used_rag': True, 'disease_detected': None, 'done': True})}\n\n"
                     else:
                         # First mention of disease - ask for image
-                        enriched_input = f"The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. Ask them if they can provide an image for analysis."
+                        pet_context = session.get_pet_context()
+                        enriched_input = f"""{pet_context}
+
+The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. Ask them if they can provide an image for analysis."""
                         
                         response_text = ""
                         async for chunk in stream_llm_response(enriched_input, ""):
@@ -654,32 +689,9 @@ async def send_message_stream(request: SendMessageRequest):
                 # because the question is checked by is_skin_or_eye_issue()
                 # and pet profile fields (like "Allergies") could trigger false matches.
                 if session.pet_profile and not session.pet_initialized:
-                    pp = session.pet_profile
-                    pet_info_parts = []
-                    if pp.get("name"):
-                        pet_info_parts.append(f"Name: {pp['name']}")
-                    pet_info_parts.append(f"Type: {animal}")
-                    if pp.get("breed"):
-                        pet_info_parts.append(f"Breed: {pp['breed']}")
-                    if pp.get("date_of_birth"):
-                        pet_info_parts.append(f"Date of Birth: {pp['date_of_birth']}")
-                    if pp.get("weight"):
-                        pet_info_parts.append(f"Weight: {pp['weight']} {pp.get('weight_unit', 'kg')}")
-                    if pp.get("gender"):
-                        pet_info_parts.append(f"Gender: {pp['gender']}")
-                    if pp.get("blood_type"):
-                        pet_info_parts.append(f"Blood Type: {pp['blood_type']}")
-                    if pp.get("allergies"):
-                        pet_info_parts.append(f"Allergies: {pp['allergies']}")
-                    if pp.get("medical_conditions"):
-                        pet_info_parts.append(f"Medical Conditions: {pp['medical_conditions']}")
-                    if pp.get("notes"):
-                        pet_info_parts.append(f"Additional Notes: {pp['notes']}")
-                    
-                    # Save pet profile to memory so it persists throughout conversation
                     from datetime import datetime
                     current_time = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
-                    pet_context = f"CURRENT DATE AND TIME: {current_time}\n\nPET PROFILE:\n{chr(10).join(pet_info_parts)}"
+                    pet_context = f"CURRENT DATE AND TIME: {current_time}\n\n{session.get_pet_context()}"
                     session.memory.save_context(
                         {"input": "System: Pet profile initialized"},
                         {"output": pet_context}
@@ -687,8 +699,12 @@ async def send_message_stream(request: SendMessageRequest):
                     chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
                     session.pet_initialized = True
                 
-                response_text = ""
-                async for chunk in stream_llm_response(user_input, chat_history):
+                pet_context = session.get_pet_context()
+                contextual_input = f"""{pet_context}
+
+Current User Question: {user_input}"""
+
+                async for chunk in stream_llm_response(contextual_input, chat_history):
                     response_text += chunk
                     yield f"data: {json.dumps({'chunk': chunk, 'used_rag': True, 'disease_detected': None, 'done': False})}\n\n"
                     await asyncio.sleep(0.01)
@@ -762,7 +778,10 @@ async def handle_image_analysis(
         confidence = tool_result.get('confidence', 'N/A')
         
         # Use agentic RAG for explanation
-        explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+        pet_context = session.get_pet_context()
+        explanation_query = f"""{pet_context}
+
+The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
 User's original description: {user_input}
 
