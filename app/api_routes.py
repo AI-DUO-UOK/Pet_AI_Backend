@@ -140,11 +140,13 @@ async def signup_clinic(
     opening_hours: Optional[str] = Form(None),
     description: Optional[str] = Form(None),
     clinic_photo: Optional[UploadFile] = File(None),
+    clinic_license: Optional[UploadFile] = File(None),
 ):
     """Signup new clinic"""
     logger.info(f"Clinic signup attempt: {email}")
 
     clinic_logo_url = None
+    license_document_url = None
 
     try:
         if clinic_photo and clinic_photo.filename:
@@ -166,6 +168,28 @@ async def signup_clinic(
     except Exception as e:
         logger.error(f"Error uploading clinic photo: {str(e)}")
         raise HTTPException(status_code=400, detail=f"Error uploading clinic photo: {str(e)}")
+
+    try:
+        if clinic_license and clinic_license.filename:
+            valid_types = ["image/jpeg", "image/png", "image/jpg", "application/pdf"]
+            if clinic_license.content_type and clinic_license.content_type not in valid_types:
+                raise HTTPException(status_code=400, detail="License must be a PDF or image (JPG/PNG)")
+
+            license_bytes = await clinic_license.read()
+            license_ext = os.path.splitext(clinic_license.filename)[1] or ".pdf"
+            license_name = f"license-{clinic_name.replace(' ', '_')}-{int(time.time())}{license_ext}"
+            license_path = SupabaseStorage.upload_clinic_document(
+                user_id=email,
+                file_data=license_bytes,
+                filename=license_name,
+                content_type=clinic_license.content_type or "application/pdf",
+            )
+            license_document_url = supabase.storage.from_("clinic-documents").get_public_url(license_path)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error uploading clinic license: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Error uploading clinic license: {str(e)}")
     
     result = AuthService.signup_clinic(
         email=email,
@@ -181,6 +205,7 @@ async def signup_clinic(
         opening_hours=opening_hours,
         description=description,
         clinic_logo_url=clinic_logo_url,
+        license_document_url=license_document_url,
     )
     
     if not result["success"]:
@@ -1134,12 +1159,13 @@ async def approve_clinic(clinic_id: str, request: Request):
         raise HTTPException(status_code=403, detail="Forbidden")
 
     try:
-        clinic_resp = supabase.table("clinics").select("id, user_id, email").eq("id", clinic_id).execute()
+        clinic_resp = supabase.table("clinics").select("id, user_id, email, clinic_name").eq("id", clinic_id).execute()
         if not clinic_resp.data:
             raise HTTPException(status_code=404, detail="Clinic not found")
 
         clinic = clinic_resp.data[0]
         user_id = clinic.get("user_id")
+        clinic_name = clinic.get("clinic_name") or "Your clinic"
         current = supabase.table("clinics").select("description").eq("id", clinic_id).execute()
         current_description = current.data[0].get("description") if current.data else ""
         clean_description = _strip_rejection_marker(current_description)
@@ -1150,6 +1176,19 @@ async def approve_clinic(clinic_id: str, request: Request):
         # Also activate corresponding auth user explicitly
         if user_id:
             supabase.table("auth_users").update({"is_active": True}).eq("id", user_id).execute()
+            
+            # Create notification
+            _create_notification(
+                user_id,
+                "clinic_approval",
+                "Clinic Approved ✅",
+                f"Congratulations! {clinic_name} has been approved by the admin. You can now access all features.",
+                user_role="clinic",
+                entity_type="clinic",
+                entity_id=clinic_id,
+                link_url="/clinic/dashboard",
+                metadata={"status": "approved", "clinic_id": clinic_id}
+            )
 
         return {"success": True, "clinic_id": clinic_id, "message": "Clinic approved"}
     except Exception as e:
@@ -1166,12 +1205,13 @@ async def reject_clinic(clinic_id: str, request: Request):
         raise HTTPException(status_code=403, detail="Forbidden")
 
     try:
-        clinic_resp = supabase.table("clinics").select("id, user_id, email").eq("id", clinic_id).execute()
+        clinic_resp = supabase.table("clinics").select("id, user_id, email, clinic_name").eq("id", clinic_id).execute()
         if not clinic_resp.data:
             raise HTTPException(status_code=404, detail="Clinic not found")
 
         clinic = clinic_resp.data[0]
         user_id = clinic.get("user_id")
+        clinic_name = clinic.get("clinic_name") or "Your clinic"
 
         # Read optional reason from request body
         try:
@@ -1203,9 +1243,28 @@ async def reject_clinic(clinic_id: str, request: Request):
         # Update clinic: keep is_verified false and append description marker
         supabase.table("clinics").update({"is_verified": False, "description": new_desc}).eq("id", clinic_id).execute()
 
-        # Deactivate associated auth user explicitly
+        # Keep associated auth user active so they can log in, view status, and edit/resubmit profile
         if user_id:
-            supabase.table("auth_users").update({"is_active": False}).eq("id", user_id).execute()
+            supabase.table("auth_users").update({"is_active": True}).eq("id", user_id).execute()
+            
+            # Create notification
+            rejection_message = f"Your registration for {clinic_name} was rejected by the admin."
+            if reason:
+                rejection_message += f" Reason: {reason}"
+            else:
+                rejection_message += " Please check your documents and resubmit."
+            
+            _create_notification(
+                user_id,
+                "clinic_rejection",
+                "Clinic Verification Rejected ❌",
+                rejection_message,
+                user_role="clinic",
+                entity_type="clinic",
+                entity_id=clinic_id,
+                link_url="/clinic/dashboard",
+                metadata={"status": "rejected", "clinic_id": clinic_id, "reason": reason or ""}
+            )
 
         return {"success": True, "clinic_id": clinic_id, "message": "Clinic rejected", "reason": reason, "rejected_at": timestamp}
     except Exception as e:
@@ -1547,6 +1606,81 @@ async def get_user_profile(user_id: str):
     
     logger.info(f"Profile fetched for user: {user_id}")
     return result
+
+
+@router.put("/user/profile")
+async def update_user_profile(
+    user_id: str = Form(...),
+    full_name: Optional[str] = Form(None),
+    phone: Optional[str] = Form(None),
+    address: Optional[str] = Form(None),
+    city: Optional[str] = Form(None),
+    state: Optional[str] = Form(None),
+    zip_code: Optional[str] = Form(None),
+    country: Optional[str] = Form(None),
+    bio: Optional[str] = Form(None),
+    emergency_contact_name: Optional[str] = Form(None),
+    emergency_contact_phone: Optional[str] = Form(None),
+    photo: Optional[UploadFile] = File(None),
+    latitude: Optional[float] = Form(None),
+    longitude: Optional[float] = Form(None),
+):
+    """Update pet owner profile details"""
+    logger.info(f"Updating pet owner profile for user: {user_id}")
+    
+    profile_image_url = None
+    
+    try:
+        if photo and photo.filename:
+            if not photo.content_type or not photo.content_type.startswith("image/"):
+                raise HTTPException(status_code=400, detail="Profile photo must be an image")
+            
+            photo_bytes = await photo.read()
+            photo_ext = os.path.splitext(photo.filename)[1] or ".jpg"
+            photo_name = f"avatar-{int(time.time())}{photo_ext}"
+            photo_path = SupabaseStorage.upload_user_avatar(
+                user_id=user_id,
+                file_data=photo_bytes,
+                filename=photo_name,
+                content_type=photo.content_type or "image/jpeg"
+            )
+            profile_image_url = supabase.storage.from_("user-avatars").get_public_url(photo_path)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error uploading avatar photo: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Error uploading avatar photo: {str(e)}")
+
+    result = AuthService.update_user_profile(
+        user_id=user_id,
+        full_name=full_name,
+        phone=phone,
+        address=address,
+        city=city,
+        state=state,
+        zip_code=zip_code,
+        country=country,
+        bio=bio,
+        emergency_contact_name=emergency_contact_name,
+        emergency_contact_phone=emergency_contact_phone,
+        profile_image_url=profile_image_url,
+        latitude=latitude,
+        longitude=longitude
+    )
+    
+    if not result["success"]:
+        logger.error(f"Error updating profile: {result.get('error')}")
+        raise HTTPException(status_code=400, detail=result.get("error"))
+        
+    logger.info(f"Profile updated successfully for user: {user_id}")
+    return result
+
+
+@router.get("/config/google-maps")
+async def get_google_maps_config():
+    """Get public Google Maps configuration key"""
+    key = os.getenv("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY", "")
+    return {"key": key}
 
 
 # ============================================

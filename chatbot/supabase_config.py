@@ -142,6 +142,30 @@ class SupabaseStorage:
         return file_path
 
     @staticmethod
+    def upload_clinic_document(user_id: str, file_data, filename: str, content_type: str = "application/pdf"):
+        """Upload clinic verification document to storage"""
+        SupabaseStorage.ensure_bucket("clinic-documents", public=True, allowed_mime_types=["image/*", "application/pdf"])
+        file_path = f"{user_id}/{filename}"
+        supabase.storage.from_("clinic-documents").upload(
+            file=file_data,
+            path=file_path,
+            file_options={"content-type": content_type or "application/pdf", "upsert": "false"},
+        )
+        return file_path
+
+    @staticmethod
+    def upload_user_avatar(user_id: str, file_data, filename: str, content_type: str = "image/jpeg"):
+        """Upload user avatar to storage"""
+        SupabaseStorage.ensure_bucket("user-avatars", public=True, allowed_mime_types=["image/*"])
+        file_path = f"{user_id}/{filename}"
+        supabase.storage.from_("user-avatars").upload(
+            file=file_data,
+            path=file_path,
+            file_options={"content-type": content_type or "image/jpeg", "upsert": "false"},
+        )
+        return file_path
+
+    @staticmethod
     def list_clinic_images(user_id: str):
         """List public URLs for clinic images stored for a user."""
         SupabaseDB._check_client()

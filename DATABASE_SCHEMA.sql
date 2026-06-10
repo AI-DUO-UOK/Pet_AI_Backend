@@ -75,6 +75,8 @@ NOT NULL,
 (255),
   emergency_contact_phone VARCHAR
 (20),
+  latitude DOUBLE PRECISION,
+  longitude DOUBLE PRECISION,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -114,16 +116,12 @@ NOT NULL,
 (20),
   country VARCHAR
 (100),
-  clinic_logo_url VARCHAR
-(500),
-  registration_number VARCHAR
-(100),
-  license_number VARCHAR
-(100),
-  website VARCHAR
-(500),
-  opening_hours VARCHAR
-(500), -- JSON format: {"Monday": "9AM-5PM", ...}
+  clinic_logo_url VARCHAR(500),
+  license_document_url VARCHAR(500),
+  registration_number VARCHAR(100),
+  license_number VARCHAR(100),
+  website VARCHAR(500),
+  opening_hours VARCHAR(500), -- JSON format: {"Monday": "9AM-5PM", ...}
   description TEXT,
   is_verified BOOLEAN DEFAULT false,
   is_active BOOLEAN DEFAULT true,

@@ -119,6 +119,7 @@ class AuthService:
         opening_hours: str = None,
         description: str = None,
         clinic_logo_url: Optional[str] = None,
+        license_document_url: Optional[str] = None,
     ) -> Dict:
         """
         Signup new clinic/veterinary
@@ -183,6 +184,7 @@ class AuthService:
                 "opening_hours": opening_hours,
                 "description": description,
                 "clinic_logo_url": clinic_logo_url,
+                "license_document_url": license_document_url,
                 "is_verified": False,  # Starts as pending (not verified)
             }
 
@@ -462,6 +464,94 @@ class AuthService:
 
         except Exception as e:
             return {"success": False, "error": f"Reset failed: {str(e)}"}
+
+    @staticmethod
+    def update_user_profile(
+        user_id: str,
+        full_name: Optional[str] = None,
+        phone: Optional[str] = None,
+        address: Optional[str] = None,
+        city: Optional[str] = None,
+        state: Optional[str] = None,
+        zip_code: Optional[str] = None,
+        country: Optional[str] = None,
+        bio: Optional[str] = None,
+        emergency_contact_name: Optional[str] = None,
+        emergency_contact_phone: Optional[str] = None,
+        profile_image_url: Optional[str] = None,
+        latitude: Optional[float] = None,
+        longitude: Optional[float] = None,
+    ) -> Dict:
+        """Update pet owner user profile"""
+        try:
+            # Check if user exists
+            user_response = supabase.table("auth_users").select("*").eq("id", user_id).execute()
+            if not user_response.data:
+                return {"success": False, "error": "User not found"}
+            
+            user = user_response.data[0]
+            role = user.get("role")
+            
+            if role != "owner":
+                return {"success": False, "error": "Only pet owner profiles can be updated through this endpoint"}
+            
+            # Prepare updates for pet_owners table
+            owner_updates = {}
+            if full_name is not None:
+                owner_updates["full_name"] = full_name
+            if phone is not None:
+                owner_updates["phone"] = phone
+            if address is not None:
+                owner_updates["address"] = address
+            if city is not None:
+                owner_updates["city"] = city
+            if state is not None:
+                owner_updates["state"] = state
+            if zip_code is not None:
+                owner_updates["zip_code"] = zip_code
+            if country is not None:
+                owner_updates["country"] = country
+            if bio is not None:
+                owner_updates["bio"] = bio
+            if emergency_contact_name is not None:
+                owner_updates["emergency_contact_name"] = emergency_contact_name
+            if emergency_contact_phone is not None:
+                owner_updates["emergency_contact_phone"] = emergency_contact_phone
+            if profile_image_url is not None:
+                owner_updates["profile_image_url"] = profile_image_url
+            if latitude is not None:
+                owner_updates["latitude"] = latitude
+            if longitude is not None:
+                owner_updates["longitude"] = longitude
+
+            if owner_updates:
+                supabase.table("pet_owners").update(owner_updates).eq("user_id", user_id).execute()
+                
+            # Also update auth_users table first_name and last_name if full_name is provided
+            if full_name:
+                name_parts = full_name.strip().split(" ", 1)
+                first_name = name_parts[0]
+                last_name = name_parts[1] if len(name_parts) > 1 else ""
+                
+                auth_updates = {"first_name": first_name, "last_name": last_name}
+                if phone is not None:
+                    auth_updates["phone"] = phone
+                    
+                supabase.table("auth_users").update(auth_updates).eq("id", user_id).execute()
+
+            # Retrieve updated profile
+            refreshed = supabase.table("pet_owners").select("*").eq("user_id", user_id).execute()
+            
+            return {
+                "success": True,
+                "profile": refreshed.data[0] if refreshed.data else {}
+            }
+
+        except Exception as e:
+            return {
+                "success": False,
+                "error": f"Error updating profile: {str(e)}"
+            }
 
 
 class PetService:
