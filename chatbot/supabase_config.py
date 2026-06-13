@@ -8,6 +8,9 @@ from typing import Iterable
 
 logger = logging.getLogger(__name__)
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Get credentials from environment variables
 SUPABASE_URL = os.getenv("SUPABASE_URL", "")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY", "")  # Use anon key for client-side, service key for server-side

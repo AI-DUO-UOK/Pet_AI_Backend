@@ -734,3 +734,27 @@ class PetService:
                 "success": False,
                 "error": f"Error fetching vaccine records: {str(e)}"
             }
+
+    @staticmethod
+    def update_pet(
+        pet_id: str,
+        updates: Dict,
+    ) -> Dict:
+        """Update pet details"""
+        try:
+            response = supabase.table("pets").update(updates).eq("id", pet_id).execute()
+            if not response.data:
+                return {
+                    "success": False,
+                    "error": "Pet not found or not updated"
+                }
+            return {
+                "success": True,
+                "pet": response.data[0],
+                "message": "Pet updated successfully!"
+            }
+        except Exception as e:
+            return {
+                "success": False,
+                "error": f"Error updating pet: {str(e)}"
+            }

@@ -375,6 +375,84 @@ async def get_pet_detail(pet_id: str):
         raise HTTPException(status_code=400, detail=str(e))
 
 
+@router.put("/pets/{pet_id}")
+async def update_pet_detail(
+    pet_id: str,
+    name: Optional[str] = Form(None),
+    breed: Optional[str] = Form(None),
+    date_of_birth: Optional[str] = Form(None),
+    weight: Optional[float] = Form(None),
+    weight_unit: Optional[str] = Form(None),
+    gender: Optional[str] = Form(None),
+    blood_type: Optional[str] = Form(None),
+    allergies: Optional[str] = Form(None),
+    medical_conditions: Optional[str] = Form(None),
+    notes: Optional[str] = Form(None),
+    photo: Optional[UploadFile] = File(None),
+):
+    """Update pet details"""
+    logger.info(f"Updating pet details for pet: {pet_id}")
+    
+    try:
+        current = supabase.table("pets").select("*").eq("id", pet_id).execute()
+        if not current.data:
+            raise HTTPException(status_code=404, detail="Pet not found")
+        
+        pet = current.data[0]
+        user_id = pet["user_id"]
+        updates = {}
+        
+        if name is not None:
+            updates["name"] = name
+        if breed is not None:
+            updates["breed"] = breed
+        if date_of_birth is not None:
+            updates["date_of_birth"] = date_of_birth
+        if weight is not None:
+            updates["weight"] = weight
+        if weight_unit is not None:
+            updates["weight_unit"] = weight_unit
+        if gender is not None:
+            updates["gender"] = gender
+        if blood_type is not None:
+            updates["blood_type"] = blood_type
+        if allergies is not None:
+            updates["allergies"] = allergies
+        if medical_conditions is not None:
+            updates["medical_conditions"] = medical_conditions
+        if notes is not None:
+            updates["notes"] = notes
+            
+        if photo and photo.filename:
+            if not photo.content_type or not photo.content_type.startswith("image/"):
+                raise HTTPException(status_code=400, detail="Pet photo must be an image")
+            
+            file_data = await photo.read()
+            file_ext = os.path.splitext(photo.filename)[1] or ".jpg"
+            storage_path = f"{user_id}/{int(time.time())}-{name or pet['name']}{file_ext}".replace(' ', '_')
+            SupabaseStorage.ensure_bucket("pet-images", public=True, allowed_mime_types=["image/*"])
+            supabase.storage.from_("pet-images").upload(
+                file=file_data,
+                path=storage_path,
+                file_options={
+                    "content-type": photo.content_type or "image/jpeg",
+                    "upsert": "false",
+                },
+            )
+            updates["profile_image_url"] = supabase.storage.from_("pet-images").get_public_url(storage_path)
+            
+        result = PetService.update_pet(pet_id=pet_id, updates=updates)
+        if not result["success"]:
+            raise HTTPException(status_code=400, detail=result.get("error"))
+            
+        return result
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating pet: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.get("/clinic/profile")
 async def get_clinic_profile(user_id: str):
     """Get the current clinic profile for a logged in clinic user."""
