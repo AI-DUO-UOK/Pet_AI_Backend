@@ -17,8 +17,10 @@ from datetime import datetime
 from chatbot.auth_service import AuthService, PetService
 from chatbot.rbac import AuthorizationService, Permission
 from chatbot.supabase_config import supabase, SupabaseStorage
+from chatbot.vaccine_service import VaccineService
 import os
 import time
+import tempfile
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -1774,6 +1776,151 @@ async def get_google_maps_config():
     """Get public Google Maps configuration key"""
     key = os.getenv("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY", "")
     return {"key": key}
+
+
+# ============================================
+# Vaccine Management Endpoints
+# ============================================
+
+@router.post("/vaccines/upload-document")
+async def upload_vaccine_document(
+    pet_id: str = Form(...),
+    file: UploadFile = File(...)
+):
+    """
+    Upload a vaccine booklet/card image, extract data via VLM,
+    and store both the document and extracted vaccination records.
+    This is for the FIRST-TIME upload only.
+    """
+    logger.info(f"Uploading vaccine document for pet: {pet_id}")
+    
+    # Save uploaded file temporarily
+    with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename or ".jpg")[1]) as tmp:
+        content = await file.read()
+        tmp.write(content)
+        tmp_path = tmp.name
+    
+    try:
+        # Upload image to Supabase storage
+        file_ext = os.path.splitext(file.filename or ".jpg")[1]
+        storage_path = f"vaccine-documents/{pet_id}/{int(time.time())}{file_ext}"
+        
+        SupabaseStorage.ensure_bucket("vaccine-documents", public=True, allowed_mime_types=["image/*", "application/pdf"])
+        
+        with open(tmp_path, "rb") as f:
+            file_data = f.read()
+        
+        supabase.storage.from_("vaccine-documents").upload(
+            file=file_data,
+            path=storage_path,
+            file_options={
+                "content-type": file.content_type or "image/jpeg",
+                "upsert": "false",
+            },
+        )
+        image_url = supabase.storage.from_("vaccine-documents").get_public_url(storage_path)
+        
+        # Process via vaccine service (VLM extraction + DB storage)
+        result = VaccineService.upload_vaccine_document(
+            pet_id=pet_id,
+            image_url=image_url,
+            image_path=tmp_path
+        )
+        
+        if not result.get("success"):
+            raise HTTPException(status_code=400, detail=result.get("error", "Failed to process vaccine document"))
+        
+        logger.info(f"Vaccine document processed: {result.get('records_count')} records for pet {pet_id}")
+        
+        return {
+            "success": True,
+            "document_id": result.get("document_id"),
+            "records_count": result.get("records_count"),
+            "records": result.get("records"),
+            "message": f"Successfully extracted {result.get('records_count')} vaccine records!"
+        }
+        
+    finally:
+        # Clean up temp file
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+
+
+@router.post("/vaccines/manual-entry")
+async def add_manual_vaccine(
+    pet_id: str = Form(...),
+    vaccine_name: str = Form(...),
+    vaccination_date: str = Form(...),
+    next_due_date: Optional[str] = Form(None),
+    batch_number: Optional[str] = Form(None),
+    veterinarian_name: Optional[str] = Form(None),
+    clinic_name: Optional[str] = Form(None),
+    clinic_id: Optional[str] = Form(None),
+    notes: Optional[str] = Form(None),
+    source: str = Form("vet_entry")
+):
+    """
+    Add a vaccine record manually (used by vets after appointments).
+    This is for all FUTURE vaccine entries after the initial upload.
+    """
+    logger.info(f"Adding manual vaccine entry for pet: {pet_id}")
+    
+    result = VaccineService.add_manual_vaccine_entry(
+        pet_id=pet_id,
+        vaccine_name=vaccine_name,
+        vaccination_date=vaccination_date,
+        next_due_date=next_due_date,
+        batch_number=batch_number,
+        veterinarian_name=veterinarian_name,
+        clinic_name=clinic_name,
+        clinic_id=clinic_id,
+        notes=notes,
+        source=source
+    )
+    
+    if not result.get("success"):
+        raise HTTPException(status_code=400, detail=result.get("error"))
+    
+    return result
+
+
+@router.get("/vaccines/{pet_id}")
+async def get_pet_vaccines(pet_id: str):
+    """Get all vaccination records for a pet"""
+    logger.info(f"Fetching vaccines for pet: {pet_id}")
+    
+    result = VaccineService.get_pet_vaccines(pet_id=pet_id)
+    
+    if not result.get("success"):
+        raise HTTPException(status_code=400, detail=result.get("error"))
+    
+    return result
+
+
+@router.get("/vaccines/{pet_id}/documents")
+async def get_pet_vaccine_documents(pet_id: str):
+    """Get uploaded vaccine documents for a pet"""
+    logger.info(f"Fetching vaccine documents for pet: {pet_id}")
+    
+    result = VaccineService.get_pet_vaccine_documents(pet_id=pet_id)
+    
+    if not result.get("success"):
+        raise HTTPException(status_code=400, detail=result.get("error"))
+    
+    return result
+
+
+@router.post("/vaccines/check-reminders")
+async def check_vaccine_reminders():
+    """
+    Trigger reminder check for all vaccines.
+    Called daily by scheduler or manually.
+    """
+    logger.info("Checking vaccine reminders")
+    
+    result = VaccineService.check_and_send_reminders()
+    
+    return result
 
 
 # ============================================
