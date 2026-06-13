@@ -36,7 +36,7 @@ class SignupOwnerRequest(BaseModel):
     password: str
     first_name: str
     last_name: str
-    phone: Optional[str] = None
+    phone: str
 
 
 class SignupClinicRequest(BaseModel):
@@ -415,6 +415,8 @@ async def update_clinic_profile(
     description: Optional[str] = Form(None),
     photo: Optional[UploadFile] = File(None),
     photos: Optional[List[UploadFile]] = File(None),
+    latitude: Optional[float] = Form(None),
+    longitude: Optional[float] = Form(None),
 ):
     """Update the current clinic profile."""
     logger.info(f"Updating clinic profile for user: {user_id}")
@@ -447,6 +449,10 @@ async def update_clinic_profile(
             updates["opening_hours"] = opening_hours
         if description is not None:
             updates["description"] = description
+        if latitude is not None:
+            updates["latitude"] = latitude
+        if longitude is not None:
+            updates["longitude"] = longitude
 
         if photo and photo.filename:
             if not photo.content_type or not photo.content_type.startswith("image/"):
@@ -484,7 +490,18 @@ async def update_clinic_profile(
             gallery_uploads.append(supabase.storage.from_("clinic-images").get_public_url(image_path))
 
         if updates:
-            supabase.table("clinics").update(updates).eq("user_id", user_id).execute()
+            try:
+                supabase.table("clinics").update(updates).eq("user_id", user_id).execute()
+            except Exception as db_err:
+                err_msg = str(db_err)
+                if "latitude" in err_msg or "longitude" in err_msg or "PGRST204" in err_msg:
+                    logger.warning(f"Failed to update clinic coordinates (columns might be missing): {err_msg}. Retrying without coordinates.")
+                    updates.pop("latitude", None)
+                    updates.pop("longitude", None)
+                    if updates:
+                        supabase.table("clinics").update(updates).eq("user_id", user_id).execute()
+                else:
+                    raise
 
         refreshed = supabase.table("clinics").select("*").eq("user_id", user_id).execute()
         if not refreshed.data:
@@ -1614,7 +1631,6 @@ async def update_user_profile(
     full_name: Optional[str] = Form(None),
     phone: Optional[str] = Form(None),
     address: Optional[str] = Form(None),
-    city: Optional[str] = Form(None),
     state: Optional[str] = Form(None),
     zip_code: Optional[str] = Form(None),
     country: Optional[str] = Form(None),
@@ -1656,7 +1672,6 @@ async def update_user_profile(
         full_name=full_name,
         phone=phone,
         address=address,
-        city=city,
         state=state,
         zip_code=zip_code,
         country=country,

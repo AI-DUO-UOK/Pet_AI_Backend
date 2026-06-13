@@ -20,7 +20,7 @@ IF NOT EXISTS auth_users
   last_name VARCHAR
 (100),
   phone VARCHAR
-(20),
+(20) NOT NULL,
   role VARCHAR
 (50) NOT NULL DEFAULT 'owner', -- 'owner' or 'clinic'
   is_active BOOLEAN DEFAULT true,
@@ -58,10 +58,8 @@ NOT NULL,
   email VARCHAR
 (255) NOT NULL,
   phone VARCHAR
-(20),
+(20) NOT NULL,
   address TEXT,
-  city VARCHAR
-(100),
   state VARCHAR
 (100),
   zip_code VARCHAR

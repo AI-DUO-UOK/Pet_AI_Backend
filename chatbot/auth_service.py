@@ -33,7 +33,7 @@ class AuthService:
         password: str,
         first_name: str,
         last_name: str,
-        phone: str = None,
+        phone: str,
     ) -> Dict:
         """
         Signup new pet owner
@@ -43,17 +43,17 @@ class AuthService:
             password: Plain text password
             first_name: First name
             last_name: Last name
-            phone: Phone number (optional)
+            phone: Phone number (mandatory)
         
         Returns:
             Dictionary with success status and user data
         """
         try:
             # Validate input
-            if not email or not password or not first_name or not last_name:
+            if not email or not password or not first_name or not last_name or not phone:
                 return {
                     "success": False,
-                    "error": "Email, password, first name, and last name are required"
+                    "error": "Email, password, first name, last name, and phone number are required"
                 }
 
             # Check if email already exists
@@ -471,7 +471,6 @@ class AuthService:
         full_name: Optional[str] = None,
         phone: Optional[str] = None,
         address: Optional[str] = None,
-        city: Optional[str] = None,
         state: Optional[str] = None,
         zip_code: Optional[str] = None,
         country: Optional[str] = None,
@@ -503,8 +502,6 @@ class AuthService:
                 owner_updates["phone"] = phone
             if address is not None:
                 owner_updates["address"] = address
-            if city is not None:
-                owner_updates["city"] = city
             if state is not None:
                 owner_updates["state"] = state
             if zip_code is not None:
