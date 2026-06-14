@@ -336,15 +336,7 @@ async def send_message(request: SendMessageRequest):
                 if session.analysis_done:
                     # Follow-up question after analysis
                     chat_history = session.get_chat_history()
-                    pet_context = session.get_pet_context()
-                    followup_query = f"""{pet_context}
-
-You have already diagnosed and discussed a {disease_type} condition with this {animal}.
-
-Previous Conversation:
-{chat_history}
-
-User's follow-up question: {user_input}
+                    followup_query = f"""User's follow-up question about the previously diagnosed {disease_type} condition for their {animal}: {user_input}
 
 IMPORTANT: Reference the specific diagnosis and previous discussion from the conversation history.
 Answer this question in the context of the condition previously diagnosed. 
@@ -704,10 +696,11 @@ async def send_message_stream(request: SendMessageRequest):
                 else:
                     if session.analysis_done:
                         # Follow-up question
-                        pet_context = session.get_pet_context()
-                        follow_up_prompt = f"""{pet_context}
+                        follow_up_prompt = f"""User's follow-up question about the previously diagnosed {disease_type} condition for their {animal}: {user_input}
 
-The user is asking a follow-up question about the {disease_type} condition we discussed earlier: '{user_input}'"""
+IMPORTANT: Reference the specific diagnosis and previous discussion from the conversation history.
+Answer this question in the context of the condition previously diagnosed. 
+Provide helpful, accurate veterinary advice based on the question asked."""
                         
                         # Stream RAG response with history
                         chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
@@ -756,10 +749,10 @@ The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. A
                     chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
                     session.pet_initialized = True
                 
-                pet_context = session.get_pet_context()
-                contextual_input = f"""{pet_context}
-
-Current User Question: {user_input}"""
+                if session.pet_profile:
+                    contextual_input = user_input
+                else:
+                    contextual_input = f"Selected Pet Profile:\n- Type: {animal}\n\nCurrent User Question: {user_input}"
 
                 response_text = ""
                 async for chunk in stream_llm_response(contextual_input, chat_history):
