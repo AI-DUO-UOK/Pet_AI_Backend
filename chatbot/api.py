@@ -144,6 +144,41 @@ def format_pet_profile_context(animal: str, pet_profile: Dict[str, Any]) -> str:
     if not any(line.startswith("- Type:") for line in lines):
         lines.append(f"- Type: {animal}")
 
+    vaccinations = pet_profile.get("vaccinations")
+    if vaccinations:
+        lines.append("\nVaccination History & Timeline:")
+        for vac in vaccinations:
+            vac_name = vac.get("vaccine_name")
+            vac_date = vac.get("vaccination_date")
+            next_due = vac.get("next_due_date")
+            clinic = vac.get("clinic_name")
+            vet = vac.get("veterinarian_name")
+            batch = vac.get("batch_number")
+            notes = vac.get("notes")
+            vac_type = vac.get("vaccine_type")
+            
+            vac_details = []
+            if vac_name:
+                name_str = f"  - Vaccine: {vac_name}"
+                if vac_type:
+                    name_str += f" ({vac_type})"
+                vac_details.append(name_str)
+            if vac_date:
+                vac_details.append(f"    Date Administered: {vac_date}")
+            if next_due:
+                vac_details.append(f"    Next Due Date: {next_due}")
+            if vet:
+                vac_details.append(f"    Veterinarian: {vet}")
+            if clinic:
+                vac_details.append(f"    Clinic: {clinic}")
+            if batch:
+                vac_details.append(f"    Batch/Lot Number: {batch}")
+            if notes:
+                vac_details.append(f"    Notes: {notes}")
+            
+            if vac_details:
+                lines.append("\n".join(vac_details))
+
     return "\n".join(lines)
 
 # ─────────────────────────────────────────────────────────────
@@ -160,6 +195,22 @@ async def fetch_pet_profile(pet_id: str) -> Optional[dict]:
     except Exception as e:
         logger.warning(f"Could not fetch pet profile for {pet_id}: {e}")
     return None
+
+
+async def fetch_pet_vaccines(pet_id: str) -> list:
+    """Fetch pet vaccination records from the database by pet_id."""
+    try:
+        from chatbot.supabase_config import supabase
+        response = supabase.table("vaccination_records")\
+            .select("*")\
+            .eq("pet_id", pet_id)\
+            .order("vaccination_date", desc=True)\
+            .execute()
+        if response.data:
+            return response.data
+    except Exception as e:
+        logger.warning(f"Could not fetch vaccination records for {pet_id}: {e}")
+    return []
 
 
 @app.post("/api/chat/start", response_model=StartConversationResponse)
@@ -194,7 +245,13 @@ async def start_conversation(request: StartConversationRequest):
             else:
                 logger.warning(f"Pet profile not found for pet_id: {request.pet_id}")
         elif request.pet_profile:
-            pet_profile = request.pet_profile
+            pet_profile = dict(request.pet_profile)
+        
+        if pet_profile:
+            pet_id = pet_profile.get("id") or request.pet_id
+            if pet_id:
+                vaccines = await fetch_pet_vaccines(pet_id)
+                pet_profile["vaccinations"] = vaccines
         
         session = ConversationSession(session_id, animal, pet_profile)
         _sessions[session_id] = session
