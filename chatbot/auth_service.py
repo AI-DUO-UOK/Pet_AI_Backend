@@ -275,13 +275,19 @@ class AuthService:
             role = user["role"]
             permissions = AuthorizationService.get_user_permissions(role)
             
-            # Get verification status for clinic users
+            # Get verification status for clinic users and avatar url
             verification_status = None
+            avatar_url = None
             if role == "clinic":
-                clinic_response = supabase.table("clinics").select("is_verified").eq("user_id", user["id"]).execute()
+                clinic_response = supabase.table("clinics").select("is_verified, clinic_logo_url").eq("user_id", user["id"]).execute()
                 if clinic_response.data:
                     is_verified = clinic_response.data[0].get("is_verified", False)
                     verification_status = "approved" if is_verified else "pending"
+                    avatar_url = clinic_response.data[0].get("clinic_logo_url")
+            elif role == "owner":
+                owner_response = supabase.table("pet_owners").select("profile_image_url").eq("user_id", user["id"]).execute()
+                if owner_response.data:
+                    avatar_url = owner_response.data[0].get("profile_image_url")
 
             return {
                 "success": True,
@@ -292,6 +298,7 @@ class AuthService:
                 "last_name": user.get("last_name"),
                 "permissions": [p.value for p in permissions],
                 "verification_status": verification_status,
+                "avatar_url": avatar_url,
                 "message": "Login successful!"
             }
 

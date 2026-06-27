@@ -381,6 +381,7 @@ async def get_pet_detail(pet_id: str):
 async def update_pet_detail(
     pet_id: str,
     name: Optional[str] = Form(None),
+    pet_type: Optional[str] = Form(None),
     breed: Optional[str] = Form(None),
     date_of_birth: Optional[str] = Form(None),
     weight: Optional[float] = Form(None),
@@ -406,6 +407,8 @@ async def update_pet_detail(
         
         if name is not None:
             updates["name"] = name
+        if pet_type is not None:
+            updates["type"] = pet_type.lower()
         if breed is not None:
             updates["breed"] = breed
         if date_of_birth is not None:
