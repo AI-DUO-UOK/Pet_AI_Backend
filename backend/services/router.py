@@ -9,5 +9,5 @@ def route_prediction(app, animal, disease_type, tensor):
     else:
         return {"error": "Invalid input"}
 
-    from app.services.predictor import predict
+    from backend.services.predictor import predict
     return predict(model, classes, tensor)

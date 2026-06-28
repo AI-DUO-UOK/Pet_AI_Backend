@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torchvision import models
-from app.config import DOG_EYE_MODEL, DEVICE
+from backend.core.config import DOG_EYE_MODEL, DEVICE
 
 class_names = [
     "Pigmented keratitis",

@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Base directory points to the backend/ folder
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 DOG_SKIN_MODEL = os.path.join(BASE_DIR, "weights/dog_skin_model.pth")
 DOG_EYE_MODEL = os.path.join(BASE_DIR, "weights/dog_eye_model_ResNet_NEW.pth")
@@ -12,8 +13,16 @@ CAT_SKIN_MODEL = os.path.join(BASE_DIR, "weights/cat_skin_model.pth")
 
 DEVICE = "cuda" if __import__("torch").cuda.is_available() else "cpu"
 
+# Supabase Configurations
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "")
+SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY", "")
+
+# Admin Credentials
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "admin@petai.com")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "AdminPass!234")
+
 # LangSmith Configuration (for tracing and debugging)
-# These can be set in .env file or will prompt at runtime
 LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2", "false").lower() == "true"
 LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", None)
 LANGCHAIN_ENDPOINT = os.getenv("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com")

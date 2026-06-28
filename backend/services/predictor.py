@@ -1,5 +1,5 @@
 import torch
-from app.config import DEVICE
+from backend.core.config import DEVICE
 
 def predict(model, class_names, tensor):
     tensor = tensor.to(DEVICE)

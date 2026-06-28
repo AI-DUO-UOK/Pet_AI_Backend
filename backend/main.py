@@ -3,10 +3,19 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 import tempfile
 import os
-from app.models import dog_skin, dog_eye, cat_skin
-from app.utils.image import preprocess
-from app.services.router import route_prediction
-from app.api_routes import router as api_router
+
+# Import models & services with updated backend package prefix
+from backend.models import dog_skin, dog_eye, cat_skin
+from backend.utils.image import preprocess
+from backend.services.router import route_prediction
+
+# Import refactored routers
+from backend.routers.auth import router as auth_router
+from backend.routers.pets import router as pets_router
+from backend.routers.appointments import router as appointments_router
+from backend.routers.clinics import router as clinics_router
+from backend.routers.admin import router as admin_router
+
 from chatbot.langsmith_config import setup_langsmith
 from chatbot.tools import _analyze_pet_image_impl
 from chatbot.rag.agentic_rag import query_agentic_rag
@@ -15,7 +24,7 @@ from chatbot.rag.agentic_rag import query_agentic_rag
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="Pet AI Disease Detection API")
+app = FastAPI(title="Pet PULSE Disease Detection API")
 
 # Enable CORS for frontend
 app.add_middleware(
@@ -32,23 +41,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include Supabase API routes
-app.include_router(api_router)
+# Include refactored routers under the /api prefix
+app.include_router(auth_router, prefix="/api")
+app.include_router(pets_router, prefix="/api")
+app.include_router(appointments_router, prefix="/api")
+app.include_router(clinics_router, prefix="/api")
+app.include_router(admin_router, prefix="/api")
 
 # 🏠 Root endpoint
 @app.get("/")
 async def root():
     """Root endpoint with API information"""
     return {
-        "name": "Pet AI Disease Detection API",
+        "name": "Pet PULSE Disease Detection API",
         "version": "1.0.0",
         "docs": "http://localhost:8000/docs",
         "status": "running",
         "endpoints": {
             "prediction": "/predict",
             "image_analysis": "/analyze-image",
-            "supabase_auth": "/api/auth/login",
-            "pets": "/api/pets"
+            "pets": "/api/pets",
+            "clinics": "/api/clinics"
         }
     }
 
@@ -58,7 +71,7 @@ async def health():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "service": "Pet AI API",
+        "service": "Pet PULSE API",
         "models_loaded": {
             "dog_skin": hasattr(app.state, 'dog_skin') and app.state.dog_skin is not None,
             "dog_eye": hasattr(app.state, 'dog_eye') and app.state.dog_eye is not None,
@@ -66,7 +79,7 @@ async def health():
         }
     }
 
-# 🔥 Load models ONCE
+# 🔥 Load models ONCE on startup
 @app.on_event("startup")
 def load_models():
     try:
@@ -107,9 +120,7 @@ async def predict(
     disease_type: str = Form(...)
 ):
     image = preprocess(file.file)
-
     result = route_prediction(app, animal, disease_type, image)
-
     return result
 
 # 🔍 Analyze image endpoint (for chatbot integration)
@@ -137,35 +148,19 @@ async def upload_image(
 ):
     """
     Upload and analyze a pet image for chatbot.
-    
-    This endpoint:
-    1. Saves uploaded image temporarily
-    2. Calls CV model for disease detection
-    3. Uses agentic RAG to explain diagnosis
-    
-    Args:
-        session_id: Conversation session ID
-        disease_type: 'skin' or 'eye'
-        file: Image file upload
-    
-    Returns:
-        Disease prediction and explanation
     """
     try:
-        # Get animal type from session (default to dog if not found)
         animal = "dog"  # Default - in production, retrieve from session
         
         if disease_type not in ["skin", "eye"]:
             raise HTTPException(status_code=400, detail="disease_type must be 'skin' or 'eye'")
         
-        # Save uploaded file temporarily
         with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
             content = await file.read()
             tmp.write(content)
             tmp_path = tmp.name
         
         try:
-            # Analyze image using CV model
             tool_result = _analyze_pet_image_impl(
                 image_path=tmp_path,
                 animal=animal,
@@ -178,7 +173,6 @@ async def upload_image(
             disease_class = tool_result.get('class', 'Unknown')
             confidence = tool_result.get('confidence', 0.0)
             
-            # Use agentic RAG to explain diagnosis (with force_rag=True to always use knowledge base)
             explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
 Provide a detailed veterinary explanation covering:
@@ -206,7 +200,6 @@ Be thorough and informative. Use formatting with headers and bullet points for c
             }
         
         finally:
-            # Clean up temp file
             if os.path.exists(tmp_path):
                 os.remove(tmp_path)
     
