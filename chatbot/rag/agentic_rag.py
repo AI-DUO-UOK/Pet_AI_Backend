@@ -50,9 +50,47 @@ def search_veterinary_knowledge_base(query: str) -> str:
         return "Error retrieving information from knowledge base."
 
 
+def is_skin_or_eye_issue(question: str) -> bool:
+    """
+    Detect if the question is about skin or eye issues.
+    If yes, ask for an image first before searching the knowledge base.
+    
+    Args:
+        question: The user's question
+        
+    Returns:
+        True if this is a skin or eye issue, False otherwise
+    """
+    # Keywords for skin/eye issues
+    skin_keywords = [
+        "skin", "rash", "itching", "itch", "scratching", "scratch",
+        "hives", "mange", "dryness", "scabs", "wounds", "infection",
+        "fungal", "bacterial", "dermatitis", "allergies", "spots",
+        "bumps", "lesions", "sores", "patches", "flaky", "scaly"
+    ]
+    
+    eye_keywords = [
+        "eye", "eyes", "vision", "sight", "blind", "blindness",
+        "discharge", "tearing", "tear", "redness", "red eye",
+        "cloudiness", "cloudy", "squinting", "squint", "pupil",
+        "glaucoma", "cataract", "cornea", "iris", "conjunctivitis",
+        "conjunctivitis", "stye", "swelling", "bulging", "watery"
+    ]
+    
+    question_lower = question.lower()
+    
+    # Check for skin or eye keywords
+    for keyword in skin_keywords + eye_keywords:
+        if keyword in question_lower:
+            return True
+    
+    return False
+
+
 def query_agentic_rag(
     question: str,
-    chat_history: str = ""
+    chat_history: str = "",
+    force_rag: bool = False
 ) -> str:
     """
     Query the agentic RAG system using intelligent routing.
@@ -60,6 +98,8 @@ def query_agentic_rag(
     The LLM decides:
     1. Whether this question needs veterinary knowledge retrieval
     2. Whether it's casual conversation that doesn't need RAG
+    3. For skin/eye issues: ask for an image first before searching RAG
+    4. For CV predictions: ALWAYS use RAG (force_rag=True)
     
     This approach is simpler, more reliable, and uses native LLM capabilities
     instead of complex agent frameworks.
@@ -67,11 +107,71 @@ def query_agentic_rag(
     Args:
         question: The user's question
         chat_history: Previous conversation context for memory
+        force_rag: If True, ALWAYS use RAG (for CV model predictions)
         
     Returns:
         The LLM's response with or without RAG context
     """
     try:
+        # If force_rag is True, skip all other logic and go straight to RAG search
+        if force_rag:
+            rag_context = search_veterinary_knowledge_base(question)
+            
+            if "No relevant" in rag_context or "Error" in rag_context:
+                # If RAG fails, still provide general knowledge answer
+                final_prompt = f"""You are a helpful veterinary assistant AI.
+
+PREVIOUS CONVERSATION (if any):
+{chat_history}
+
+USER QUESTION: {question}
+
+Answer this question using your general veterinary knowledge. Be thorough and informative."""
+            else:
+                # Use RAG context
+                final_prompt = f"""You are a helpful veterinary assistant AI.
+
+You have been provided with relevant veterinary information from the veterinary knowledge base to help answer the user's question.
+
+RELEVANT INFORMATION FROM THE VETERINARY KNOWLEDGE BASE CONTEXT:
+{rag_context}
+
+PREVIOUS CONVERSATION (if any):
+{chat_history}
+
+USER QUESTION: {question}
+
+Provide a natural, conversational response using the information available from the retrieved context. Do NOT mention "knowledge base", "retrieved context", or "RAG" in your response. Just give helpful advice naturally providing detailed and accurate veterinary advice."""
+            
+            response = llm.invoke(final_prompt)
+            return response.content
+        
+        # Check if this is a skin or eye issue - if so, ask for image first
+        # BUT skip this if the question already contains a CV model prediction
+        if "computer vision model detected" not in question.lower() and is_skin_or_eye_issue(question):
+            image_request_prompt = f"""You are a helpful veterinary assistant AI.
+
+The user is asking about a potential skin or eye issue with their pet.
+
+PREVIOUS CONVERSATION (if any):
+{chat_history}
+
+USER QUESTION: {question}
+
+Your response should:
+1. Acknowledge their concern
+2. Ask them to share an image/photo of the affected area/eye
+3. Explain why the image is important for diagnosis
+4. Be empathetic and reassuring
+5. DO NOT search medical knowledge base or provide detailed medical explanations yet
+6. Keep your response focused on requesting the image first
+
+Respond in a friendly, professional manner."""
+            
+            response = llm.invoke(image_request_prompt)
+            return response.content
+        
+        # For non-skin/eye issues, proceed with regular RAG routing
         # First, ask the LLM to decide: should we use RAG?
         routing_prompt = f"""Given this user question, decide if it requires veterinary knowledge base retrieval.
 
@@ -101,9 +201,9 @@ Answer (YES/NO):"""
             # Use RAG context
             final_prompt = f"""You are a helpful veterinary assistant AI.
 
-Use the following retrieved context from the veterinary knowledge base to answer the user's question:
+You have been provided with relevant veterinary information from the veterinary knowledge base to help answer the user's question.
 
-VETERINARY KNOWLEDGE BASE CONTEXT:
+RELEVANT INFORMATION FROM THE VETERINARY KNOWLEDGE BASE CONTEXT:
 {rag_context}
 
 PREVIOUS CONVERSATION (if any):
@@ -111,7 +211,7 @@ PREVIOUS CONVERSATION (if any):
 
 USER QUESTION: {question}
 
-Answer based on the retrieved context. Provide detailed, accurate veterinary advice."""
+Provide a natural, conversational response using the information available from the retrieved context. Do NOT mention "knowledge base", "retrieved context", or "RAG" in your response. Just give helpful advice naturally providing detailed and accurate veterinary advice."""
         else:
             # Use general knowledge (no RAG)
             final_prompt = f"""You are a helpful veterinary assistant AI.

@@ -9,7 +9,7 @@ from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from typing import Optional, Dict, AsyncGenerator
+from typing import Optional, Dict, AsyncGenerator, Any
 import uuid
 import os
 import tempfile
@@ -18,7 +18,7 @@ import json
 import asyncio
 
 from chatbot.main import detect_disease_type, extract_image_path, clean_agent_response
-from chatbot.tools import _analyze_pet_image_impl
+from chatbot.tools import _analyze_pet_image_impl, _analyze_medical_document_vlm_impl
 from chatbot.rag.agentic_rag import query_agentic_rag
 from chatbot.memory import SimpleConversationMemory
 from chatbot.agent import agent
@@ -51,6 +51,8 @@ class StartConversationRequest(BaseModel):
     """Request to start a new conversation"""
     animal: str  # 'dog' or 'cat'
     user_id: Optional[str] = None  # Optional user identifier
+    pet_id: Optional[str] = None  # Optional pet identifier for real user data
+    pet_profile: Optional[Dict[str, Any]] = None
 
 class StartConversationResponse(BaseModel):
     """Response when starting conversation"""
@@ -82,17 +84,23 @@ class UploadImageRequest(BaseModel):
 class ConversationSession:
     """Manages a single conversation session"""
     
-    def __init__(self, session_id: str, animal: str):
+    def __init__(self, session_id: str, animal: str, pet_profile: Optional[Dict[str, Any]] = None):
         self.session_id = session_id
         self.animal = animal
+        self.pet_profile = pet_profile or {}
         self.memory = SimpleConversationMemory()
         self.current_disease_type = None
         self.analysis_done = False
+        self.pet_initialized = False
     
     def get_chat_history(self) -> str:
         """Get formatted chat history"""
         memory_vars = self.memory.load_memory_variables({})
         return memory_vars.get('chat_history', '')
+
+    def get_pet_context(self) -> str:
+        """Get selected pet profile context for LLM prompts."""
+        return format_pet_profile_context(self.animal, self.pet_profile)
 
 # Store active sessions
 _sessions: Dict[str, ConversationSession] = {}
@@ -103,9 +111,107 @@ def get_session(session_id: str) -> ConversationSession:
         raise HTTPException(status_code=404, detail=f"Session {session_id} not found")
     return _sessions[session_id]
 
+
+def format_pet_profile_context(animal: str, pet_profile: Dict[str, Any]) -> str:
+    """Build a compact pet profile context block for prompts."""
+    if not pet_profile:
+        return f"Selected Pet Profile:\n- Type: {animal}"
+
+    field_labels = {
+        "name": "Name",
+        "type": "Type",
+        "breed": "Breed",
+        "age": "Age",
+        "date_of_birth": "Date of birth",
+        "gender": "Gender",
+        "blood_type": "Blood type",
+        "allergies": "Allergies",
+        "medical_conditions": "Medical conditions",
+        "notes": "Notes",
+        "microchip_id": "Microchip ID",
+    }
+    lines = ["Selected Pet Profile:"]
+    for key, label in field_labels.items():
+        value = pet_profile.get(key)
+        if value is not None and str(value).strip():
+            lines.append(f"- {label}: {value}")
+
+    weight = pet_profile.get("weight")
+    if weight is not None and str(weight).strip():
+        weight_unit = pet_profile.get("weight_unit") or ""
+        lines.append(f"- Weight: {weight} {weight_unit}".strip())
+
+    if not any(line.startswith("- Type:") for line in lines):
+        lines.append(f"- Type: {animal}")
+
+    vaccinations = pet_profile.get("vaccinations")
+    if vaccinations:
+        lines.append("\nVaccination History & Timeline:")
+        for vac in vaccinations:
+            vac_name = vac.get("vaccine_name")
+            vac_date = vac.get("vaccination_date")
+            next_due = vac.get("next_due_date")
+            clinic = vac.get("clinic_name")
+            vet = vac.get("veterinarian_name")
+            batch = vac.get("batch_number")
+            notes = vac.get("notes")
+            vac_type = vac.get("vaccine_type")
+            
+            vac_details = []
+            if vac_name:
+                name_str = f"  - Vaccine: {vac_name}"
+                if vac_type:
+                    name_str += f" ({vac_type})"
+                vac_details.append(name_str)
+            if vac_date:
+                vac_details.append(f"    Date Administered: {vac_date}")
+            if next_due:
+                vac_details.append(f"    Next Due Date: {next_due}")
+            if vet:
+                vac_details.append(f"    Veterinarian: {vet}")
+            if clinic:
+                vac_details.append(f"    Clinic: {clinic}")
+            if batch:
+                vac_details.append(f"    Batch/Lot Number: {batch}")
+            if notes:
+                vac_details.append(f"    Notes: {notes}")
+            
+            if vac_details:
+                lines.append("\n".join(vac_details))
+
+    return "\n".join(lines)
+
 # ─────────────────────────────────────────────────────────────
 # API Endpoints
 # ─────────────────────────────────────────────────────────────
+
+async def fetch_pet_profile(pet_id: str) -> Optional[dict]:
+    """Fetch pet profile from the database by pet_id."""
+    try:
+        from chatbot.supabase_config import supabase
+        response = supabase.table("pets").select("*").eq("id", pet_id).execute()
+        if response.data:
+            return response.data[0]
+    except Exception as e:
+        logger.warning(f"Could not fetch pet profile for {pet_id}: {e}")
+    return None
+
+
+async def fetch_pet_vaccines(pet_id: str) -> list:
+    """Fetch pet vaccination records from the database by pet_id."""
+    try:
+        from chatbot.supabase_config import supabase
+        response = supabase.table("vaccination_records")\
+            .select("*")\
+            .eq("pet_id", pet_id)\
+            .order("vaccination_date", desc=True)\
+            .execute()
+        if response.data:
+            return response.data
+    except Exception as e:
+        logger.warning(f"Could not fetch vaccination records for {pet_id}: {e}")
+    return []
+
 
 @app.post("/api/chat/start", response_model=StartConversationResponse)
 async def start_conversation(request: StartConversationRequest):
@@ -116,7 +222,7 @@ async def start_conversation(request: StartConversationRequest):
     The session ID is used for all subsequent messages.
     
     Args:
-        request: Contains animal type ('dog' or 'cat')
+        request: Contains animal type ('dog' or 'cat'), optional pet_id for real user data
     
     Returns:
         Session ID and initial greeting
@@ -130,15 +236,39 @@ async def start_conversation(request: StartConversationRequest):
         session_id = str(uuid.uuid4())
         animal = request.animal.lower()
         
-        session = ConversationSession(session_id, animal)
+        # Fetch pet profile if pet_id is provided, or use direct pet_profile
+        pet_profile = None
+        if request.pet_id:
+            pet_profile = await fetch_pet_profile(request.pet_id)
+            if pet_profile:
+                logger.info(f"Fetched pet profile: {pet_profile.get('name')} for session {session_id}")
+            else:
+                logger.warning(f"Pet profile not found for pet_id: {request.pet_id}")
+        elif request.pet_profile:
+            pet_profile = dict(request.pet_profile)
+        
+        if pet_profile:
+            pet_id = pet_profile.get("id") or request.pet_id
+            if pet_id:
+                vaccines = await fetch_pet_vaccines(pet_id)
+                pet_profile["vaccinations"] = vaccines
+        
+        session = ConversationSession(session_id, animal, pet_profile)
         _sessions[session_id] = session
+        
+        # Build welcome message
+        if pet_profile:
+            pet_name = pet_profile.get("name", "your pet")
+            message = f"🐾 Welcome back!\n\nHi! I'm your AI Pet Health Assistant, and I'm here to help with {pet_name}'s health and wellbeing."
+        else:
+            message = f"✅ Great! I'll help you with your {animal.upper()}'s health. How can I assist you today?"
         
         logger.info(f"Created new session {session_id} for {animal}")
         
         return StartConversationResponse(
             session_id=session_id,
             animal=animal,
-            message=f"✅ Great! I'll help you with your {animal.upper()}'s health. How can I assist you today?"
+            message=message
         )
     
     except HTTPException:
@@ -182,8 +312,12 @@ async def send_message(request: SendMessageRequest):
             if detected_disease_type != session.current_disease_type:
                 session.analysis_done = False
             session.current_disease_type = detected_disease_type
-        
-        disease_type = session.current_disease_type
+            disease_type = session.current_disease_type
+        else:
+            # No disease keywords in current message - reset disease type
+            # to prevent non-disease questions from being routed to disease flow
+            disease_type = None
+            session.current_disease_type = None
         bot_response = ""
         used_rag = False
         
@@ -202,12 +336,7 @@ async def send_message(request: SendMessageRequest):
                 if session.analysis_done:
                     # Follow-up question after analysis
                     chat_history = session.get_chat_history()
-                    followup_query = f"""You have already diagnosed and discussed a {disease_type} condition with this {animal}.
-
-Previous Conversation:
-{chat_history}
-
-User's follow-up question: {user_input}
+                    followup_query = f"""User's follow-up question about the previously diagnosed {disease_type} condition for their {animal}: {user_input}
 
 IMPORTANT: Reference the specific diagnosis and previous discussion from the conversation history.
 Answer this question in the context of the condition previously diagnosed. 
@@ -220,7 +349,10 @@ Provide helpful, accurate veterinary advice based on the question asked."""
                     used_rag = True
                 else:
                     # Ask for image (using agent)
+                    pet_context = session.get_pet_context()
                     enriched_input = f"""
+{pet_context}
+
 Pet Type: {animal}
 Issue Type: {disease_type} disease
 
@@ -236,7 +368,23 @@ Do NOT use the tool yet. Just ask for the image."""
             # General health question - use agentic RAG
             chat_history = session.get_chat_history()
             
-            pet_query = f"""Pet Type: {animal}
+            # Inject pet profile context on the very first message only
+            # IMPORTANT: Add to chat_history, NOT to the question string,
+            # because the question is checked by is_skin_or_eye_issue()
+            # and pet profile fields (like "Allergies") could trigger false matches.
+            if session.pet_profile and not session.pet_initialized:
+                from datetime import datetime
+                current_time = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
+                pet_context = f"CURRENT DATE AND TIME: {current_time}\n\n{session.get_pet_context()}"
+                session.memory.save_context(
+                    {"input": "System: Pet profile initialized"},
+                    {"output": pet_context}
+                )
+                chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
+                session.pet_initialized = True
+            
+            pet_context = session.get_pet_context()
+            pet_query = f"""{pet_context}
 
 Previous Conversation:
 {chat_history}
@@ -248,7 +396,7 @@ If this is casual conversation or personal information, answer directly without 
 Be smart about deciding whether retrieval is necessary."""
             
             bot_response = query_agentic_rag(
-                question=pet_query,
+                question=user_input,
                 chat_history=chat_history
             )
             used_rag = True
@@ -325,16 +473,20 @@ async def upload_image(
             confidence = tool_result.get('confidence', 'N/A')
             
             # Use agentic RAG to explain diagnosis (exact same as CLI)
-            explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+            pet_context = session.get_pet_context()
+            explanation_query = f"""{pet_context}
 
-Provide a detailed veterinary explanation covering:
+The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+
+Respond conversationally as a friendly vet assistant. Start by saying something like "Your {animal} appears to have {disease_class}." Then explain:
 1. What is {disease_class}?
 2. Common causes and risk factors for this condition
 3. Treatment options and recommendations
 4. When to seek professional veterinary care
 5. Prevention and management tips
 
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
+Be warm, conversational, and informative. Use formatting with headers and bullet points for clarity.
+IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysis model in your response. Just give the advice naturally."""
             
             chat_history = session.get_chat_history()
             explanation_text = query_agentic_rag(
@@ -371,6 +523,90 @@ Be thorough and informative. Use formatting with headers and bullet points for c
         raise
     except Exception as e:
         logger.error(f"Error uploading image: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/chat/upload-document")
+async def upload_document(
+    session_id: str = Form(...),
+    file: UploadFile = File(...)
+):
+    """
+    Upload and analyze a medical document (prescription, vaccine card, or medical report).
+    
+    This endpoint:
+    1. Saves uploaded image temporarily
+    2. Calls VLM (Qwen2.5-VL-72B) via OpenRouter to extract data in JSON
+    3. Uses Mistral to explain the extracted data conversationally
+    
+    Args:
+        session_id: Conversation session ID
+        file: Document image file upload
+    
+    Returns:
+        Extracted data and conversational explanation
+    """
+    try:
+        session = get_session(session_id)
+        
+        # Save uploaded file temporarily
+        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename or ".jpg")[1]) as tmp:
+            content = await file.read()
+            tmp.write(content)
+            tmp_path = tmp.name
+        
+        try:
+            # Analyze document using VLM
+            extracted_data = _analyze_medical_document_vlm_impl(tmp_path)
+            
+            if isinstance(extracted_data, dict) and "error" in extracted_data:
+                raise HTTPException(status_code=400, detail=extracted_data['error'])
+            
+            # Format the extracted data as a readable string for RAG context
+            extracted_json_str = json.dumps(extracted_data, indent=2)
+            
+            # Use Mistral + RAG to explain the document in conversational style
+            explanation_query = f"""The following data was extracted from a medical document (prescription, vaccine card, or medical report) using AI analysis:
+
+EXTRACTED DATA:
+{extracted_json_str}
+
+Respond conversationally as a friendly vet assistant. Explain what this document says in simple terms.
+If it's a prescription, explain the medication, dosage, and instructions clearly.
+If it's a vaccine card, explain what vaccines were given and when the next ones are due.
+If it's a medical report, summarize the findings and recommendations.
+Be clear, helpful, and reassuring. Use formatting with headers and bullet points for clarity.
+IMPORTANT: Do NOT mention the AI analysis or extraction process in your response. Just explain the document naturally."""
+            
+            chat_history = session.get_chat_history()
+            explanation_text = query_agentic_rag(
+                question=explanation_query,
+                chat_history=chat_history
+            )
+            
+            # Save to memory
+            session.memory.save_context(
+                {"input": f"Uploaded medical document: {file.filename}"},
+                {"output": f"Document analyzed. Extracted data: {extracted_json_str}\n\nExplanation: {explanation_text}"}
+            )
+            
+            logger.info(f"Session {session.session_id}: Medical document analyzed")
+            
+            return {
+                "session_id": session.session_id,
+                "extracted_data": extracted_data,
+                "explanation": explanation_text
+            }
+        
+        finally:
+            # Clean up temp file
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error uploading document: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -438,8 +674,11 @@ async def send_message_stream(request: SendMessageRequest):
                 if detected_disease_type != session.current_disease_type:
                     session.analysis_done = False
                 session.current_disease_type = detected_disease_type
-            
-            disease_type = session.current_disease_type
+                disease_type = session.current_disease_type
+            else:
+                # No disease keywords in current message - reset disease type
+                disease_type = None
+                session.current_disease_type = None
             used_rag = False
             
             # Handle disease-specific flow
@@ -457,7 +696,11 @@ async def send_message_stream(request: SendMessageRequest):
                 else:
                     if session.analysis_done:
                         # Follow-up question
-                        follow_up_prompt = f"The user is asking a follow-up question about the {disease_type} condition we discussed earlier: '{user_input}'"
+                        follow_up_prompt = f"""User's follow-up question about the previously diagnosed {disease_type} condition for their {animal}: {user_input}
+
+IMPORTANT: Reference the specific diagnosis and previous discussion from the conversation history.
+Answer this question in the context of the condition previously diagnosed. 
+Provide helpful, accurate veterinary advice based on the question asked."""
                         
                         # Stream RAG response with history
                         chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
@@ -474,7 +717,10 @@ async def send_message_stream(request: SendMessageRequest):
                         yield f"data: {json.dumps({'chunk': '', 'used_rag': True, 'disease_detected': None, 'done': True})}\n\n"
                     else:
                         # First mention of disease - ask for image
-                        enriched_input = f"The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. Ask them if they can provide an image for analysis."
+                        pet_context = session.get_pet_context()
+                        enriched_input = f"""{pet_context}
+
+The user mentioned their {animal} has {disease_type} symptoms: '{user_input}'. Ask them if they can provide an image for analysis."""
                         
                         response_text = ""
                         async for chunk in stream_llm_response(enriched_input, ""):
@@ -488,8 +734,28 @@ async def send_message_stream(request: SendMessageRequest):
                 # General health question - use agentic RAG
                 chat_history = session.memory.load_memory_variables({}).get('chat_history', '')
                 
+                # Inject pet profile context on the very first message only
+                # IMPORTANT: Add to chat_history, NOT to the question string,
+                # because the question is checked by is_skin_or_eye_issue()
+                # and pet profile fields (like "Allergies") could trigger false matches.
+                if session.pet_profile and not session.pet_initialized:
+                    from datetime import datetime
+                    current_time = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
+                    pet_context = f"CURRENT DATE AND TIME: {current_time}\n\n{session.get_pet_context()}"
+                    session.memory.save_context(
+                        {"input": "System: Pet profile initialized"},
+                        {"output": pet_context}
+                    )
+                    chat_history = pet_context + "\n\n" + chat_history if chat_history else pet_context
+                    session.pet_initialized = True
+                
+                if session.pet_profile:
+                    contextual_input = user_input
+                else:
+                    contextual_input = f"Selected Pet Profile:\n- Type: {animal}\n\nCurrent User Question: {user_input}"
+
                 response_text = ""
-                async for chunk in stream_llm_response(user_input, chat_history):
+                async for chunk in stream_llm_response(contextual_input, chat_history):
                     response_text += chunk
                     yield f"data: {json.dumps({'chunk': chunk, 'used_rag': True, 'disease_detected': None, 'done': False})}\n\n"
                     await asyncio.sleep(0.01)
@@ -563,18 +829,22 @@ async def handle_image_analysis(
         confidence = tool_result.get('confidence', 'N/A')
         
         # Use agentic RAG for explanation
-        explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+        pet_context = session.get_pet_context()
+        explanation_query = f"""{pet_context}
+
+The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
 User's original description: {user_input}
 
-Provide a detailed veterinary explanation covering:
+Respond conversationally as a friendly vet assistant by provide a detailed veterinary explanation. Start by saying something like "Your {animal} appears to have {disease_class}." Then explain:
 1. What is {disease_class}?
 2. Common causes and risk factors for this condition
 3. Treatment options and recommendations
 4. When to seek professional veterinary care
 5. Prevention and management tips
 
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
+Be warm, conversational, and informative. Use formatting with headers and bullet points for clarity.
+IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysis model in your response. Just give the advice naturally."""
         
         chat_history = session.get_chat_history()
         explanation_text = query_agentic_rag(
@@ -604,46 +874,39 @@ async def stream_llm_response(
     chat_history: str = ""
 ) -> AsyncGenerator[str, None]:
     """
-    Stream LLM response in sentence chunks while preserving all markdown.
+    Stream LLM response while preserving markdown structure.
     
-    Uses the exact same query_agentic_rag but streams the output.
-    Streams by sentences/lines to naturally preserve markdown formatting.
+    Streams complete markdown elements (paragraphs, lists, code blocks)
+    to ensure proper rendering and avoid breaking markdown syntax.
     
     Args:
         question: User question
         chat_history: Previous conversation history
     
     Yields:
-        Response chunks (complete sentences/lines with formatting intact)
+        Response chunks (preserving markdown structure)
     """
     try:
-        # Get full response using existing agentic RAG (unchanged logic)
+        # Get full response using existing agentic RAG
         full_response = query_agentic_rag(question=question, chat_history=chat_history)
         
-        # Simple approach: split by double newlines (paragraphs) and stream them
-        # This naturally preserves all markdown formatting
+        # Split by double newlines to preserve paragraph structure
+        # This naturally preserves all markdown formatting (lists, headings, etc.)
         paragraphs = full_response.split('\n\n')
         
         for para in paragraphs:
-            if not para.strip():
+            para = para.strip()
+            if not para:
                 continue
             
-            # For each paragraph, yield it in sentence-sized chunks
-            # This preserves headers, lists, formatting, everything
-            import re
-            
-            # Split into sentences but keep the delimiters
-            sentences = re.split(r'(?<=[.!?\n])\s+', para.strip())
-            
-            for sentence in sentences:
-                if sentence.strip():
-                    yield sentence + ' '
-                    # Shorter delay for natural streaming feel
-                    await asyncio.sleep(0.04)
-            
-            # Add paragraph break between paragraphs
-            yield '\n\n'
+            # Yield the entire paragraph at once to preserve markdown structure
+            # This ensures lists, headings, and formatting stay intact
+            yield para
             await asyncio.sleep(0.02)
+            
+            # Yield paragraph separator to maintain structure
+            yield '\n\n'
+            await asyncio.sleep(0.01)
     
     except Exception as e:
         logger.error(f"Error streaming LLM response: {e}")
