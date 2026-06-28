@@ -16,7 +16,6 @@ build/
 node_modules/
 .env
 .env.local
-weights/
 sample_images/
 *.log
 *.sqlite3
