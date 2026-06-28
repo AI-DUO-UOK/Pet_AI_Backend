@@ -8,5 +8,8 @@ COPY requirements.txt .
 # Install packages with no cache to keep image lean
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the rest of the application code
+COPY . .
+
 # Keep bash as default command for interactive development
 CMD ["bash"]
