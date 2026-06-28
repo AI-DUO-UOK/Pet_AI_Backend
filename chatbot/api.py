@@ -5,7 +5,7 @@ Connects frontend to backend without changing any chatbot logic.
 Imports and reuses exact same functions as CLI chatbot.
 """
 
-from fastapi import FastAPI, HTTPException, UploadFile, File, Form
+from fastapi import FastAPI, Request, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
@@ -42,6 +42,27 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 🏠 Root endpoint
+@app.get("/")
+async def root(request: Request):
+    """Root endpoint with chatbot API information"""
+    base_url = str(request.base_url).rstrip('/')
+    return {
+        "name": "Pet AI Chatbot API",
+        "status": "running",
+        "docs": f"{base_url}/docs",
+        "version": "1.0.0"
+    }
+
+# 🏥 Health check endpoint
+@app.get("/health")
+async def health():
+    """Health check endpoint for Railway/production monitoring"""
+    return {
+        "status": "healthy",
+        "service": "Pet AI Chatbot API"
+    }
 
 # ─────────────────────────────────────────────────────────────
 # Data Models
