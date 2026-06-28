@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi import FastAPI, Request, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 import tempfile
@@ -50,13 +50,18 @@ app.include_router(admin_router, prefix="/api")
 
 # 🏠 Root endpoint
 @app.get("/")
-async def root():
+async def root(request: Request):
     """Root endpoint with API information"""
+    base_url = str(request.base_url).rstrip('/')
+    env = os.getenv("ENVIRONMENT", "production" if os.getenv("RAILWAY_STATIC_URL") or os.getenv("RAILWAY_ENVIRONMENT") else "development")
     return {
         "name": "Pet PULSE Disease Detection API",
         "version": "1.0.0",
-        "docs": "http://localhost:8000/docs",
         "status": "running",
+        "environment": env,
+        "docs": f"{base_url}/docs",
+        "openapi": f"{base_url}/openapi.json",
+        "health": f"{base_url}/health",
         "endpoints": {
             "prediction": "/predict",
             "image_analysis": "/analyze-image",
