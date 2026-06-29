@@ -4,6 +4,10 @@ import logging
 import tempfile
 import os
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # Import models & services with updated backend package prefix
 from backend.models import dog_skin, dog_eye, cat_skin
 from backend.utils.image import preprocess
@@ -30,10 +34,6 @@ try:
 except ImportError as e:
     logger.warning(f"Chatbot integrations not loaded (this is normal on Hugging Face Spaces): {e}")
     has_chatbot = False
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Pet PULSE Disease Detection API")
 
