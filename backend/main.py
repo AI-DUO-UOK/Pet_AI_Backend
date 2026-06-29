@@ -9,16 +9,27 @@ from backend.models import dog_skin, dog_eye, cat_skin
 from backend.utils.image import preprocess
 from backend.services.router import route_prediction
 
-# Import refactored routers
-from backend.routers.auth import router as auth_router
-from backend.routers.pets import router as pets_router
-from backend.routers.appointments import router as appointments_router
-from backend.routers.clinics import router as clinics_router
-from backend.routers.admin import router as admin_router
+# Import refactored routers (optional for lightweight deployments like Hugging Face)
+try:
+    from backend.routers.auth import router as auth_router
+    from backend.routers.pets import router as pets_router
+    from backend.routers.appointments import router as appointments_router
+    from backend.routers.clinics import router as clinics_router
+    from backend.routers.admin import router as admin_router
+    has_backend_routers = True
+except ImportError as e:
+    logger.warning(f"Backend routers not loaded (this is normal on Hugging Face Spaces): {e}")
+    has_backend_routers = False
 
-from chatbot.langsmith_config import setup_langsmith
-from chatbot.tools import _analyze_pet_image_impl
-from chatbot.rag.agentic_rag import query_agentic_rag
+# Import chatbot integrations (optional for lightweight deployments like Hugging Face)
+try:
+    from chatbot.langsmith_config import setup_langsmith
+    from chatbot.tools import _analyze_pet_image_impl
+    from chatbot.rag.agentic_rag import query_agentic_rag
+    has_chatbot = True
+except ImportError as e:
+    logger.warning(f"Chatbot integrations not loaded (this is normal on Hugging Face Spaces): {e}")
+    has_chatbot = False
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -42,11 +53,12 @@ app.add_middleware(
 )
 
 # Include refactored routers under the /api prefix
-app.include_router(auth_router, prefix="/api")
-app.include_router(pets_router, prefix="/api")
-app.include_router(appointments_router, prefix="/api")
-app.include_router(clinics_router, prefix="/api")
-app.include_router(admin_router, prefix="/api")
+if has_backend_routers:
+    app.include_router(auth_router, prefix="/api")
+    app.include_router(pets_router, prefix="/api")
+    app.include_router(appointments_router, prefix="/api")
+    app.include_router(clinics_router, prefix="/api")
+    app.include_router(admin_router, prefix="/api")
 
 # 🏠 Root endpoint
 @app.get("/")
@@ -87,12 +99,13 @@ async def health():
 # 🔥 Load models ONCE on startup
 @app.on_event("startup")
 def load_models():
-    try:
-        # Initialize LangSmith tracing (optional)
-        setup_langsmith()
-        logger.info("LangSmith tracing initialized")
-    except Exception as e:
-        logger.warning(f"LangSmith initialization failed (optional): {e}")
+    if has_chatbot:
+        try:
+            # Initialize LangSmith tracing (optional)
+            setup_langsmith()
+            logger.info("LangSmith tracing initialized")
+        except Exception as e:
+            logger.warning(f"LangSmith initialization failed (optional): {e}")
     
     try:
         app.state.dog_skin = dog_skin.load_model()
@@ -154,6 +167,8 @@ async def upload_image(
     """
     Upload and analyze a pet image for chatbot.
     """
+    if not has_chatbot:
+        raise HTTPException(status_code=501, detail="Chatbot integration not available on this instance")
     try:
         animal = "dog"  # Default - in production, retrieve from session
         
