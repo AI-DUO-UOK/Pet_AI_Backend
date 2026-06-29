@@ -15,6 +15,7 @@ from backend.routers.pets import router as pets_router
 from backend.routers.appointments import router as appointments_router
 from backend.routers.clinics import router as clinics_router
 from backend.routers.admin import router as admin_router
+from backend.routers.payments import router as payments_router
 
 from chatbot.langsmith_config import setup_langsmith
 from chatbot.tools import _analyze_pet_image_impl
@@ -47,6 +48,7 @@ app.include_router(pets_router, prefix="/api")
 app.include_router(appointments_router, prefix="/api")
 app.include_router(clinics_router, prefix="/api")
 app.include_router(admin_router, prefix="/api")
+app.include_router(payments_router)
 
 # 🏠 Root endpoint
 @app.get("/")
