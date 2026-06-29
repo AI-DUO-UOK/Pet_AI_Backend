@@ -1,7 +1,10 @@
 from fastapi import Request, Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials
 from backend.core.security import verify_supabase_jwt, security_scheme
-from chatbot.supabase_config import supabase
+try:
+    from chatbot.supabase_config import supabase
+except ImportError:
+    supabase = None
 from typing import Dict, List, Optional
 
 async def get_current_user(
@@ -11,6 +14,11 @@ async def get_current_user(
     Dependency to get the currently authenticated user.
     Verifies the JWT and fetches their profile from public.users.
     """
+    if supabase is None:
+        raise HTTPException(
+            status_code=status.HTTP_501_NOT_IMPLEMENTED,
+            detail="Supabase integration not available on this instance"
+        )
     if not credentials:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

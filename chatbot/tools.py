@@ -5,6 +5,8 @@ import logging
 from langchain.tools import tool
 from chatbot.vlm import analyze_medical_document_vlm
 
+import os
+
 logger = logging.getLogger(__name__)
 
 FASTAPI_URL = os.getenv("DISEASE_DETECTION_API_URL") or os.getenv("FASTAPI_URL") or "http://127.0.0.1:8000/analyze-image"

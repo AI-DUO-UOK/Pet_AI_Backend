@@ -1,8 +1,12 @@
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi import FastAPI, Request, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 import tempfile
 import os
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Import models & services with updated backend package prefix
 from backend.models import dog_skin, dog_eye, cat_skin
@@ -23,13 +27,15 @@ except ImportError as e:
     logger.warning(f"Backend routers not loaded (this is normal on Hugging Face Spaces): {e}")
     has_backend_routers = False
 
-from chatbot.langsmith_config import setup_langsmith
-from chatbot.tools import _analyze_pet_image_impl
-from chatbot.rag.agentic_rag import query_agentic_rag
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Import chatbot integrations (optional for lightweight deployments like Hugging Face)
+try:
+    from chatbot.langsmith_config import setup_langsmith
+    from chatbot.tools import _analyze_pet_image_impl
+    from chatbot.rag.agentic_rag import query_agentic_rag
+    has_chatbot = True
+except ImportError as e:
+    logger.warning(f"Chatbot integrations not loaded (this is normal on Hugging Face Spaces): {e}")
+    has_chatbot = False
 
 app = FastAPI(title="Pet PULSE Disease Detection API")
 
@@ -60,13 +66,18 @@ if has_backend_routers:
 
 # 🏠 Root endpoint
 @app.get("/")
-async def root():
+async def root(request: Request):
     """Root endpoint with API information"""
+    base_url = str(request.base_url).rstrip('/')
+    env = os.getenv("ENVIRONMENT", "production" if os.getenv("RAILWAY_STATIC_URL") or os.getenv("RAILWAY_ENVIRONMENT") else "development")
     return {
         "name": "Pet PULSE Disease Detection API",
         "version": "1.0.0",
-        "docs": "http://localhost:8000/docs",
         "status": "running",
+        "environment": env,
+        "docs": f"{base_url}/docs",
+        "openapi": f"{base_url}/openapi.json",
+        "health": f"{base_url}/health",
         "endpoints": {
             "prediction": "/predict",
             "image_analysis": "/analyze-image",
@@ -92,12 +103,13 @@ async def health():
 # 🔥 Load models ONCE on startup
 @app.on_event("startup")
 def load_models():
-    try:
-        # Initialize LangSmith tracing (optional)
-        setup_langsmith()
-        logger.info("LangSmith tracing initialized")
-    except Exception as e:
-        logger.warning(f"LangSmith initialization failed (optional): {e}")
+    if has_chatbot:
+        try:
+            # Initialize LangSmith tracing (optional)
+            setup_langsmith()
+            logger.info("LangSmith tracing initialized")
+        except Exception as e:
+            logger.warning(f"LangSmith initialization failed (optional): {e}")
     
     try:
         app.state.dog_skin = dog_skin.load_model()
@@ -159,6 +171,8 @@ async def upload_image(
     """
     Upload and analyze a pet image for chatbot.
     """
+    if not has_chatbot:
+        raise HTTPException(status_code=501, detail="Chatbot integration not available on this instance")
     try:
         animal = "dog"  # Default - in production, retrieve from session
         
