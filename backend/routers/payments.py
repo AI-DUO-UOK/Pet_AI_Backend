@@ -24,6 +24,7 @@ Related frontend file:
 
 import logging
 import os
+from datetime import datetime
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Header, Request
@@ -174,6 +175,13 @@ async def create_checkout_session(
 
             # Setup success URL with pet_id so frontend knows where to redirect
             success_url = os.getenv("STRIPE_SUCCESS_URL")
+            cancel_url = os.getenv("STRIPE_CANCEL_URL")
+            if not success_url or not cancel_url:
+                raise HTTPException(
+                    status_code=500,
+                    detail="Stripe environment variables (STRIPE_SUCCESS_URL or STRIPE_CANCEL_URL) are not configured"
+                )
+
             if "?" in success_url:
                 success_url += f"&pet_id={request.pet_id}"
             else:
@@ -200,7 +208,7 @@ async def create_checkout_session(
                 }],
                 mode="payment",
                 success_url=success_url,
-                cancel_url=os.getenv("STRIPE_CANCEL_URL"),
+                cancel_url=cancel_url,
                 metadata={
                     "appointment_id": appt_id,
                     "clinic_id": request.clinic_id,
@@ -218,14 +226,18 @@ async def create_checkout_session(
                 "currency": "LKR",
                 "status": "pending"
             }
-            supabase.table("payments").insert(payment_data).execute()
+            payment_resp = supabase.table("payments").insert(payment_data).execute()
+            if not payment_resp.data:
+                raise HTTPException(status_code=500, detail="Failed to create payment record")
 
             return CheckoutSessionResponse(
                 checkout_url=session.url,
                 session_id=session.id
             )
+        except HTTPException:
+            raise
         except Exception as stripe_err:
-            logger.error(f"Stripe session creation failed: {stripe_err}")
+            logger.exception("Stripe session creation failed")
             raise HTTPException(status_code=400, detail=f"Stripe error: {str(stripe_err)}")
     else:
         # Fallback to local mock flow (Development Fallback)
@@ -389,6 +401,29 @@ async def stripe_webhook(
             }).eq("id", appt_id).execute()
 
             logger.warning(f"Appointment {appt_id} and Payment {payment['id']} marked as failed/cancelled")
+
+    # Issue 10: Handle checkout session expiration (abandoned payments)
+    elif event["type"] == "checkout.session.expired":
+        session = event["data"]["object"]
+        metadata = session.get("metadata", {})
+        appt_id = metadata.get("appointment_id")
+        
+        logger.info(f"Webhook received: Checkout session expired for session {session['id']}")
+        
+        # Update payment record to expired
+        supabase.table("payments").update({
+            "status": "expired",
+            "updated_at": datetime.utcnow().isoformat()
+        }).eq("stripe_session_id", session["id"]).execute()
+
+        # Cancel the pending appointment
+        if appt_id:
+            supabase.table("appointments").update({
+                "status": "cancelled",
+                "updated_at": datetime.utcnow().isoformat()
+            }).eq("id", appt_id).execute()
+
+            logger.info(f"Appointment {appt_id} marked as cancelled due to expired session")
 
     return {"status": "success"}
 
