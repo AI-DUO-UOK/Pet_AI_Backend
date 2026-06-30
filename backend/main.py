@@ -20,7 +20,7 @@ try:
     from backend.routers.appointments import router as appointments_router
     from backend.routers.clinics import router as clinics_router
     from backend.routers.admin import router as admin_router
-    from backend.routers.config import router as config_router
+    from backend.routers.config import router as config_router  # GET /api/config/google-maps
     from backend.routers.payments import router as payments_router  # Payment & Stripe integration
     has_backend_routers = True
 except ImportError as e:
@@ -61,7 +61,7 @@ if has_backend_routers:
     app.include_router(appointments_router, prefix="/api")
     app.include_router(clinics_router, prefix="/api")
     app.include_router(admin_router, prefix="/api")
-    app.include_router(config_router)
+    app.include_router(config_router)  # prefix already set in router: /api/config
     app.include_router(payments_router, prefix="/api")  # POST /api/payments/create-checkout-session, etc.
 
 # 🏠 Root endpoint
