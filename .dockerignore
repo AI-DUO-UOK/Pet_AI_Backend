@@ -16,7 +16,6 @@ build/
 node_modules/
 .env
 .env.local
-.env.production
 weights/
 sample_images/
 *.log

@@ -19,12 +19,8 @@ class AuthService:
     ) -> Dict:
         """Complete pet owner profile registration"""
         try:
-            # 1. Update phone, role, and full_name in users
-            supabase.table("users").update({
-                "phone_number": phone, 
-                "role": "owner",
-                "full_name": f"{first_name} {last_name}".strip()
-            }).eq("id", user_id).execute()
+            # 1. Update phone and role in users
+            supabase.table("users").update({"phone_number": phone, "role": "owner"}).eq("id", user_id).execute()
 
             # 2. Insert or update pet_owners (idempotent registration)
             owner_data = {
@@ -79,12 +75,8 @@ class AuthService:
     ) -> Dict:
         """Complete clinic profile registration"""
         try:
-            # 1. Update phone, role, and full_name in users
-            supabase.table("users").update({
-                "phone_number": phone, 
-                "role": "clinic",
-                "full_name": clinic_name
-            }).eq("id", user_id).execute()
+            # 1. Update phone and role in users
+            supabase.table("users").update({"phone_number": phone, "role": "clinic"}).eq("id", user_id).execute()
 
             # 2. Insert or update clinics (idempotent registration)
             clinic_data = {

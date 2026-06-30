@@ -2,7 +2,11 @@ from fastapi import Request, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from typing import Optional, Dict
 import logging
-from chatbot.supabase_config import supabase
+
+try:
+    from chatbot.supabase_config import supabase
+except ImportError:
+    supabase = None
 
 logger = logging.getLogger(__name__)
 
@@ -14,6 +18,11 @@ def verify_supabase_jwt(token: str) -> Dict:
     Returns the user data dict if valid.
     Raises HTTPException 401 if invalid/expired.
     """
+    if supabase is None:
+        raise HTTPException(
+            status_code=status.HTTP_501_NOT_IMPLEMENTED,
+            detail="Supabase integration not available on this instance"
+        )
     try:
         # get_user verifies the token against the Supabase Auth server
         response = supabase.auth.get_user(token)
