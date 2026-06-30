@@ -21,7 +21,6 @@ try:
     from backend.routers.clinics import router as clinics_router
     from backend.routers.admin import router as admin_router
     from backend.routers.config import router as config_router
-    from backend.routers.payments import router as payments_router
     has_backend_routers = True
 except ImportError as e:
     logger.warning(f"Backend routers not loaded (this is normal on Hugging Face Spaces): {e}")
@@ -62,7 +61,6 @@ if has_backend_routers:
     app.include_router(clinics_router, prefix="/api")
     app.include_router(admin_router, prefix="/api")
     app.include_router(config_router)
-    app.include_router(payments_router)
 
 # 🏠 Root endpoint
 @app.get("/")

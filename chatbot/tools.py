@@ -1,4 +1,3 @@
-import os
 import requests
 import json
 import logging
@@ -9,7 +8,7 @@ import os
 
 logger = logging.getLogger(__name__)
 
-FASTAPI_URL = os.getenv("DISEASE_DETECTION_API_URL") or os.getenv("FASTAPI_URL") or "http://127.0.0.1:8000/analyze-image"
+FASTAPI_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000/analyze-image")
 
 def _analyze_pet_image_impl(image_path: str, animal: str, disease_type: str) -> dict:
     """
