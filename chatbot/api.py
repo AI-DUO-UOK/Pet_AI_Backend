@@ -19,7 +19,7 @@ import asyncio
 
 from chatbot.main import detect_disease_type, extract_image_path, clean_agent_response
 from chatbot.tools import _analyze_pet_image_impl, _analyze_medical_document_vlm_impl
-from chatbot.rag.agentic_rag import query_agentic_rag, stream_agentic_rag
+from chatbot.rag.agentic_rag import query_agentic_rag
 from chatbot.memory import SimpleConversationMemory
 from chatbot.agent import agent
 from chatbot.llm import llm
@@ -895,18 +895,40 @@ async def stream_llm_response(
     chat_history: str = ""
 ) -> AsyncGenerator[str, None]:
     """
-    Stream LLM response token-by-token in real time.
+    Stream LLM response while preserving markdown structure.
+    
+    Streams complete markdown elements (paragraphs, lists, code blocks)
+    to ensure proper rendering and avoid breaking markdown syntax.
     
     Args:
         question: User question
         chat_history: Previous conversation history
     
     Yields:
-        Response chunks (tokens) in real time
+        Response chunks (preserving markdown structure)
     """
     try:
-        async for chunk in stream_agentic_rag(question=question, chat_history=chat_history):
-            yield chunk
+        # Get full response using existing agentic RAG
+        full_response = query_agentic_rag(question=question, chat_history=chat_history)
+        
+        # Split by double newlines to preserve paragraph structure
+        # This naturally preserves all markdown formatting (lists, headings, etc.)
+        paragraphs = full_response.split('\n\n')
+        
+        for para in paragraphs:
+            para = para.strip()
+            if not para:
+                continue
+            
+            # Yield the entire paragraph at once to preserve markdown structure
+            # This ensures lists, headings, and formatting stay intact
+            yield para
+            await asyncio.sleep(0.02)
+            
+            # Yield paragraph separator to maintain structure
+            yield '\n\n'
+            await asyncio.sleep(0.01)
+    
     except Exception as e:
         logger.error(f"Error streaming LLM response: {e}")
         yield f"Error: {str(e)}"

@@ -16,6 +16,5 @@ llm = ChatOpenAI(
     openai_api_key=api_key,
     openai_api_base="https://openrouter.ai/api/v1",
     max_tokens=1000,  # Reduced to fit within available credits
-    request_timeout=30,
-    streaming=True
+    request_timeout=30
 )
