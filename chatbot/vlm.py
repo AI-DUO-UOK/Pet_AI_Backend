@@ -8,7 +8,7 @@ import os
 import base64
 import json
 import logging
-from openai import OpenAI
+from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -20,7 +20,7 @@ VLM_API_KEY = os.getenv("OPENROUTER_API_KEY")
 if not VLM_API_KEY:
     raise ValueError("OPENROUTER_API_KEY not found in .env file")
 
-_vlm_client = OpenAI(
+_vlm_client = AsyncOpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=VLM_API_KEY,
 )
@@ -66,7 +66,7 @@ Return ONLY valid JSON, no other text.
 """
 
 
-def _query_vlm_qwen(image_path: str, system_prompt: str, user_prompt: str) -> str:
+async def _query_vlm_qwen(image_path: str, system_prompt: str, user_prompt: str) -> str:
     """
     Execute a VLM query against Qwen2.5-VL-72B on OpenRouter.
     Returns the cleaned raw text response from the model.
@@ -88,7 +88,7 @@ def _query_vlm_qwen(image_path: str, system_prompt: str, user_prompt: str) -> st
     
     logger.info(f"VLM Query: Analyzing image: {image_path} ({len(base64_image)} bytes base64)")
     
-    response = _vlm_client.chat.completions.create(
+    response = await _vlm_client.chat.completions.create(
         model=VLM_MODEL,
         messages=[
             {
@@ -128,7 +128,7 @@ def _query_vlm_qwen(image_path: str, system_prompt: str, user_prompt: str) -> st
     return result_text.strip()
 
 
-def analyze_medical_document_vlm(image_path: str) -> dict:
+async def analyze_medical_document_vlm(image_path: str) -> dict:
     """
     Analyze a medical document image using Qwen2.5-VL-72B via OpenRouter.
     
@@ -140,7 +140,7 @@ def analyze_medical_document_vlm(image_path: str) -> dict:
         Returns {"error": "..."} on failure.
     """
     try:
-        result_text = _query_vlm_qwen(
+        result_text = await _query_vlm_qwen(
             image_path=image_path,
             system_prompt=VLM_SYSTEM_PROMPT,
             user_prompt=EXTRACTION_PROMPT

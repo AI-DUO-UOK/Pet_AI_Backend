@@ -12,6 +12,7 @@ This is the professional, production-grade approach used by ChatGPT, Claude, etc
 from chatbot.rag.retriever import get_advanced_retriever
 from chatbot.llm import llm
 import logging
+import asyncio
 
 logger = logging.getLogger(__name__)
 
@@ -87,7 +88,7 @@ def is_skin_or_eye_issue(question: str) -> bool:
     return False
 
 
-def query_agentic_rag(
+async def query_agentic_rag(
     question: str,
     chat_history: str = "",
     force_rag: bool = False
@@ -115,12 +116,12 @@ def query_agentic_rag(
     try:
         # If force_rag is True, skip all other logic and go straight to RAG search
         if force_rag:
-            rag_context = search_veterinary_knowledge_base(question)
+            rag_context = await asyncio.to_thread(search_veterinary_knowledge_base, question)
             
             if "No relevant" in rag_context or "Error" in rag_context:
                 # If RAG fails, still provide general knowledge answer
                 final_prompt = f"""You are a helpful veterinary assistant AI.
-
+ 
 PREVIOUS CONVERSATION (if any):
 {chat_history}
 
@@ -143,7 +144,7 @@ USER QUESTION: {question}
 
 Provide a natural, conversational response using the information available from the retrieved context. Do NOT mention "knowledge base", "retrieved context", or "RAG" in your response. Just give helpful advice naturally providing detailed and accurate veterinary advice."""
             
-            response = llm.invoke(final_prompt)
+            response = await llm.ainvoke(final_prompt)
             return response.content
         
         # Check if this is a skin or eye issue - if so, ask for image first
@@ -168,7 +169,7 @@ Your response should:
 
 Respond in a friendly, professional manner."""
             
-            response = llm.invoke(image_request_prompt)
+            response = await llm.ainvoke(image_request_prompt)
             return response.content
         
         # For non-skin/eye issues, proceed with regular RAG routing
@@ -183,13 +184,13 @@ Answer with ONLY 'YES' or 'NO':
 
 Answer (YES/NO):"""
         
-        routing_response = llm.invoke(routing_prompt)
+        routing_response = await llm.ainvoke(routing_prompt)
         should_use_rag = "YES" in routing_response.content.upper()
         
         # Get veterinary context if needed
         rag_context = ""
         if should_use_rag:
-            rag_context = search_veterinary_knowledge_base(question)
+            rag_context = await asyncio.to_thread(search_veterinary_knowledge_base, question)
             # Check if we got useful information
             if "No relevant" in rag_context or "Error" in rag_context:
                 # RAG didn't find relevant info, fall back to general knowledge
@@ -225,7 +226,7 @@ Answer this question. If it's a veterinary question that needs specific knowledg
 If it's casual conversation, respond naturally and friendly."""
         
         # Get the final response
-        response = llm.invoke(final_prompt)
+        response = await llm.ainvoke(final_prompt)
         return response.content
     
     except Exception:
@@ -241,7 +242,7 @@ User question: {question}
 
 Please answer this question to the best of your ability."""
             
-            response = llm.invoke(fallback_prompt)
+            response = await llm.ainvoke(fallback_prompt)
             return response.content
         except Exception:
             return "I encountered an error processing your question. Please try again."

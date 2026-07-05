@@ -162,7 +162,9 @@ async def fetch_pet_profile(pet_id: str) -> Optional[dict]:
     """Fetch pet profile from the database by pet_id."""
     try:
         from core.supabase_config import supabase
-        response = supabase.table("pets").select("*").eq("id", pet_id).execute()
+        response = await asyncio.to_thread(
+            supabase.table("pets").select("*").eq("id", pet_id).execute
+        )
         if response.data:
             return response.data[0]
     except Exception as e:
@@ -174,11 +176,13 @@ async def fetch_pet_vaccines(pet_id: str) -> list:
     """Fetch pet vaccination records from the database by pet_id."""
     try:
         from core.supabase_config import supabase
-        response = supabase.table("vaccination_records")\
-            .select("*")\
-            .eq("pet_id", pet_id)\
-            .order("vaccination_date", desc=True)\
-            .execute()
+        response = await asyncio.to_thread(
+            supabase.table("vaccination_records")\
+                .select("*")\
+                .eq("pet_id", pet_id)\
+                .order("vaccination_date", desc=True)\
+                .execute
+        )
         if response.data:
             return response.data
     except Exception as e:
@@ -200,7 +204,7 @@ async def handle_image_analysis(
     Handle image analysis using exact same logic as CLI.
     """
     try:
-        tool_result = _analyze_pet_image_impl(
+        tool_result = await _analyze_pet_image_impl(
             image_path=image_path,
             animal=animal,
             disease_type=disease_type
@@ -231,7 +235,7 @@ Be warm, conversational, and informative. Use formatting with headers and bullet
 IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysis model in your response. Just give the advice naturally."""
         
         chat_history = session.get_chat_history()
-        explanation_text = query_agentic_rag(
+        explanation_text = await query_agentic_rag(
             question=explanation_query,
             chat_history=chat_history
         )
@@ -262,7 +266,7 @@ async def stream_llm_response(
     """
     try:
         # Get full response using existing agentic RAG
-        full_response = query_agentic_rag(question=question, chat_history=chat_history)
+        full_response = await query_agentic_rag(question=question, chat_history=chat_history)
         
         # Split by double newlines to preserve paragraph structure
         paragraphs = full_response.split('\n\n')
@@ -381,7 +385,7 @@ IMPORTANT: Reference the specific diagnosis and previous discussion from the con
 Answer this question in the context of the condition previously diagnosed. 
 Provide helpful, accurate veterinary advice based on the question asked."""
                     
-                    bot_response = query_agentic_rag(
+                    bot_response = await query_agentic_rag(
                         question=followup_query,
                         chat_history=chat_history
                     )
@@ -428,7 +432,7 @@ If this is a veterinary/medical question, search the knowledge base for accurate
 If this is casual conversation or personal information, answer directly without searching.
 Be smart about deciding whether retrieval is necessary."""
             
-            bot_response = query_agentic_rag(
+            bot_response = await query_agentic_rag(
                 question=user_input,
                 chat_history=chat_history
             )
@@ -477,7 +481,7 @@ async def upload_image(
             tmp_path = tmp.name
         
         try:
-            tool_result = _analyze_pet_image_impl(
+            tool_result = await _analyze_pet_image_impl(
                 image_path=tmp_path,
                 animal=animal,
                 disease_type=disease_type
@@ -505,7 +509,7 @@ Be warm, conversational, and informative. Use formatting with headers and bullet
 IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysis model in your response. Just give the advice naturally."""
             
             chat_history = session.get_chat_history()
-            explanation_text = query_agentic_rag(
+            explanation_text = await query_agentic_rag(
                 question=explanation_query,
                 chat_history=chat_history
             )
@@ -554,7 +558,7 @@ async def upload_document(
             tmp_path = tmp.name
         
         try:
-            extracted_data = _analyze_medical_document_vlm_impl(tmp_path)
+            extracted_data = await _analyze_medical_document_vlm_impl(tmp_path)
             
             if isinstance(extracted_data, dict) and "error" in extracted_data:
                 raise HTTPException(status_code=400, detail=extracted_data['error'])
@@ -576,7 +580,7 @@ Be clear, helpful, and reassuring. Use formatting with headers and bullet points
 IMPORTANT: Do NOT mention the AI analysis or extraction process in your response. Just explain the document naturally."""
             
             chat_history = session.get_chat_history()
-            explanation_text = query_agentic_rag(
+            explanation_text = await query_agentic_rag(
                 question=explanation_query,
                 chat_history=chat_history
             )

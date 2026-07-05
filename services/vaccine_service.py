@@ -22,7 +22,7 @@ class VaccineService:
         self.vaccine_repo = vaccine_repo
         self.user_repo = user_repo
 
-    def upload_vaccine_document(
+    async def upload_vaccine_document(
         self,
         pet_id: str,
         image_url: str,
@@ -42,7 +42,7 @@ class VaccineService:
         """
         try:
             # Step 1: Run VLM extraction
-            extracted = extract_vaccine_data_vlm(image_path)
+            extracted = await extract_vaccine_data_vlm(image_path)
             
             if isinstance(extracted, dict) and "error" in extracted:
                 return {"success": False, "error": extracted["error"]}

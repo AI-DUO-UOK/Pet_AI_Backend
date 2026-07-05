@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 import tempfile
 import os
+import asyncio
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -162,7 +163,7 @@ async def predict(
 ):
     try:
         image = preprocess(file.file)
-        result = route_prediction(app, animal, disease_type, image)
+        result = await asyncio.to_thread(route_prediction, app, animal, disease_type, image)
         return result
     except Exception as e:
         logger.exception("Prediction failed")
@@ -182,7 +183,7 @@ async def analyze_image(
     """
     try:
         image = preprocess(file.file)
-        result = route_prediction(app, animal, disease_type, image)
+        result = await asyncio.to_thread(route_prediction, app, animal, disease_type, image)
         return result
     except Exception as e:
         logger.exception("Image analysis failed")

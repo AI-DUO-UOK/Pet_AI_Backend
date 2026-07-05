@@ -30,7 +30,7 @@ If the image is not a vaccine card or booklet, return {"error": "This does not a
 """
 
 
-def extract_vaccine_data_vlm(image_path: str) -> dict:
+async def extract_vaccine_data_vlm(image_path: str) -> dict:
     """
     Analyze a vaccine card/booklet image using Qwen2.5-VL-72B via OpenRouter.
     
@@ -42,7 +42,7 @@ def extract_vaccine_data_vlm(image_path: str) -> dict:
         Returns {"error": "..."} on failure.
     """
     try:
-        result_text = _query_vlm_qwen(
+        result_text = await _query_vlm_qwen(
             image_path=image_path,
             system_prompt="You are a medical document analysis AI specialized in extracting vaccine data. You ALWAYS return valid JSON only.",
             user_prompt=VACCINE_EXTRACTION_PROMPT

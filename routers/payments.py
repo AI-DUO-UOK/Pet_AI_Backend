@@ -24,6 +24,7 @@ Related frontend file:
 
 import logging
 import os
+import asyncio
 from datetime import datetime
 from typing import Optional
 
@@ -188,9 +189,8 @@ async def create_checkout_session(
             else:
                 success_url += f"?pet_id={request.pet_id}"
 
-            # 2. Create Stripe checkout session
-            # LKR uses 2 decimal places in Stripe (cents), so multiplying by 100 is correct.
-            session = stripe.checkout.Session.create(
+            session = await asyncio.to_thread(
+                stripe.checkout.Session.create,
                 payment_method_types=["card"],
                 line_items=[{
                     "price_data": {
@@ -344,7 +344,7 @@ async def stripe_webhook(
         receipt_url = None
         if payment_intent_id:
             try:
-                pi = stripe.PaymentIntent.retrieve(payment_intent_id)
+                pi = await asyncio.to_thread(stripe.PaymentIntent.retrieve, payment_intent_id)
                 if pi.charges and pi.charges.data:
                     receipt_url = pi.charges.data[0].receipt_url
             except Exception as pi_err:
