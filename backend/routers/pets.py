@@ -6,8 +6,8 @@ import os
 import tempfile
 from backend.core.dependencies import get_current_user
 from backend.services.pet_service import PetService
-from chatbot.supabase_config import supabase, SupabaseStorage
-from chatbot.vaccine_service import VaccineService
+from backend.core.supabase_config import supabase, SupabaseStorage
+from backend.services.vaccine_service import VaccineService
 
 logger = logging.getLogger(__name__)
 

@@ -22,6 +22,7 @@ try:
     from backend.routers.admin import router as admin_router
     from backend.routers.config import router as config_router  # GET /api/config/google-maps
     from backend.routers.payments import router as payments_router  # Payment & Stripe integration
+    from backend.routers.chat import router as chat_router  # Unified chatbot router
     has_backend_routers = True
 except ImportError as e:
     logger.warning(f"Backend routers not loaded (this is normal on Hugging Face Spaces): {e}")
@@ -63,6 +64,7 @@ if has_backend_routers:
     app.include_router(admin_router, prefix="/api")
     app.include_router(config_router)  # prefix already set in router: /api/config
     app.include_router(payments_router, prefix="/api")  # POST /api/payments/create-checkout-session, etc.
+    app.include_router(chat_router, prefix="/api")  # Unified chatbot router
 
 # 🏠 Root endpoint
 @app.get("/")
@@ -160,75 +162,3 @@ async def analyze_image(
     image = preprocess(file.file)
     result = route_prediction(app, animal, disease_type, image)
     return result
-
-# 📸 Chatbot image upload endpoint
-@app.post("/api/chat/upload-image")
-async def upload_image(
-    session_id: str = Form(...),
-    disease_type: str = Form(...),
-    file: UploadFile = File(...)
-):
-    """
-    Upload and analyze a pet image for chatbot.
-    """
-    if not has_chatbot:
-        raise HTTPException(status_code=501, detail="Chatbot integration not available on this instance")
-    try:
-        animal = "dog"  # Default - in production, retrieve from session
-        
-        if disease_type not in ["skin", "eye"]:
-            raise HTTPException(status_code=400, detail="disease_type must be 'skin' or 'eye'")
-        
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
-            content = await file.read()
-            tmp.write(content)
-            tmp_path = tmp.name
-        
-        try:
-            tool_result = _analyze_pet_image_impl(
-                image_path=tmp_path,
-                animal=animal,
-                disease_type=disease_type
-            )
-            
-            if isinstance(tool_result, dict) and "error" in tool_result:
-                raise HTTPException(status_code=400, detail=tool_result['error'])
-            
-            disease_class = tool_result.get('class', 'Unknown')
-            confidence = tool_result.get('confidence', 0.0)
-            
-            explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
-
-Provide a detailed veterinary explanation covering:
-1. What is {disease_class}?
-2. Common causes and risk factors for this condition
-3. Treatment options and recommendations
-4. When to seek professional veterinary care
-5. Prevention and management tips
-
-Be thorough and informative. Use formatting with headers and bullet points for clarity."""
-            
-            explanation_text = query_agentic_rag(
-                question=explanation_query,
-                chat_history="",
-                force_rag=True
-            )
-            
-            logger.info(f"Image analyzed for {disease_type}: {disease_class}")
-            
-            return {
-                "session_id": session_id,
-                "disease_class": disease_class,
-                "confidence": confidence,
-                "explanation": explanation_text
-            }
-        
-        finally:
-            if os.path.exists(tmp_path):
-                os.remove(tmp_path)
-    
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error uploading image: {e}")
-        raise HTTPException(status_code=500, detail=str(e))

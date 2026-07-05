@@ -25,9 +25,10 @@ Always be compassionate and provide medical advice based on the analysis."""
 class AgentExecutorWrapper:
     """Wrapper to provide .run() interface compatible with old AgentExecutor"""
     
-    def __init__(self, graph, memory):
+    def __init__(self, graph, memory, tools=None):
         self.graph = graph
         self.memory = memory
+        self.tools = tools or []
         
     def run(self, input_text: str, **kwargs) -> str:
         """
@@ -70,4 +71,4 @@ class AgentExecutorWrapper:
             return f"I encountered an error: {str(e)}"
 
 # Create the wrapper instance with .run() method
-agent = AgentExecutorWrapper(_agent_graph, memory)
+agent = AgentExecutorWrapper(_agent_graph, memory, tools)

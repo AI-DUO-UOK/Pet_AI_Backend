@@ -1,6 +1,6 @@
 from typing import Dict, Optional
 import time
-from chatbot.supabase_config import supabase, SupabaseStorage
+from backend.core.supabase_config import supabase, SupabaseStorage
 
 class PetService:
     """Service for managing pets and their vaccine records"""

@@ -4,7 +4,7 @@ import logging
 from backend.core.dependencies import get_current_user
 from backend.schemas.schemas import CreateAppointmentRequest, CreateReviewRequest
 from backend.services.appointment_service import AppointmentService
-from chatbot.supabase_config import supabase
+from backend.core.supabase_config import supabase
 
 logger = logging.getLogger(__name__)
 

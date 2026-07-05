@@ -27,7 +27,7 @@ def run_reminder_check():
     calculates days remaining, and creates notifications if not already sent.
     """
     try:
-        from chatbot.vaccine_service import VaccineService
+        from backend.services.vaccine_service import VaccineService
         
         logger.info(f"=== Vaccine Reminder Check Started at {datetime.now().isoformat()} ===")
         

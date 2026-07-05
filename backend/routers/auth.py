@@ -7,7 +7,7 @@ from datetime import datetime
 from backend.core.dependencies import get_current_user
 from backend.schemas.schemas import RegisterOwnerRequest, RegisterClinicRequest, NotificationReadRequest
 from backend.services.auth_service import AuthService
-from chatbot.supabase_config import supabase, SupabaseStorage
+from backend.core.supabase_config import supabase, SupabaseStorage
 
 logger = logging.getLogger(__name__)
 

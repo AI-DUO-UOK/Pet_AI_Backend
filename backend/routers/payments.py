@@ -147,7 +147,7 @@ async def create_checkout_session(
         )
 
     # Import Supabase client
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
 
     stripe_key = os.getenv("STRIPE_SECRET_KEY")
     if stripe_key:
@@ -296,7 +296,7 @@ async def stripe_webhook(
         return {"status": "ignored", "reason": "Stripe not configured"}
 
     # Import Supabase client
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
 
     payload = await raw_request.body()
 
@@ -440,7 +440,7 @@ async def get_payment(
     """
     Retrieve a single payment record by ID.
     """
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
 
     result = supabase.table("payments").select("*, appointments(*)").eq("id", payment_id).execute()
     if not result.data:
@@ -467,7 +467,7 @@ async def get_payment_history(
     """
     List all payment records for the currently authenticated owner.
     """
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
 
     # Fetch appointments for this owner first
     appt_resp = supabase.table("appointments").select("id").eq("owner_id", current_user["id"]).execute()
@@ -493,7 +493,7 @@ async def download_receipt(
     """
     Generate and return a PDF receipt or redirect to Stripe's receipt URL.
     """
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
     from fastapi.responses import RedirectResponse
 
     result = supabase.table("payments").select("*").eq("id", payment_id).execute()

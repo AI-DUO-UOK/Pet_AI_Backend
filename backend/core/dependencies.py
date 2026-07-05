@@ -2,7 +2,7 @@ from fastapi import Request, Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials
 from backend.core.security import verify_supabase_jwt, security_scheme
 try:
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
 except ImportError:
     supabase = None
 from typing import Dict, List, Optional

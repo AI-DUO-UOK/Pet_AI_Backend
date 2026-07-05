@@ -1,5 +1,5 @@
 from typing import Dict, Optional
-from chatbot.supabase_config import supabase
+from backend.core.supabase_config import supabase
 
 class AuthService:
     """Authentication and Profile Service"""

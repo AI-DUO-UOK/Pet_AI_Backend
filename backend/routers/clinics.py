@@ -5,7 +5,7 @@ import time
 import os
 from backend.core.dependencies import get_current_user, require_role
 from backend.services.clinic_service import ClinicService
-from chatbot.supabase_config import supabase, SupabaseStorage
+from backend.core.supabase_config import supabase, SupabaseStorage
 
 logger = logging.getLogger(__name__)
 

@@ -24,7 +24,7 @@ async def get_all_clinics():
     logger.info("Admin: Fetching all clinics")
     result = ClinicService.get_public_clinics()  # We can fetch all or public
     # Let's query all clinics from Supabase directly for admin
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
     try:
         resp = supabase.table("clinics").select("*").order("created_at", desc=True).execute()
         clinics = [ClinicService._parse_clinic_status(c) for c in (resp.data or [])]
@@ -37,7 +37,7 @@ async def get_admin_stats():
     """Return admin dashboard counts and recent clinic activity"""
     logger.info("Admin: Fetching dashboard stats")
     
-    from chatbot.supabase_config import supabase
+    from backend.core.supabase_config import supabase
     try:
         all_resp = supabase.table("clinics").select("id", "is_verified", "clinic_name", "created_at", "description").execute()
         clinics = [ClinicService._parse_clinic_status(c) for c in (all_resp.data or [])]

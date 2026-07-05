@@ -1,7 +1,7 @@
 from typing import Dict, List, Optional
 from datetime import datetime
 import logging
-from chatbot.supabase_config import supabase, SupabaseStorage
+from backend.core.supabase_config import supabase, SupabaseStorage
 
 logger = logging.getLogger(__name__)
 
