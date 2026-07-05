@@ -146,16 +146,20 @@ async def get_clinic_patients(current_user: dict = Depends(get_current_user)):
         resp = supabase.table("appointments").select("*").eq("clinic_id", clinic_id).order("appointment_date", desc=False).execute()
         appts = resp.data or []
 
-        # Enrich each appointment with pet name and owner full name
+        # Enrich each appointment with pet name, type, breed and owner full name
         enriched = []
         for a in appts:
             pet_name = None
+            pet_type = None
+            pet_breed = None
             owner_name = None
             try:
                 if a.get("pet_id"):
-                    pet_resp = supabase.table("pets").select("name").eq("id", a.get("pet_id")).execute()
+                    pet_resp = supabase.table("pets").select("name, type, breed").eq("id", a.get("pet_id")).execute()
                     if pet_resp.data:
                         pet_name = pet_resp.data[0].get("name")
+                        pet_type = pet_resp.data[0].get("type")
+                        pet_breed = pet_resp.data[0].get("breed")
                 if a.get("owner_id"):
                     owner_resp = supabase.table("pet_owners").select("full_name").eq("user_id", a.get("owner_id")).execute()
                     if owner_resp.data:
@@ -165,6 +169,8 @@ async def get_clinic_patients(current_user: dict = Depends(get_current_user)):
 
             item = dict(a)
             item["pet_name"] = pet_name or a.get("pet_id")
+            item["pet_type"] = pet_type or "Pet"
+            item["breed"] = pet_breed or ""
             item["owner_name"] = owner_name or a.get("owner_id")
             enriched.append(item)
 

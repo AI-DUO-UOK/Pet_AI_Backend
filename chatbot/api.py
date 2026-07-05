@@ -515,10 +515,6 @@ IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysi
                 chat_history=chat_history
             )
             
-            # Update session
-            session.analysis_done = True
-            session.current_disease_type = disease_type
-            
             # Save diagnosis to memory
             diagnosis_record = f"Diagnosed with {disease_class} (confidence: {confidence:.1%}) from {disease_type} image analysis"
             session.memory.save_context(
@@ -550,7 +546,8 @@ IMPORTANT: Do NOT mention the knowledge base, retrieved contexts, or the analysi
 @app.post("/api/chat/upload-document")
 async def upload_document(
     session_id: str = Form(...),
-    file: UploadFile = File(...)
+    file: UploadFile = File(...),
+    prompt: Optional[str] = Form(None)
 ):
     """
     Upload and analyze a medical document (prescription, vaccine card, or medical report).
@@ -563,6 +560,7 @@ async def upload_document(
     Args:
         session_id: Conversation session ID
         file: Document image file upload
+        prompt: Optional user query/prompt about the document
     
     Returns:
         Extracted data and conversational explanation
@@ -586,13 +584,17 @@ async def upload_document(
             # Format the extracted data as a readable string for RAG context
             extracted_json_str = json.dumps(extracted_data, indent=2)
             
+            # Incorporate user prompt if present
+            user_prompt_str = f"\n\nUSER'S QUESTION/PROMPT ABOUT THE DOCUMENT:\n{prompt}" if prompt else ""
+            
             # Use Mistral + RAG to explain the document in conversational style
             explanation_query = f"""The following data was extracted from a medical document (prescription, vaccine card, or medical report) using AI analysis:
-
+            
 EXTRACTED DATA:
 {extracted_json_str}
+{user_prompt_str}
 
-Respond conversationally as a friendly vet assistant. Explain what this document says in simple terms.
+Respond conversationally as a friendly vet assistant. Explain what this document says in simple terms, focusing specifically on answering the user's question/prompt if one was provided.
 If it's a prescription, explain the medication, dosage, and instructions clearly.
 If it's a vaccine card, explain what vaccines were given and when the next ones are due.
 If it's a medical report, summarize the findings and recommendations.
