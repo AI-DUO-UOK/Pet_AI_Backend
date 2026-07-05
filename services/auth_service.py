@@ -1,11 +1,11 @@
 from typing import Dict, Optional
-from repositories.user_repository import UserRepository
-from repositories.clinic_repository import ClinicRepository
+from interfaces.user_repository import IUserRepository
+from interfaces.clinic_repository import IClinicRepository
 
 class AuthService:
     """Authentication and Profile Service"""
 
-    def __init__(self, user_repo: UserRepository, clinic_repo: ClinicRepository):
+    def __init__(self, user_repo: IUserRepository, clinic_repo: IClinicRepository):
         self.user_repo = user_repo
         self.clinic_repo = clinic_repo
 

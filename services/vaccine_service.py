@@ -8,8 +8,8 @@ import logging
 from datetime import datetime, date, timedelta
 from typing import Dict, List, Optional, Any
 
-from repositories.vaccine_repository import VaccineRepository
-from repositories.user_repository import UserRepository
+from interfaces.vaccine_repository import IVaccineRepository
+from interfaces.user_repository import IUserRepository
 from chatbot.vaccine_vlm import extract_vaccine_data_vlm
 
 logger = logging.getLogger(__name__)
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 class VaccineService:
     """Service for managing pet vaccination records."""
 
-    def __init__(self, vaccine_repo: VaccineRepository, user_repo: UserRepository):
+    def __init__(self, vaccine_repo: IVaccineRepository, user_repo: IUserRepository):
         self.vaccine_repo = vaccine_repo
         self.user_repo = user_repo
 

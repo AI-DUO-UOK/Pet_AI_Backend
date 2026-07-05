@@ -1,8 +1,8 @@
 from typing import Dict, Optional
 import time
 import logging
-from repositories.pet_repository import PetRepository
-from core.cache import CacheService
+from interfaces.pet_repository import IPetRepository
+from interfaces.cache_service import ICacheService
 from core.supabase_config import SupabaseStorage
 
 logger = logging.getLogger(__name__)
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class PetService:
     """Service for managing pets and their vaccine records"""
 
-    def __init__(self, pet_repo: PetRepository, cache_service: CacheService):
+    def __init__(self, pet_repo: IPetRepository, cache_service: ICacheService):
         self.pet_repo = pet_repo
         self.cache_service = cache_service
 

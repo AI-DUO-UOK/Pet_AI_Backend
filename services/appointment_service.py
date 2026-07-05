@@ -1,10 +1,10 @@
 from typing import Dict, List, Optional
 from datetime import datetime
 import logging
-from repositories.appointment_repository import AppointmentRepository
-from repositories.pet_repository import PetRepository
-from repositories.clinic_repository import ClinicRepository
-from repositories.user_repository import UserRepository
+from interfaces.appointment_repository import IAppointmentRepository
+from interfaces.pet_repository import IPetRepository
+from interfaces.clinic_repository import IClinicRepository
+from interfaces.user_repository import IUserRepository
 
 logger = logging.getLogger(__name__)
 
@@ -13,10 +13,10 @@ class AppointmentService:
 
     def __init__(
         self,
-        appt_repo: AppointmentRepository,
-        pet_repo: PetRepository,
-        clinic_repo: ClinicRepository,
-        user_repo: UserRepository
+        appt_repo: IAppointmentRepository,
+        pet_repo: IPetRepository,
+        clinic_repo: IClinicRepository,
+        user_repo: IUserRepository
     ):
         self.appt_repo = appt_repo
         self.pet_repo = pet_repo

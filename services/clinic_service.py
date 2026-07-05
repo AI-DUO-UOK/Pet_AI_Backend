@@ -1,9 +1,9 @@
 from typing import Dict, List, Optional
 from datetime import datetime
 import logging
-from repositories.clinic_repository import ClinicRepository
-from repositories.user_repository import UserRepository
-from core.cache import CacheService
+from interfaces.clinic_repository import IClinicRepository
+from interfaces.user_repository import IUserRepository
+from interfaces.cache_service import ICacheService
 from core.supabase_config import SupabaseStorage
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ REJECTION_MARKER = "__ADMIN_REJECTION__::"
 class ClinicService:
     """Service for managing clinic profiles, approvals, and public listings"""
 
-    def __init__(self, clinic_repo: ClinicRepository, user_repo: UserRepository, cache_service: CacheService):
+    def __init__(self, clinic_repo: IClinicRepository, user_repo: IUserRepository, cache_service: ICacheService):
         self.clinic_repo = clinic_repo
         self.user_repo = user_repo
         self.cache_service = cache_service

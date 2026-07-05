@@ -1,47 +1,41 @@
 from typing import Dict, List, Optional
 from core.supabase_config import supabase
+from interfaces.clinic_repository import IClinicRepository
 
-class ClinicRepository:
+class ClinicRepository(IClinicRepository):
     """Repository for managing clinics table and listings"""
 
-    @staticmethod
-    def insert_clinic(clinic_data: Dict) -> Optional[Dict]:
+    def insert_clinic(self, clinic_data: Dict) -> Optional[Dict]:
         """Create new clinic registration"""
         response = supabase.table("clinics").insert(clinic_data).execute()
         return response.data[0] if response.data else None
 
-    @staticmethod
-    def get_by_id(clinic_id: str) -> Optional[Dict]:
+    def get_by_id(self, clinic_id: str) -> Optional[Dict]:
         """Fetch clinic profile by ID"""
         response = supabase.table("clinics").select("*").eq("id", clinic_id).execute()
         return response.data[0] if response.data else None
 
-    @staticmethod
-    def get_by_user_id(user_id: str) -> Optional[Dict]:
+    def get_by_user_id(self, user_id: str) -> Optional[Dict]:
         """Fetch clinic profile by clinic owner user_id"""
         response = supabase.table("clinics").select("*").eq("user_id", user_id).execute()
         return response.data[0] if response.data else None
 
-    @staticmethod
-    def get_all_clinics() -> List[Dict]:
+    def get_all_clinics(self) -> List[Dict]:
         """Get all clinics ordered by creation date (for admin)"""
         response = supabase.table("clinics").select("*").order("created_at", desc=True).execute()
         return response.data or []
 
-    @staticmethod
-    def get_public_clinics() -> List[Dict]:
+    def get_public_clinics(self) -> List[Dict]:
         """Get verified, active clinics (for public search)"""
         response = supabase.table("clinics").select("*").eq("is_verified", True).eq("is_active", True).execute()
         return response.data or []
 
-    @staticmethod
-    def update_clinic(clinic_id: str, updates: Dict) -> Optional[Dict]:
+    def update_clinic(self, clinic_id: str, updates: Dict) -> Optional[Dict]:
         """Update clinic profile details"""
         response = supabase.table("clinics").update(updates).eq("id", clinic_id).execute()
         return response.data[0] if response.data else None
 
-    @staticmethod
-    def reject_clinic(clinic_id: str, updates: Dict) -> Optional[Dict]:
+    def reject_clinic(self, clinic_id: str, updates: Dict) -> Optional[Dict]:
         """
         Reject a clinic registration.
         Supports structured rejection columns (rejection_reason, rejected_at)

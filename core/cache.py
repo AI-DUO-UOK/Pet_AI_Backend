@@ -2,6 +2,7 @@ import os
 import logging
 import json
 from typing import Optional, Any
+from interfaces.cache_service import ICacheService
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +13,7 @@ try:
 except ImportError:
     has_redis = False
 
-class CacheService:
+class CacheService(ICacheService):
     """Caching service with Redis backend and in-memory fallback"""
     
     def __init__(self):
