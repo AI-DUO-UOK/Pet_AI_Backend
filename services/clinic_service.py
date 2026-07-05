@@ -19,8 +19,14 @@ class ClinicService:
         self.cache_service = cache_service
 
     def get_clinic_profile(self, user_id: str) -> Dict:
-        """Get clinic profile by owner's user_id"""
+        """Get clinic profile by owner's user_id (with Redis/In-memory caching)"""
         try:
+            cache_key = f"clinic:profile:{user_id}"
+            cached = self.cache_service.get(cache_key)
+            if cached is not None:
+                logger.info(f"Cache hit: clinic profile for user {user_id}")
+                return {"success": True, "clinic": cached}
+
             clinic_data = self.clinic_repo.get_by_user_id(user_id)
             if not clinic_data:
                 return {"success": False, "error": "Clinic not found"}
@@ -31,13 +37,20 @@ class ClinicService:
             if not clinic.get("clinic_logo_url") and clinic["gallery_urls"]:
                 clinic["clinic_logo_url"] = clinic["gallery_urls"][0]
                 
+            self.cache_service.set(cache_key, clinic, expire_seconds=1800)
             return {"success": True, "clinic": clinic}
         except Exception as e:
             return {"success": False, "error": f"Error fetching clinic profile: {str(e)}"}
 
     def get_clinic_by_id(self, clinic_id: str) -> Dict:
-        """Get clinic details by clinic ID"""
+        """Get clinic details by clinic ID (with Redis/In-memory caching)"""
         try:
+            cache_key = f"clinic:detail:{clinic_id}"
+            cached = self.cache_service.get(cache_key)
+            if cached is not None:
+                logger.info(f"Cache hit: clinic details for {clinic_id}")
+                return {"success": True, "clinic": cached}
+
             clinic_data = self.clinic_repo.get_by_id(clinic_id)
             if not clinic_data:
                 return {"success": False, "error": "Clinic not found"}
@@ -48,6 +61,8 @@ class ClinicService:
                 clinic["gallery_urls"] = SupabaseStorage.list_clinic_images(user_id)
                 if not clinic.get("clinic_logo_url") and clinic["gallery_urls"]:
                     clinic["clinic_logo_url"] = clinic["gallery_urls"][0]
+
+            self.cache_service.set(cache_key, clinic, expire_seconds=1800)
             return {"success": True, "clinic": clinic}
         except Exception as e:
             return {"success": False, "error": f"Error fetching clinic: {str(e)}"}
@@ -104,8 +119,10 @@ class ClinicService:
             if not updated_profile:
                 return {"success": False, "error": "Failed to update clinic profile"}
 
-            # Cache Invalidation: Clear public clinics cache
+            # Cache Invalidation: Clear public clinics cache, detail cache, and owner profile cache
             self.cache_service.delete("clinics:public")
+            self.cache_service.delete(f"clinic:detail:{clinic_id}")
+            self.cache_service.delete(f"clinic:profile:{user_id}")
 
             return {
                 "success": True,
@@ -139,8 +156,11 @@ class ClinicService:
             if not updated_profile:
                 return {"success": False, "error": "Failed to verify clinic"}
 
-            # Cache Invalidation: Clear public clinics cache
+            # Cache Invalidation: Clear public clinics cache, detail cache, and owner profile cache
             self.cache_service.delete("clinics:public")
+            self.cache_service.delete(f"clinic:detail:{clinic_id}")
+            if user_id:
+                self.cache_service.delete(f"clinic:profile:{user_id}")
 
             # Create notification
             if user_id:
@@ -194,8 +214,11 @@ class ClinicService:
 
             self.clinic_repo.reject_clinic(clinic_id, updates)
 
-            # Cache Invalidation: Clear public clinics cache
+            # Cache Invalidation: Clear public clinics cache, detail cache, and owner profile cache
             self.cache_service.delete("clinics:public")
+            self.cache_service.delete(f"clinic:detail:{clinic_id}")
+            if user_id:
+                self.cache_service.delete(f"clinic:profile:{user_id}")
 
             # Keep associated auth profile active so they can log in, view status, and edit/resubmit profile
             if user_id:

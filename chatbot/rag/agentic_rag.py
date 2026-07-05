@@ -20,12 +20,25 @@ logger = logging.getLogger(__name__)
 def search_veterinary_knowledge_base(query: str) -> str:
     """
     Search the veterinary knowledge base for information about pet diseases,
-    symptoms, treatments, and healthcare.
+    symptoms, treatments, and healthcare. (With RAG query caching)
     
     Use this ONLY for veterinary/medical questions.
     Do NOT use for casual conversation or personal information.
     """
     try:
+        import hashlib
+        from core.dependencies import _cache_service
+        
+        query_cleaned = query.strip().lower()
+        query_hash = hashlib.sha256(query_cleaned.encode('utf-8')).hexdigest()
+        cache_key = f"rag:search:{query_hash}"
+        
+        # Check cache
+        cached_context = _cache_service.get(cache_key)
+        if cached_context is not None:
+            logger.info(f"RAG Cache hit for query hash: {query_hash}")
+            return cached_context
+
         retriever = get_advanced_retriever()
         search_results = retriever.search(query=query, top_k=3)
         
@@ -37,7 +50,9 @@ def search_veterinary_knowledge_base(query: str) -> str:
         ]
         
         if not relevant_results:
-            return "No relevant veterinary information found in the knowledge base for this query."
+            no_info_msg = "No relevant veterinary information found in the knowledge base for this query."
+            _cache_service.set(cache_key, no_info_msg, expire_seconds=86400)
+            return no_info_msg
         
         # Build context from retrieved chunks
         context = "\n\n".join([
@@ -45,6 +60,8 @@ def search_veterinary_knowledge_base(query: str) -> str:
             for result in relevant_results
         ])
         
+        # Cache the built context for 24 hours
+        _cache_service.set(cache_key, context, expire_seconds=86400)
         return context
     except Exception:
         logging.exception("Error searching knowledge base")
