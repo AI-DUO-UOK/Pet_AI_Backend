@@ -4,10 +4,10 @@ import logging
 import time
 import os
 from datetime import datetime
-from backend.core.dependencies import get_current_user
-from backend.schemas.schemas import RegisterOwnerRequest, RegisterClinicRequest, NotificationReadRequest
-from backend.services.auth_service import AuthService
-from backend.core.supabase_config import supabase, SupabaseStorage
+from core.dependencies import get_current_user, get_auth_service
+from schemas.schemas import RegisterOwnerRequest, RegisterClinicRequest, NotificationReadRequest
+from services.auth_service import AuthService
+from core.supabase_config import supabase, SupabaseStorage
 
 logger = logging.getLogger(__name__)
 
@@ -16,12 +16,13 @@ router = APIRouter(prefix="/auth", tags=["Authentication & Notifications"])
 @router.post("/register/owner")
 async def register_owner(
     request: RegisterOwnerRequest,
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    auth_service: AuthService = Depends(get_auth_service)
 ):
     """Complete registration of a new pet owner profile"""
     logger.info(f"Registering pet owner profile for user: {current_user['id']}")
     
-    result = AuthService.register_pet_owner(
+    result = auth_service.register_pet_owner(
         user_id=current_user["id"],
         email=current_user["email"],
         first_name=request.first_name,
@@ -55,7 +56,8 @@ async def register_clinic(
     clinic_license: Optional[UploadFile] = File(None),
     latitude: Optional[float] = Form(None),
     longitude: Optional[float] = Form(None),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    auth_service: AuthService = Depends(get_auth_service)
 ):
     """Complete registration of a new clinic profile"""
     logger.info(f"Registering clinic profile for user: {current_user['id']}")
@@ -96,7 +98,7 @@ async def register_clinic(
         )
         license_document_url = supabase.storage.from_("clinic-documents").get_public_url(license_path)
 
-    result = AuthService.register_clinic(
+    result = auth_service.register_clinic(
         user_id=current_user["id"],
         email=current_user["email"],
         clinic_name=clinic_name,
@@ -121,9 +123,12 @@ async def register_clinic(
     return result
 
 @router.get("/profile")
-async def get_profile(current_user: dict = Depends(get_current_user)):
+async def get_profile(
+    current_user: dict = Depends(get_current_user),
+    auth_service: AuthService = Depends(get_auth_service)
+):
     """Get the current authenticated user's profile"""
-    result = AuthService.get_user_profile(current_user["id"])
+    result = auth_service.get_user_profile(current_user["id"])
     if not result["success"]:
         raise HTTPException(status_code=404, detail=result.get("error"))
     return result
@@ -142,7 +147,8 @@ async def update_profile(
     photo: Optional[UploadFile] = File(None),
     latitude: Optional[float] = Form(None),
     longitude: Optional[float] = Form(None),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    auth_service: AuthService = Depends(get_auth_service)
 ):
     """Update pet owner profile details"""
     profile_image_url = None
@@ -188,7 +194,7 @@ async def update_profile(
     if longitude is not None:
         updates["longitude"] = longitude
 
-    result = AuthService.update_user_profile(user_id=current_user["id"], updates=updates)
+    result = auth_service.update_user_profile(user_id=current_user["id"], updates=updates)
     if not result["success"]:
         raise HTTPException(status_code=400, detail=result.get("error"))
         

@@ -4,10 +4,10 @@ import logging
 import time
 import os
 import tempfile
-from backend.core.dependencies import get_current_user
-from backend.services.pet_service import PetService
-from backend.core.supabase_config import supabase, SupabaseStorage
-from backend.services.vaccine_service import VaccineService
+from core.dependencies import get_current_user, get_pet_service, get_vaccine_service
+from services.pet_service import PetService
+from core.supabase_config import supabase, SupabaseStorage
+from services.vaccine_service import VaccineService
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,8 @@ async def create_pet(
     medical_conditions: Optional[str] = Form(None),
     notes: Optional[str] = Form(None),
     photo: Optional[UploadFile] = File(None),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    pet_service: PetService = Depends(get_pet_service)
 ):
     """Add a new pet (Owner only)"""
     if current_user["role"] != "owner":
@@ -56,7 +57,7 @@ async def create_pet(
         )
         profile_image_url = supabase.storage.from_("pet-images").get_public_url(storage_path)
 
-    result = PetService.add_pet(
+    result = pet_service.add_pet(
         user_id=current_user["id"],
         name=name,
         pet_type=pet_type,
@@ -78,10 +79,13 @@ async def create_pet(
     return result
 
 @router.get("/pets")
-async def get_pets(current_user: dict = Depends(get_current_user)):
+async def get_pets(
+    current_user: dict = Depends(get_current_user),
+    pet_service: PetService = Depends(get_pet_service)
+):
     """Get all pets for the currently logged-in user (Owner) or all pets if Clinic/Admin"""
     if current_user["role"] == "owner":
-        result = PetService.get_user_pets(user_id=current_user["id"])
+        result = pet_service.get_user_pets(user_id=current_user["id"])
     else:
         try:
             response = supabase.table("pets").select("*").execute()
@@ -131,7 +135,8 @@ async def update_pet_detail(
     medical_conditions: Optional[str] = Form(None),
     notes: Optional[str] = Form(None),
     photo: Optional[UploadFile] = File(None),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    pet_service: PetService = Depends(get_pet_service)
 ):
     """Update details of a specific pet"""
     try:
@@ -185,7 +190,7 @@ async def update_pet_detail(
             )
             updates["profile_image_url"] = supabase.storage.from_("pet-images").get_public_url(storage_path)
 
-        result = PetService.update_pet(pet_id=pet_id, updates=updates)
+        result = pet_service.update_pet(pet_id=pet_id, updates=updates)
         if not result["success"]:
             raise HTTPException(status_code=400, detail=result.get("error"))
 
@@ -204,7 +209,8 @@ async def upload_vaccine_record(
     pet_id: str = Form(...),
     file: UploadFile = File(...),
     upload_date: Optional[str] = Form(None),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    pet_service: PetService = Depends(get_pet_service)
 ):
     """Upload a vaccination record for a pet"""
     try:
@@ -218,7 +224,7 @@ async def upload_vaccine_record(
         file_data = await file.read()
         file_type = "pdf" if file.content_type == "application/pdf" else "image"
 
-        result = PetService.upload_vaccine_record(
+        result = pet_service.upload_vaccine_record(
             pet_id=pet_id,
             file_data=file_data,
             file_name=file.filename,
@@ -237,7 +243,11 @@ async def upload_vaccine_record(
         raise HTTPException(status_code=400, detail=str(e))
 
 @router.get("/vaccine-records")
-async def get_vaccine_records(pet_id: str, current_user: dict = Depends(get_current_user)):
+async def get_vaccine_records(
+    pet_id: str,
+    current_user: dict = Depends(get_current_user),
+    pet_service: PetService = Depends(get_pet_service)
+):
     """Get all vaccine records for a pet"""
     try:
         pet_resp = supabase.table("pets").select("user_id").eq("id", pet_id).execute()
@@ -247,7 +257,7 @@ async def get_vaccine_records(pet_id: str, current_user: dict = Depends(get_curr
         if current_user["role"] == "owner" and pet_resp.data[0]["user_id"] != current_user["id"]:
             raise HTTPException(status_code=403, detail="Access denied")
 
-        result = PetService.get_pet_vaccine_records(pet_id=pet_id)
+        result = pet_service.get_pet_vaccine_records(pet_id=pet_id)
         if not result["success"]:
             raise HTTPException(status_code=400, detail=result.get("error"))
 
@@ -265,7 +275,8 @@ async def get_vaccine_records(pet_id: str, current_user: dict = Depends(get_curr
 async def upload_vaccine_document(
     pet_id: str = Form(...),
     file: UploadFile = File(...),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    vaccine_service: VaccineService = Depends(get_vaccine_service)
 ):
     """Upload vaccine booklet/card image, extract data via VLM, and store records"""
     logger.info(f"Uploading vaccine document for pet: {pet_id} by user: {current_user['id']}")
@@ -301,7 +312,7 @@ async def upload_vaccine_document(
         )
         image_url = supabase.storage.from_("vaccine-documents").get_public_url(storage_path)
         
-        result = VaccineService.upload_vaccine_document(
+        result = vaccine_service.upload_vaccine_document(
             pet_id=pet_id,
             image_url=image_url,
             image_path=tmp_path
@@ -333,14 +344,15 @@ async def add_manual_vaccine(
     clinic_id: Optional[str] = Form(None),
     notes: Optional[str] = Form(None),
     source: str = Form("vet_entry"),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    vaccine_service: VaccineService = Depends(get_vaccine_service)
 ):
     """Add a vaccine record manually (Clinics or Vets)"""
     # Verify clinic role or admin
     if current_user["role"] not in ["clinic", "admin"]:
         raise HTTPException(status_code=403, detail="Only clinics and admins can make manual vaccine entries")
 
-    result = VaccineService.add_manual_vaccine_entry(
+    result = vaccine_service.add_manual_vaccine_entry(
         pet_id=pet_id,
         vaccine_name=vaccine_name,
         vaccination_date=vaccination_date,
@@ -359,7 +371,11 @@ async def add_manual_vaccine(
     return result
 
 @router.get("/vaccines/{pet_id}")
-async def get_pet_vaccines(pet_id: str, current_user: dict = Depends(get_current_user)):
+async def get_pet_vaccines(
+    pet_id: str,
+    current_user: dict = Depends(get_current_user),
+    vaccine_service: VaccineService = Depends(get_vaccine_service)
+):
     """Get all vaccination records for a pet"""
     pet_resp = supabase.table("pets").select("user_id").eq("id", pet_id).execute()
     if not pet_resp.data:
@@ -367,14 +383,18 @@ async def get_pet_vaccines(pet_id: str, current_user: dict = Depends(get_current
     if current_user["role"] == "owner" and pet_resp.data[0]["user_id"] != current_user["id"]:
         raise HTTPException(status_code=403, detail="Access denied")
 
-    result = VaccineService.get_pet_vaccines(pet_id=pet_id)
+    result = vaccine_service.get_pet_vaccines(pet_id=pet_id)
     if not result.get("success"):
         raise HTTPException(status_code=400, detail=result.get("error"))
     
     return result
 
 @router.get("/vaccines/{pet_id}/documents")
-async def get_pet_vaccine_documents(pet_id: str, current_user: dict = Depends(get_current_user)):
+async def get_pet_vaccine_documents(
+    pet_id: str,
+    current_user: dict = Depends(get_current_user),
+    vaccine_service: VaccineService = Depends(get_vaccine_service)
+):
     """Get uploaded vaccine documents for a pet"""
     pet_resp = supabase.table("pets").select("user_id").eq("id", pet_id).execute()
     if not pet_resp.data:
@@ -382,19 +402,22 @@ async def get_pet_vaccine_documents(pet_id: str, current_user: dict = Depends(ge
     if current_user["role"] == "owner" and pet_resp.data[0]["user_id"] != current_user["id"]:
         raise HTTPException(status_code=403, detail="Access denied")
 
-    result = VaccineService.get_pet_vaccine_documents(pet_id=pet_id)
+    result = vaccine_service.get_pet_vaccine_documents(pet_id=pet_id)
     if not result.get("success"):
         raise HTTPException(status_code=400, detail=result.get("error"))
     
     return result
 
 @router.post("/vaccines/check-reminders")
-async def check_vaccine_reminders(current_user: dict = Depends(get_current_user)):
+async def check_vaccine_reminders(
+    current_user: dict = Depends(get_current_user),
+    vaccine_service: VaccineService = Depends(get_vaccine_service)
+):
     """Trigger reminder check for all vaccines (Admin only)"""
     if current_user["role"] != "admin":
         raise HTTPException(status_code=403, detail="Admin access required")
         
-    result = VaccineService.check_and_send_reminders()
+    result = vaccine_service.check_and_send_reminders()
     return result
 
 # ============================================

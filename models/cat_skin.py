@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torchvision import models
-from backend.core.config import CAT_SKIN_MODEL, DEVICE
+from core.config import CAT_SKIN_MODEL, DEVICE
 
 class_names = ["Flea_Allergy", "Health", "Ringworm", "Scabies"]
 

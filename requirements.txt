@@ -36,3 +36,4 @@ pydantic>=2.0.0
 trafilatura
 supabase
 stripe
+redis

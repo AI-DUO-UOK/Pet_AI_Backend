@@ -1,8 +1,8 @@
 from fastapi import Request, Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials
-from backend.core.security import verify_supabase_jwt, security_scheme
+from core.security import verify_supabase_jwt, security_scheme
 try:
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
 except ImportError:
     supabase = None
 from typing import Dict, List, Optional
@@ -72,3 +72,45 @@ def require_role(role: str):
 
 def require_any_role(roles: List[str]):
     return Depends(RoleChecker(roles))
+
+from services.auth_service import AuthService
+from services.pet_service import PetService
+from services.clinic_service import ClinicService
+from services.appointment_service import AppointmentService
+from services.vaccine_service import VaccineService
+from repositories.user_repository import UserRepository
+from repositories.pet_repository import PetRepository
+from repositories.clinic_repository import ClinicRepository
+from repositories.appointment_repository import AppointmentRepository
+from repositories.vaccine_repository import VaccineRepository
+from core.cache import CacheService
+
+# Single global CacheService instance
+_cache_service = CacheService()
+
+def get_cache_service() -> CacheService:
+    return _cache_service
+
+def get_auth_service() -> AuthService:
+    return AuthService(user_repo=UserRepository(), clinic_repo=ClinicRepository())
+
+def get_pet_service(cache_service: CacheService = Depends(get_cache_service)) -> PetService:
+    return PetService(pet_repo=PetRepository(), cache_service=cache_service)
+
+def get_clinic_service(cache_service: CacheService = Depends(get_cache_service)) -> ClinicService:
+    return ClinicService(
+        clinic_repo=ClinicRepository(),
+        user_repo=UserRepository(),
+        cache_service=cache_service
+    )
+
+def get_appointment_service() -> AppointmentService:
+    return AppointmentService(
+        appt_repo=AppointmentRepository(),
+        pet_repo=PetRepository(),
+        clinic_repo=ClinicRepository(),
+        user_repo=UserRepository()
+    )
+
+def get_vaccine_service() -> VaccineService:
+    return VaccineService(vaccine_repo=VaccineRepository(), user_repo=UserRepository())

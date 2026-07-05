@@ -1,16 +1,30 @@
 from typing import Dict, List, Optional
 from datetime import datetime
-import time
 import logging
-from backend.core.supabase_config import supabase
+from repositories.appointment_repository import AppointmentRepository
+from repositories.pet_repository import PetRepository
+from repositories.clinic_repository import ClinicRepository
+from repositories.user_repository import UserRepository
 
 logger = logging.getLogger(__name__)
 
 class AppointmentService:
     """Service for managing appointments and reviews"""
 
-    @staticmethod
+    def __init__(
+        self,
+        appt_repo: AppointmentRepository,
+        pet_repo: PetRepository,
+        clinic_repo: ClinicRepository,
+        user_repo: UserRepository
+    ):
+        self.appt_repo = appt_repo
+        self.pet_repo = pet_repo
+        self.clinic_repo = clinic_repo
+        self.user_repo = user_repo
+
     def create_appointment(
+        self,
         pet_id: str,
         clinic_id: str,
         owner_id: str,
@@ -32,15 +46,13 @@ class AppointmentService:
                 "status": "scheduled"
             }
             
-            response = supabase.table("appointments").insert(appointment_data).execute()
-            if not response.data:
+            created = self.appt_repo.insert_appointment(appointment_data)
+            if not created:
                 return {"success": False, "error": "Failed to create appointment"}
-
-            created = response.data[0]
             
             # Send notifications
             try:
-                AppointmentService._send_appointment_notifications(created)
+                self._send_appointment_notifications(created)
             except Exception as notif_err:
                 logger.warning(f"Failed to send appointment notifications: {notif_err}")
 
@@ -56,13 +68,10 @@ class AppointmentService:
                 "error": f"Error creating appointment: {str(e)}"
             }
 
-    @staticmethod
-    def get_owner_appointments(owner_id: str) -> Dict:
+    def get_owner_appointments(self, owner_id: str) -> Dict:
         """Get all appointments for pet owner"""
         try:
-            response = supabase.table("appointments").select("*").eq("owner_id", owner_id).execute()
-            appointments = response.data or []
-            # We can enrich reviews here if needed
+            appointments = self.appt_repo.get_user_appointments(owner_id)
             return {
                 "success": True,
                 "appointments": appointments,
@@ -74,12 +83,10 @@ class AppointmentService:
                 "error": f"Error fetching owner appointments: {str(e)}"
             }
 
-    @staticmethod
-    def get_clinic_appointments(clinic_id: str) -> Dict:
+    def get_clinic_appointments(self, clinic_id: str) -> Dict:
         """Get all appointments for clinic"""
         try:
-            response = supabase.table("appointments").select("*").eq("clinic_id", clinic_id).execute()
-            appointments = response.data or []
+            appointments = self.appt_repo.get_clinic_appointments(clinic_id)
             return {
                 "success": True,
                 "appointments": appointments,
@@ -91,12 +98,10 @@ class AppointmentService:
                 "error": f"Error fetching clinic appointments: {str(e)}"
             }
 
-    @staticmethod
-    def get_pet_appointments(pet_id: str) -> Dict:
+    def get_pet_appointments(self, pet_id: str) -> Dict:
         """Get all appointments for a pet"""
         try:
-            response = supabase.table("appointments").select("*").eq("pet_id", pet_id).execute()
-            appointments = response.data or []
+            appointments = self.appt_repo.get_appointments_by_pet(pet_id)
             return {
                 "success": True,
                 "appointments": appointments,
@@ -108,24 +113,21 @@ class AppointmentService:
                 "error": f"Error fetching pet appointments: {str(e)}"
             }
 
-    @staticmethod
-    def update_appointment_status(appointment_id: str, status: str) -> Dict:
+    def update_appointment_status(self, appointment_id: str, status: str) -> Dict:
         """Update appointment status (scheduled, completed, cancelled, etc.)"""
         try:
             # Fetch appointment
-            appt_resp = supabase.table("appointments").select("*").eq("id", appointment_id).execute()
-            if not appt_resp.data:
+            appt = self.appt_repo.get_by_id(appointment_id)
+            if not appt:
                 return {"success": False, "error": "Appointment not found"}
-            
-            appt = appt_resp.data[0]
             
             # Update status
             timestamp = datetime.utcnow().isoformat()
-            supabase.table("appointments").update({"status": status, "updated_at": timestamp}).eq("id", appointment_id).execute()
+            self.appt_repo.update_appointment(appointment_id, {"status": status, "updated_at": timestamp})
             
             # Send status update notifications
             try:
-                AppointmentService._send_status_notifications(appt, status)
+                self._send_status_notifications(appt, status)
             except Exception as notif_err:
                 logger.warning(f"Failed to send status notifications: {notif_err}")
 
@@ -140,8 +142,8 @@ class AppointmentService:
                 "error": f"Error updating appointment status: {str(e)}"
             }
 
-    @staticmethod
     def create_review(
+        self,
         appointment_id: str,
         rating: int,
         treatment: str,
@@ -150,11 +152,10 @@ class AppointmentService:
         """Create review for a completed appointment"""
         try:
             # Fetch appointment
-            appt_resp = supabase.table("appointments").select("*").eq("id", appointment_id).execute()
-            if not appt_resp.data:
+            appt = self.appt_repo.get_by_id(appointment_id)
+            if not appt:
                 return {"success": False, "error": "Appointment not found"}
             
-            appt = appt_resp.data[0]
             if appt.get("status") != "completed":
                 return {"success": False, "error": "Only completed appointments can be reviewed"}
 
@@ -168,15 +169,13 @@ class AppointmentService:
                 "comment": comment,
             }
 
-            response = supabase.table("clinic_reviews").insert(review_data).execute()
-            if not response.data:
+            created_review = self.appt_repo.insert_review(review_data)
+            if not created_review:
                 return {"success": False, "error": "Failed to create review"}
-
-            created_review = response.data[0]
 
             # Notify clinic
             try:
-                AppointmentService._notify_clinic_about_review(created_review)
+                self._notify_clinic_about_review(created_review)
             except Exception as notif_err:
                 logger.warning(f"Failed to notify clinic about review: {notif_err}")
 
@@ -191,12 +190,10 @@ class AppointmentService:
                 "error": f"Error creating review: {str(e)}"
             }
 
-    @staticmethod
-    def get_reviews_for_clinic(clinic_id: str) -> Dict:
+    def get_reviews_for_clinic(self, clinic_id: str) -> Dict:
         """Get reviews for a clinic"""
         try:
-            response = supabase.table("clinic_reviews").select("*").eq("clinic_id", clinic_id).order("created_at", desc=True).execute()
-            reviews = response.data or []
+            reviews = self.appt_repo.get_reviews_by_clinic(clinic_id)
             avg_rating = round(sum(r.get("rating", 0) for r in reviews) / len(reviews), 1) if reviews else 0.0
             return {
                 "success": True,
@@ -211,8 +208,7 @@ class AppointmentService:
             }
 
     # Private helper methods for notifications
-    @staticmethod
-    def _create_notification(user_id: str, type_: str, title: str, message: str, role: str, entity_type: str, entity_id: str):
+    def _create_notification(self, user_id: str, type_: str, title: str, message: str, role: str, entity_type: str, entity_id: str):
         payload = {
             "user_id": user_id,
             "user_role": role,
@@ -224,60 +220,57 @@ class AppointmentService:
             "is_read": False,
             "created_at": datetime.utcnow().isoformat(),
         }
-        supabase.table("notifications").insert(payload).execute()
+        self.user_repo.insert_notification(payload)
 
-    @staticmethod
-    def _send_appointment_notifications(appt: Dict):
-        pet_resp = supabase.table("pets").select("name").eq("id", appt["pet_id"]).execute()
-        pet_name = pet_resp.data[0]["name"] if pet_resp.data else "your pet"
+    def _send_appointment_notifications(self, appt: Dict):
+        pet = self.pet_repo.get_by_id(appt["pet_id"])
+        pet_name = pet["name"] if pet else "your pet"
         
-        clinic_resp = supabase.table("clinics").select("clinic_name", "user_id").eq("id", appt["clinic_id"]).execute()
+        clinic = self.clinic_repo.get_by_id(appt["clinic_id"])
         clinic_name = "Clinic"
         clinic_user_id = None
-        if clinic_resp.data:
-            clinic_name = clinic_resp.data[0]["clinic_name"]
-            clinic_user_id = clinic_resp.data[0]["user_id"]
+        if clinic:
+            clinic_name = clinic["clinic_name"]
+            clinic_user_id = clinic["user_id"]
 
         title = "Appointment Scheduled"
         message = f"{pet_name} has a new appointment with {clinic_name} on {appt['appointment_date']} at {appt['appointment_time']}."
         
         # Notify owner
-        AppointmentService._create_notification(appt["owner_id"], "appointment", title, message, "owner", "appointment", appt["id"])
+        self._create_notification(appt["owner_id"], "appointment", title, message, "owner", "appointment", appt["id"])
         
         # Notify clinic
         if clinic_user_id:
-            AppointmentService._create_notification(clinic_user_id, "appointment", title, message, "clinic", "appointment", appt["id"])
+            self._create_notification(clinic_user_id, "appointment", title, message, "clinic", "appointment", appt["id"])
 
-    @staticmethod
-    def _send_status_notifications(appt: Dict, status: str):
-        pet_resp = supabase.table("pets").select("name").eq("id", appt["pet_id"]).execute()
-        pet_name = pet_resp.data[0]["name"] if pet_resp.data else "your pet"
+    def _send_status_notifications(self, appt: Dict, status: str):
+        pet = self.pet_repo.get_by_id(appt["pet_id"])
+        pet_name = pet["name"] if pet else "your pet"
         
-        clinic_resp = supabase.table("clinics").select("clinic_name", "user_id").eq("id", appt["clinic_id"]).execute()
+        clinic = self.clinic_repo.get_by_id(appt["clinic_id"])
         clinic_name = "Clinic"
         clinic_user_id = None
-        if clinic_resp.data:
-            clinic_name = clinic_resp.data[0]["clinic_name"]
-            clinic_user_id = clinic_resp.data[0]["user_id"]
+        if clinic:
+            clinic_name = clinic["clinic_name"]
+            clinic_user_id = clinic["user_id"]
 
         status_label = status.replace("_", " ").title()
         title = f"Appointment {status_label}"
         message = f"{pet_name}'s appointment with {clinic_name} on {appt['appointment_date']} at {appt['appointment_time']} was updated to {status_label}."
         
         # Notify owner
-        AppointmentService._create_notification(appt["owner_id"], "appointment_status", title, message, "owner", "appointment", appt["id"])
+        self._create_notification(appt["owner_id"], "appointment_status", title, message, "owner", "appointment", appt["id"])
         
         # Notify clinic
         if clinic_user_id:
-            AppointmentService._create_notification(clinic_user_id, "appointment_status", title, message, "clinic", "appointment", appt["id"])
+            self._create_notification(clinic_user_id, "appointment_status", title, message, "clinic", "appointment", appt["id"])
 
-    @staticmethod
-    def _notify_clinic_about_review(review: Dict):
-        clinic_resp = supabase.table("clinics").select("user_id", "clinic_name").eq("id", review["clinic_id"]).execute()
-        if clinic_resp.data and clinic_resp.data[0].get("user_id"):
-            clinic_user_id = clinic_resp.data[0]["user_id"]
-            clinic_name = clinic_resp.data[0]["clinic_name"]
-            AppointmentService._create_notification(
+    def _notify_clinic_about_review(self, review: Dict):
+        clinic = self.clinic_repo.get_by_id(review["clinic_id"])
+        if clinic and clinic.get("user_id"):
+            clinic_user_id = clinic["user_id"]
+            clinic_name = clinic["clinic_name"]
+            self._create_notification(
                 clinic_user_id,
                 "clinic_review",
                 "New Client Review",
@@ -286,4 +279,3 @@ class AppointmentService:
                 "review",
                 review["id"]
             )
-        

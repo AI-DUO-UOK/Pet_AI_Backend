@@ -30,8 +30,8 @@ from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, Header, Request
 from pydantic import BaseModel
 
-from backend.core.dependencies import get_current_user
-from backend.services.appointment_service import AppointmentService
+from core.dependencies import get_current_user, get_appointment_service
+from services.appointment_service import AppointmentService
 
 import stripe
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
@@ -78,7 +78,8 @@ class CheckoutSessionResponse(BaseModel):
 @router.post("/payments/create-checkout-session", response_model=CheckoutSessionResponse)
 async def create_checkout_session(
     request: CreateCheckoutSessionRequest,
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    appt_service: AppointmentService = Depends(get_appointment_service)
 ):
     """
     Create a Stripe Hosted Checkout Session for an appointment booking.
@@ -147,7 +148,7 @@ async def create_checkout_session(
         )
 
     # Import Supabase client
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
 
     stripe_key = os.getenv("STRIPE_SECRET_KEY")
     if stripe_key:
@@ -242,7 +243,7 @@ async def create_checkout_session(
     else:
         # Fallback to local mock flow (Development Fallback)
         # 1. Immediately create the appointment as "scheduled"
-        appt_result = AppointmentService.create_appointment(
+        appt_result = appt_service.create_appointment(
             pet_id=request.pet_id,
             clinic_id=request.clinic_id,
             owner_id=request.owner_id,
@@ -296,7 +297,7 @@ async def stripe_webhook(
         return {"status": "ignored", "reason": "Stripe not configured"}
 
     # Import Supabase client
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
 
     payload = await raw_request.body()
 
@@ -366,7 +367,17 @@ async def stripe_webhook(
         try:
             appt_resp = supabase.table("appointments").select("*").eq("id", appt_id).execute()
             if appt_resp.data:
-                AppointmentService._send_appointment_notifications(appt_resp.data[0])
+                from repositories.appointment_repository import AppointmentRepository
+                from repositories.pet_repository import PetRepository
+                from repositories.clinic_repository import ClinicRepository
+                from repositories.user_repository import UserRepository
+                appt_service = AppointmentService(
+                    appt_repo=AppointmentRepository(),
+                    pet_repo=PetRepository(),
+                    clinic_repo=ClinicRepository(),
+                    user_repo=UserRepository()
+                )
+                appt_service._send_appointment_notifications(appt_resp.data[0])
                 logger.info(f"Notifications sent for appointment: {appt_id}")
         except Exception as notif_err:
             logger.error(f"Failed to send notifications: {notif_err}")
@@ -440,7 +451,7 @@ async def get_payment(
     """
     Retrieve a single payment record by ID.
     """
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
 
     result = supabase.table("payments").select("*, appointments(*)").eq("id", payment_id).execute()
     if not result.data:
@@ -467,7 +478,7 @@ async def get_payment_history(
     """
     List all payment records for the currently authenticated owner.
     """
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
 
     # Fetch appointments for this owner first
     appt_resp = supabase.table("appointments").select("id").eq("owner_id", current_user["id"]).execute()
@@ -493,7 +504,7 @@ async def download_receipt(
     """
     Generate and return a PDF receipt or redirect to Stripe's receipt URL.
     """
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
     from fastapi.responses import RedirectResponse
 
     result = supabase.table("payments").select("*").eq("id", payment_id).execute()

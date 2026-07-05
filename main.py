@@ -9,20 +9,20 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Import models & services with updated backend package prefix
-from backend.models import dog_skin, dog_eye, cat_skin
-from backend.utils.image import preprocess
-from backend.services.router import route_prediction
+from models import dog_skin, dog_eye, cat_skin
+from utils.image import preprocess
+from services.router import route_prediction
 
 # Import refactored routers (optional for lightweight deployments like Hugging Face)
 try:
-    from backend.routers.auth import router as auth_router
-    from backend.routers.pets import router as pets_router
-    from backend.routers.appointments import router as appointments_router
-    from backend.routers.clinics import router as clinics_router
-    from backend.routers.admin import router as admin_router
-    from backend.routers.config import router as config_router  # GET /api/config/google-maps
-    from backend.routers.payments import router as payments_router  # Payment & Stripe integration
-    from backend.routers.chat import router as chat_router  # Unified chatbot router
+    from routers.auth import router as auth_router
+    from routers.pets import router as pets_router
+    from routers.appointments import router as appointments_router
+    from routers.clinics import router as clinics_router
+    from routers.admin import router as admin_router
+    from routers.config import router as config_router  # GET /api/config/google-maps
+    from routers.payments import router as payments_router  # Payment & Stripe integration
+    from routers.chat import router as chat_router  # Unified chatbot router
     has_backend_routers = True
 except ImportError as e:
     logger.warning(f"Backend routers not loaded (this is normal on Hugging Face Spaces): {e}")

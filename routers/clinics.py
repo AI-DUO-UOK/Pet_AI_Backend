@@ -3,21 +3,24 @@ from typing import Optional, List
 import logging
 import time
 import os
-from backend.core.dependencies import get_current_user, require_role
-from backend.services.clinic_service import ClinicService
-from backend.core.supabase_config import supabase, SupabaseStorage
+from core.dependencies import get_current_user, require_role, get_clinic_service
+from services.clinic_service import ClinicService
+from core.supabase_config import supabase, SupabaseStorage
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(tags=["Clinics"])
 
 @router.get("/clinic/profile")
-async def get_clinic_profile(current_user: dict = Depends(get_current_user)):
+async def get_clinic_profile(
+    current_user: dict = Depends(get_current_user),
+    clinic_service: ClinicService = Depends(get_clinic_service)
+):
     """Get the current logged-in clinic's profile details"""
     if current_user["role"] != "clinic":
         raise HTTPException(status_code=403, detail="Access denied. Clinic role required.")
 
-    result = ClinicService.get_clinic_profile(user_id=current_user["id"])
+    result = clinic_service.get_clinic_profile(user_id=current_user["id"])
     if not result["success"]:
         raise HTTPException(status_code=404, detail=result.get("error"))
     return result
@@ -38,7 +41,8 @@ async def update_clinic_profile(
     photos: Optional[List[UploadFile]] = File(None),
     latitude: Optional[float] = Form(None),
     longitude: Optional[float] = Form(None),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_user),
+    clinic_service: ClinicService = Depends(get_clinic_service)
 ):
     """Update the current logged-in clinic's profile details"""
     if current_user["role"] != "clinic":
@@ -107,73 +111,41 @@ async def update_clinic_profile(
             content_type=gallery_photo.content_type or "image/jpeg",
         )
 
-    result = ClinicService.update_clinic_profile(user_id=current_user["id"], updates=updates)
+    result = clinic_service.update_clinic_profile(user_id=current_user["id"], updates=updates)
     if not result["success"]:
         raise HTTPException(status_code=400, detail=result.get("error"))
         
     return result
 
 @router.get("/clinics")
-async def get_public_clinics():
+async def get_public_clinics(clinic_service: ClinicService = Depends(get_clinic_service)):
     """Public endpoint: Get all verified clinics"""
-    result = ClinicService.get_public_clinics()
+    result = clinic_service.get_public_clinics()
     if not result["success"]:
         raise HTTPException(status_code=400, detail=result.get("error"))
     return result
 
 @router.get("/clinics/{clinic_id}")
-async def get_clinic_by_id(clinic_id: str):
+async def get_clinic_by_id(
+    clinic_id: str,
+    clinic_service: ClinicService = Depends(get_clinic_service)
+):
     """Public endpoint: Get clinic details by clinic ID"""
-    result = ClinicService.get_clinic_by_id(clinic_id=clinic_id)
+    result = clinic_service.get_clinic_by_id(clinic_id=clinic_id)
     if not result["success"]:
         raise HTTPException(status_code=404, detail=result.get("error"))
     return result
 
 @router.get("/clinic/patients")
-async def get_clinic_patients(current_user: dict = Depends(get_current_user)):
+async def get_clinic_patients(
+    current_user: dict = Depends(get_current_user),
+    clinic_service: ClinicService = Depends(get_clinic_service)
+):
     """Get all appointments / patients for the current clinic"""
     if current_user["role"] != "clinic":
         raise HTTPException(status_code=403, detail="Access denied. Clinic role required.")
 
-    # Get the clinic's ID from user_id
-    clinic_resp = supabase.table("clinics").select("id").eq("user_id", current_user["id"]).execute()
-    if not clinic_resp.data:
-        raise HTTPException(status_code=404, detail="Clinic profile not found")
-
-    clinic_id = clinic_resp.data[0]["id"]
-    
-    try:
-        resp = supabase.table("appointments").select("*").eq("clinic_id", clinic_id).order("appointment_date", desc=False).execute()
-        appts = resp.data or []
-
-        # Enrich each appointment with pet name, type, breed and owner full name
-        enriched = []
-        for a in appts:
-            pet_name = None
-            pet_type = None
-            pet_breed = None
-            owner_name = None
-            try:
-                if a.get("pet_id"):
-                    pet_resp = supabase.table("pets").select("name, type, breed").eq("id", a.get("pet_id")).execute()
-                    if pet_resp.data:
-                        pet_name = pet_resp.data[0].get("name")
-                        pet_type = pet_resp.data[0].get("type")
-                        pet_breed = pet_resp.data[0].get("breed")
-                if a.get("owner_id"):
-                    owner_resp = supabase.table("pet_owners").select("full_name").eq("user_id", a.get("owner_id")).execute()
-                    if owner_resp.data:
-                        owner_name = owner_resp.data[0].get("full_name")
-            except Exception:
-                pass
-
-            item = dict(a)
-            item["pet_name"] = pet_name or a.get("pet_id")
-            item["pet_type"] = pet_type or "Pet"
-            item["breed"] = pet_breed or ""
-            item["owner_name"] = owner_name or a.get("owner_id")
-            enriched.append(item)
-
-        return {"success": True, "appointments": enriched, "count": len(enriched)}
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    result = clinic_service.get_clinic_patients(user_id=current_user["id"])
+    if not result["success"]:
+        raise HTTPException(status_code=400, detail=result.get("error"))
+    return result

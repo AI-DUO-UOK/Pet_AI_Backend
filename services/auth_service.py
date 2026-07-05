@@ -1,11 +1,16 @@
 from typing import Dict, Optional
-from backend.core.supabase_config import supabase
+from repositories.user_repository import UserRepository
+from repositories.clinic_repository import ClinicRepository
 
 class AuthService:
     """Authentication and Profile Service"""
 
-    @staticmethod
+    def __init__(self, user_repo: UserRepository, clinic_repo: ClinicRepository):
+        self.user_repo = user_repo
+        self.clinic_repo = clinic_repo
+
     def register_pet_owner(
+        self,
         user_id: str,
         email: str,
         first_name: str,
@@ -20,7 +25,7 @@ class AuthService:
         """Complete pet owner profile registration"""
         try:
             # 1. Update phone and role in users
-            supabase.table("users").update({"phone_number": phone, "role": "owner"}).eq("id", user_id).execute()
+            self.user_repo.update_user(user_id, {"phone_number": phone, "role": "owner"})
 
             # 2. Insert or update pet_owners (idempotent registration)
             owner_data = {
@@ -35,17 +40,17 @@ class AuthService:
                 "bio": bio,
             }
 
-            existing = supabase.table("pet_owners").select("*").eq("user_id", user_id).execute()
-            if existing.data:
-                response = supabase.table("pet_owners").update(owner_data).eq("user_id", user_id).execute()
+            existing = self.user_repo.get_owner_profile(user_id)
+            if existing:
+                profile = self.user_repo.update_owner_profile(user_id, owner_data)
             else:
-                response = supabase.table("pet_owners").insert(owner_data).execute()
+                profile = self.user_repo.insert_owner_profile(owner_data)
             
             return {
                 "success": True,
                 "user_id": user_id,
                 "role": "owner",
-                "profile": response.data[0] if response.data else {},
+                "profile": profile or {},
                 "message": "Pet owner profile registered successfully!"
             }
         except Exception as e:
@@ -54,8 +59,8 @@ class AuthService:
                 "error": f"Registration failed: {str(e)}"
             }
 
-    @staticmethod
     def register_clinic(
+        self,
         user_id: str,
         email: str,
         clinic_name: str,
@@ -76,7 +81,7 @@ class AuthService:
         """Complete clinic profile registration"""
         try:
             # 1. Update phone and role in users
-            supabase.table("users").update({"phone_number": phone, "role": "clinic"}).eq("id", user_id).execute()
+            self.user_repo.update_user(user_id, {"phone_number": phone, "role": "clinic"})
 
             # 2. Insert or update clinics (idempotent registration)
             clinic_data = {
@@ -98,20 +103,20 @@ class AuthService:
                 "longitude": longitude,
             }
 
-            existing = supabase.table("clinics").select("*").eq("user_id", user_id).execute()
-            if existing.data:
+            existing = self.clinic_repo.get_by_user_id(user_id)
+            if existing:
                 # Preserve existing verification status
-                clinic_data["is_verified"] = existing.data[0].get("is_verified", False)
-                response = supabase.table("clinics").update(clinic_data).eq("user_id", user_id).execute()
+                clinic_data["is_verified"] = existing.get("is_verified", False)
+                profile = self.clinic_repo.update_clinic(existing["id"], clinic_data)
             else:
                 clinic_data["is_verified"] = False  # Starts as pending
-                response = supabase.table("clinics").insert(clinic_data).execute()
+                profile = self.clinic_repo.insert_clinic(clinic_data)
             
             return {
                 "success": True,
                 "user_id": user_id,
                 "role": "clinic",
-                "profile": response.data[0] if response.data else {},
+                "profile": profile or {},
                 "message": "Clinic profile registered successfully! Pending admin approval."
             }
         except Exception as e:
@@ -120,23 +125,21 @@ class AuthService:
                 "error": f"Clinic registration failed: {str(e)}"
             }
 
-    @staticmethod
-    def get_user_profile(user_id: str) -> Dict:
+    def get_user_profile(self, user_id: str) -> Dict:
         """Get user profile based on their role in the users table"""
         try:
             # Get profile
-            profile_response = supabase.table("users").select("*").eq("id", user_id).execute()
-            if not profile_response.data:
+            profile = self.user_repo.get_by_id(user_id)
+            if not profile:
                 return {"success": False, "error": "User profile not found"}
 
-            profile = profile_response.data[0]
             role = profile.get("role")
 
             # Get detail profile based on role
             if role == "owner":
-                detail_response = supabase.table("pet_owners").select("*").eq("user_id", user_id).execute()
+                detail_profile = self.user_repo.get_owner_profile(user_id)
             elif role == "clinic":
-                detail_response = supabase.table("clinics").select("*").eq("user_id", user_id).execute()
+                detail_profile = self.clinic_repo.get_by_user_id(user_id)
             else:
                 return {
                     "success": True,
@@ -149,14 +152,14 @@ class AuthService:
                     }
                 }
 
-            if not detail_response.data:
+            if not detail_profile:
                 return {"success": False, "error": f"{role.title()} details not found"}
 
             return {
                 "success": True,
                 "user_id": user_id,
                 "role": role,
-                "profile": detail_response.data[0]
+                "profile": detail_profile
             }
         except Exception as e:
             return {
@@ -164,18 +167,17 @@ class AuthService:
                 "error": f"Error fetching profile: {str(e)}"
             }
 
-    @staticmethod
-    def update_user_profile(user_id: str, updates: Dict) -> Dict:
+    def update_user_profile(self, user_id: str, updates: Dict) -> Dict:
         """Update pet owner user profile"""
         try:
             # Check role
-            profile_resp = supabase.table("users").select("role").eq("id", user_id).execute()
-            if not profile_resp.data or profile_resp.data[0].get("role") != "owner":
+            profile = self.user_repo.get_by_id(user_id)
+            if not profile or profile.get("role") != "owner":
                 return {"success": False, "error": "Only pet owner profiles can be updated here"}
 
             # Update pet_owners
             if updates:
-                supabase.table("pet_owners").update(updates).eq("user_id", user_id).execute()
+                self.user_repo.update_owner_profile(user_id, updates)
                 
                 # Also update the users table to keep them in sync
                 user_updates = {}
@@ -187,14 +189,14 @@ class AuthService:
                     user_updates["avatar_url"] = updates["profile_image_url"]
                 
                 if user_updates:
-                    supabase.table("users").update(user_updates).eq("id", user_id).execute()
+                    self.user_repo.update_user(user_id, user_updates)
                 
             # Retrieve updated profile
-            refreshed = supabase.table("pet_owners").select("*").eq("user_id", user_id).execute()
+            refreshed = self.user_repo.get_owner_profile(user_id)
             
             return {
                 "success": True,
-                "profile": refreshed.data[0] if refreshed.data else {}
+                "profile": refreshed or {}
             }
         except Exception as e:
             return {

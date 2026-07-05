@@ -1,12 +1,21 @@
 from typing import Dict, Optional
 import time
-from backend.core.supabase_config import supabase, SupabaseStorage
+import logging
+from repositories.pet_repository import PetRepository
+from core.cache import CacheService
+from core.supabase_config import SupabaseStorage
+
+logger = logging.getLogger(__name__)
 
 class PetService:
     """Service for managing pets and their vaccine records"""
 
-    @staticmethod
+    def __init__(self, pet_repo: PetRepository, cache_service: CacheService):
+        self.pet_repo = pet_repo
+        self.cache_service = cache_service
+
     def add_pet(
+        self,
         user_id: str,
         name: str,
         pet_type: str,
@@ -39,11 +48,13 @@ class PetService:
                 "profile_image_url": profile_image_url,
             }
 
-            response = supabase.table("pets").insert(pet_data).execute()
-            if not response.data:
+            pet = self.pet_repo.insert_pet(pet_data)
+            if not pet:
                 return {"success": False, "error": "Failed to create pet"}
 
-            pet = response.data[0]
+            # Cache Invalidation: Clear owner pets list cache
+            self.cache_service.delete(f"pets:owner:{user_id}")
+
             return {
                 "success": True,
                 "pet_id": pet["id"],
@@ -56,15 +67,28 @@ class PetService:
                 "error": f"Error adding pet: {str(e)}"
             }
 
-    @staticmethod
-    def get_user_pets(user_id: str) -> Dict:
-        """Get all pets for a user"""
+    def get_user_pets(self, user_id: str) -> Dict:
+        """Get all pets for a user (with Redis/In-memory caching)"""
         try:
-            response = supabase.table("pets").select("*").eq("user_id", user_id).execute()
+            cache_key = f"pets:owner:{user_id}"
+            cached_pets = self.cache_service.get(cache_key)
+            if cached_pets is not None:
+                logger.info(f"Cache hit: user pets for {user_id}")
+                return {
+                    "success": True,
+                    "pets": cached_pets,
+                    "count": len(cached_pets)
+                }
+
+            pets = self.pet_repo.get_user_pets(user_id)
+            
+            # Cache the list for 30 minutes
+            self.cache_service.set(cache_key, pets, expire_seconds=1800)
+            
             return {
                 "success": True,
-                "pets": response.data or [],
-                "count": len(response.data or [])
+                "pets": pets,
+                "count": len(pets)
             }
         except Exception as e:
             return {
@@ -72,19 +96,28 @@ class PetService:
                 "error": f"Error fetching pets: {str(e)}"
             }
 
-    @staticmethod
-    def update_pet(pet_id: str, updates: Dict) -> Dict:
-        """Update pet details"""
+    def update_pet(self, pet_id: str, updates: Dict) -> Dict:
+        """Update pet details (and invalidate related caches)"""
         try:
-            response = supabase.table("pets").update(updates).eq("id", pet_id).execute()
-            if not response.data:
+            # Query existing user_id for cache invalidation
+            pet_before = self.pet_repo.get_by_id(pet_id)
+            
+            pet = self.pet_repo.update_pet(pet_id, updates)
+            if not pet:
                 return {
                     "success": False,
                     "error": "Pet not found or not updated"
                 }
+
+            # Cache Invalidation
+            if pet_before:
+                user_id = pet_before.get("user_id")
+                self.cache_service.delete(f"pets:owner:{user_id}")
+            self.cache_service.delete(f"pets:detail:{pet_id}")
+
             return {
                 "success": True,
-                "pet": response.data[0],
+                "pet": pet,
                 "message": "Pet updated successfully!"
             }
         except Exception as e:
@@ -93,8 +126,8 @@ class PetService:
                 "error": f"Error updating pet: {str(e)}"
             }
 
-    @staticmethod
     def upload_vaccine_record(
+        self,
         pet_id: str,
         file_data: bytes,
         file_name: str,
@@ -112,6 +145,8 @@ class PetService:
 
             # Upload to storage
             SupabaseStorage.ensure_bucket("vaccine-documents", public=False)
+            
+            from core.supabase_config import supabase
             supabase.storage.from_("vaccine-documents").upload(
                 file=file_data,
                 path=file_path,
@@ -132,13 +167,13 @@ class PetService:
                 "uploaded_by": uploaded_by,
             }
 
-            response = supabase.table("vaccine_records").insert(record_data).execute()
-            if not response.data:
+            record = self.pet_repo.insert_vaccine_record(record_data)
+            if not record:
                 return {"success": False, "error": "Failed to save vaccine record"}
 
             return {
                 "success": True,
-                "record_id": response.data[0]["id"],
+                "record_id": record["id"],
                 "file_url": file_path,
                 "message": "Vaccine record uploaded successfully!"
             }
@@ -148,15 +183,14 @@ class PetService:
                 "error": f"Error uploading vaccine record: {str(e)}"
             }
 
-    @staticmethod
-    def get_pet_vaccine_records(pet_id: str) -> Dict:
+    def get_pet_vaccine_records(self, pet_id: str) -> Dict:
         """Get all vaccine records for a pet"""
         try:
-            response = supabase.table("vaccine_records").select("*").eq("pet_id", pet_id).execute()
+            records = self.pet_repo.get_vaccine_records(pet_id)
             return {
                 "success": True,
-                "records": response.data or [],
-                "count": len(response.data or [])
+                "records": records,
+                "count": len(records)
             }
         except Exception as e:
             return {

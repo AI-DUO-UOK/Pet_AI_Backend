@@ -161,7 +161,7 @@ def format_pet_profile_context(animal: str, pet_profile: Dict[str, Any]) -> str:
 async def fetch_pet_profile(pet_id: str) -> Optional[dict]:
     """Fetch pet profile from the database by pet_id."""
     try:
-        from backend.core.supabase_config import supabase
+        from core.supabase_config import supabase
         response = supabase.table("pets").select("*").eq("id", pet_id).execute()
         if response.data:
             return response.data[0]
@@ -173,7 +173,7 @@ async def fetch_pet_profile(pet_id: str) -> Optional[dict]:
 async def fetch_pet_vaccines(pet_id: str) -> list:
     """Fetch pet vaccination records from the database by pet_id."""
     try:
-        from backend.core.supabase_config import supabase
+        from core.supabase_config import supabase
         response = supabase.table("vaccination_records")\
             .select("*")\
             .eq("pet_id", pet_id)\

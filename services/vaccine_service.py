@@ -8,7 +8,8 @@ import logging
 from datetime import datetime, date, timedelta
 from typing import Dict, List, Optional, Any
 
-from backend.core.supabase_config import supabase
+from repositories.vaccine_repository import VaccineRepository
+from repositories.user_repository import UserRepository
 from chatbot.vaccine_vlm import extract_vaccine_data_vlm
 
 logger = logging.getLogger(__name__)
@@ -17,8 +18,12 @@ logger = logging.getLogger(__name__)
 class VaccineService:
     """Service for managing pet vaccination records."""
 
-    @staticmethod
+    def __init__(self, vaccine_repo: VaccineRepository, user_repo: UserRepository):
+        self.vaccine_repo = vaccine_repo
+        self.user_repo = user_repo
+
     def upload_vaccine_document(
+        self,
         pet_id: str,
         image_url: str,
         image_path: str
@@ -47,13 +52,13 @@ class VaccineService:
                 return {"success": False, "error": "No vaccine data found in the image"}
             
             # Step 2: Store the document record
-            doc_result = supabase.table("vaccine_documents").insert({
+            doc_data = {
                 "pet_id": pet_id,
                 "image_url": image_url,
                 "extracted_json": json.dumps(extracted),
-            }).execute()
-            
-            document_id = doc_result.data[0]["id"] if doc_result.data else None
+            }
+            doc_result = self.vaccine_repo.insert_vaccine_document(doc_data)
+            document_id = doc_result["id"] if doc_result else None
             
             # Step 3: Store each extracted vaccine record
             stored_records = []
@@ -71,9 +76,9 @@ class VaccineService:
                 
                 # Only insert if vaccine_name and date are present
                 if record_data["vaccine_name"] and record_data["vaccination_date"]:
-                    result = supabase.table("vaccination_records").insert(record_data).execute()
-                    if result.data:
-                        stored_records.append(result.data[0])
+                    result = self.vaccine_repo.insert_vaccination_record(record_data)
+                    if result:
+                        stored_records.append(result)
             
             return {
                 "success": True,
@@ -86,8 +91,8 @@ class VaccineService:
             logger.error(f"Error uploading vaccine document: {e}")
             return {"success": False, "error": str(e)}
 
-    @staticmethod
     def add_manual_vaccine_entry(
+        self,
         pet_id: str,
         vaccine_name: str,
         vaccination_date: str,
@@ -134,16 +139,16 @@ class VaccineService:
                 "source": source,
             }
             
-            result = supabase.table("vaccination_records").insert(record_data).execute()
+            result = self.vaccine_repo.insert_vaccination_record(record_data)
             
-            if not result.data:
+            if not result:
                 return {"success": False, "error": "Failed to create vaccine record"}
             
-            logger.info(f"Vaccine record created: {result.data[0]['id']} for pet {pet_id}")
+            logger.info(f"Vaccine record created: {result['id']} for pet {pet_id}")
             
             return {
                 "success": True,
-                "record": result.data[0],
+                "record": result,
                 "message": "Vaccine record added successfully!"
             }
             
@@ -151,8 +156,7 @@ class VaccineService:
             logger.error(f"Error adding vaccine record: {e}")
             return {"success": False, "error": str(e)}
 
-    @staticmethod
-    def get_pet_vaccines(pet_id: str) -> Dict:
+    def get_pet_vaccines(self, pet_id: str) -> Dict:
         """
         Get all vaccination records for a pet, ordered by date.
         
@@ -163,24 +167,18 @@ class VaccineService:
             Dictionary with success status and records list
         """
         try:
-            records = supabase.table("vaccination_records")\
-                .select("*")\
-                .eq("pet_id", pet_id)\
-                .order("vaccination_date", desc=True)\
-                .execute()
-            
+            records = self.vaccine_repo.get_vaccination_records(pet_id)
             return {
                 "success": True,
-                "records": records.data or [],
-                "count": len(records.data or [])
+                "records": records,
+                "count": len(records)
             }
             
         except Exception as e:
             logger.error(f"Error fetching vaccines: {e}")
             return {"success": False, "error": str(e), "records": []}
 
-    @staticmethod
-    def get_pet_vaccine_documents(pet_id: str) -> Dict:
+    def get_pet_vaccine_documents(self, pet_id: str) -> Dict:
         """
         Get uploaded vaccine documents for a pet.
         
@@ -191,23 +189,17 @@ class VaccineService:
             Dictionary with success status and documents list
         """
         try:
-            docs = supabase.table("vaccine_documents")\
-                .select("*")\
-                .eq("pet_id", pet_id)\
-                .order("uploaded_at", desc=True)\
-                .execute()
-            
+            documents = self.vaccine_repo.get_vaccine_documents(pet_id)
             return {
                 "success": True,
-                "documents": docs.data or []
+                "documents": documents
             }
             
         except Exception as e:
             logger.error(f"Error fetching vaccine documents: {e}")
             return {"success": False, "error": str(e), "documents": []}
 
-    @staticmethod
-    def check_and_send_reminders() -> Dict:
+    def check_and_send_reminders(self) -> Dict:
         """
         Check all vaccination records for upcoming/overdue dates
         and create notifications. Called daily by scheduler.
@@ -221,12 +213,9 @@ class VaccineService:
             notifications_created = []
             
             # Get all vaccination records with next_due_date
-            records = supabase.table("vaccination_records")\
-                .select("*, pets!inner(user_id, name)")\
-                .not_.is_("next_due_date", "null")\
-                .execute()
+            records = self.vaccine_repo.get_records_with_due_dates()
             
-            for record in records.data or []:
+            for record in records:
                 next_due_str = record.get("next_due_date")
                 if not next_due_str:
                     continue
@@ -256,14 +245,7 @@ class VaccineService:
                     continue
                 
                 # Check if notification already sent today
-                existing = supabase.table("notification_logs")\
-                    .select("id")\
-                    .eq("vaccination_id", record_id)\
-                    .eq("notification_type", notification_type)\
-                    .eq("sent_date", today_str)\
-                    .execute()
-                
-                if existing.data:
+                if self.vaccine_repo.check_notification_log_exists(record_id, notification_type, today_str):
                     continue  # Skip duplicate
                 
                 # Build notification message
@@ -289,7 +271,7 @@ class VaccineService:
                     continue
                 
                 # Create notification
-                notif_result = supabase.table("notifications").insert({
+                notif_result = self.user_repo.insert_notification({
                     "user_id": user_id,
                     "user_role": "owner",
                     "type": notification_type,
@@ -303,17 +285,17 @@ class VaccineService:
                         "next_due_date": next_due_str[:10],
                         "days_remaining": days_remaining
                     }
-                }).execute()
+                })
                 
                 # Log the notification
-                supabase.table("notification_logs").insert({
+                self.vaccine_repo.log_notification_sent({
                     "vaccination_id": record_id,
                     "notification_type": notification_type,
                     "sent_date": today_str
-                }).execute()
+                })
                 
-                if notif_result.data:
-                    notifications_created.append(notif_result.data[0])
+                if notif_result:
+                    notifications_created.append(notif_result)
             
             return {
                 "success": True,

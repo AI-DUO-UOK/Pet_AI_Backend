@@ -66,6 +66,68 @@ Return ONLY valid JSON, no other text.
 """
 
 
+def _query_vlm_qwen(image_path: str, system_prompt: str, user_prompt: str) -> str:
+    """
+    Execute a VLM query against Qwen2.5-VL-72B on OpenRouter.
+    Returns the cleaned raw text response from the model.
+    """
+    # Read and encode image
+    with open(image_path, "rb") as image_file:
+        base64_image = base64.b64encode(image_file.read()).decode("utf-8")
+    
+    # Determine image MIME type
+    ext = os.path.splitext(image_path)[1].lower()
+    mime_type = {
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.png': 'image/png',
+        '.gif': 'image/gif',
+        '.bmp': 'image/bmp',
+        '.webp': 'image/webp',
+    }.get(ext, 'image/jpeg')
+    
+    logger.info(f"VLM Query: Analyzing image: {image_path} ({len(base64_image)} bytes base64)")
+    
+    response = _vlm_client.chat.completions.create(
+        model=VLM_MODEL,
+        messages=[
+            {
+                "role": "system",
+                "content": system_prompt
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": user_prompt
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:{mime_type};base64,{base64_image}"
+                        }
+                    }
+                ]
+            }
+        ],
+        temperature=0,
+        max_tokens=2000
+    )
+    
+    result_text = response.choices[0].message.content.strip()
+    logger.info(f"VLM Query: Raw response length: {len(result_text)} chars")
+    
+    # Clean markdown code blocks if present
+    if result_text.startswith("```json"):
+        result_text = result_text[7:]
+    if result_text.startswith("```"):
+        result_text = result_text[3:]
+    if result_text.endswith("```"):
+        result_text = result_text[:-3]
+    return result_text.strip()
+
+
 def analyze_medical_document_vlm(image_path: str) -> dict:
     """
     Analyze a medical document image using Qwen2.5-VL-72B via OpenRouter.
@@ -78,71 +140,17 @@ def analyze_medical_document_vlm(image_path: str) -> dict:
         Returns {"error": "..."} on failure.
     """
     try:
-        # Read and encode image
-        with open(image_path, "rb") as image_file:
-            base64_image = base64.b64encode(image_file.read()).decode("utf-8")
-        
-        # Determine image MIME type
-        ext = os.path.splitext(image_path)[1].lower()
-        mime_type = {
-            '.jpg': 'image/jpeg',
-            '.jpeg': 'image/jpeg',
-            '.png': 'image/png',
-            '.gif': 'image/gif',
-            '.bmp': 'image/bmp',
-            '.webp': 'image/webp',
-        }.get(ext, 'image/jpeg')
-        
-        logger.info(f"VLM: Analyzing document image: {image_path} ({len(base64_image)} bytes base64)")
-        
-        response = _vlm_client.chat.completions.create(
-            model=VLM_MODEL,
-            messages=[
-                {
-                    "role": "system",
-                    "content": VLM_SYSTEM_PROMPT
-                },
-                {
-                    "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": EXTRACTION_PROMPT
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:{mime_type};base64,{base64_image}"
-                            }
-                        }
-                    ]
-                }
-            ],
-            temperature=0,
-            max_tokens=2000
+        result_text = _query_vlm_qwen(
+            image_path=image_path,
+            system_prompt=VLM_SYSTEM_PROMPT,
+            user_prompt=EXTRACTION_PROMPT
         )
-        
-        result_text = response.choices[0].message.content.strip()
-        logger.info(f"VLM: Raw response length: {len(result_text)} chars")
-        
-        # Try to parse as JSON
-        # Handle case where VLM wraps JSON in markdown code blocks
-        if result_text.startswith("```json"):
-            result_text = result_text[7:]
-        if result_text.startswith("```"):
-            result_text = result_text[3:]
-        if result_text.endswith("```"):
-            result_text = result_text[:-3]
-        result_text = result_text.strip()
-        
         try:
-            result_json = json.loads(result_text)
-            return result_json
+            return json.loads(result_text)
         except json.JSONDecodeError:
-            # If parsing fails, return the raw text wrapped in a dict
-            logger.warning(f"VLM: Response was not valid JSON, returning as text")
+            logger.warning("VLM: Response was not valid JSON, returning as text")
             return {"extracted_text": result_text}
-    
+            
     except FileNotFoundError:
         logger.error(f"VLM: Image file not found: {image_path}")
         return {"error": f"Image file not found: {image_path}"}

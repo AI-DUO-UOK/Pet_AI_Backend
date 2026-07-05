@@ -4,7 +4,7 @@ from typing import Optional, Dict
 import logging
 
 try:
-    from backend.core.supabase_config import supabase
+    from core.supabase_config import supabase
 except ImportError:
     supabase = None
 

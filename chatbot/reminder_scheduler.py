@@ -27,11 +27,17 @@ def run_reminder_check():
     calculates days remaining, and creates notifications if not already sent.
     """
     try:
-        from backend.services.vaccine_service import VaccineService
+        from services.vaccine_service import VaccineService
+        from repositories.vaccine_repository import VaccineRepository
+        from repositories.user_repository import UserRepository
         
         logger.info(f"=== Vaccine Reminder Check Started at {datetime.now().isoformat()} ===")
         
-        result = VaccineService.check_and_send_reminders()
+        vaccine_service = VaccineService(
+            vaccine_repo=VaccineRepository(),
+            user_repo=UserRepository()
+        )
+        result = vaccine_service.check_and_send_reminders()
         
         if result.get("success"):
             count = result.get("notifications_created", 0)
