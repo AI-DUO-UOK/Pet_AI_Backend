@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request, UploadFile, File, Form, HTTPException
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 import tempfile
@@ -39,6 +40,22 @@ except ImportError as e:
     has_chatbot = False
 
 app = FastAPI(title="Pet PULSE Disease Detection API")
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    logger.exception(f"Unhandled exception occurred on path: {request.url.path}")
+    return JSONResponse(
+        status_code=500,
+        content={"success": False, "error": "Internal server error. Please try again later."}
+    )
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    logger.warning(f"HTTP exception on path {request.url.path}: status={exc.status_code} detail={exc.detail}")
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"success": False, "error": exc.detail}
+    )
 
 # Enable CORS for frontend
 app.add_middleware(
@@ -143,9 +160,13 @@ async def predict(
     animal: str = Form(...),
     disease_type: str = Form(...)
 ):
-    image = preprocess(file.file)
-    result = route_prediction(app, animal, disease_type, image)
-    return result
+    try:
+        image = preprocess(file.file)
+        result = route_prediction(app, animal, disease_type, image)
+        return result
+    except Exception as e:
+        logger.exception("Prediction failed")
+        return {"success": False, "error": "Failed to analyze image. Please ensure it's a valid image file."}
 
 # 🔍 Analyze image endpoint (for chatbot integration)
 @app.post("/analyze-image")
@@ -159,6 +180,10 @@ async def analyze_image(
     Analyze pet image for disease detection.
     Used by chatbot for skin/eye disease diagnosis.
     """
-    image = preprocess(file.file)
-    result = route_prediction(app, animal, disease_type, image)
-    return result
+    try:
+        image = preprocess(file.file)
+        result = route_prediction(app, animal, disease_type, image)
+        return result
+    except Exception as e:
+        logger.exception("Image analysis failed")
+        return {"success": False, "error": "Failed to analyze image. Please ensure it's a valid image file."}

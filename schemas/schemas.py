@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional, List
 
 class RegisterOwnerRequest(BaseModel):
@@ -51,6 +51,6 @@ class CreateAppointmentRequest(BaseModel):
 
 class CreateReviewRequest(BaseModel):
     appointment_id: str
-    rating: int
-    treatment: str
+    rating: int = Field(..., ge=1, le=5)
+    treatment: str = Field(..., max_length=100)
     comment: Optional[str] = None
