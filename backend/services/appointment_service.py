@@ -195,13 +195,34 @@ class AppointmentService:
     def get_reviews_for_clinic(clinic_id: str) -> Dict:
         """Get reviews for a clinic"""
         try:
-            response = supabase.table("clinic_reviews").select("*").eq("clinic_id", clinic_id).order("created_at", desc=True).execute()
+            response = supabase.table("clinic_reviews").select("*, pets(name), users(full_name, email)").eq("clinic_id", clinic_id).order("created_at", desc=True).execute()
             reviews = response.data or []
-            avg_rating = round(sum(r.get("rating", 0) for r in reviews) / len(reviews), 1) if reviews else 0.0
+            formatted_reviews = []
+            for r in reviews:
+                pet_name = r.get("pets", {}).get("name") if r.get("pets") else "Unknown Pet"
+                users_data = r.get("users") or {}
+                reviewer_name = users_data.get("full_name") or users_data.get("email") or "Anonymous Owner"
+                reviewer_name = reviewer_name.strip()
+                formatted_reviews.append({
+                    "id": r.get("id"),
+                    "appointment_id": r.get("appointment_id"),
+                    "clinic_id": r.get("clinic_id"),
+                    "pet_id": r.get("pet_id"),
+                    "owner_id": r.get("owner_id"),
+                    "rating": r.get("rating"),
+                    "treatment": r.get("treatment"),
+                    "comment": r.get("comment"),
+                    "created_at": r.get("created_at"),
+                    "updated_at": r.get("updated_at"),
+                    "reviewer": reviewer_name,
+                    "pet": pet_name,
+                    "date": r.get("created_at")
+                })
+            avg_rating = round(sum(r.get("rating", 0) for r in formatted_reviews) / len(formatted_reviews), 1) if formatted_reviews else 0.0
             return {
                 "success": True,
-                "reviews": reviews,
-                "count": len(reviews),
+                "reviews": formatted_reviews,
+                "count": len(formatted_reviews),
                 "average_rating": avg_rating
             }
         except Exception as e:
@@ -209,6 +230,7 @@ class AppointmentService:
                 "success": False,
                 "error": f"Error fetching clinic reviews: {str(e)}"
             }
+
 
     # Private helper methods for notifications
     @staticmethod

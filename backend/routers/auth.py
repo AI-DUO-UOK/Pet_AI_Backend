@@ -145,6 +145,12 @@ async def update_profile(
     current_user: dict = Depends(get_current_user)
 ):
     """Update pet owner profile details"""
+    try:
+        with open("e:/AI_DUO/Pet_AI_Backend/debug.log", "a") as f:
+            f.write(f"\n{datetime.utcnow().isoformat()} - API called: full_name={full_name}, phone={phone}, bio={bio}, address={address}, lat={latitude}, lng={longitude}\n")
+    except Exception as log_err:
+        logger.error(f"Failed to write to debug.log: {log_err}")
+    logger.info(f"update_profile API called for user {current_user['id']}: full_name={full_name}, phone={phone}, bio={bio}, address={address}, lat={latitude}, lng={longitude}")
     profile_image_url = None
     
     if photo and photo.filename:

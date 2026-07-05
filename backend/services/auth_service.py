@@ -37,7 +37,7 @@ class AuthService:
 
             existing = supabase.table("pet_owners").select("*").eq("user_id", user_id).execute()
             if existing.data:
-                response = supabase.table("pet_owners").update(owner_data).eq("user_id", user_id).execute()
+                response = existing
             else:
                 response = supabase.table("pet_owners").insert(owner_data).execute()
             
@@ -175,7 +175,15 @@ class AuthService:
 
             # Update pet_owners
             if updates:
-                supabase.table("pet_owners").update(updates).eq("user_id", user_id).execute()
+                # Filter updates to only include columns that exist in pet_owners
+                allowed_columns = {
+                    "full_name", "email", "phone", "address", "state", "zip_code",
+                    "country", "profile_image_url", "bio", "latitude", "longitude"
+                }
+                filtered_updates = {k: v for k, v in updates.items() if k in allowed_columns}
+                
+                if filtered_updates:
+                    supabase.table("pet_owners").update(filtered_updates).eq("user_id", user_id).execute()
                 
                 # Also update the users table to keep them in sync
                 user_updates = {}

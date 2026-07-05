@@ -529,7 +529,15 @@ class AuthService:
                 owner_updates["longitude"] = longitude
 
             if owner_updates:
-                supabase.table("pet_owners").update(owner_updates).eq("user_id", user_id).execute()
+                # Filter updates to only include columns that exist in pet_owners
+                allowed_columns = {
+                    "full_name", "email", "phone", "address", "state", "zip_code",
+                    "country", "profile_image_url", "bio", "latitude", "longitude"
+                }
+                filtered_owner_updates = {k: v for k, v in owner_updates.items() if k in allowed_columns}
+                
+                if filtered_owner_updates:
+                    supabase.table("pet_owners").update(filtered_owner_updates).eq("user_id", user_id).execute()
                 
             # Also update auth_users table first_name and last_name if full_name is provided
             if full_name:
