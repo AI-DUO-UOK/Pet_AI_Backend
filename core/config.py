@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Base directory points to the backend/ folder
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DOG_SKIN_MODEL = os.path.join(BASE_DIR, "weights/dog_skin_model.pth")
 DOG_EYE_MODEL = os.path.join(BASE_DIR, "weights/dog_eye_model_ResNet_NEW.pth")

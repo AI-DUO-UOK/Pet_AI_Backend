@@ -109,7 +109,7 @@ async def update_appointment_status(
     # Validate status
     valid_statuses = {"scheduled", "completed", "cancelled", "in_progress"}
     if status not in valid_statuses:
-        raise HTTPException(status_code=400, detail=Status code error)
+        raise HTTPException(status_code=400, detail="Invalid status value")
 
     # Check authorization
     appt_resp = supabase.table("appointments").select("owner_id", "clinic_id").eq("id", appointment_id).execute()

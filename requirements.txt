@@ -16,7 +16,7 @@ python-dotenv
 
 # Advanced RAG Pipeline Dependencies
 
-docling==2.31.0
+# docling==2.31.0
 
 
 llama-index==0.14.21
