@@ -95,84 +95,33 @@ def detect_disease_type(user_input: str) -> str:
     
     return None
 
-def run_chat():
-    print("\n🐾 Pet AI Healthcare Chatbot Started")
-    print("=" * 60)
-    print("Welcome! I'm your veterinary assistant.")
-    print("I can help with general pet health questions and diagnose")
-    print("specific skin or eye issues with image analysis.\n")
-    
-    # Get pet type from user
+def prompt_pet_type() -> str:
+    """Prompt the user for pet type (dog/cat)."""
     while True:
         animal = input("What type of pet do you have? (dog/cat): ").strip().lower()
         if animal in ["dog", "cat"]:
-            break
+            return animal
         print("❌ Please enter 'dog' or 'cat'")
+
+
+def process_image_analysis(image_path: str, animal: str, disease_type: str, user_input: str) -> str:
+    """Perform image analysis using vision model and explain via RAG."""
+    print("\n📸 Analyzing image with computer vision model...\n")
+    from chatbot.tools import _analyze_pet_image_impl
     
-    print(f"\n✅ Great! I'll help you with your {animal.upper()}'s health.\n")
+    tool_result = _analyze_pet_image_impl(
+        image_path=image_path,
+        animal=animal,
+        disease_type=disease_type
+    )
     
-    # Track disease type and analysis across conversation turns
-    current_disease_type = None
-    analysis_done = False  # Track if we've already analyzed an image
+    if isinstance(tool_result, dict) and "error" in tool_result:
+        raise RuntimeError(tool_result['error'])
+        
+    disease_class = tool_result.get('class', 'Unknown')
+    confidence = tool_result.get('confidence', 0.0)
     
-    conversation_active = True
-    while conversation_active:
-        try:
-            user_input = input("You: ").strip()
-            
-            if not user_input:
-                continue
-            
-            if user_input.lower() in ["exit", "quit", "bye"]:
-                print("Bot: Goodbye! Take care of your pet! 🐾")
-                conversation_active = False
-                break
-            
-            # Detect disease type from current message
-            detected_disease_type = detect_disease_type(user_input)
-            
-            # Update current disease type if a new one is detected
-            # Otherwise, keep the previous disease type for context
-            if detected_disease_type:
-                # If switching to a different disease, reset analysis flag
-                if detected_disease_type != current_disease_type:
-                    analysis_done = False
-                current_disease_type = detected_disease_type
-            
-            disease_type = current_disease_type  # Use tracked disease type
-            
-            # Build context for the agent
-            if disease_type:
-                # Extract image path if provided
-                image_path = extract_image_path(user_input)
-                
-                if image_path and os.path.isfile(image_path):
-                    # SPECIAL CASE: User has skin/eye issue + provided image
-                    # Call the tool directly to ensure we get the analysis
-                    print("\n📸 Analyzing image with computer vision model...\n")
-                    
-                    from chatbot.tools import _analyze_pet_image_impl
-                    try:
-                        # Call the implementation function directly (not the @tool decorated version)
-                        tool_result = _analyze_pet_image_impl(
-                            image_path=image_path,
-                            animal=animal,
-                            disease_type=disease_type
-                        )
-                        
-                        # Check if tool returned an error
-                        if isinstance(tool_result, dict) and "error" in tool_result:
-                            error_msg = tool_result['error']
-                            print(f"Bot: I encountered an error while analyzing the image: {error_msg}")
-                            print("     Please try again with a different image file.\n")
-                            continue
-                        else:
-                            # Tool succeeded - use agentic RAG to explain the diagnosis
-                            disease_class = tool_result.get('class', 'Unknown')
-                            confidence = tool_result.get('confidence', 'N/A')
-                            
-                            # Use agentic RAG - agent will decide whether to search knowledge base
-                            explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
+    explanation_query = f"""The computer vision model detected {disease_class} (confidence: {confidence:.1%}) from a {animal}'s {disease_type} image.
 
 User's original description: {user_input}
 
@@ -184,135 +133,143 @@ Provide a detailed veterinary explanation covering:
 5. Prevention and management tips
 
 Be thorough and informative. Use formatting with headers and bullet points for clarity."""
-                            
-                            # Get conversation history for context
-                            memory_vars = memory.load_memory_variables({})
-                            chat_history = memory_vars.get('chat_history', '')
-                            
-                            # Agent decides whether to use RAG
-                            explanation_text = query_agentic_rag(
-                                question=explanation_query,
-                                chat_history=chat_history
-                            )
-                            
-                            print(f"Bot: {explanation_text}\n")
-                            analysis_done = True  # Mark that we've done analysis
-                            
-                            # IMPORTANT: Save the specific diagnosis to memory
-                            # This ensures follow-up questions can reference the exact diagnosis
-                            diagnosis_record = f"Diagnosed with {disease_class} (confidence: {confidence:.1%}) from {disease_type} image analysis"
-                            memory.save_context(
-                                {"input": user_input},
-                                {"output": diagnosis_record}
-                            )
-                            continue
-                    except Exception as e:
-                        error_msg = str(e)
-                        print(f"Bot: I encountered an error while analyzing the image: {error_msg}")
-                        print("     Please try again with a different image file.\n")
-                        continue
-                else:
-                    # User hasn't provided image yet for skin/eye issue
-                    if analysis_done:
-                        # We already analyzed an image - this is a follow-up question
-                        # Use RAG first, then fall back to general knowledge if needed
-                        memory_vars = memory.load_memory_variables({})
-                        conversation_history = memory_vars.get('chat_history', '')
-                        
-                        # Use agentic RAG for follow-up question - agent decides if RAG is needed
-                        followup_query = f"""You have already diagnosed and discussed a {disease_type} condition with this {animal}.
+    
+    chat_history = memory.load_memory_variables({}).get('chat_history', '')
+    explanation_text = query_agentic_rag(
+        question=explanation_query,
+        chat_history=chat_history
+    )
+    
+    diagnosis_record = f"Diagnosed with {disease_class} (confidence: {confidence:.1%}) from {disease_type} image analysis"
+    memory.save_context({"input": user_input}, {"output": diagnosis_record})
+    return explanation_text
+
+
+def process_followup(user_input: str, animal: str, disease_type: str) -> str:
+    """Process follow-up questions for a previously diagnosed disease."""
+    chat_history = memory.load_memory_variables({}).get('chat_history', '')
+    
+    followup_query = f"""You have already diagnosed and discussed a {disease_type} condition with this {animal}.
 
 Previous Conversation:
-{conversation_history}
+{chat_history}
 
 User's follow-up question: {user_input}
 
 IMPORTANT: Reference the specific diagnosis and previous discussion from the conversation history.
 Answer this question in the context of the condition previously diagnosed. 
 Provide helpful, accurate veterinary advice based on the question asked."""
-                        
-                        # Agent decides whether to use RAG
-                        followup_answer = query_agentic_rag(
-                            question=followup_query,
-                            chat_history=conversation_history
-                        )
-                        
-                        print(f"Bot: {followup_answer}\n")
-                        
-                        # Save follow-up to memory for continued context
-                        memory.save_context(
-                            {"input": user_input},
-                            {"output": followup_answer}
-                        )
-                    else:
-                        # First time for this disease - ask for image WITHOUT searching knowledge base
-                        # RAG search will only happen AFTER the CV model analyzes the image
-                        enriched_input = f"""
-                        Pet Type: {animal}
-                        Issue Type: {disease_type} disease
-                        
-                        User Query: {user_input}
-                        
-                        The user is asking about a {disease_type} issue. Ask them to upload a clear image
-                        so you can provide a proper diagnosis. Guide them to provide the image file path.
-                        Do NOT use the tool yet. Just ask for the image.
-                        """
-                        response = agent.run(enriched_input)
-                        clean_response = clean_agent_response(response)
-                        print(f"Bot: {clean_response}\n")
-                        
-                        # Save to memory
-                        memory.save_context(
-                            {"input": user_input},
-                            {"output": clean_response}
-                        )
-            else:
-                # General health question (no disease keywords detected)
-                # Use RAG retriever to get knowledge base context
-                analysis_done = False  # Reset for general questions
-                
-                # Get conversation history from memory for better context
-                memory_vars = memory.load_memory_variables({})
-                conversation_history = memory_vars.get('chat_history', '')
-                
-                # Use agentic RAG - let the agent decide whether to search knowledge base or answer directly
-                # This is intelligent routing that avoids unnecessary retrieval
-                pet_query = f"""Pet Type: {animal}
+    
+    answer = query_agentic_rag(
+        question=followup_query,
+        chat_history=chat_history
+    )
+    memory.save_context({"input": user_input}, {"output": answer})
+    return answer
+
+
+def process_disease_image_request(user_input: str, animal: str, disease_type: str) -> str:
+    """Prompt user to provide an image path for the matched disease."""
+    enriched_input = f"""
+    Pet Type: {animal}
+    Issue Type: {disease_type} disease
+    
+    User Query: {user_input}
+    
+    The user is asking about a {disease_type} issue. Ask them to upload a clear image
+    so you can provide a proper diagnosis. Guide them to provide the image file path.
+    Do NOT use the tool yet. Just ask for the image.
+    """
+    response = agent.run(enriched_input)
+    clean_response = clean_agent_response(response)
+    memory.save_context({"input": user_input}, {"output": clean_response})
+    return clean_response
+
+
+def process_general_query(user_input: str, animal: str) -> str:
+    """Process general queries not matched to disease types using Agentic RAG."""
+    chat_history = memory.load_memory_variables({}).get('chat_history', '')
+    
+    pet_query = f"""Pet Type: {animal}
 
 Previous Conversation:
-{conversation_history}
+{chat_history}
 
 Current User Question: {user_input}
 
 If this is a veterinary/medical question, search the knowledge base for accurate information.
 If this is casual conversation or personal information, answer directly without searching.
 Be smart about deciding whether retrieval is necessary."""
+    
+    response = query_agentic_rag(
+        question=pet_query,
+        chat_history=chat_history
+    )
+    memory.save_context({"input": user_input}, {"output": response})
+    return response
+
+
+def run_chat():
+    print("\n🐾 Pet AI Healthcare Chatbot Started")
+    print("=" * 60)
+    print("Welcome! I'm your veterinary assistant.")
+    print("I can help with general pet health questions and diagnose")
+    print("specific skin or eye issues with image analysis.\n")
+    
+    animal = prompt_pet_type()
+    print(f"\n✅ Great! I'll help you with your {animal.upper()}'s health.\n")
+    
+    current_disease_type = None
+    analysis_done = False
+    
+    while True:
+        try:
+            user_input = input("You: ").strip()
+            if not user_input:
+                continue
+            
+            if user_input.lower() in ["exit", "quit", "bye"]:
+                print("Bot: Goodbye! Take care of your pet! 🐾")
+                break
+            
+            detected_disease = detect_disease_type(user_input)
+            if detected_disease:
+                if detected_disease != current_disease_type:
+                    analysis_done = False
+                current_disease_type = detected_disease
+            
+            disease_type = current_disease_type
+            
+            if disease_type:
+                image_path = extract_image_path(user_input)
                 
-                # Agent decides: use RAG or answer directly
-                clean_response = query_agentic_rag(
-                    question=pet_query,
-                    chat_history=conversation_history
-                )
+                if image_path and os.path.isfile(image_path):
+                    try:
+                        bot_response = process_image_analysis(image_path, animal, disease_type, user_input)
+                        analysis_done = True
+                        print(f"Bot: {bot_response}\n")
+                    except Exception as img_err:
+                        print(f"Bot: I encountered an error while analyzing the image: {str(img_err)}")
+                        print("     Please try again with a different image file.\n")
+                elif analysis_done:
+                    bot_response = process_followup(user_input, animal, disease_type)
+                    print(f"Bot: {bot_response}\n")
+                else:
+                    bot_response = process_disease_image_request(user_input, animal, disease_type)
+                    print(f"Bot: {bot_response}\n")
+            else:
+                analysis_done = False
+                bot_response = process_general_query(user_input, animal)
+                print(f"Bot: {bot_response}\n")
                 
-                print(f"Bot: {clean_response}\n")
-                
-                # Save all responses to memory for context in future turns
-                memory.save_context(
-                    {"input": user_input},
-                    {"output": clean_response}
-                )
-        
         except KeyboardInterrupt:
             print("\n\nBot: Goodbye! 🐾")
-            conversation_active = False
+            break
         except Exception as e:
             print(f"❌ Error: {str(e)}")
             print("Please try again.\n")
 
 
 if __name__ == "__main__":
-    # Initialize LangSmith tracing (optional)
     setup_langsmith()
-    
-    # Start the chatbot
     run_chat()
